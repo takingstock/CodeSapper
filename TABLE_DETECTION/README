@@ -1,1 +1,25 @@
 ALL things table detection. Open source models and libraries are very amateurish and do a poor job. This is a collection of rule based engines that i had to write up to support models like TATR
+In order to run this, you can use either tesseract ( which should work for most cases ) else there's a google ocr reader too ( please ensure you add the credentials in the json file and change the OCR engine )
+PLEASE ENSURE ALL THE BASIC DETAILS IN THE CONFIG ARE CHECKED CORRECTLY ..thats the only effort needed to get cell contents :)
+
+once this is done, simply run tabularData_pipeline.py or call the method tableContents with the file path of the PDF / JPG / PNG file
+The response would be in the format
+DICT { key -> index number of the table ( since a pdf can have multiple tables )
+       value -> DICT { key - row number
+                        value -> array of cells [ DICT -> key -> HDR - column header name
+                                                          key -> CELL_INFO - > final textual contents of the cell ]
+                      }
+    }
+
+sample op ->
+{ 0 :
+  {1: 
+        [{'HDR': 'Facilities Consolidation_750', 'CELL_INFO': ' $ 86'}, {'HDR': 'Severance and Other Personnel Costs_980', 'CELL_INFO': ' §$ —'}, {'HDR': 'Data Assets Center_1186', 'CELL_INFO': ' $ as)'}, {'HDR': 'Total_1416', 'CELL_INFO': ' 93'}, {'HDR': 'Facilities Consolidation_1572', 'CELL_INFO': ' $ 177'}, {'HDR': 'Severance and Other Personnel Costs_1820', 'CELL_INFO': ' $ —'}, {'HDR': 'Data Assets Center_2008', 'CELL_INFO': ' $ (224)'}, {'HDR': 'Description', 'CELL_INFO': ' Cost of revenue $'}], 
+  2: 
+        [{'HDR': 'Facilities Consolidation_750', 'CELL_INFO': ' 710'}, {'HDR': 'Severance and Other Personnel Costs_980', 'CELL_INFO': ' 28'}, {'HDR': 'Data Assets Center_1186', 'CELL_INFO': ' ——'}, {'HDR': 'Total_1416', 'CELL_INFO': ' 738'}, {'HDR': 'Facilities Consolidation_1572', 'CELL_INFO': ' 1,581'}, {'HDR': 'Severance and Other Personnel Costs_1820', 'CELL_INFO': ' 413'}, {'HDR': 'Data Assets Center_2008', 'CELL_INFO': ' —'}, {'HDR': 'Description', 'CELL_INFO': ' Research and development'}], 
+  3: 
+        [{'HDR': 'Facilities Consolidation_750', 'CELL_INFO': ' 162'}, {'HDR': 'Severance and Other Personnel Costs_980', 'CELL_INFO': ' 16'}, {'HDR': 'Data Assets Center_1186', 'CELL_INFO': ' —'}, {'HDR': 'Total_1416', 'CELL_INFO': ' 178'}, {'HDR': 'Facilities Consolidation_1572', 'CELL_INFO': ' 396'}, {'HDR': 'Severance and Other Personnel Costs_1820', 'CELL_INFO': ' 307'}, {'HDR': 'Data Assets Center_2008', 'CELL_INFO': ' ='}, {'HDR': 'Description', 'CELL_INFO': ' Marketing and sales'}], 
+  4: 
+        [{'HDR': 'Facilities Consolidation_750', 'CELL_INFO': ' 142'}, {'HDR': 'Severance and Other Personnel Costs_980', 'CELL_INFO': ' (3)'}, {'HDR': 'Data Assets Center_1186', 'CELL_INFO': ' —'}, {'HDR': 'Total_1416', 'CELL_INFO': ' 139'}, {'HDR': 'Facilities Consolidation_1572', 'CELL_INFO': ' 352'}, {'HDR': 'Severance and Other Personnel Costs_1820', 'CELL_INFO': ' 450'}, {'HDR': 'Data Assets Center_2008', 'CELL_INFO': ' —'}, {'HDR': 'Description', 'CELL_INFO': ' General and administrative'}]
+  }
+** in order to differentiate column header names that are the same string ( at times "Amount" will be the column name that gets repeated, for e.g. ), i append it with the x offset co-ordinate ..get rid of it using a simple split
