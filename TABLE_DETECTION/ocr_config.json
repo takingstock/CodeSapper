@@ -1,0 +1,8 @@
+{
+	"ocr_engine": "GOOGLE",
+	"credentials_if_google_ocr": "/home/ubuntu/ABHIJEET/OCR/orc_credentials.json",
+	"project_name_if_google_ocr": "My First Project",
+	"JSON_FOLDER": "/home/ubuntu/AI_TBL_DET/LINE_DETECTION/",
+	"debug_flag": "True",
+	"DEBUG_FOLDER":"/home/ubuntu/AI_TBL_DET/LINE_DETECTION/NEO_TBL_DET/"
+}
