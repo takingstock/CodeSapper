@@ -1,4 +1,4 @@
-import sys
+import sys, json
 import re
 
 def parse_diff_file(diff_file):
@@ -34,6 +34,9 @@ def parse_diff_file(diff_file):
                 hunk_data['new_code'].append(line[1:].strip())
 
     print('FINAL CHANGE->', changes)
+    with open('changes_for_further_analysis.json', 'w' ) as fp:
+        json.dump( changes, fp )
+
     return changes
 
 def main():

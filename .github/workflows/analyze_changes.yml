@@ -37,3 +37,10 @@ jobs:
         run: |
           python trigger_dependency_analysis.py changed_files.txt
 
+      - name: Upload generated files
+        uses: actions/upload-artifact@v2
+        with:
+          name: generated-files
+          path: |
+            changes_for_further_analysis.json
+            # Add other files or directories you want to upload here          
