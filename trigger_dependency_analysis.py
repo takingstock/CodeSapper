@@ -11,7 +11,7 @@ def parse_diff_file(diff_file):
             print('DUMM->', line)
             if line.startswith('diff --git'):
                 current_file = re.search(r'b/(.*)', line).group(1)
-            elif line.startswith('@@'):
+            elif line.startswith('@@') and current_file is not None and '.py' in current_file:
                 hunk_info = re.search(r'@@ -(\d+),(\d+) \+(\d+),(\d+) @@', line)
                 if hunk_info is not None:
                     old_start = int(hunk_info.group(1))
@@ -28,9 +28,9 @@ def parse_diff_file(diff_file):
                         'new_code': []
                     }
                     changes.append(hunk_data)
-            elif line.startswith('-') and hunk_info:
+            elif line.startswith('-') and hunk_info and current_file is not None and '.py' in current_file:
                 hunk_data['old_code'].append(line[1:].strip())
-            elif line.startswith('+') and hunk_info:
+            elif line.startswith('+') and hunk_info and current_file is not None and '.py' in current_file:
                 hunk_data['new_code'].append(line[1:].strip())
 
     print('FINAL CHANGE->', changes)
