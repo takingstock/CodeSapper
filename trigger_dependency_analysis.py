@@ -4,10 +4,10 @@ import re
 def parse_diff_file(diff_file):
     changes = []
     current_file = None
-    print('DUMMS->', diff_file)
 
     with open(diff_file, 'r') as file:
         for line in file:
+            print('DUMMS->', line)
             if line.startswith('diff --git'):
                 current_file = re.search(r'b/(.*)', line).group(1)
             if line.startswith('@@') and current_file is not None and '.py' in current_file:

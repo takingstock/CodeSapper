@@ -30,7 +30,7 @@ class LLM_interface:
 
         path = Path( self.src_folder_ )
         llm_input_ = [str(file.resolve()) for file in path.rglob('*') if file.is_file()]
-        print('Change for testing github actions#8')
+        print('Change for testing github actions#10')
 
         return llm_input_
 
