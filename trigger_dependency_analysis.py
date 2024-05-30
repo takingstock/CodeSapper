@@ -1,35 +1,36 @@
-import os
 import sys
+import re
 
-def analyze_changes(file_list):
-    for file_name in file_list:
-        if file_name.endswith('.py'):
-            print(f"Analyzing {file_name}")
-            with open(file_name, 'r') as file:
-                lines = file.readlines()
-                for i, line in enumerate(lines):
-                    if 'def ' in line:
-                        method_name = line.split('def ')[1].split('(')[0].strip()
-                        with open( 'DUMB.txt', 'w+' ) as fp:
-                          fp.write("Found method: {"+method_name+"} in file: {"+file_name+"}\n")
+def parse_diff_file(diff_file):
+    changes = []
+    current_file = None
+    print('DUMMS->', diff_file)
 
-                        # Add your logic here to handle the method and file name
-                        # For example, you can call another function or perform some analysis
-                        # ...
+    with open(diff_file, 'r') as file:
+        for line in file:
+            if line.startswith('diff --git'):
+                current_file = re.search(r'b/(.*)', line).group(1)
+            if line.startswith('@@') and current_file is not None and '.py' in current_file:
+                line_numbers = re.search(r'@@ -(\d+),\d+ \+(\d+),\d+ @@', line)
+                start_line = int(line_numbers.group(2))
+                changes.append({
+                    'file': current_file,
+                    'line': start_line
+                })
+    print('ANALYSIS->', changes)
+    return changes
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python analyze_changes.py <diff_file>")
+        sys.exit(1)
+
+    diff_file = sys.argv[1]
+    changes = parse_diff_file(diff_file)
+
+    for change in changes:
+        print(f"File: {change['file']}, Line: {change['line']}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python analyze_changes.py <changed_files.txt>")
-        sys.exit(1)
-
-    changed_files_path = sys.argv[1]
-
-    if not os.path.exists(changed_files_path):
-        print(f"File {changed_files_path} does not exist.")
-        sys.exit(1)
-
-    with open(changed_files_path, 'r') as file:
-        changed_files = [line.strip() for line in file.readlines()]
-
-    analyze_changes(changed_files)
+    main()
 
