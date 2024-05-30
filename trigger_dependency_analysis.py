@@ -11,7 +11,7 @@ def analyze_changes(file_list):
                     if 'def ' in line:
                         method_name = line.split('def ')[1].split('(')[0].strip()
                         with open( 'DUMB.txt', 'w+' ) as fp:
-                          fp.write("Found method: {+"method_name"+} in file: {+"file_name"+}\n")
+                          fp.write("Found method: {"+method_name+"} in file: {"+file_name+"}\n")
 
                         # Add your logic here to handle the method and file name
                         # For example, you can call another function or perform some analysis
