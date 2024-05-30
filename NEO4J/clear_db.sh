@@ -1,0 +1,1 @@
+/datadrive/EXPERIMENTS/NEO4J/neomodel/clear_db.sh

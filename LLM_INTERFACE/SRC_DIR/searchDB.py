@@ -11,7 +11,8 @@ emb_ = createJsonFeats.returnEmbed( txt )
 res_ = db_utils.searchSignature( {'docSignature': emb_} )
 corpus_ = dict()
 
-if 'searchRes_' in res_:
+def pos( res_ ):
+  if 'searchRes_' in res_:
     act_ = res_[ 'searchRes_' ]
     print( act_ )
     tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []
@@ -96,3 +97,5 @@ if 'searchRes_' in res_:
 
         print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
                 ' BM25 : ', score_title_[keyid] )
+
+    return 123

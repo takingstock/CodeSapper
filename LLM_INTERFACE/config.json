@@ -8,5 +8,7 @@
 	},
 	"MODEL_NAME": "llama3-70b-8192",
 	"CHUNK_SIZE": 4096,
-	"TEMP": 1
+	"TEMP": 1,
+	"PYTHON_RETURN_SYNTAX": "return",
+	"JS_RETURN_SYNTAX": "return"
 }

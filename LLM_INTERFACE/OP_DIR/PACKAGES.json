@@ -1,0 +1,1545 @@
+{
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py": [
+        {
+            "createJsonFeats": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "pos",
+                        "method_defn": "def pos( res_ ):",
+                        "usage": [
+                            "            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "returnEmbed": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "pos",
+                        "method_defn": "def pos( res_ ):",
+                        "usage": [
+                            "            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "os": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "pos",
+                        "method_defn": "def pos( res_ ):",
+                        "usage": [
+                            "        cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )\n",
+                            "        print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "json": 1
+        },
+        {
+            "sys": 1
+        },
+        {
+            "traceback": 1
+        },
+        {
+            "db_utils": 1
+        },
+        {
+            "numpy": 3
+        },
+        {
+            "np": {
+                "def": 3,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "pos",
+                        "method_defn": "def pos( res_ ):",
+                        "usage": [
+                            "        print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])    \n",
+                            "        if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue\n",
+                            "        print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])    \n",
+                            "        if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue\n",
+                            "        print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])    \n",
+                            "        if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue\n",
+                            "        print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])    \n",
+                            "        if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue\n",
+                            "        print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])    \n",
+                            "        if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "scipy.spatial.distance": 100
+        },
+        {
+            "distance": {
+                "def": 100,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "pos",
+                        "method_defn": "def pos( res_ ):",
+                        "usage": [
+                            "        cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "rank_bm25.BM25Okapi": 100
+        },
+        {
+            "BM25Okapi": {
+                "def": 100,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "pos",
+                        "method_defn": "def pos( res_ ):",
+                        "usage": [
+                            "            BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \\\n",
+                            "            BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py": [
+        {
+            "createJsonFeats": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py",
+                        "method_nm": "addToDB",
+                        "method_defn": "def addToDB():",
+                        "usage": [
+                            "            emb_ = createJsonFeats.returnEmbed( txt )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "os": 1
+        },
+        {
+            "json": 1
+        },
+        {
+            "sys": 1
+        },
+        {
+            "traceback": 1
+        },
+        {
+            "db_utils": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py",
+                        "method_nm": "addToDB",
+                        "method_defn": "def addToDB():",
+                        "usage": [
+                            "            db_utils.insertNewSignature( dd_ )\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py": [
+        {
+            "json": 0
+        },
+        {
+            "math": 0
+        },
+        {
+            "sys": 0
+        },
+        {
+            "traceback": 0
+        },
+        {
+            "copy": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "find_tables",
+                        "method_defn": "def find_tables(self, sheet):",
+                        "usage": [
+                            "        init_end_col = copy.copy( end_col )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "multiprocessing": 0
+        },
+        {
+            "os": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "findHighVarianceColumns",
+                        "method_defn": "def findHighVarianceColumns( self, start_hdr_row_, sheet, tbl ):",
+                        "usage": [
+                            "                ## now transpose the contents of the frame since we want it to retain the shape of a column\n",
+                            "                transposed_ = np.transpose( np.asarray( list( numeric_frame_.values() ) ) )\n",
+                            "                #print('The val of transposed_->', transposed_)\n",
+                            "                ## perform PCA and pick the most high variance columns\n",
+                            "                self.sklearn_pca_object_.fit( transposed_ )\n",
+                            "                ## only consider those components that contribute to 90% or whatever threshold level of variance\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "returnSummary",
+                        "method_defn": "def returnSummary( self, tbl ):",
+                        "usage": [
+                            "        i am also considering transposing the first few rows to see how different the summary looks\n",
+                            "        frame_, transposed_frame_, start_hdr_row_ = '', '', self.findHdrRow( tbl )\n",
+                            "        frame_num_contours_, transposed_frame_contours_ = 0, 0\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "findHdrRow",
+                        "method_defn": "def findHdrRow( self, tbl ):",
+                        "usage": [
+                            "            ## should we start the table ..at times the header table is split across more than 1 row\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "mergeAndInsert",
+                        "method_defn": "def mergeAndInsert(self, summary_D)",
+                        "usage": [
+                            "        b) the transposed table structure\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "returnEntireSheet",
+                        "method_defn": "def returnEntireSheet( self, tbl_, sheet_name ): ",
+                        "usage": [
+                            "        find if the entire sheet contains mostly textual information. If so, then we should simply\n",
+                            "            ## HENCE its mostly observations being selected from a drop down and does NOT need\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "numpy": 2
+        },
+        {
+            "np": {
+                "def": 2,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "is_date",
+                        "method_defn": "def is_date( input_str):",
+                        "usage": [
+                            "            _ = int( input_str )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "convertToPandas",
+                        "method_defn": "def convertToPandas(self, tbl_)",
+                        "usage": [
+                            "            _ = int( input_str )\n",
+                            "            _ = float( input_str )\n",
+                            "            return parser.parse(input_str)\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "findHighVarianceColumns",
+                        "method_defn": "def findHighVarianceColumns( self, start_hdr_row_, sheet, tbl ):",
+                        "usage": [
+                            "                max_uid_ = np.max( uid )\n",
+                            "                transposed_ = np.transpose( np.asarray( list( numeric_frame_.values() ) ) )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "openpyxl": 3
+        },
+        {
+            "time": {
+                "def": 5,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "process",
+                        "method_defn": "def process( colNum, sheet, tbl ):",
+                        "usage": [
+                            "                return ( True, sorted_dates_[0].strftime('%B %d, %Y'), sorted_dates_[-1].strftime('%B %d, %Y') )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "__init__",
+                        "method_defn": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.max_tables_per_sheet_ = 10 ## at times a single sheet can have multiple tables\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "find_tables",
+                        "method_defn": "def find_tables(self, sheet):",
+                        "usage": [
+                            "        timer_ = time.time()\n",
+                            "        print('Time taken->', time.time() - timer_, start_row, end_row, start_col, end_col)    \n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "returnSummary",
+                        "method_defn": "def returnSummary( self, tbl ):",
+                        "usage": [
+                            "        time_ = time.time()\n",
+                            "        print('Time taken to find high var cols ->', time.time() - time_)\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "findHdrRow",
+                        "method_defn": "def findHdrRow( self, tbl ):",
+                        "usage": [
+                            "            ## should we start the table ..at times the header table is split across more than 1 row\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "random": {
+                "def": 5,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "createDBRec",
+                        "method_defn": "def createDBRec( self, summary_D, mode='NORM' ): ",
+                        "usage": [
+                            "        insertRec['docID'] = random.randint( 1000, 100000 )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "datetime": 5
+        },
+        {
+            "pandas": 6
+        },
+        {
+            "pd": 6
+        },
+        {
+            "sklearn.decomposition": 7
+        },
+        {
+            "PCA": {
+                "def": 7,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "__init__",
+                        "method_defn": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.sklearn_pca_object_ = PCA()\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "findHighVarianceColumns",
+                        "method_defn": "def findHighVarianceColumns( self, start_hdr_row_, sheet, tbl ):",
+                        "usage": [
+                            "                ## standardize the column since PCA better be done on std values\n",
+                            "                ## perform PCA and pick the most high variance columns\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "query_llama3_via_groq": 9
+        },
+        {
+            "llama3": {
+                "def": 9,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "findHeaderInfo",
+                        "method_defn": "NA",
+                        "usage": [
+                            "            self.query_fn_ = llama3\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "query_gpt_via_groq": 10
+        },
+        {
+            "openai": {
+                "def": 10,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "findHeaderInfo",
+                        "method_defn": "NA",
+                        "usage": [
+                            "            self.query_fn_ = openai\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "createJsonFeats": {
+                "def": 11,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "createDBRec",
+                        "method_defn": "def createDBRec( self, summary_D, mode='NORM' ): ",
+                        "usage": [
+                            "        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "db_utils": {
+                "def": 12,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "mergeAndInsert",
+                        "method_defn": "def mergeAndInsert(self, summary_D)",
+                        "usage": [
+                            "        db_utils.insertNewSignature( rec_ )\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py": [
+        {
+            "json": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnEmbed",
+                        "method_defn": "def returnEmbed( sent ): ",
+                        "usage": [
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "                                        headers={'Content-Type': 'application/json'} )\n",
+                            "    json_obj = json.loads(string)\n",
+                            "    return json_obj['encoded_'], True\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnEmbed",
+                        "method_defn": "def returnEmbed( sent ): ",
+                        "usage": [
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "                                        headers={'Content-Type': 'application/json'} )\n",
+                            "    json_obj = json.loads(string)\n",
+                            "    return json_obj['encoded_'], True\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):",
+                        "usage": [
+                            "        json_ = json.load( fp )\n",
+                            "        json_raw = json.load( fp )\n",
+                            "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    _request = urllib.request.Request( url_encode, data=data, method='POST', headers={'Content-Type': 'application/json'} )\n",
+                            "    json_obj = json.loads(string)\n",
+                            "    return json_obj['encoded_'], key_tuple_\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "numpy": 1
+        },
+        {
+            "np": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):",
+                        "usage": [
+                            "    #print( np.asarray( dist_matrix_ ).shape, dist_matrix_[0] )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "findKeys": {
+                "def": 2,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):",
+                        "usage": [
+                            "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "scipy.spatial": 3
+        },
+        {
+            "distance": 3
+        },
+        {
+            "scipy.linalg": 4
+        },
+        {
+            "eig": {
+                "def": 4,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):",
+                        "usage": [
+                            "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "urllib.request": {
+                "def": 5,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnEmbed",
+                        "method_defn": "def returnEmbed( sent ): ",
+                        "usage": [
+                            "    _request = urllib.request.Request( url_encode, data=data, method='POST', \\\n",
+                            "    response = urllib.request.urlopen( _request )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnEmbed",
+                        "method_defn": "def returnEmbed( sent ): ",
+                        "usage": [
+                            "    _request = urllib.request.Request( url_encode, data=data, method='POST', \\\n",
+                            "    response = urllib.request.urlopen( _request )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):",
+                        "usage": [
+                            "    _request = urllib.request.Request( url_encode, data=data, method='POST', headers={'Content-Type': 'application/json'} )\n",
+                            "    response = urllib.request.urlopen( _request )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sys": {
+                "def": 7,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "blockPrint",
+                        "method_defn": "def blockPrint():",
+                        "usage": [
+                            "    sys.stdout = open(os.devnull, 'w')\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "enablePrint",
+                        "method_defn": "def enablePrint():",
+                        "usage": [
+                            "    sys.stdout = sys.__stdout__\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "os": {
+                "def": 7,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "blockPrint",
+                        "method_defn": "def blockPrint():",
+                        "usage": [
+                            "    sys.stdout = open(os.devnull, 'w')\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py": [
+        {
+            "createJsonFeats": 0
+        },
+        {
+            "": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "returnBlankDBRec",
+                        "method_defn": "def returnBlankDBRec():",
+                        "usage": [
+                            "\n",
+                            "    dbRec_ = dict()\n",
+                            "    dbRec_['docID'] = ''\n",
+                            "    dbRec_['docSignature'] = []\n",
+                            "    dbRec_['tupArr'] = []\n",
+                            "    dbRec_['ocr_op'] = [] ## assing raw ocr op ['lines']\n",
+                            "    dbRec_['dimension'] = [] ## assing raw ocr op ht, wd\n",
+                            "    dbRec_['tableFeedback'] = dict()\n",
+                            "    dbRec_['feedbackDict'] = [ { 'config_field_nm': '',\\\n",
+                            "                               'field_co_ords':[],\\\n",
+                            "                               'field_datatype': '',\\\n",
+                            "                               'feedback_value': '',\\\n",
+                            "                               'local_neigh_dict': dict() } ]\n",
+                            "    dbRec_['exception_feedback'] = [] ## will contain dicts of fmt -> \n",
+                            "            ## { 'docID':, 'failed_fields': [ { 'config_field_nm':, 'feedback_value':, 'feedback_co_ords':, 'comments;' } ]\n",
+                            "    dbRec_['success_feedback'] = [] ## array of dicts        \n",
+                            "    ## { 'docID':, 'passed_fields': [ { 'config_field_nm':, 'local_field':, 'feedback_value':, 'feedback_co_ords': , 'comments': } ]\n",
+                            "\n",
+                            "    return dbRec_\n",
+                            "\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "insertNewSignature",
+                        "method_defn": "def insertNewSignature( rec_ ):",
+                        "usage": [
+                            "\n",
+                            "\n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    insert_request = urllib.request.Request( url_insert, data=data, method='POST', \\\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n",
+                            "\n",
+                            "    response = urllib.request.urlopen( insert_request )\n",
+                            "    string = response.read().decode('utf-8')\n",
+                            "\n",
+                            "    return string\n",
+                            "    \n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "updateSignature",
+                        "method_defn": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    \n",
+                            "\n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    insert_request = urllib.request.Request( url_update, data=data, method='POST', \\\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n",
+                            "\n",
+                            "    response = urllib.request.urlopen( insert_request )\n",
+                            "    string = response.read().decode('utf-8')\n",
+                            "\n",
+                            "    return string\n",
+                            "\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "updateSignature",
+                        "method_defn": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    \n",
+                            "\n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    insert_request = urllib.request.Request( url_update, data=data, method='POST', \\\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n",
+                            "\n",
+                            "    response = urllib.request.urlopen( insert_request )\n",
+                            "    string = response.read().decode('utf-8')\n",
+                            "\n",
+                            "    return string\n",
+                            "\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "searchSignature",
+                        "method_defn": "def searchSignature( rec_ ):",
+                        "usage": [
+                            "\n",
+                            "\n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    search_request = urllib.request.Request( url_search, data=data, method='POST', \\\n",
+                            "                                                headers={'Content-Type': 'application/json'} )\n",
+                            "    response = urllib.request.urlopen( search_request )\n",
+                            "    string = response.read().decode('utf-8')\n",
+                            "    json_obj = json.loads(string)\n",
+                            "\n",
+                            "    return json_obj\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "json": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "insertNewSignature",
+                        "method_defn": "def insertNewSignature( rec_ ):",
+                        "usage": [
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "updateSignature",
+                        "method_defn": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "updateSignature",
+                        "method_defn": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "searchSignature",
+                        "method_defn": "def searchSignature( rec_ ):",
+                        "usage": [
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "                                                headers={'Content-Type': 'application/json'} )\n",
+                            "    json_obj = json.loads(string)\n",
+                            "    return json_obj\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "returnBlankDBRec",
+                        "method_defn": "def returnBlankDBRec():",
+                        "usage": [
+                            "\n",
+                            "    dbRec_ = dict()\n",
+                            "    dbRec_['docID'] = ''\n",
+                            "    dbRec_['docSignature'] = []\n",
+                            "    dbRec_['tupArr'] = []\n",
+                            "    dbRec_['ocr_op'] = [] ## assing raw ocr op ['lines']\n",
+                            "    dbRec_['dimension'] = [] ## assing raw ocr op ht, wd\n",
+                            "    dbRec_['tableFeedback'] = dict()\n",
+                            "    dbRec_['feedbackDict'] = [ { 'config_field_nm': '',\\\n",
+                            "                               'field_co_ords':[],\\\n",
+                            "                               'field_datatype': '',\\\n",
+                            "                               'feedback_value': '',\\\n",
+                            "                               'local_neigh_dict': dict() } ]\n",
+                            "    dbRec_['exception_feedback'] = [] ## will contain dicts of fmt -> \n",
+                            "            ## { 'docID':, 'failed_fields': [ { 'config_field_nm':, 'feedback_value':, 'feedback_co_ords':, 'comments;' } ]\n",
+                            "    dbRec_['success_feedback'] = [] ## array of dicts        \n",
+                            "    ## { 'docID':, 'passed_fields': [ { 'config_field_nm':, 'local_field':, 'feedback_value':, 'feedback_co_ords': , 'comments': } ]\n",
+                            "\n",
+                            "    return dbRec_\n",
+                            "\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "insertNewSignature",
+                        "method_defn": "def insertNewSignature( rec_ ):",
+                        "usage": [
+                            "\n",
+                            "\n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    insert_request = urllib.request.Request( url_insert, data=data, method='POST', \\\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n",
+                            "\n",
+                            "    response = urllib.request.urlopen( insert_request )\n",
+                            "    string = response.read().decode('utf-8')\n",
+                            "\n",
+                            "    return string\n",
+                            "    \n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "updateSignature",
+                        "method_defn": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    \n",
+                            "\n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    insert_request = urllib.request.Request( url_update, data=data, method='POST', \\\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n",
+                            "\n",
+                            "    response = urllib.request.urlopen( insert_request )\n",
+                            "    string = response.read().decode('utf-8')\n",
+                            "\n",
+                            "    return string\n",
+                            "\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "updateSignature",
+                        "method_defn": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    \n",
+                            "\n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    insert_request = urllib.request.Request( url_update, data=data, method='POST', \\\n",
+                            "                                              headers={'Content-Type': 'application/json'})\n",
+                            "\n",
+                            "    response = urllib.request.urlopen( insert_request )\n",
+                            "    string = response.read().decode('utf-8')\n",
+                            "\n",
+                            "    return string\n",
+                            "\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "searchSignature",
+                        "method_defn": "def searchSignature( rec_ ):",
+                        "usage": [
+                            "\n",
+                            "\n",
+                            "    data = json.dumps( rec_ ).encode('utf-8')\n",
+                            "    search_request = urllib.request.Request( url_search, data=data, method='POST', \\\n",
+                            "                                                headers={'Content-Type': 'application/json'} )\n",
+                            "    response = urllib.request.urlopen( search_request )\n",
+                            "    string = response.read().decode('utf-8')\n",
+                            "    json_obj = json.loads(string)\n",
+                            "\n",
+                            "    return json_obj\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "urllib": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "insertNewSignature",
+                        "method_defn": "def insertNewSignature( rec_ ):",
+                        "usage": [
+                            "    insert_request = urllib.request.Request( url_insert, data=data, method='POST', \\\n",
+                            "    response = urllib.request.urlopen( insert_request )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "updateSignature",
+                        "method_defn": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    insert_request = urllib.request.Request( url_update, data=data, method='POST', \\\n",
+                            "    response = urllib.request.urlopen( insert_request )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "updateSignature",
+                        "method_defn": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    insert_request = urllib.request.Request( url_update, data=data, method='POST', \\\n",
+                            "    response = urllib.request.urlopen( insert_request )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "searchSignature",
+                        "method_defn": "def searchSignature( rec_ ):",
+                        "usage": [
+                            "    search_request = urllib.request.Request( url_search, data=data, method='POST', \\\n",
+                            "    response = urllib.request.urlopen( search_request )\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/fetchLLMResponse.py": [
+        {
+            "os": 0
+        },
+        {
+            "openai": 1
+        },
+        {
+            "OpenAI": 1
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py": [
+        {
+            "json": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "euclid",
+                        "method_defn": "def euclid( refpts, pts, json_ ):",
+                        "usage": [
+                            "    ht, wd = json_['height'], json_['width']\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "findRaw",
+                        "method_defn": "def findRaw( ids, json_raw ):",
+                        "usage": [
+                            "      for line in json_raw['lines']:\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "findNeighBour",
+                        "method_defn": "def findNeighBour(",
+                        "usage": [
+                            "    for rt_wd_ctr in range( ref_wd_ctr, len( json_['lines'][lctr]) ):\n",
+                            "      rt_wd = json_['lines'][lctr][rt_wd_ctr]\n",
+                            "    for ctr in range( min( lctr + 1, len( json_['lines'] )-1 ), min( lctr + 4, len( json_['lines'] )-1 ) ):\n",
+                            "      curr_line ,line_ = json_['lines'][lctr], json_['lines'][ctr]\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "findValNeighBour",
+                        "method_defn": "def findValNeighBour(",
+                        "usage": [
+                            "    curr_wd = json_['lines'][lctr][ref_wd_ctr]\n",
+                            "      lt_wd = json_['lines'][lctr][lt_wd_ctr]\n",
+                            "      curr_line ,line_ = json_['lines'][lctr], json_['lines'][ctr]\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "neighContours",
+                        "method_defn": "def neighContours(",
+                        "usage": [
+                            "    for linectr in range( len( json_['lines'] ) ):\n",
+                            "      line_ = json_['lines'][linectr]\n",
+                            "    for linectr in range( len( json_['lines'] ) ):\n",
+                            "      line_ = json_['lines'][linectr]\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sys": 0
+        },
+        {
+            "random": 0
+        },
+        {
+            "cv2": 0
+        },
+        {
+            "numpy": 1
+        },
+        {
+            "np": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "findValFeats",
+                        "method_defn": "def findValFeats( refwd ):",
+                        "usage": [
+                            "    returnFeats = np.zeros(( numValFeats ))\n",
+                            "    returnFeats[6] = np.median( lenwds_ )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "findWdFeats",
+                        "method_defn": "def findWdFeats(",
+                        "usage": [
+                            "    returnFeats = np.zeros((6))\n",
+                            "    #returnFeats = np.zeros((total_feats_))\n",
+                            "    #if len( txt.split() ) < 1: return returnFeats.tolist() + np.zeros((4)).tolist()\n",
+                            "    returnFeats[5] = np.median( lenwds_ )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "neighContours",
+                        "method_defn": "def neighContours(",
+                        "usage": [
+                            "    x_vertical, y_horizontal = np.zeros((6, ( upper_neigh + lower_neigh ))), np.zeros((6, ( left_neigh + rt_neigh )))\n",
+                            "    respFeat_ = np.zeros((6*4)) \n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "scipy.spatial.distance": 19
+        },
+        {
+            "distance": {
+                "def": 19,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "euclid",
+                        "method_defn": "def euclid( refpts, pts, json_ ):",
+                        "usage": [
+                            "    return distance.euclidean( refpts, pts )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sklearn.cluster": 3
+        },
+        {
+            "KMeans": 3
+        },
+        {
+            "collections": 4
+        },
+        {
+            "Counter": 4
+        },
+        {
+            "os": {
+                "def": 69,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "findValFeats",
+                        "method_defn": "def findValFeats( refwd ):",
+                        "usage": [
+                            "    returnFeats = np.zeros(( numValFeats ))\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "findWdFeats",
+                        "method_defn": "def findWdFeats(",
+                        "usage": [
+                            "    returnFeats = np.zeros((6))\n",
+                            "    #returnFeats = np.zeros((total_feats_))\n",
+                            "    #if len( txt.split() ) < 1: return returnFeats.tolist() + np.zeros((4)).tolist()\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "neighContours",
+                        "method_defn": "def neighContours(",
+                        "usage": [
+                            "    x_vertical, y_horizontal = np.zeros((6, ( upper_neigh + lower_neigh ))), np.zeros((6, ( left_neigh + rt_neigh )))\n",
+                            "    respFeat_ = np.zeros((6*4)) \n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/firstpass.py": [
+        {
+            "openpyxl": 0
+        },
+        {
+            "": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/firstpass.py",
+                        "method_nm": "find_table_bounds",
+                        "method_defn": "def find_table_bounds(sheet):",
+                        "usage": [
+                            "\n",
+                            "    max_row = sheet.max_row\n",
+                            "    max_col = sheet.max_column\n",
+                            "\n",
+                            "    # Initialize variables to track the bounds\n",
+                            "    start_row ,end_row ,start_col ,end_col = None, None, None, None\n",
+                            "\n",
+                            "    # Iterate over rows to find the start and end rows\n",
+                            "    for row in range(1, max_row + 1):\n",
+                            "        if all(sheet.cell(row=row, column=col).value is None for col in range(1, max_col + 1)):\n",
+                            "            if start_row is None:\n",
+                            "                continue  # Skip empty rows before the table\n",
+                            "            else:\n",
+                            "                end_row = row - 1\n",
+                            "                break\n",
+                            "        elif start_row is None:\n",
+                            "            start_row = row\n",
+                            "    \n",
+                            "    # Iterate over columns to find the start and end columns\n",
+                            "    for col in range(1, max_col + 1):\n",
+                            "        #for row in range(start_row, end_row):\n",
+                            "        #    print('ROW NUM->', col, ' VALUE: ', sheet.cell(row=row, column=col).value )\n",
+                            "\n",
+                            "        if all(sheet.cell(row=row, column=col).value is None for row in range(start_row, end_row)):\n",
+                            "            if start_col is None:\n",
+                            "                continue  # Skip empty columns before the table\n",
+                            "            else:\n",
+                            "                end_col = col - 1\n",
+                            "                break\n",
+                            "        elif start_col is None:\n",
+                            "            start_col = col\n",
+                            "\n",
+                            "    return start_row, end_row, start_col, end_col\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/pca_test.py": [
+        {
+            "numpy": 0
+        },
+        {
+            "np": 0
+        },
+        {
+            "time": 11
+        },
+        {
+            "sklearn.decomposition": 1
+        },
+        {
+            "PCA": 1
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py": [
+        {
+            "os": 0
+        },
+        {
+            "ast": 0
+        },
+        {
+            "time": 0
+        },
+        {
+            "math": 0
+        },
+        {
+            "json": 0
+        },
+        {
+            "openai": 5
+        },
+        {
+            "OpenAI": 5
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py": [
+        {
+            "os": 0
+        },
+        {
+            "": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py",
+                        "method_nm": "returnDocSummary",
+                        "method_defn": "def returnDocSummary( data_frame, high_variance_cols_ ): ",
+                        "usage": [
+                            "\n",
+                            "\n",
+                            "        if len( high_variance_cols_ ) > 0:\n",
+                            "            content_ = prompts_dict_[\"SUMMARIZE_SAMPLE_FOCUS\"] + ' , '.join( high_variance_cols_ ).strip() + '\\n'\n",
+                            "        else:\n",
+                            "            content_ = prompts_dict_[\"SUMMARIZE_SAMPLE\"]\n",
+                            "\n",
+                            "        print( 'GETTIN IN->', content_ )\n",
+                            "\n",
+                            "        try:\n",
+                            "            chat_completion = client.chat.completions.create(\n",
+                            "                messages=[\n",
+                            "                    {\n",
+                            "                        \"role\": \"user\",\n",
+                            "                        \"content\": content_ + data_frame\n",
+                            "                    }\n",
+                            "                ],\n",
+                            "                model=groq_cfg_[\"GROQ_BASE_MODEL\"],\n",
+                            "            )\n",
+                            "\n",
+                            "            kk = ( chat_completion.choices[0].message.content )\n",
+                            "\n",
+                            "            return kk\n",
+                            "        except:\n",
+                            "            return 'NO RESPONSE'\n",
+                            "\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py",
+                        "method_nm": "returnDocSummary",
+                        "method_defn": "def returnDocSummary( data_frame, high_variance_cols_ ): ",
+                        "usage": [
+                            "\n",
+                            "\n",
+                            "        if len( high_variance_cols_ ) > 0:\n",
+                            "            content_ = prompts_dict_[\"SUMMARIZE_SAMPLE_FOCUS\"] + ' , '.join( high_variance_cols_ ).strip() + '\\n'\n",
+                            "        else:\n",
+                            "            content_ = prompts_dict_[\"SUMMARIZE_SAMPLE\"]\n",
+                            "\n",
+                            "        print( 'GETTIN IN->', content_ )\n",
+                            "\n",
+                            "        try:\n",
+                            "            chat_completion = client.chat.completions.create(\n",
+                            "                messages=[\n",
+                            "                    {\n",
+                            "                        \"role\": \"user\",\n",
+                            "                        \"content\": content_ + data_frame\n",
+                            "                    }\n",
+                            "                ],\n",
+                            "                model=groq_cfg_[\"GROQ_BASE_MODEL\"],\n",
+                            "            )\n",
+                            "\n",
+                            "            kk = ( chat_completion.choices[0].message.content )\n",
+                            "\n",
+                            "            return kk\n",
+                            "        except:\n",
+                            "            return 'NO RESPONSE'\n",
+                            "\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "ast": 0
+        },
+        {
+            "time": 0
+        },
+        {
+            "math": 0
+        },
+        {
+            "json": 0
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py": [
+        {
+            "openpyxl": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "def read_excel_file(file_path):",
+                        "usage": [
+                            "    workbook = openpyxl.load_workbook( file_path, read_only=True )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "": {
+                "def": 0,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "def read_excel_file(file_path):",
+                        "usage": [
+                            "\n",
+                            "    # Load the workbook\n",
+                            "    workbook = openpyxl.load_workbook( file_path, read_only=True )\n",
+                            "    # Get the specified sheet in the workbook\n",
+                            "    localD = dict()\n",
+                            "\n",
+                            "    for sheet_name in workbook.sheetnames:\n",
+                            "        sheet = workbook[sheet_name]\n",
+                            "        time.sleep( 1 )\n",
+                            "        print('Iterating over sheet->', file_path, sheet_name)\n",
+                            "        \n",
+                            "        num_rows_to_consider_ , frame_ = 4, ''\n",
+                            "        try:\n",
+                            "            for rowidx, row in enumerate( sheet.iter_rows(values_only=True) ):\n",
+                            "\n",
+                            "                if rowidx > num_rows_to_consider_: break\n",
+                            "                for cell in row:\n",
+                            "                    frame_ += str(cell) + '\\t'\n",
+                            "\n",
+                            "                frame_ += '\\n'\n",
+                            "\n",
+                            "            print('Sending to LLM for summary->', frame_)\n",
+                            "\n",
+                            "            summary_ = groq_first_pass.returnLLMResponse( frame_ )\n",
+                            "            ## append file name, sheet name\n",
+                            "            localD[ sheet_name ] = file_path.split('/')[-1] + ' ' + sheet_name + ' ' + summary_\n",
+                            "        except:\n",
+                            "            print( 'EXCPN-> '+file_path + ' ' + sheet_name + ' ' + traceback.format_exc() )\n",
+                            "\n",
+                            "    finalJson_[ file_path.split('/')[-1] ] = localD\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "groq_first_pass": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "def read_excel_file(file_path):",
+                        "usage": [
+                            "            summary_ = groq_first_pass.returnLLMResponse( frame_ )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "def read_excel_file(file_path):",
+                        "usage": [
+                            "\n",
+                            "    # Load the workbook\n",
+                            "    workbook = openpyxl.load_workbook( file_path, read_only=True )\n",
+                            "    # Get the specified sheet in the workbook\n",
+                            "    localD = dict()\n",
+                            "\n",
+                            "    for sheet_name in workbook.sheetnames:\n",
+                            "        sheet = workbook[sheet_name]\n",
+                            "        time.sleep( 1 )\n",
+                            "        print('Iterating over sheet->', file_path, sheet_name)\n",
+                            "        \n",
+                            "        num_rows_to_consider_ , frame_ = 4, ''\n",
+                            "        try:\n",
+                            "            for rowidx, row in enumerate( sheet.iter_rows(values_only=True) ):\n",
+                            "\n",
+                            "                if rowidx > num_rows_to_consider_: break\n",
+                            "                for cell in row:\n",
+                            "                    frame_ += str(cell) + '\\t'\n",
+                            "\n",
+                            "                frame_ += '\\n'\n",
+                            "\n",
+                            "            print('Sending to LLM for summary->', frame_)\n",
+                            "\n",
+                            "            summary_ = groq_first_pass.returnLLMResponse( frame_ )\n",
+                            "            ## append file name, sheet name\n",
+                            "            localD[ sheet_name ] = file_path.split('/')[-1] + ' ' + sheet_name + ' ' + summary_\n",
+                            "        except:\n",
+                            "            print( 'EXCPN-> '+file_path + ' ' + sheet_name + ' ' + traceback.format_exc() )\n",
+                            "\n",
+                            "    finalJson_[ file_path.split('/')[-1] ] = localD\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "time": {
+                "def": 3,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "def read_excel_file(file_path):",
+                        "usage": [
+                            "        time.sleep( 1 )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "": {
+                "def": 3,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "def read_excel_file(file_path):",
+                        "usage": [
+                            "\n",
+                            "    # Load the workbook\n",
+                            "    workbook = openpyxl.load_workbook( file_path, read_only=True )\n",
+                            "    # Get the specified sheet in the workbook\n",
+                            "    localD = dict()\n",
+                            "\n",
+                            "    for sheet_name in workbook.sheetnames:\n",
+                            "        sheet = workbook[sheet_name]\n",
+                            "        time.sleep( 1 )\n",
+                            "        print('Iterating over sheet->', file_path, sheet_name)\n",
+                            "        \n",
+                            "        num_rows_to_consider_ , frame_ = 4, ''\n",
+                            "        try:\n",
+                            "            for rowidx, row in enumerate( sheet.iter_rows(values_only=True) ):\n",
+                            "\n",
+                            "                if rowidx > num_rows_to_consider_: break\n",
+                            "                for cell in row:\n",
+                            "                    frame_ += str(cell) + '\\t'\n",
+                            "\n",
+                            "                frame_ += '\\n'\n",
+                            "\n",
+                            "            print('Sending to LLM for summary->', frame_)\n",
+                            "\n",
+                            "            summary_ = groq_first_pass.returnLLMResponse( frame_ )\n",
+                            "            ## append file name, sheet name\n",
+                            "            localD[ sheet_name ] = file_path.split('/')[-1] + ' ' + sheet_name + ' ' + summary_\n",
+                            "        except:\n",
+                            "            print( 'EXCPN-> '+file_path + ' ' + sheet_name + ' ' + traceback.format_exc() )\n",
+                            "\n",
+                            "    finalJson_[ file_path.split('/')[-1] ] = localD\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "os": 40
+        },
+        {
+            "": {
+                "def": 40,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "def read_excel_file(file_path):",
+                        "usage": [
+                            "\n",
+                            "    # Load the workbook\n",
+                            "    workbook = openpyxl.load_workbook( file_path, read_only=True )\n",
+                            "    # Get the specified sheet in the workbook\n",
+                            "    localD = dict()\n",
+                            "\n",
+                            "    for sheet_name in workbook.sheetnames:\n",
+                            "        sheet = workbook[sheet_name]\n",
+                            "        time.sleep( 1 )\n",
+                            "        print('Iterating over sheet->', file_path, sheet_name)\n",
+                            "        \n",
+                            "        num_rows_to_consider_ , frame_ = 4, ''\n",
+                            "        try:\n",
+                            "            for rowidx, row in enumerate( sheet.iter_rows(values_only=True) ):\n",
+                            "\n",
+                            "                if rowidx > num_rows_to_consider_: break\n",
+                            "                for cell in row:\n",
+                            "                    frame_ += str(cell) + '\\t'\n",
+                            "\n",
+                            "                frame_ += '\\n'\n",
+                            "\n",
+                            "            print('Sending to LLM for summary->', frame_)\n",
+                            "\n",
+                            "            summary_ = groq_first_pass.returnLLMResponse( frame_ )\n",
+                            "            ## append file name, sheet name\n",
+                            "            localD[ sheet_name ] = file_path.split('/')[-1] + ' ' + sheet_name + ' ' + summary_\n",
+                            "        except:\n",
+                            "            print( 'EXCPN-> '+file_path + ' ' + sheet_name + ' ' + traceback.format_exc() )\n",
+                            "\n",
+                            "    finalJson_[ file_path.split('/')[-1] ] = localD\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "json": 40
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/validate_search.py": [
+        {
+            "createJsonFeats": 0
+        },
+        {
+            "cj": 0
+        },
+        {
+            "scipy.spatial": 1
+        },
+        {
+            "distance": 1
+        }
+    ]
+}

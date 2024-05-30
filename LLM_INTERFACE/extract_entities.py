@@ -18,6 +18,8 @@ class LLM_interface:
         self.model_to_be_used_ = self.config_['MODEL_NAME']
 
         self.temperature_ = self.config_['TEMP']
+        self.py_return_syntax , self.js_return_syntax = self.config_["PYTHON_RETURN_SYNTAX"],\
+                                                        self.config_["JS_RETURN_SYNTAX"]
         #self.response_format_ = self.config_['RESPONSE_FMT']
 
         self.variable_store_ = dict() #{ 'file_path': [ {'var_nm': <ln #> } ] }
@@ -31,15 +33,21 @@ class LLM_interface:
 
         return llm_input_
 
-    def method_contains_variable( var_key , method_start_ln_num, method_end_ln_num, method_fp_nm ):
+    def method_contains_variable(self, var_key , method_start_ln_num, method_end_ln_num, method_fp_nm ):
 
         with open( method_fp_nm, 'r' ) as fp:
             ll_ = fp.readlines()
         
         appearances_ = []
-        for idx in range( method_start_ln_num, method_end_ln_num ):
-            if var_key in ll_[ idx ]: ## check if var name is present in the line ..simple enough
-                appearances_.append( ll_[ idx ] )
+        try:
+            for idx in range( method_start_ln_num - 1, method_end_ln_num + 1 ):
+                if ( var_key in ll_[ idx ] or fuzz.ratio( var_key, ll_[ idx ] ) > 90 ) and\
+                        'def' not in ll_[ idx ]: # at times 2 methods across files MIGHT have the same name
+                    ## but different fucn..such methods are quite local to the files .. ignore such cases
+                    ## check if var name is present in the line ..simple enough
+                    appearances_.append( ll_[ idx ] )
+        except:
+            print('INDEX OUT OF RANGE ERR')
 
         return appearances_
 
@@ -51,19 +59,29 @@ class LLM_interface:
 
                 if fp_nm == method_fp_nm:
                     for var_element in var_arr_:
+                        tmp_ = dict()
                         for var_key, var_init_ln_num in var_element.items():
                             ## finally we get to the variable and its line num
                             ## now iterate through the method stores
                             for method_deet in method_deets:
-                                for method_keys, method_items in method_deet.items():
-                                    method_start_ln_num, method_end_ln_num = method_items
+                                #for method_keys, method_items in method_deet.items():
+                                    method_start_ln_num, method_end_ln_num = method_deet['range']
                                     uses_ = self.method_contains_variable( var_key , method_start_ln_num, \
                                             method_end_ln_num, method_fp_nm )
 
                                     if len( uses_ ) > 0:
-                                        ll_ = var_element['usage'] if 'usage' in var_element else []
-                                        ll_.append( { 'file_path': method_fp_nm, 'method_nm': method_keys } )
-                                        var_element['usage'] = ll_
+                                        ll_ = tmp_[ var_key ] if var_key in tmp_ else []
+                                        ll_.append( { 'file_path': method_fp_nm, \
+                                                      'method_nm': method_deet['method_name'],\
+                                                      'method_defn': method_deet['method_begin'],\
+                                                      'usage': uses_ } )
+                                        tmp_[ var_key ] = ll_
+
+                        for k, v in tmp_.items():
+                            if k in var_element:
+                                var_element[ k ] = { 'def': var_element[ k ], 'local_uses': v }
+                            else:
+                                var_element[ k ] = { 'def': var_element[ k ] , 'local_uses': [] }
 
         ## first find out uses of global packages in the local methods
         for fp_nm, package_arr_ in self.package_store_.items():
@@ -71,40 +89,87 @@ class LLM_interface:
 
                 if fp_nm == method_fp_nm:
                     for package_element in package_arr_:
+                        tmp_ = dict()
                         for package_key, package_init_ln_num in package_element.items():
                             ## finally we get to the variable and its line num
                             ## now iterate through the method stores
                             for method_deet in method_deets:
-                                for method_keys, method_items in method_deet.items():
-                                    method_start_ln_num, method_end_ln_num = method_items
+                                #for method_keys, method_items in method_deet.items():
+                                    method_start_ln_num, method_end_ln_num = method_deet['range']
                                     uses_ = self.method_contains_variable( package_key , method_start_ln_num, \
                                             method_end_ln_num, method_fp_nm )
 
                                     if len( uses_ ) > 0:
-                                        ll_ = package_element['usage'] if 'usage' in package_element else []
-                                        ll_.append( { 'file_path': method_fp_nm, 'method_nm': method_keys } )
-                                        package_element['usage'] = ll_
+                                        ll_ = tmp_[ package_key ] if package_key in tmp_ else []
+                                        ll_.append( { 'file_path': method_fp_nm, \
+                                                      'method_nm': method_deet['method_name'],\
+                                                      'method_defn': method_deet['method_begin'],\
+                                                      'usage': uses_ } )
+                                        tmp_[ package_key ] = ll_
+
+                        for k, v in tmp_.items():
+                            if k in package_element:
+                                package_element[ k ] = { 'def': package_element[ k ], 'local_uses': v }
+                            else:
+                                package_element[ k ] = { 'def': package_element[ k ], 'local_uses': [] }
+
 
         ## now find the usage of methods within the file/module
         for fp_nm, method_arr_ in self.method_store_.items():
             for method_fp_nm, method_deets in self.method_store_.items():
 
                 if fp_nm == method_fp_nm:
-                    for _element in _arr_:
-                        for _key, _init_ln_num in _element.items():
-                            ## finally we get to the variable and its line num
-                            ## now iterate through the method stores
-                            for method_deet in method_deets:
-                                for method_keys, method_items in method_deet.items():
-                                    method_start_ln_num, method_end_ln_num = method_items
-                                    uses_ = self.method_contains_variable( _key , method_start_ln_num, \
+                    for _element in method_arr_:
+                        tmp_ = dict()
+                        for method_deet in method_deets:
+                            if method_deet['range'] == _element['range']: continue
+                            method_start_ln_num, method_end_ln_num = method_deet['range']
+                            uses_ = self.method_contains_variable( _element['method_name']+'(' , method_start_ln_num, \
                                             method_end_ln_num, method_fp_nm )
 
-                                    if len( uses_ ) > 0:
-                                        ll_ = _element['usage'] if 'usage' in _element else []
-                                        ll_.append( { 'file_path': method_fp_nm, 'method_nm': method_keys } )
-                                        _element['usage'] = ll_
+                            if len( uses_ ) > 0:
+                                ll_ = tmp_[ _element['method_name'] ] if _element['method_name'] in tmp_ else []
+                                ll_.append( { 'file_path': method_fp_nm, \
+                                              'method_nm': method_deet['method_name'],\
+                                              'method_defn': method_deet['method_begin'],\
+                                              'usage': uses_ } )
 
+                                tmp_[ _element['method_name'] ] = ll_
+
+                        for k, v in tmp_.items():
+                            if k == _element['method_name']:
+                                _element.update( {'local_uses': v } )
+                            else:
+                                _element.update( {'local_uses': [] } )
+
+        ## now find the usage of methods OUTSIDE the file/module
+        for fp_nm, method_arr_ in self.method_store_.items():
+            for _element in method_arr_:
+                tmp_ = dict()
+                for method_fp_nm, method_deets in self.method_store_.items():
+
+                    if fp_nm != method_fp_nm:
+                        for method_deet in method_deets:
+                            method_start_ln_num, method_end_ln_num = method_deet['range']
+                            uses_ = self.method_contains_variable( _element['method_name']+'(' , method_start_ln_num, \
+                                            method_end_ln_num, method_fp_nm )
+
+                            print('GLOBAL CHECKS->ELE: ',_element,'\nLOCALMETHOD: ',method_deet,'\nUSE: ',uses_)
+
+                            if len( uses_ ) > 0:
+                                ll_ = tmp_[ _element['method_name'] ] if _element['method_name'] in tmp_ else []
+                                ll_.append( { 'file_path': method_fp_nm, \
+                                              'method_nm': method_deet['method_name'],\
+                                              'method_defn': method_deet['method_begin'],\
+                                              'usage': uses_ } )
+
+                                tmp_[ _element['method_name'] ] = ll_
+
+                for k, v in tmp_.items():
+                    if k == _element['method_name']:
+                        _element.update( {'global_uses': v } )
+                    else:
+                        _element.update( {'global_uses': [] } )
 
     def executeInstruction(self, mode, msg ):
         # modes -> MODULE_VARIABLES, PACKAGE_VARIABLES, METHODS
@@ -148,11 +213,37 @@ class LLM_interface:
                 print('First occurence of ', var_method_nm ,' line #', idx)
                 return idx
 
+        ## if its come here, it means it couldn't find the end ..use a defaul language specific end statemet
+        ## python -> return , javascript -> return
+        ## self.py_return_syntax, self.js_return_syntax
+        return_signature_ = self.py_return_syntax + ' ' 
+        # add space at end ..else it will return some function call like returnXYZ ..lol
+        for idx, line_ in enumerate( ll_ ):
+            if return_signature_ in line_ :
+                print('First occurence of ', var_method_nm ,' line #', idx)
+                return idx
+
+    def ensure_starts_with_square_bracket(self, s):
+        # Find the first occurrence of the '[' character
+        index = s.find('[')
+
+        # If '[' is found, return the substring from that index
+        if index != -1:
+            return s[index:]
+        # If '[' is not found, return an empty string or handle as needed
+        else:
+            return ''
+
     def processModuleVars( self, resp_, fnm ):
 
         print('ENTERING-> processModuleVars ', resp_)
+        '''
+        sometimes LLMs vomit unnecessary stuff at the beginning ..simple pre processing to ensure we start
+        with an array
+        '''
+        legit_resp_ = self.ensure_starts_with_square_bracket( resp_ )
         try:
-            ll_ = ast.literal_eval( resp_ )
+            ll_ = ast.literal_eval( legit_resp_ )
         except:
             print('No array returned by the model ->', traceback.format_exc())
             return None
@@ -168,14 +259,18 @@ class LLM_interface:
                         self.variable_store_[ fnm ] = varList
                 else:
                     varList = []
-                    if { varNm: lnNo } not in varList:
-                        varList.append( { varNm: lnNo } )
-                        self.variable_store_[ fnm ] = varList
+                    varList.append( { varNm: lnNo } )
+                    self.variable_store_[ fnm ] = varList
 
     def processPackageVars( self, resp_, fnm ):
 
+        '''
+        sometimes LLMs vomit unnecessary stuff at the beginning ..simple pre processing to ensure we start
+        with an array
+        '''
+        legit_resp_ = self.ensure_starts_with_square_bracket( resp_ )
         try:
-            ll_ = ast.literal_eval( resp_ )
+            ll_ = ast.literal_eval( legit_resp_ )
         except:
             print('No array returned by the model')
             return None
@@ -207,8 +302,15 @@ class LLM_interface:
 
     def processModuleRefs( self, resp_, chunk_, fnm_ ): 
         ## populate self.method_store_ { 'file_path': [ {'method_nm': ( < start ln #>, < end ln # > ) } ] }
+        '''
+        sometimes LLMs vomit unnecessary stuff at the beginning ..simple pre processing to ensure we start
+        with an array
+        '''
+        legit_resp_ = self.ensure_starts_with_square_bracket( resp_ )
+        print( 'MOD ENTRY->', legit_resp_ )
+
         try:
-            ll_ = ast.literal_eval( resp_ )
+            ll_ = ast.literal_eval( legit_resp_ )
         except:
             print('No array returned by the model')
             return None
@@ -222,6 +324,18 @@ class LLM_interface:
                 print('BACKUP CALL to "METHOD_ENDING" ', ll_)
             except:
                 print('EXCPN IN BACKUP CALL to "METHOD_ENDING" ->', traceback.format_exc() )
+
+        tmp_ll_ = []
+        ## at times the key names are malformed thanks to LLMs hallucinating ..ensure standardizatio of keys
+        for idx, method_deets in enumerate( ll_ ):
+            tmpD = { 'method_name':'' , 'method_begin':'' , 'method_end':'' }
+            for k, v in method_deets.items():
+                if 'name' in k: tmpD[ 'method_name' ] = v
+                if 'begin' in k: tmpD[ 'method_begin' ] = v
+                if 'end' in k: tmpD[ 'method_end' ] = v
+            tmp_ll_.append( tmpD )
+
+        ll_ = tmp_ll_
 
         for idx, method_deets in enumerate( ll_ ):
             if len( file_methods_ ) > 0 \
@@ -254,18 +368,24 @@ class LLM_interface:
 
     def cleanUp( self, file_ ):
         ## if global vars are present in the package vars, delete them
-        tmp_vars_ = []
-        for varD in self.variable_store_:
-            dupe_ = False
-            if varD in self.package_store_: ## so an imported package was counted as a global var ..naaa aah
-                dupe_ = True
-            if dupe_ is False: tmp_vars_.append( varD )
+        for fnm, varD_arr in self.variable_store_.items():
+            tmp_vars_ = []
 
-        self.variable_store_ = tmp_vars_
+            for varD in varD_arr:
+                dupe_ = False
+                for pack_fnm, packD_arr in self.package_store_.items():
+                    if varD in packD_arr: ## so an imported package was counted as a global var ..naaa aah
+                        dupe_ = True
+                        break
+
+                if dupe_ is False:
+                    tmp_vars_.append( varD )
+
+            self.variable_store_[ fnm ] = tmp_vars_
 
         ## sort methods identified and ensure the begin and ends of methods are defined
-        print('Going to SORT->', self.method_store_)
         method_hold_ = sorted( self.method_store_[file_], key=lambda x:x['range'][0] )
+        print('Going to SORT->', self.method_store_, '\n', method_hold_)
         neo_ = []
 
         for idx, method_ in enumerate( method_hold_ ):
@@ -276,7 +396,7 @@ class LLM_interface:
                     curr['range'] = ( curr['range'][0], nxt['range'][0] )
 
                     neo_.append( curr )
-            else:
+            elif ( idx > len( method_hold_ ) - 2 and len( method_hold_ ) >= 2 ):
                 curr, nxt = method_hold_[ -2 ], method_hold_[ -1 ]
 
                 if curr['range'][0] != nxt['range'][0]:
@@ -284,9 +404,23 @@ class LLM_interface:
 
                     neo_.append( curr )
                     neo_.append( nxt )
+            else:
+                neo_.append( method_ )
 
-        self.method_store_ = neo_
+        self.method_store_[file_] = neo_
 
+    def writeUpResults(self):
+        '''
+        store as simple json fmt
+        '''
+        with open( self.dest_folder_ + '/VARIABLE.json', 'w+' ) as fp:
+            json.dump( self.variable_store_, fp, indent=4 )
+
+        with open( self.dest_folder_ + '/PACKAGES.json', 'w+' ) as fp:
+            json.dump( self.package_store_, fp, indent=4 )
+
+        with open( self.dest_folder_ + '/METHODS.json', 'w+' ) as fp:
+            json.dump( self.method_store_, fp, indent=4 )
 
     def extractGraphElements(self):
 
@@ -296,7 +430,7 @@ class LLM_interface:
         ## is > 0 we start our chunkin from the backtrack values
 
         for file_ in input_files_:
-            if 'basic_' not in file_: continue
+            #if 'basic_' not in file_: continue
             print('ooooooooooooooooooooooooooooooooooooooooooo')    
             backtrack_ = False
 
@@ -330,7 +464,10 @@ class LLM_interface:
             self.cleanUp( file_ )
             print('ooooooooooooooooooooooooooooooooooooooooooo')    
 
-        print('extracted CONTENTS->', self.variable_store_, '\n',self.package_store_, '\n', self.method_store_)
+        #print('extracted CONTENTS->', self.variable_store_, '\n',self.package_store_, '\n', self.method_store_)
+        self.findUsage()
+        #print('POST USAGE->', self.variable_store_, '\n',self.package_store_, '\n', self.method_store_)
+        self.writeUpResults()
 
 if __name__ == "__main__":
 

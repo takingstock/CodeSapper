@@ -1,0 +1,1082 @@
+{
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py": [
+        {
+            "txt": {
+                "def": 6,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "def pos( res_ ):",
+                        "usage": [
+                            "    tokenized_query = txt.split(\" \")\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "emb_": {
+                "def": 8,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "def pos( res_ ):",
+                        "usage": [
+                            "        cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "res_": {
+                "def": 10,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "def pos( res_ ):",
+                        "usage": [
+                            "def pos( res_ ):\n",
+                            "  if 'searchRes_' in res_:\n",
+                            "    act_ = res_[ 'searchRes_' ]\n",
+                            "    for res_nm, resD in act_.items():\n",
+                            "    enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )\n",
+                            "    sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n",
+                            "    enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )\n",
+                            "    sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n",
+                            "    enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )\n",
+                            "    sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n",
+                            "    enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )\n",
+                            "    sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n",
+                            "    enum_doc_scores_ = list( enumerate( score_title_ ) )\n",
+                            "    sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "corpus_": {
+                "def": 11,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "def pos( res_ ):",
+                        "usage": [
+                            "            corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]\n",
+                            "    top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )\n",
+                            "    tokenized_corpus = [doc.split(\" \") for doc in list( corpus_.keys() )]\n",
+                            "    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n",
+                            "        print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n",
+                            "    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n",
+                            "        print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n",
+                            "    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n",
+                            "        print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n",
+                            "    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n",
+                            "        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n",
+                            "    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n",
+                            "        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "bm25_score_dt_": {
+                "def": 47,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "def pos( res_ ):",
+                        "usage": [
+                            "    bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)\n",
+                            "    enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )\n",
+                            "                ' BM25 : ', bm25_score_dt_[keyid] )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sorted_doc_score_3": {
+                "def": 60,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "def pos( res_ ):",
+                        "usage": [
+                            "    sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n",
+                            "        print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])    \n",
+                            "        if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sorted_doc_score_4": {
+                "def": 63,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "def pos( res_ ):",
+                        "usage": [
+                            "    sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n",
+                            "        print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])    \n",
+                            "        if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "score_title_": {
+                "def": 48,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "def pos( res_ ):",
+                        "usage": [
+                            "    score_title_  = title.get_scores(tokenized_query)\n",
+                            "    enum_doc_scores_ = list( enumerate( score_title_ ) )\n",
+                            "                ' BM25 : ', score_title_[keyid] )\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py": [
+        {
+            "js_": {
+                "def": 4,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py",
+                        "method_nm": "def addToDB():",
+                        "usage": [
+                            "    for fnm, sheets in js_.items():\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "cnt_": {
+                "def": 6,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py",
+                        "method_nm": "def addToDB():",
+                        "usage": [
+                            "            cnt_ += 1\n",
+                            "            dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py": [
+        {
+            "parser": {
+                "def": 1,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def is_date( input_str):",
+                        "usage": [
+                            "        ## first check for INT and FLOAT since parser foolishly accepts ints\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHeaderInfo( self, tbl_ ):",
+                        "usage": [
+                            "            return parser.parse(input_str)\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "default_max_row_": {
+                "def": 73,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.default_max_col_ , self.default_max_row_, self.max_cols_for_review_, \\\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_tables(self, sheet)",
+                        "usage": [
+                            "        max_row = sheet.max_row if sheet.max_row is not None else self.default_max_row_\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "default_max_col_": {
+                "def": 73,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.default_max_col_ , self.default_max_row_, self.max_cols_for_review_, \\\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_tables(self, sheet)",
+                        "usage": [
+                            "        max_col = sheet.max_column if sheet.max_column is not None else self.default_max_col_\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "minElemsInTable": {
+                "def": 72,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.num_rows_to_consider_, self.col_thresh_, self.minElemsInTable, self.max_rows_variance = 4, 0.8, 6, 100\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_tables(self, sheet)",
+                        "usage": [
+                            "                    ( abs( start_row - end_row )*abs( start_col - end_col ) ) <= self.minElemsInTable: continue    \n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "table_bounds_": {
+                "def": 137,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_tables(self, sheet)",
+                        "usage": [
+                            "        table_bounds_ = []\n",
+                            "        table_bounds_.append( { 'START_ROW': start_row, 'END_ROW': end_row,\\\n",
+                            "            table_bounds_.append( { 'START_ROW': start_row, 'END_ROW': end_row,\\\n",
+                            "            table_bounds_.append( { 'START_ROW': start_row, 'END_ROW': end_row,\\\n",
+                            "        for tab in table_bounds_: tab['START_COL'] = 1; tab['END_COL'] = max_col;\n",
+                            "        for idx1, tab1 in enumerate( table_bounds_ ):\n",
+                            "            for idx2, tab2 in enumerate( table_bounds_ ):\n",
+                            "        for idx, tab in enumerate( table_bounds_ ):\n",
+                            "                    final_resp_.append( table_bounds_ )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "max_col": {
+                "def": 73,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.default_max_col_ , self.default_max_row_, self.max_cols_for_review_, \\\n",
+                            "    def find_bounds( self, sheet, max_row, max_col, start_row ,end_row ,start_col ,end_col ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_bounds( self, sheet, max_row, max_col, start_row , end_row ,start_col ,end_col )",
+                        "usage": [
+                            "    def find_bounds( self, sheet, max_row, max_col, start_row ,end_row ,start_col ,end_col ):\n",
+                            "            if all( self.sheet.cell(row=row, column=col).value is None for col in range(1, max_col + 2)):\n",
+                            "        for col in range( start_col_idx_, max_col + 2):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_tables(self, sheet)",
+                        "usage": [
+                            "        ## NOTE -> sheet.max_row and sheet.max_column is NOT WORKING !! NEED TO FIX\n",
+                            "        max_col = sheet.max_column if sheet.max_column is not None else self.default_max_col_\n",
+                            "        print('KKR->', max_row, max_col)\n",
+                            "        start_row ,end_row ,start_col ,end_col = None, None, 1, sheet.max_column\n",
+                            "        start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, start_row ,\\\n",
+                            "            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, end_row ,\\\n",
+                            "        ## now iterate from end_col to max_col to find all tables cols wise\n",
+                            "            if init_end_col >= max_col: break\n",
+                            "            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, None ,\\\n",
+                            "        for tab in table_bounds_: tab['START_COL'] = 1; tab['END_COL'] = max_col;\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "max_tables_per_sheet_": {
+                "def": 71,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.max_tables_per_sheet_ = 10 ## at times a single sheet can have multiple tables\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_tables(self, sheet)",
+                        "usage": [
+                            "        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "max_elements_for_summary_": {
+                "def": 74,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "                self.min_num_distinct_values_, self.max_elements_for_summary_ = 50, 50, 10, 3, 15\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHeaderInfo(self, tbl):",
+                        "usage": [
+                            "            for col in range( tbl['START_COL'], min( self.max_elements_for_summary_, tbl['END_COL'] + 1 ) ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def returnSummary( self, tbl_ ):",
+                        "usage": [
+                            "            for col_ctr in range( tbl['START_COL'], min( self.max_elements_for_summary_, tbl['END_COL']+1 ) ):\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "max_rows_variance": {
+                "def": 72,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.num_rows_to_consider_, self.col_thresh_, self.minElemsInTable, self.max_rows_variance = 4, 0.8, 6, 100\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHighVarianceColumns( self, start_hdr_row_, sheet, tbl )",
+                        "usage": [
+                            "        end_row_ =  min( tbl['START_ROW'] + self.max_rows_variance , tbl['END_ROW'] + 1 )\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "sheet": {
+                "def": 33,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHeaderInfo( self, tbl_ ):",
+                        "usage": [
+                            "def process( colNum, sheet, tbl ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def process( colNum, sheet, tbl ):",
+                        "usage": [
+                            "def process( colNum, sheet, tbl ):\n",
+                            "                dtVal_ = is_date( str( sheet.cell(row=rw, column=colNum).value ) )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.sheet = None\n",
+                            "        self.max_tables_per_sheet_ = 10 ## at times a single sheet can have multiple tables\n",
+                            "    def find_bounds( self, sheet, max_row, max_col, start_row ,end_row ,start_col ,end_col ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_bounds( self, sheet, max_row, max_col, start_row , end_row ,start_col ,end_col )",
+                        "usage": [
+                            "    def find_bounds( self, sheet, max_row, max_col, start_row ,end_row ,start_col ,end_col ):\n",
+                            "        ## need to add 2 to max rw and col since max_row of sheet returns the last row with data\n",
+                            "            if all( self.sheet.cell(row=row, column=col).value is None for col in range(1, max_col + 2)):\n",
+                            "            #    print('ROW NUM->', col, ' VALUE: ', sheet.cell(row=row, column=col).value )\n",
+                            "            if all( self.sheet.cell(row=row, column=col).value is None for row in range(start_row, end_row)):\n",
+                            "    def is_hdr_row_format( self, tbl_bound, sheet ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def is_hdr_row_format( self, tbl_bound, sheet )",
+                        "usage": [
+                            "    def is_hdr_row_format( self, tbl_bound, sheet ):\n",
+                            "            if type( self.sheet.cell(row=tbl_bound['START_ROW'], column=col_ctr).value ) == str:\n",
+                            "    def find_tables(self, sheet):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def find_tables(self, sheet)",
+                        "usage": [
+                            "    def find_tables(self, sheet):\n",
+                            "        ## NOTE -> sheet.max_row and sheet.max_column is NOT WORKING !! NEED TO FIX\n",
+                            "        max_row = sheet.max_row if sheet.max_row is not None else self.default_max_row_\n",
+                            "        max_col = sheet.max_column if sheet.max_column is not None else self.default_max_col_\n",
+                            "        start_row ,end_row ,start_col ,end_col = None, None, 1, sheet.max_column\n",
+                            "        start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, start_row ,\\\n",
+                            "            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, end_row ,\\\n",
+                            "            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, None ,\\\n",
+                            "                if self.is_hdr_row_format( tmp_[ctr], sheet ) == False:\n",
+                            "        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findDateRange( self, tbl_ ):",
+                        "usage": [
+                            "            results = process(col, self.sheet, tbl)\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHeaderInfo(self, tbl):",
+                        "usage": [
+                            "                col_frame_ += '\\t' + str( self.sheet.cell(row=rw, column=col).value )\n",
+                            "    def findHighVarianceColumns(self, start_hdr_row_, sheet, tbl ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHighVarianceColumns( self, start_hdr_row_, sheet, tbl )",
+                        "usage": [
+                            "    def findHighVarianceColumns(self, start_hdr_row_, sheet, tbl ):\n",
+                            "                hdr_col_names_.append( str( self.sheet.cell(row=start_row_-1, column=col_ctr).value ) )\n",
+                            "                    col_arr_[ idx ] = str( self.sheet.cell(row=row_ctr, column=col_ctr).value )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def returnSummary( self, tbl_ ):",
+                        "usage": [
+                            "        high_variance_cols_, hdr_col_names_ = self.findHighVarianceColumns( start_hdr_row_, self.sheet, tbl )\n",
+                            "                frame_ += '\\t' + str( self.sheet.cell(row=row_ctr, column=col_ctr).value )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHdrRow( self, tbl )",
+                        "usage": [
+                            "                if self.sheet.cell(row=row_ctr, column=col_ctr).value is not None and \\\n",
+                            "                        len( str( self.sheet.cell(row=row_ctr, column=col_ctr).value ) ) > 0: \n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def createDBRec( self, summary_D, mode='NORM' ):",
+                        "usage": [
+                            "        insertRec['sheet_name'] = summary_D['sheet_name']\n",
+                            "        print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def mergeAndInsert( self, summary_D ):",
+                        "usage": [
+                            "    def returnEntireSheet( self, tbl_, sheet_name ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def returnEntireSheet( self, tbl_, sheet_name ):",
+                        "usage": [
+                            "    def returnEntireSheet( self, tbl_, sheet_name ):\n",
+                            "        find if the entire sheet contains mostly textual information. If so, then we should simply\n",
+                            "        chunk the whole sheet , after concatenating \n",
+                            "        use_entire_sheet_, chunks_ = False, []\n",
+                            "                if type( self.sheet.cell(row=row_ctr, column=col_ctr).value ) == str and\\\n",
+                            "                        len( (self.sheet.cell(row=row_ctr, column=col_ctr).value).split() ) >= self.sz_of_phrase_:\n",
+                            "                unique_.add( ( self.sheet.cell(row=row_ctr, column=col_ctr).value ) )\n",
+                            "            print('returnEntireSheet->', sheet_name, tbl_, num_str_, ( tbl_['END_ROW'] - tbl_['START_ROW'] ), ignore)\n",
+                            "                use_entire_sheet_ = True\n",
+                            "                        frame_ += '\\t'+ str( self.sheet.cell(row=row_ctr, column=col_ctr).value )\n",
+                            "        return chunks_, use_entire_sheet_\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "num_rows_to_consider_": {
+                "def": 72,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def __init__(self, file_path, llm='LLAMA'):",
+                        "usage": [
+                            "        self.num_rows_to_consider_, self.col_thresh_, self.minElemsInTable, self.max_rows_variance = 4, 0.8, 6, 100\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHeaderInfo(self, tbl):",
+                        "usage": [
+                            "        for rw in range( row_starter_ , min( row_starter_ + self.num_rows_to_consider_, tbl['END_ROW'] ) ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def returnSummary( self, tbl_ ):",
+                        "usage": [
+                            "                              , min( tbl['START_ROW']+self.num_rows_to_consider_ , tbl['END_ROW']+1 ) ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "def findHdrRow( self, tbl )",
+                        "usage": [
+                            "                              min( tbl['START_ROW']+self.num_rows_to_consider_ , tbl['END_ROW']+1 ) ):\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py": [
+        {
+            "url_encode": {
+                "def": 22,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "def enablePrint():",
+                        "usage": [
+                            "#url_encode = 'http://20.235.122.20:5000/encodeSentence'\n",
+                            "url_encode = 'http://0.0.0.0:5200/encodeSentence'\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "def returnEmbed( sent ):",
+                        "usage": [
+                            "    _request = urllib.request.Request( url_encode, data=data, method='POST', \\\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "def returnEmbed( sent ):",
+                        "usage": [
+                            "    _request = urllib.request.Request( url_encode, data=data, method='POST', \\\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "def returnJsonFeat( src_0, src_raw ):",
+                        "usage": [
+                            "    _request = urllib.request.Request( url_encode, data=data, method='POST', headers={'Content-Type': 'application/json'} )\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py": [
+        {
+            "flask_url_": 3
+        },
+        {
+            "url_insert": {
+                "def": 6,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "def insertNewSignature( rec_ ):",
+                        "usage": [
+                            "    insert_request = urllib.request.Request( url_insert, data=data, method='POST', \\\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "url_search": {
+                "def": 7,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "def searchSignature( rec_ ):",
+                        "usage": [
+                            "    search_request = urllib.request.Request( url_search, data=data, method='POST', \\\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "url_update": {
+                "def": 8,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    insert_request = urllib.request.Request( url_update, data=data, method='POST', \\\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py",
+                        "method_nm": "def updateSignature( rec_ ):",
+                        "usage": [
+                            "    insert_request = urllib.request.Request( url_update, data=data, method='POST', \\\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/fetchLLMResponse.py": [
+        {
+            "client": {
+                "def": 3,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/fetchLLMResponse.py",
+                        "method_nm": "def returnOpenAI_response( dataframe ):",
+                        "usage": [
+                            "    completion = client.chat.completions.create(\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py": [
+        {
+            "total_feats_": {
+                "def": 6,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findWdFeats(",
+                        "usage": [
+                            "    #returnFeats = np.zeros((total_feats_))\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "digs": {
+                "def": 23,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def allNum(",
+                        "usage": [
+                            "  digs, special, illegal, digs2 =0, 0, 0, 0\n",
+                            "      if ord(char) >= 48 and ord(char) <= 57: digs += 1\n",
+                            "      if ord(char) >= 65 and ord(char) <= 90: digs2 += 1\n",
+                            "    if ( digs+digs2+special == len( chk ) and digs >= 1 ) or ( digs >= 4 and illegal <= 4 ): \n",
+                            "  digs, special, illegal, digs2 =0, 0, 0, 0\n",
+                            "    if ord(char) >= 48 and ord(char) <= 57: digs += 1\n",
+                            "    if ord(char) >= 65 and ord(char) <= 90: digs2 += 1\n",
+                            "  if ( digs+digs2+special == len( wd_ ) and digs >= 2 ) or ( digs >= 4 and illegal <= 4 ):\n",
+                            "  if mode == 'SPIKE' and ( digs >= 1 or digs+digs2+special == len( wd_ ) ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findValFeats( refwd ):",
+                        "usage": [
+                            "    digs, caps, small, special, begcaps = 0, 0, 0, 0, 0\n",
+                            "      if ord(char) >= 48 and ord(char) <= 57: digs += 1\n",
+                            "    returnFeats[0] = digs\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findWdFeats(",
+                        "usage": [
+                            "    digs, caps, small, special, begcaps = 0, 0, 0, 0, 0\n",
+                            "      if ord(char) >= 48 and ord(char) <= 57: digs += 1\n",
+                            "    returnFeats[0] = digs\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def featNum( txt ):",
+                        "usage": [
+                            "    digs, caps, small, special = 0, 0, 0, 0\n",
+                            "      if ord(char) >= 48 and ord(char) <= 57: digs += 1\n",
+                            "    if '.0' in txt and digs == 1 and caps > 0 and special > 0: digs = 0\n",
+                            "    #print( 'DESPO->', txt, ' digs, caps, special, small = ',digs, caps, special, small)\n",
+                            "    if digs+special == len(txt) and digs > 0: return 1 # num\n",
+                            "    if digs+caps+special == len(txt) and digs > 0 and not ( digs == 1 and '0' in txt and caps >=3 ): return 2 # alnum\n",
+                            "    if digs+caps+special+small == len(txt) and digs > 0 and caps > 0 and not ( digs == 1 and '0' in txt and caps >= 3 ): return 2\n",
+                            "    if digs+caps+special+small == len(txt) and digs >=4 : return 2\n",
+                            "    if caps+special+small == len(txt) and digs == 0 and small > 0: return 3 # mixed str\n",
+                            "    if special+small == len(txt) and digs == 0 and small > 0: return 4 # small cap\n",
+                            "    if special+caps == len(txt) and digs == 0: return 5 # large cap\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "caps": {
+                "def": 77,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findValFeats( refwd ):",
+                        "usage": [
+                            "    digs, caps, small, special, begcaps = 0, 0, 0, 0, 0\n",
+                            "      if ord(char) >= 65 and ord(char) <= 90: caps += 1\n",
+                            "      if ord( wd[0] ) >= 65 and ord( wd[0] ) <= 90: begcaps += 1\n",
+                            "    returnFeats[1] = caps\n",
+                            "    returnFeats[4] = begcaps\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findWdFeats(",
+                        "usage": [
+                            "    digs, caps, small, special, begcaps = 0, 0, 0, 0, 0\n",
+                            "      if ord(char) >= 65 and ord(char) <= 90: caps += 1\n",
+                            "      if ord( wd[0] ) >= 65 and ord( wd[0] ) <= 90: begcaps += 1\n",
+                            "    returnFeats[1] = min( caps, len( txt.split() ) ) if caps > 0 else caps ## dont want to diff KEYs that are in all caps\n",
+                            "    returnFeats[4] = begcaps\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def featNum( txt ):",
+                        "usage": [
+                            "    digs, caps, small, special = 0, 0, 0, 0\n",
+                            "      if ord(char) >= 65 and ord(char) <= 90: caps += 1\n",
+                            "    if '.0' in txt and digs == 1 and caps > 0 and special > 0: digs = 0\n",
+                            "    #print( 'DESPO->', txt, ' digs, caps, special, small = ',digs, caps, special, small)\n",
+                            "    if digs+caps+special == len(txt) and digs > 0 and not ( digs == 1 and '0' in txt and caps >=3 ): return 2 # alnum\n",
+                            "    if digs+caps+special+small == len(txt) and digs > 0 and caps > 0 and not ( digs == 1 and '0' in txt and caps >= 3 ): return 2\n",
+                            "    if digs+caps+special+small == len(txt) and digs >=4 : return 2\n",
+                            "    if caps+special+small == len(txt) and digs == 0 and small > 0: return 3 # mixed str\n",
+                            "    if special+caps == len(txt) and digs == 0: return 5 # large cap\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "special": {
+                "def": 23,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def allNum(",
+                        "usage": [
+                            "  digs, special, illegal, digs2 =0, 0, 0, 0\n",
+                            "      if char in [',','.','$','S','-','/']: special += 1\n",
+                            "    if ( digs+digs2+special == len( chk ) and digs >= 1 ) or ( digs >= 4 and illegal <= 4 ): \n",
+                            "  digs, special, illegal, digs2 =0, 0, 0, 0\n",
+                            "    if char in [',','.','$','S','-','/']: special += 1\n",
+                            "  if ( digs+digs2+special == len( wd_ ) and digs >= 2 ) or ( digs >= 4 and illegal <= 4 ):\n",
+                            "  if mode == 'SPIKE' and ( digs >= 1 or digs+digs2+special == len( wd_ ) ):\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findValFeats( refwd ):",
+                        "usage": [
+                            "    digs, caps, small, special, begcaps = 0, 0, 0, 0, 0\n",
+                            "      if char in [',','.','$','S','-','/',' ']: special += 1\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findWdFeats(",
+                        "usage": [
+                            "    digs, caps, small, special, begcaps = 0, 0, 0, 0, 0\n",
+                            "      if char in [',','.','$','S','-','/',' ']: special += 1\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def featNum( txt ):",
+                        "usage": [
+                            "    digs, caps, small, special = 0, 0, 0, 0\n",
+                            "      if char in [',','.','$','-','/',' ',\":\"]: special += 1\n",
+                            "    if '.0' in txt and digs == 1 and caps > 0 and special > 0: digs = 0\n",
+                            "    #print( 'DESPO->', txt, ' digs, caps, special, small = ',digs, caps, special, small)\n",
+                            "    if digs+special == len(txt) and digs > 0: return 1 # num\n",
+                            "    if digs+caps+special == len(txt) and digs > 0 and not ( digs == 1 and '0' in txt and caps >=3 ): return 2 # alnum\n",
+                            "    if digs+caps+special+small == len(txt) and digs > 0 and caps > 0 and not ( digs == 1 and '0' in txt and caps >= 3 ): return 2\n",
+                            "    if digs+caps+special+small == len(txt) and digs >=4 : return 2\n",
+                            "    if caps+special+small == len(txt) and digs == 0 and small > 0: return 3 # mixed str\n",
+                            "    if special+small == len(txt) and digs == 0 and small > 0: return 4 # small cap\n",
+                            "    if special+caps == len(txt) and digs == 0: return 5 # large cap\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "small": {
+                "def": 77,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findValFeats( refwd ):",
+                        "usage": [
+                            "    digs, caps, small, special, begcaps = 0, 0, 0, 0, 0\n",
+                            "      if ord(char) >= 97 and ord(char) <= 122: small += 1\n",
+                            "    returnFeats[2] = small\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def findWdFeats(",
+                        "usage": [
+                            "    digs, caps, small, special, begcaps = 0, 0, 0, 0, 0\n",
+                            "      if ord(char) >= 97 and ord(char) <= 122: small += 1\n",
+                            "    returnFeats[2] = small\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py",
+                        "method_nm": "def featNum( txt ):",
+                        "usage": [
+                            "    digs, caps, small, special = 0, 0, 0, 0\n",
+                            "      if ord(char) >= 97 and ord(char) <= 122: small += 1\n",
+                            "    #print( 'DESPO->', txt, ' digs, caps, special, small = ',digs, caps, special, small)\n",
+                            "    if digs+caps+special+small == len(txt) and digs > 0 and caps > 0 and not ( digs == 1 and '0' in txt and caps >= 3 ): return 2\n",
+                            "    if digs+caps+special+small == len(txt) and digs >=4 : return 2\n",
+                            "    if caps+special+small == len(txt) and digs == 0 and small > 0: return 3 # mixed str\n",
+                            "    if special+small == len(txt) and digs == 0 and small > 0: return 4 # small cap\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/firstpass.py": [
+        {
+            "workbook": 0
+        },
+        {
+            "sheet": {
+                "def": 2,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/firstpass.py",
+                        "method_nm": "def find_table_bounds(sheet):",
+                        "usage": [
+                            "def find_table_bounds(sheet):\n",
+                            "    max_row = sheet.max_row\n",
+                            "    max_col = sheet.max_column\n",
+                            "        if all(sheet.cell(row=row, column=col).value is None for col in range(1, max_col + 1)):\n",
+                            "        #    print('ROW NUM->', col, ' VALUE: ', sheet.cell(row=row, column=col).value )\n",
+                            "        if all(sheet.cell(row=row, column=col).value is None for row in range(start_row, end_row)):\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/pca_test.py": [
+        {
+            "X": 2
+        },
+        {
+            "pca": 9
+        },
+        {
+            "time": 11
+        },
+        {
+            "start_": 12
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py": [
+        {
+            "prompts_dict_": {
+                "def": 3,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame ):",
+                        "usage": [
+                            "                        \"content\": prompts_dict_[\"SUMMARIZE_SAMPLE\"] + data_frame\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame ):",
+                        "usage": [
+                            "                        \"content\": prompts_dict_[\"SUMMARIZE_SAMPLE\"] + data_frame\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "cfg_": {
+                "def": 6,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame ):",
+                        "usage": [
+                            "                model=cfg_[\"BASE_MODEL\"],\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame ):",
+                        "usage": [
+                            "                model=cfg_[\"BASE_MODEL\"],\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "OpenAI": 8
+        },
+        {
+            "client": {
+                "def": 10,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame ):",
+                        "usage": [
+                            "            chat_completion = client.chat.completions.create(\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame ):",
+                        "usage": [
+                            "            chat_completion = client.chat.completions.create(\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py": [
+        {
+            "prompts_dict_": {
+                "def": 3,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame, high_variance_cols_ ):",
+                        "usage": [
+                            "            content_ = prompts_dict_[\"SUMMARIZE_SAMPLE_FOCUS\"] + ' , '.join( high_variance_cols_ ).strip() + '\\n'\n",
+                            "            content_ = prompts_dict_[\"SUMMARIZE_SAMPLE\"]\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame, high_variance_cols_ ):",
+                        "usage": [
+                            "            content_ = prompts_dict_[\"SUMMARIZE_SAMPLE_FOCUS\"] + ' , '.join( high_variance_cols_ ).strip() + '\\n'\n",
+                            "            content_ = prompts_dict_[\"SUMMARIZE_SAMPLE\"]\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "groq_cfg_": {
+                "def": 6,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame, high_variance_cols_ ):",
+                        "usage": [
+                            "                model=groq_cfg_[\"GROQ_BASE_MODEL\"],\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame, high_variance_cols_ ):",
+                        "usage": [
+                            "                model=groq_cfg_[\"GROQ_BASE_MODEL\"],\n"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "Groq": 8
+        },
+        {
+            "client": {
+                "def": 10,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame, high_variance_cols_ ):",
+                        "usage": [
+                            "            chat_completion = client.chat.completions.create(\n"
+                        ]
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py",
+                        "method_nm": "def returnDocSummary( data_frame, high_variance_cols_ ):",
+                        "usage": [
+                            "            chat_completion = client.chat.completions.create(\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py": [
+        {
+            "finalJson_": {
+                "def": 4,
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py",
+                        "method_nm": "def read_excel_file(file_path):",
+                        "usage": [
+                            "    finalJson_[ file_path.split('/')[-1] ] = localD\n"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/validate_search.py": []
+}
