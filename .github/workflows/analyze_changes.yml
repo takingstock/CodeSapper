@@ -31,7 +31,7 @@ jobs:
       - name: Identify changed files
         id: changes
         run: |
-          git diff --unified=0 ${{ github.event.before }} ${{ github.sha }} > changed_files.txt
+          git diff ${{ github.event.before }} ${{ github.sha }} > changed_files.txt
 
       - name: Run analysis script
         run: |
