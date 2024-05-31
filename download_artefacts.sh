@@ -15,14 +15,14 @@ if [ -z "$RUN_ID" ]; then
 fi
 
 echo "LATEST RUN ID->$RUN_ID"
-
+echo "curl -H Authorization: token $GITHUB_TOKEN https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts"
 # Fetch the artifact URL
 ARTIFACT_URL=$(curl -H "Authorization: token $GITHUB_TOKEN" \
   "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts" \
   | jq -r ".artifacts[] | select(.name==\"$ARTIFACT_NAME\") | .archive_download_url")
 
 # Download the artifact
-echo $ARTIFACT_URL
+echo "(curl -H Authorization: token $GITHUB_TOKEN https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts | jq -r .artifacts[] | select(.name==\$ARTIFACT_NAME\) | .archive_download_url)"
 curl -L -H "Authorization: token $GITHUB_TOKEN" -o $ARTIFACT_NAME.zip $ARTIFACT_URL
 
 # Unzip the artifact
