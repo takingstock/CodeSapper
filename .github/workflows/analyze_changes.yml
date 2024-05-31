@@ -64,7 +64,7 @@ jobs:
           GITHUB_TOKEN="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"
 
           echo "LATEST RUN ID->$RUN_ID"
-          sleep(10)
+          sleep 10
           echo "curl -H Authorization: token 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 https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts"
           _URL=$( curl -H "Authorization: token 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" \
             "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts" )
