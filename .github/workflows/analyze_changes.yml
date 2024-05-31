@@ -58,6 +58,6 @@ jobs:
           # Get the current workflow run ID
           RUN_ID=${{ github.run_id }}
 
-          python download_artefacts.sh RUN_ID
+          python download_artefacts.py RUN_ID
 
           echo "Artifact downloaded and extracted successfully."           
