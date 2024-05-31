@@ -47,7 +47,7 @@ jobs:
 
   check_and_download:
     runs-on: ubuntu-latest
-    needs: build_and_deploy
+    needs: analyze-changes
     steps:
       - name: Install jq
         run: sudo apt-get install -y jq
