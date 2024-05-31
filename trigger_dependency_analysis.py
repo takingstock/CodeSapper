@@ -31,10 +31,15 @@ def find_method_class_for_line(definitions, line_number):
     """
     Finds the method or class for a given line number.
     """
+    class_nm, method_nm = None, None
+
     for def_type, name, start_line, end_line in definitions:
-        if start_line <= line_number <= end_line:
-            return def_type, name
-    return None
+        if start_line <= line_number <= end_line and def_type == 'class':
+            class_nm = name
+        elif start_line <= line_number <= end_line and def_type == 'function':
+            method_nm = name
+
+    return {'class_nm': class_nm, 'method_nm': method_nm }
 
 def parse_diff_file(diff_file):
     changes = []
