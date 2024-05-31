@@ -52,8 +52,8 @@ jobs:
       - name: Install jq
         run: sudo apt-get install -y jq
 
-      - name: Check if the build and deploy job was successful
-        if: ${{ needs.build_and_deploy.result == 'success' }}
+      - name: Check if the analyze-changes job was successful
+        if: ${{ needs.analyze-changes.result == 'success' }}
         run: |
           # Get the current workflow run ID
           RUN_ID="${{ github.run_id }}"
