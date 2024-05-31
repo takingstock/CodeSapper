@@ -1,0 +1,38 @@
+name: Monitor Workflow
+
+on:
+  workflow_run:
+    workflows: ["Analyze Code Changes"]  # Replace with the name of your workflow
+    types:
+      - completed
+
+jobs:
+  check_and_download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Check if the run was successful
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        run: |
+          echo "Run ID: ${{ github.event.workflow_run.id }}"
+
+          # Fetch the artifact URL
+          ARTIFACT_URL=$(curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}/artifacts" \
+            | jq -r ".artifacts[] | select(.name==\"generated-files\") | .archive_download_url")
+
+          if [ -z "$ARTIFACT_URL" ]; then
+            echo "Artifact not found."
+            exit 1
+          fi
+
+          # Download the artifact
+          curl -L -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -o generated-files.zip $ARTIFACT_URL
+
+          # Unzip the artifact
+          unzip -o generated-files.zip -d ./local-directory
+
+          echo "Artifact downloaded and extracted successfully."
+
