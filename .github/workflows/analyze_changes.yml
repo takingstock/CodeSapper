@@ -56,33 +56,8 @@ jobs:
         if: ${{ needs.analyze-changes.result == 'success' }}
         run: |
           # Get the current workflow run ID
-          RUN_ID="${{ github.run_id }}"
-          echo "Run ID: $RUN_ID"
-          echo "secrets.GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
-          echo "${{ github.repository_owner }}"
-          echo "$(echo ${{ github.repository }} | cut -d'/' -f2)"
+          RUN_ID=${{ github.run_id }}
 
-          RESPONSE=$(curl -H "Authorization: token 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" \
-            "https://api.github.com/repos/${{ github.repository_owner }}/$(echo ${{ github.repository }} | cut -d'/' -f2)/actions/runs/${RUN_ID}/artifacts")
-
-          echo "API Response: (curl -H Authorization: token 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 https://api.github.com/repos/${{ github.repository_owner }}/$(echo ${{ github.repository }} | cut -d'/' -f2)/actions/runs/${RUN_ID}/artifacts)"          
-
-          echo "THE ARTI URL-> $(curl -H Authorization: token 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 https://api.github.com/repos/${{ github.repository_owner }}/$(echo ${{ github.repository }} | cut -d'/' -f2)/actions/runs/${RUN_ID}/artifacts"| jq -r ".artifacts[] | select(.name==\"generated-files\") | .archive_download_url)"
-          # Fetch the artifact URL
-          ARTIFACT_URL = $(curl -H "Authorization: token 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" \
-            "https://api.github.com/repos/${{ github.repository_owner }}/$(echo ${{ github.repository }} | cut -d'/' -f2)/actions/runs/${RUN_ID}/artifacts")\ 
-            | jq -r ".artifacts[] | select(.name==\"generated-files\") | .archive_download_url")
-
-
-          if [ -z "$ARTIFACT_URL" ]; then
-            echo "Artifact not found."
-            exit 1
-          fi
-
-          # Download the artifact
-          curl -L -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -o generated-files.zip $ARTIFACT_URL
-
-          # Unzip the artifact
-          unzip -o generated-files.zip -d ./local-directory
+          python download_artefacts.sh RUN_ID
 
           echo "Artifact downloaded and extracted successfully."           
