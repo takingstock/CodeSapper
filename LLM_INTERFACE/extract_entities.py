@@ -119,7 +119,7 @@ class LLM_interface:
                                 package_element[ k ] = { 'def': package_element[ k ], 'local_uses': [] }
 
 
-        print('Another test for github actions#2230')
+        print('Another test for github actions#230')
         ## now find the usage of methods within the file/module
         for fp_nm, method_arr_ in self.method_store_.items():
             for method_fp_nm, method_deets in self.method_store_.items():
