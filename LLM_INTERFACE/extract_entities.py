@@ -42,6 +42,7 @@ class LLM_interface:
             ll_ = fp.readlines()
         
         appearances_ = []
+        print('Another test for github actions#231')
         try:
             for idx in range( method_start_ln_num - 1, method_end_ln_num + 1 ):
                 if ( var_key in ll_[ idx ] or fuzz.ratio( var_key, ll_[ idx ] ) > 90 ) and\
