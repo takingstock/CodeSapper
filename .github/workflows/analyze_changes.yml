@@ -44,3 +44,35 @@ jobs:
           path: |
             changes_for_further_analysis.json
             # Add other files or directories you want to upload here          
+
+  check_and_download:
+    runs-on: ubuntu-latest
+    needs: build_and_deploy
+    steps:
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Check if the build and deploy job was successful
+        if: ${{ needs.build_and_deploy.result == 'success' }}
+        run: |
+          # Get the current workflow run ID
+          RUN_ID="${{ github.run_id }}"
+          echo "Run ID: $RUN_ID"
+
+          # Fetch the artifact URL
+          ARTIFACT_URL=$(curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs/${RUN_ID}/artifacts" \
+            | jq -r ".artifacts[] | select(.name==\"generated-files\") | .archive_download_url")
+
+          if [ -z "$ARTIFACT_URL" ]; then
+            echo "Artifact not found."
+            exit 1
+          fi
+
+          # Download the artifact
+          curl -L -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -o generated-files.zip $ARTIFACT_URL
+
+          # Unzip the artifact
+          unzip -o generated-files.zip -d ./local-directory
+
+          echo "Artifact downloaded and extracted successfully."           
