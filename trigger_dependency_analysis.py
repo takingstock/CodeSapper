@@ -70,9 +70,17 @@ def parse_diff_file(diff_file):
 
     print('FINAL CHANGE->', changes)
     ## finally add method name that the line changes belong to
-    method_class_deets_ = parse_python_file( chg_dict_['file'] )
+    curr_file_ = None
 
     for chg_dict_ in changes:
+        if curr_file_ != chg_dict_['file']:
+            method_class_deets_ = parse_python_file( chg_dict_['file'] )
+            curr_file_ = chg_dict_['file']
+            ## we dont want to parse the tree for every element in the "changes" array
+            ## changes array, the way its constructed, will mostly have multiple mentions of the same file
+            ## the DS -> file, code change, line # etc ..so file will be repeated and hence parse AST only when
+            ## the file is diff ..capisce ?
+
         method_class_nm_old = find_method_class_for_line( method_class_deets_, chg_dict_['old_start'] )
         method_class_nm_new = find_method_class_for_line( method_class_deets_, chg_dict_['new_start'] )
 
