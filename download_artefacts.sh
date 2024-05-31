@@ -15,7 +15,9 @@ if [ -z "$RUN_ID" ]; then
 fi
 
 echo "LATEST RUN ID->$RUN_ID"
+temp_=$( curl -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts" )
 echo "curl -H Authorization: token $GITHUB_TOKEN https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts"
+echo "TT->$temp_"
 # Fetch the artifact URL
 ARTIFACT_URL=$(curl -H "Authorization: token $GITHUB_TOKEN" \
   "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts" \
