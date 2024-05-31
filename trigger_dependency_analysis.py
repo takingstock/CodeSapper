@@ -1,5 +1,40 @@
-import sys, json
+import sys, json, ast
 import re
+
+def parse_python_file(file_path):
+    """
+    Parses a Python file and returns a list of tuples containing
+    the type (class or function), name, start line, and end line.
+    """
+    with open(file_path, "r") as file:
+        tree = ast.parse(file.read(), filename=file_path)
+
+    definitions = []
+
+    for node in ast.walk(tree):
+        if isinstance(node, ast.FunctionDef):
+            # Function/method definition
+            name = node.name
+            start_line = node.lineno
+            end_line = node.end_lineno
+            definitions.append(('function', name, start_line, end_line))
+        elif isinstance(node, ast.ClassDef):
+            # Class definition
+            name = node.name
+            start_line = node.lineno
+            end_line = node.end_lineno
+            definitions.append(('class', name, start_line, end_line))
+
+    return definitions
+
+def find_method_class_for_line(definitions, line_number):
+    """
+    Finds the method or class for a given line number.
+    """
+    for def_type, name, start_line, end_line in definitions:
+        if start_line <= line_number <= end_line:
+            return def_type, name
+    return None
 
 def parse_diff_file(diff_file):
     changes = []
@@ -34,6 +69,18 @@ def parse_diff_file(diff_file):
                 hunk_data['new_code'].append(line[1:].strip())
 
     print('FINAL CHANGE->', changes)
+    ## finally add method name that the line changes belong to
+    method_class_deets_ = parse_python_file( chg_dict_['file'] )
+
+    for chg_dict_ in changes:
+        method_class_nm_old = find_method_class_for_line( method_class_deets_, chg_dict_['old_start'] )
+        method_class_nm_new = find_method_class_for_line( method_class_deets_, chg_dict_['new_start'] )
+
+        ## in case the lines are moved to a new method
+        chg_dict_['method_class_nm_old'] = method_class_nm_old
+        chg_dict_['method_class_nm_new'] = method_class_nm_new
+        
+
     with open('changes_for_further_analysis.json', 'w' ) as fp:
         json.dump( changes, fp )
 
