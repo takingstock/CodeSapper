@@ -78,6 +78,7 @@ def parse_diff_file(diff_file):
     curr_file_ = None
 
     for chg_dict_ in changes:
+      try:  
         if curr_file_ != chg_dict_['file']:
             method_class_deets_ = parse_python_file( chg_dict_['file'] )
             curr_file_ = chg_dict_['file']
@@ -92,6 +93,8 @@ def parse_diff_file(diff_file):
         ## in case the lines are moved to a new method
         chg_dict_['method_class_nm_old'] = method_class_nm_old
         chg_dict_['method_class_nm_new'] = method_class_nm_new
+      except:
+          continue
         
 
     with open('changes_for_further_analysis.json', 'w' ) as fp:
