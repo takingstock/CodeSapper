@@ -64,9 +64,13 @@ jobs:
           GITHUB_TOKEN="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"
 
           echo "LATEST RUN ID->$RUN_ID"
-          ARTIFACT_URL=$(curl -H "Authorization: token $GITHUB_TOKEN" \
-            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts" \
-            | jq -r ".artifacts[] | select(.name==\"$ARTIFACT_NAME\") | .archive_download_url")                                                                                    
-          curl -L -H "Authorization: token $GITHUB_TOKEN" -o $ARTIFACT_NAME.zip $ARTIFACT_URL
+          _URL=$( curl -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts" )
+          
+          echo "LATEST URL-> $_URL"   
+          #ARTIFACT_URL=$(curl -H "Authorization: token $GITHUB_TOKEN" \
+          #  "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runs/$RUN_ID/artifacts" \
+          #  | jq -r ".artifacts[] | select(.name==\"$ARTIFACT_NAME\") | .archive_download_url")                                                                                    
+          #curl -L -H "Authorization: token $GITHUB_TOKEN" -o $ARTIFACT_NAME.zip $ARTIFACT_URL
 
-          echo "Artifact downloaded and extracted successfully."           
+          #echo "Artifact downloaded and extracted successfully."           
