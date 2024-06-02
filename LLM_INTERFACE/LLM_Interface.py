@@ -5,17 +5,18 @@ from groq import Groq
 from pathlib import Path
 
 class LLM_interface:
-    def __init__(self, src_folder_, dest_folder_, cfg_path_="./config.json", llm_='LLAMA'):
+    def __init__(self, cfg_path_="./config.json", llm_='LLAMA'):
 
         with open( cfg_path_, 'r' ) as fp:
             self.config_ = json.load( fp )
 
         self.llm_client_ = Groq( api_key=self.config_['GROQ_KEY'],  )
         self.extraction_prompt_ = self.config_['EXTRACTION_PROMPT']
-        self.src_folder_ = src_folder_
-        self.dest_folder_ = dest_folder_
+        self.src_folder_ = self.config_['SRC_FOLDER']
+        self.dest_folder_ = self.config_['DEST_FOLDER']
         self.chunk_size_ = self.config_['CHUNK_SIZE']
         self.model_to_be_used_ = self.config_['MODEL_NAME']
+        self.code_ctx_win_ = self.config_['CODE_CONTEXT_WINDOW']
 
         self.temperature_ = self.config_['TEMP']
         self.py_return_syntax , self.js_return_syntax = self.config_["PYTHON_RETURN_SYNTAX"],\
@@ -25,14 +26,13 @@ class LLM_interface:
         self.variable_store_ = dict() #{ 'file_path': [ {'var_nm': <ln #> } ] }
         self.package_store_ = dict() #{ 'file_path': [ {'package_nm': <ln #> } ] }## since these are used in methods
         self.method_store_ = dict() #{ 'file_path': [ {'method_nm': ( < start ln #>, < end ln # > ) } ] }
+        self.var_json_file, self.pack_json_file, self.method_json_file = \
+                self.config_['VAR_JSON'], self.config_['PACK_JSON'], self.config_['METHOD_JSON']
 
     def populateLLMInput(self):
 
         path = Path( self.src_folder_ )
         llm_input_ = [str(file.resolve()) for file in path.rglob('*') if file.is_file()]
-        print('Change for testing github actions#14')
-        x = 8
-        y = 10
 
         return llm_input_
 
@@ -42,7 +42,6 @@ class LLM_interface:
             ll_ = fp.readlines()
         
         appearances_ = []
-        print('Another test for github actions#231')
         try:
             for idx in range( method_start_ln_num - 1, method_end_ln_num + 1 ):
                 if ( var_key in ll_[ idx ] or fuzz.ratio( var_key, ll_[ idx ] ) > 90 ) and\
@@ -88,7 +87,6 @@ class LLM_interface:
                                 var_element[ k ] = { 'def': var_element[ k ] , 'local_uses': [] }
 
         ## first find out uses of global packages in the local methods
-        print('Another test for github actions#263')
         for fp_nm, package_arr_ in self.package_store_.items():
             for method_fp_nm, method_deets in self.method_store_.items():
 
@@ -119,7 +117,6 @@ class LLM_interface:
                                 package_element[ k ] = { 'def': package_element[ k ], 'local_uses': [] }
 
 
-        print('Another test for github actions#2301')
         ## now find the usage of methods within the file/module
         for fp_nm, method_arr_ in self.method_store_.items():
             for method_fp_nm, method_deets in self.method_store_.items():
@@ -132,6 +129,7 @@ class LLM_interface:
                             method_start_ln_num, method_end_ln_num = method_deet['range']
                             uses_ = self.method_contains_variable( _element['method_name']+'(' , method_start_ln_num, \
                                             method_end_ln_num, method_fp_nm )
+                            print('LOCAL CHECKS->ELE: ',_element,'\nLOCALMETHOD: ',method_deet,'\nUSE: ',uses_)
 
                             if len( uses_ ) > 0:
                                 ll_ = tmp_[ _element['method_name'] ] if _element['method_name'] in tmp_ else []
@@ -209,10 +207,13 @@ class LLM_interface:
 
         return chunk_
 
-    def returnLnNum( self, fnm, var_method_nm ):
+    def returnLnNum( self, fnm, var_method_nm, pre_processed_ll_=None ):
         ## return the first instance of the match
-        with open( fnm, 'r' ) as fp:
-            ll_ = fp.readlines()
+        if pre_processed_ll_ == None:
+            with open( fnm, 'r' ) as fp:
+                ll_ = fp.readlines()
+        else:
+            ll_ = pre_processed_ll_
         
         for idx, line_ in enumerate( ll_ ):
             if var_method_nm in line_ or fuzz.ratio( var_method_nm, line_ ) >= 90:
@@ -247,12 +248,8 @@ class LLM_interface:
         sometimes LLMs vomit unnecessary stuff at the beginning ..simple pre processing to ensure we start
         with an array
         '''
-        legit_resp_ = self.ensure_starts_with_square_bracket( resp_ )
-        try:
-            ll_ = ast.literal_eval( legit_resp_ )
-        except:
-            print('No array returned by the model ->', traceback.format_exc())
-            return None
+        ll_ = []
+        ll_ = self.checkLLMResponseFormat( resp_ )
 
         for varNm in ll_:
             lnNo = self.returnLnNum( fnm, varNm )
@@ -274,12 +271,9 @@ class LLM_interface:
         sometimes LLMs vomit unnecessary stuff at the beginning ..simple pre processing to ensure we start
         with an array
         '''
-        legit_resp_ = self.ensure_starts_with_square_bracket( resp_ )
-        try:
-            ll_ = ast.literal_eval( legit_resp_ )
-        except:
-            print('No array returned by the model')
-            return None
+
+        ll_ = []
+        ll_ = self.checkLLMResponseFormat( resp_ )
 
         for packageNm in ll_:
             for pack, moniker in packageNm.items():
@@ -306,20 +300,26 @@ class LLM_interface:
 
                         self.package_store_[ fnm ] = varList
 
+    def checkLLMResponseFormat( self, resp_ ):
+
+        legit_resp_ = self.ensure_starts_with_square_bracket( resp_ )
+        print( 'MOD ENTRY->', legit_resp_ )
+
+        try:
+            ll_ = ast.literal_eval( legit_resp_ )
+            return ll_
+        except:
+            print('No array returned by the model')
+            return None
+
     def processModuleRefs( self, resp_, chunk_, fnm_ ): 
         ## populate self.method_store_ { 'file_path': [ {'method_nm': ( < start ln #>, < end ln # > ) } ] }
         '''
         sometimes LLMs vomit unnecessary stuff at the beginning ..simple pre processing to ensure we start
         with an array
         '''
-        legit_resp_ = self.ensure_starts_with_square_bracket( resp_ )
-        print( 'MOD ENTRY->', legit_resp_ )
-
-        try:
-            ll_ = ast.literal_eval( legit_resp_ )
-        except:
-            print('No array returned by the model')
-            return None
+        ll_ = []
+        ll_ = self.checkLLMResponseFormat( resp_ )
 
         file_methods_ = self.method_store_[ fnm_ ] if fnm_ in self.method_store_ else []
         print('EXISTING file_methods_ = ', file_methods_, ll_)
@@ -419,14 +419,25 @@ class LLM_interface:
         '''
         store as simple json fmt
         '''
-        with open( self.dest_folder_ + '/VARIABLE.json', 'w+' ) as fp:
+        ## NOTE-> this is a very basic write method. Ideally we need to consider the following and see if need a 
+        ## mongo DB a) size of the files b) re-writing the entire DB / doing incremental chunks
+        ## critical to be able to acess the method info and start and end lines
+        with open( self.dest_folder_ + self.var_json_file, 'w+' ) as fp:
             json.dump( self.variable_store_, fp, indent=4 )
 
-        with open( self.dest_folder_ + '/PACKAGES.json', 'w+' ) as fp:
+        with open( self.dest_folder_ + self.pack_json_file, 'w+' ) as fp:
             json.dump( self.package_store_, fp, indent=4 )
 
-        with open( self.dest_folder_ + '/METHODS.json', 'w+' ) as fp:
+        with open( self.dest_folder_ + self.method_json_file, 'w+' ) as fp:
             json.dump( self.method_store_, fp, indent=4 )
+
+    def readMethodsDBJson(self):
+        '''
+        read the method json and return reference ..let the caller decide what to do with the data
+        especially since there might be a mongo call also to be made ..no convoluting this space
+        '''
+        with open( self.dest_folder_ + self.method_json_file, 'r' ) as fp:
+            return json.load( fp )
 
     def extractGraphElements(self):
 
@@ -436,7 +447,7 @@ class LLM_interface:
         ## is > 0 we start our chunkin from the backtrack values
 
         for file_ in input_files_:
-            #if 'basic_' not in file_: continue
+            if 'basic_' not in file_: continue
             print('ooooooooooooooooooooooooooooooooooooooooooo')    
             backtrack_ = False
 
@@ -477,5 +488,5 @@ class LLM_interface:
 
 if __name__ == "__main__":
 
-    interface_ = LLM_interface('./SRC_DIR/', './OP_DIR/')
+    interface_ = LLM_interface()
     interface_.extractGraphElements()
