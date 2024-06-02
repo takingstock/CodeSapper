@@ -133,8 +133,8 @@ class GenerateXLMetaInfo:
     def find_tables(self, sheet):
         ## NOTE -> sheet.max_row and sheet.max_column is NOT WORKING !! NEED TO FIX
         ## default is stop gap
-        max_row = sheet.max_row if sheet.max_row is not None else self.default_max_row_
-        max_col = sheet.max_column if sheet.max_column is not None else self.default_max_col_
+        max_row = sheet.max_row if sheet.max_row is not None else 20
+        max_col = sheet.max_column if sheet.max_column is not None else 30
         table_bounds_ = []
 
         print('KKR->', max_row, max_col)

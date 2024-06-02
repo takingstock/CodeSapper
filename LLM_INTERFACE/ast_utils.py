@@ -13,6 +13,13 @@ class CodeAnalyzer(ast.NodeVisitor):
         code = '\n'.join( code )
         # Parse the code into an AST
         return ast.parse(code)
+    
+    def parse_ast_snippet( self, snippet_arr_):
+        local_snippet_ = snippet_arr_[:-1] # the last entry is always some thing like -- a/ ++ b/ 
+        code_snippet_ = textwrap.dedent( ''.join( local_snippet_ ) )
+        parsed_ast = ast.parse( code_snippet_ )
+        # Parse the code into an AST
+        return parsed_ast
 
     def gc(self):
         if self.file_ptr_ != None:
@@ -24,21 +31,24 @@ class CodeAnalyzer(ast.NodeVisitor):
         value = node.value
         value_names = self.get_names(value)
         print(f"Assignment: Line {node.lineno}, Targets: {targets}, Values: {value_names}")
-        self.ast_linewise_deets_[ node.lineno ] = { 'Type':'Assignment', 'Targets': targets }
+        self.ast_linewise_deets_[ node.lineno ] = { 'Type':'Assignment', 'Targets': targets,\
+                                                    'Ending': 'NA', 'Values': value_names }
         self.generic_visit(node)
 
     def visit_If(self, node):
         # Handle if statements
         test_names = self.get_names(node.test)
         print(f"If statement: Line {node.lineno}, End {node.body[-1].lineno} ,Condition Variables: {test_names}")
-        self.ast_linewise_deets_[ node.lineno ] = { 'Type':'If Statement', 'Targets': test_names , 'Ending': node.body[-1].lineno }
+        self.ast_linewise_deets_[ node.lineno ] = { 'Type':'If Statement', 'Targets': test_names , \
+                                                     'Ending': node.body[-1].lineno, 'Values': 'NA' }
         self.generic_visit(node)
 
     def visit_For(self, node):
         # Handle for loops
         target = node.target.id if isinstance(node.target, ast.Name) else str(node.target)
         iter_names = self.get_names(node.iter)
-        self.ast_linewise_deets_[ node.lineno ] = { 'Type':'For loop',  'Targets': iter_names, 'Ending': node.body[-1].lineno }
+        self.ast_linewise_deets_[ node.lineno ] = { 'Type':'For loop', 'Targets': iter_names, \
+                                                    'Ending': node.body[-1].lineno, 'Values': 'NA' }
         print(f"For loop: Line {node.lineno}, End {node.body[-1].lineno} ,Loop Variable: {target}, Iterating Over: {iter_names}")
         self.generic_visit(node)
 
