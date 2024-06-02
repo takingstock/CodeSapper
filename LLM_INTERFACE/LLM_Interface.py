@@ -282,8 +282,8 @@ class LLM_interface:
 
                 if lnNo is not None:
                     if fnm in self.package_store_:
-                        varList = self.package_store_[ fnm ]
-                        if { pack: lnNo } not in varList:
+                        varList = self.package_store_[ fnm ] if fnm in self.package_store_ else []
+                        if pack is not None and { pack: lnNo } not in varList:
                             varList.append( { pack: lnNo } )
                         ## if numpy is imported as "np" ( moniker ) then we need to store this as well
                         ## since most likely this is what will get used in the methods below

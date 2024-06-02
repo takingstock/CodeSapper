@@ -69,9 +69,9 @@ def parse_diff_file(diff_file):
                     }
                     changes.append(hunk_data)
             elif line.startswith('-') and hunk_info and current_file is not None and '.py' in current_file:
-                hunk_data['old_code'].append(line[1:].strip())
+                hunk_data['old_code'].append(line[1:])
             elif line.startswith('+') and hunk_info and current_file is not None and '.py' in current_file:
-                hunk_data['new_code'].append(line[1:].strip())
+                hunk_data['new_code'].append(line[1:])
 
     print('FINAL CHANGE->', changes)
     ## finally add method name that the line changes belong to
