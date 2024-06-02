@@ -223,10 +223,10 @@ class LLM_interface:
         ## if its come here, it means it couldn't find the end ..use a defaul language specific end statemet
         ## python -> return , javascript -> return
         ## self.py_return_syntax, self.js_return_syntax
-        return_signature_ = self.py_return_syntax + ' ' 
+        return_signature_ = self.py_return_syntax + ' ' + ''
         # add space at end ..else it will return some function call like returnXYZ ..lol
-        for idx, line_ in enumerate( ll_ ):
-            if return_signature_ in line_ :
+        for idx, line_text in enumerate( ll_ ):
+            if return_signature_ in line_text :
                 print('First occurence of ', var_method_nm ,' line #', idx)
                 return idx
 
