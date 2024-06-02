@@ -13096,3 +13096,62 @@
 2024-06-02 13:10:08,418 - GitHubMonitor - INFO - Extracted latest_run_id->
 2024-06-02 13:10:08,418 - GitHubMonitor - INFO - 9336338044
 2024-06-02 13:10:08,418 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:10:19,257 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:10:19,257 - GitHubMonitor - INFO - 9336338044
+2024-06-02 13:10:19,257 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:10:29,997 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:10:29,997 - GitHubMonitor - INFO - 9336338044
+2024-06-02 13:10:29,997 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:10:40,770 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:10:40,770 - GitHubMonitor - INFO - 9336338044
+2024-06-02 13:10:40,770 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:10:51,704 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:10:51,705 - GitHubMonitor - INFO - 9336338044
+2024-06-02 13:10:51,705 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:11:02,499 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:11:02,499 - GitHubMonitor - INFO - 9336338044
+2024-06-02 13:11:02,499 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:11:13,229 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:11:13,229 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:11:13,523 - GitHubMonitor - INFO - New artifact found. Downloading from https://api.github.com/repos/AmyGB-ai/IKG/actions/artifacts/1560202569/zip
+2024-06-02 13:11:14,669 - GitHubMonitor - INFO - GOIN TO WRITE->
+2024-06-02 13:11:14,670 - GitHubMonitor - INFO - /datadrive/IKG/github-monitor//downloaded_artifacts/generated-files.zip
+2024-06-02 13:11:14,670 - GitHubMonitor - INFO - IN WITH SCOPE->
+2024-06-02 13:11:14,670 - GitHubMonitor - INFO - /datadrive/IKG/github-monitor//downloaded_artifacts/generated-files.zip
+2024-06-02 13:11:14,671 - GitHubMonitor - INFO - Artifact downloaded and extracted successfully.
+2024-06-02 13:11:25,497 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:11:25,498 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:11:25,498 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:11:36,223 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:11:36,223 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:11:36,224 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:11:47,004 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:11:47,004 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:11:47,004 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:11:57,845 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:11:57,845 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:11:57,845 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:12:08,725 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:12:08,725 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:12:08,725 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:12:19,448 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:12:19,448 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:12:19,448 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:12:30,330 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:12:30,330 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:12:30,330 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:12:41,210 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:12:41,210 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:12:41,210 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:12:52,117 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:12:52,117 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:12:52,117 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:13:03,124 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:13:03,124 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:13:03,124 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:13:14,122 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:13:14,123 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:13:14,123 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-02 13:13:24,901 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-02 13:13:24,902 - GitHubMonitor - INFO - 9338542967
+2024-06-02 13:13:24,902 - GitHubMonitor - INFO - No new successful runs. Retrying...
