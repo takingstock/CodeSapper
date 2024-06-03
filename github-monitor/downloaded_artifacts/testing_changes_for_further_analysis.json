@@ -1,0 +1,1 @@
+[{"file": "LLM_INTERFACE/SRC_DIR/testChunking.py", "old_start": 133, "old_length": 8, "new_start": 133, "new_length": 8, "old_code": ["    x = a+b\n"], "new_code": ["    x = a*b\n"], "method_class_nm_old": {"class_nm": "GenerateXLMetaInfo", "method_nm": "chunking_test"}, "method_class_nm_new": {"class_nm": "GenerateXLMetaInfo", "method_nm": "chunking_test"}}]
