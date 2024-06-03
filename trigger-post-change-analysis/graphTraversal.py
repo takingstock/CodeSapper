@@ -18,26 +18,31 @@ class traverseGraph():
 
 
 
-    def traverse_graph(self, tx, method_name, file_name):
+    def traverse_graph(self, tx, method_name, file_name, mode):
         ## the ">" operator beside global_uses , in the relationshipFilter means 'only look downstream'
         query = '''
         MATCH ( startNode:Method { method_name: "'''+ method_name +'''", file_name: "'''+ file_name +'''" } )
         CALL apoc.path.subgraphNodes(startNode, {
-            relationshipFilter: "global_uses>",
+            relationshipFilter: "'''+mode+'''>",
             minLevel: 1
         }) YIELD node
         RETURN node
         '''
         result = tx.run(query, method_name=method_name, file_name=file_name)
         print('Traversal Beginning->', method_name)
+        response_ = list()
+
         for record in result:
             print('GOOGOO->', dict(record['node']) )
+            response_.append( dict(record['node']) )
 
-    def get_traversal_path(self, tx, method_name, file_name):
+        return response_
+
+    def get_traversal_path(self, tx, method_name, file_name, mode):
 
         query = '''
         MATCH ( startNode:Method { method_name: "'''+ method_name +'''", file_name: "'''+ file_name +'''" } )
-        CALL apoc.path.expand(startNode, "global_uses>", null, 0, 100) YIELD path
+        CALL apoc.path.expand(startNode, "'''+mode+'''>", null, 0, 100) YIELD path
         RETURN path
         '''
 
@@ -59,17 +64,22 @@ class traverseGraph():
 
         net.save_graph("traversal_path.html")
 
-    def call_traversal(self, method, file_):
+    def call_traversal(self, method, file_, mode, generate_html=False):
 
         with GraphDatabase.driver( self.NEO4J_URI, auth=self.NEO4J_AUTH ) as driver:
             try:
                 with driver.session() as session:
-                    session.execute_read( self.traverse_graph, method, file_ )
-                    session.execute_read( self.get_traversal_path, method, file_ )
+                    mode_usage_ = session.execute_read( self.traverse_graph, method, file_, mode )
+
+                    if generate_html == True:
+                        session.execute_read( self.get_traversal_path, method, file_, mode )
+
+                    return mode_usage_
             except:
                 print('TRAVERSAL ISSUE->', traceback.format_exc())
+                return None
 
 if __name__ == "__main__":
 
-    tg_ = traverseGraph('./config.json')
-    tg_.call_traversal( "returnEmbed", "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py" )
+    tg_ = traverseGraph('./neo4j.config.json')
+    tg_.call_traversal( "returnEmbed", "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py", "global" )

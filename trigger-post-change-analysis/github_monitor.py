@@ -8,7 +8,7 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 import sys
 import os
-
+import trigger_downstream
 
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 REPO_OWNER = "AmyGB-ai"
@@ -117,6 +117,8 @@ def main():
                     with open(RUN_ID_FILE, 'w') as f:
                         f.write(str(latest_run_id))
                     print(f"Artifact downloaded and extracted successfully.")
+                    ## now trigger graph traversal for all the changes
+                    trigger_downstream.start( RUN_ID_FILE )
                 else:
                     print("No artifact found for the latest successful run.")
             else:

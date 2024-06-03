@@ -1,0 +1,5 @@
+{
+	"uname": "neo4j",
+	"pwd"  : "slayer#666",
+	"URI" : "bolt://localhost:7687"
+}
