@@ -1,7 +1,7 @@
-import graphTraversal
+from graphTraversal import traverseGraph
 import json, sys, os
 import numpy as np
-
+import time
 ##local packages
 import chunking_utils
 from LLM_Interface import LLM_interface
@@ -10,8 +10,8 @@ def addChangeImpactOnFile( change_record_ ):
 
     llm_interface_ = LLM_interface()
     msg_ = change_record_['method_context'] + '\n' ## add the changed method
-    msg_ += "Changed line - NEW : " + change_record_["new_code"] + '\n' ## add new changes
-    msg_ += " OLD : " + change_record_["old_code"] + '\n' ## add older version of the above
+    msg_ += "Changed line - NEW : " + ( ''.join( change_record_["new_code"] ) ) + '\n' ## add new changes
+    msg_ += " OLD : " + ( ''.join( change_record_["old_code"] ) ) + '\n' ## add older version of the above
 
     impact_response_ = llm_interface_.executeInstruction( "IMPACT_SAMEFILE", msg_ )
 
@@ -21,21 +21,22 @@ def addChangeImpactOnDownstreamFile( change_record_, downstream_snippet_ ):
 
     llm_interface_ = LLM_interface()
     msg_ = change_record_['method_context'] + '\n' ## add the changed method
-    msg_ += "Changed line - NEW : " + change_record_["new_code"] + '\n' ## add new changes
-    msg_ += " OLD : " + change_record_["old_code"] + '\n' ## add older version of the above
+    msg_ += "Changed line - NEW : " + ( ''.join( change_record_["new_code"] ) ) + '\n' ## add new changes
+    msg_ += " OLD : " + ( ''.join( change_record_["old_code"] ) ) + '\n' ## add older version of the above
     msg_ += " downstream file importing " + change_record_["method_class_nm_new"]["method_nm"] + '\n'
     msg_ += downstream_snippet_ ## add the downstream method importing the above method
 
+    print('CALLING LLM addChangeImpactOnDownstreamFile->', msg_)
     impact_response_ = llm_interface_.executeInstruction( "IMPACT_DOWNSTREAM", msg_ )
 
     return impact_response_
 
-def aggregateImpactResponse( changed_D, usage_, change_record_, mode ):
+def aggregateImpactResponse( changed_D, usage_, change_record_, mode, default_home_dir_ ):
 
     for usage_rec_ in usage_:
         usage_D = { 'file_nm': usage_rec_['file_name'] if default_home_dir_ in usage_rec_['file_name'] \
                                                        else default_home_dir_ + usage_rec_['file_name'],\
-                                                       'method_nm': 'method_name' }
+                                                       'method_nm': usage_rec_['method_name'] }
 
         downstream_snippet_ = chunking_utils.createChunkInDownStreamFile( changed_D, usage_D )
 
@@ -69,6 +70,12 @@ def start( change_summary_file_, default_neo4j_config_='./neo4j.config.json', de
         change_summary_ = json.load( fp )
         ## call chunking for the changed method itself, first
         chunking_utils.createChunkInChangeFile( default_home_dir_, change_summary_ )
+        print('STAGE1-> self chunking := ', change_summary_)
+
+    with open( default_neo4j_config_, 'r' ) as fp:
+        neo4j_conf_ = json.load( fp )
+
+    start_timer_ = time.time()
 
     for idx, change_record_ in enumerate( change_summary_ ):
         fnm, method_ = change_record_['file'], change_record_["method_class_nm_old"]["method_nm"]
@@ -76,8 +83,15 @@ def start( change_summary_file_, default_neo4j_config_='./neo4j.config.json', de
 
         tg_ = traverseGraph( default_neo4j_config_ )
         ## traverse the graph and find global uses first
-        global_usage_ = tg_.call_traversal( method_, default_home_dir_ + fnm, mode='global' )
-        local_usage_ = tg_.call_traversal( method_, default_home_dir_ + fnm, mode='local' )
+        #NOTE->COMMENT THE BELOW & UNCOMMENT THE LINES BELOW ..only for testing 
+        global_usage_ = tg_.call_traversal( method_, (default_home_dir_ + fnm), mode=neo4j_conf_['global_usage'] )
+        local_usage_ = tg_.call_traversal( method_, (default_home_dir_ + fnm), mode=neo4j_conf_['local_usage'] )
+
+        #global_usage_ = tg_.call_traversal( method_, default_home_dir_ + fnm, mode='global' )
+        #local_usage_ = tg_.call_traversal( method_, default_home_dir_ + fnm, mode='local' )
+
+        print('STAGE2->Global->', global_usage_, time.time() - start_timer_)
+        print('STAGE2->Local->', local_usage_)
 
         ## global_usage_ of type {'method_name': 'createDBRec', 'method_importance_': 0.23500000000000004, 'file_name': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_begin_ln': '359', 'method_end_ln': '385', 'method_begin_snippet': "def createDBRec( self, summary_D, mode='NORM' ): ", 'method_end_snippet': 'return insertRec'}
 
@@ -85,14 +99,14 @@ def start( change_summary_file_, default_neo4j_config_='./neo4j.config.json', de
 
         if global_usage_ != None and len( global_usage_ ) > 0:
             try:
-                aggregateImpactResponse( changed_D, global_usage_, change_record_, 'global' )
+                aggregateImpactResponse( changed_D, global_usage_, change_record_, 'global', default_home_dir_ )
             except:
-                print('Unable to find global usage method..INVESTIGATE')
+                print('start->aggregateImpactResponse->EXCPN->', traceback.format_exc())
 
         elif local_usage_ != None and len( local_usage_ ) > 0:
             ## if no global impact formed simply summarize impact on local file itself
             try:
-                aggregateImpactResponse( changed_D, local_usage_, change_record_, 'local' )
+                aggregateImpactResponse( changed_D, local_usage_, change_record_, 'local', default_home_dir_ )
             except:
                 print('Unable to find global usage method..INVESTIGATE')
         else:
@@ -101,4 +115,9 @@ def start( change_summary_file_, default_neo4j_config_='./neo4j.config.json', de
             change_record_['impact_analysis'] = [ { 'impacted_method': method_,\
                                                     'impact_analysis': impact_ ,\
                                                     'impact_type': 'local' } ]
+        print( 'MOMO->', change_record_, time.time() - start_timer_ )
+
+if __name__ == "__main__":
+
+    start( '/datadrive/IKG/LLM_INTERFACE/downloaded_artifacts/changes_for_further_analysis.json')
 

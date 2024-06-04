@@ -29,11 +29,10 @@ class traverseGraph():
         RETURN node
         '''
         result = tx.run(query, method_name=method_name, file_name=file_name)
-        print('Traversal Beginning->', method_name)
+        print('Traversal Beginning->', method_name, file_name, query)
         response_ = list()
 
         for record in result:
-            print('GOOGOO->', dict(record['node']) )
             response_.append( dict(record['node']) )
 
         return response_
@@ -82,4 +81,4 @@ class traverseGraph():
 if __name__ == "__main__":
 
     tg_ = traverseGraph('./neo4j.config.json')
-    tg_.call_traversal( "returnEmbed", "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py", "global" )
+    tg_.call_traversal( "returnEmbed", "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py", "global_uses" )

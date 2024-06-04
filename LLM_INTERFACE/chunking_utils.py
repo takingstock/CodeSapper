@@ -5,15 +5,41 @@ from python_ast_utils import CodeAnalyzer ## need to replace this based on progr
 
 def findRange( file_, input_method_, method_json_ ):
 
-    for file_key, method_deets_ in method_json_.items():
-        ref_file_, input_file_ = file_key.split('/')[-1], file_.split('/')[-1]
-        #print('FINDING RANGE->', ref_file_, input_file_)
-        if ref_file_ == input_file_:
-            for content in method_deets_:
-                if "method_name" in content and content["method_name"] == input_method_:
-                    return content[ 'range' ]
+    with open( file_, 'r' ) as fp:
+        usage_file_ = fp.readlines()
+
+        for file_key, method_deets_ in method_json_.items():
+            ref_file_, input_file_ = file_key.split('/')[-1], file_.split('/')[-1]
+            #print('FINDING RANGE->', ref_file_, input_file_)
+            if ref_file_ == input_file_:
+                for content in method_deets_:
+                    print('DEEPER->', file_, content, input_method_)
+
+                    if "method_name" in content and content["method_name"] == input_method_:
+                        return content[ 'range' ]
 
     return []
+
+def findRangeDownstream( file_, input_method_, method_json_ ):
+
+    with open( file_, 'r' ) as fp:
+        usage_file_ = fp.readlines()
+
+        for file_key, method_deets_ in method_json_.items():
+            ref_file_, input_file_ = file_key.split('/')[-1], file_.split('/')[-1]
+            #print('FINDING RANGE->', ref_file_, input_file_)
+            if ref_file_ == input_file_:
+                for content in method_deets_:
+                    print('DEEPER->', file_, content, input_method_)
+                    range_ = content['range']
+                    if range_[1] < range_[0]: continue
+                    ## now find point of entry 
+                    for idx, ln_ in enumerate( usage_file_[ range_[0]: range_[1] ] ):
+                        if input_method_ in ln_:
+                            print( 'POE->', usage_file_[ range_[0] + idx : range_[0] + idx + 1 ] )
+                            return [ range_[0] + idx , range_[0] + idx + 1 ], content['range']
+
+    return [], []
 
 def cmpOldNew( old_code_vars_, new_code_vars_, target_dict_ ):
     '''
@@ -34,6 +60,7 @@ def cmpOldNew( old_code_vars_, new_code_vars_, target_dict_ ):
     target_dict_keys_ = list( target_dict_.keys() )
 
     for _ , assignment_deets in old_code_vars_.items():
+        print( 'cmpOldNew->', assignment_deets )
         tgt_of_interest_ = assignment_deets['Targets'][0]
         
         for target_, tdeets_ in target_dict_.items():
@@ -42,7 +69,7 @@ def cmpOldNew( old_code_vars_, new_code_vars_, target_dict_ ):
                 tgt_of_interest_ = tdeets_['MAX_LN_TGT']
                 if tdeets_['MIN'] < min_ln_ : min_ln_ = tdeets_['MIN']
                 if tdeets_['MAX'] > max_ln_ : max_ln_ = tdeets_['MAX']
-                print('NEW TGT->', tgt_of_interest_, min_ln_, max_ln_)
+                #print('NEW TGT->', tgt_of_interest_, min_ln_, max_ln_)
 
     for _ , assignment_deets in new_code_vars_.items():
         tgt_of_interest_ = assignment_deets['Targets'][0]
@@ -160,13 +187,15 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
         with open( file_nm_, 'r' ) as fp:
             tmp_contents_ = fp.readlines()
 
-        if code_review_range_[0] == 10000 or code_review_range_[1] == -1:
+        if code_review_range_[0] == 10000 or code_review_range_[1] == -1 or \
+            ( code_review_range_[0] == code_review_range_[1] ) or ( code_review_range_[1] < code_review_range_[0] ):
             print('Sending the entire code of <', method_nm_,'> for review')
         else:
-            print('Found contextual subtext for <', method_nm_,'>')
+            print('Found contextual subtext for <', method_nm_,'>', begin_ln_, end_ln_)
             begin_ln_, end_ln_ = code_review_range_
 
-        chunks_for_analysis_.append( changeD.update( { 'method_context': tmp_contents_[ begin_ln_: end_ln_ ] } ) )
+        chunks_for_analysis_.append( changeD.update( { \
+                'method_context': ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ) } ) )
 
     ast_utils_.gc()
 
@@ -210,15 +239,15 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
     method_summary_ = llm_interface_.readMethodsDBJson()
     chunks_for_analysis_ = []
 
-    begin_ln_, end_ln_ = findRange( downstream_file_details_['file_nm'], downstream_file_details_['method_nm'],\
-                                                                         method_summary_ )
+    range_for_snippet, range_for_llm = findRangeDownstream( downstream_file_details_['file_nm'], \
+                                                            change_details_['method_nm'], method_summary_ )
 
-    parsed_ast_ = ast_utils_.parse_ast( downstream_file_details_['file_nm'], ( begin_ln_, end_ln_ ) )
+    parsed_ast_ = ast_utils_.parse_ast( downstream_file_details_['file_nm'], range_for_snippet )
     ast_utils_.visit( parsed_ast_ )
     ast_details_ = ast_utils_.ast_linewise_deets_
 
     begin_ln_, downstream_point_of_entry_ = findPointOfEntry( downstream_file_details_['file_nm'], \
-                                                                ( begin_ln_, end_ln_ ),\
+                                                                range_for_snippet,\
                                                                                 change_details_ )
     if downstream_point_of_entry_ == None:
         print('Point of entry not found ..raise EXCPN')
@@ -238,15 +267,20 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
     with open( downstream_file_details_['file_nm'], 'r' ) as fp:
         tmp_contents_ = fp.readlines()
 
-    if code_review_range_[0] == 10000 or code_review_range_[1] == -1:
-        print('Sending the entire code of <', downstream_point_of_entry_,'> for review')
+    if code_review_range_[0] == 10000 or code_review_range_[1] == -1 or \
+            ( begin_ln_ == end_ln_ ) or ( end_ln_ < begin_ln_ ):
+
+        begin_ln_, end_ln_ = range_for_llm
+        print('Sending the entire code of <', downstream_point_of_entry_,'> for review', begin_ln_, end_ln_)
     else:
         _, end_ln_ = code_review_range_ ## begin will be point of entry ..just get the furthest assignment
         print('Found contextual subtext for <', downstream_point_of_entry_,'>', begin_ln_, end_ln_ )
 
     ast_utils_.gc()
 
-    return tmp_contents_[ begin_ln_: end_ln_ ] 
+    print('RETURNING->', ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ))
+
+    return ( ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ) )
 
 if __name__ == '__main__':
     import json, time

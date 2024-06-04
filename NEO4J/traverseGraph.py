@@ -29,7 +29,7 @@ class traverseGraph():
         RETURN node
         '''
         result = tx.run(query, method_name=method_name, file_name=file_name)
-        print('Traversal Beginning->', method_name)
+        print('Traversal Beginning->', method_name, query)
         for record in result:
             print('GOOGOO->', dict(record['node']) )
 

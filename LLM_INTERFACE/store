@@ -1,0 +1,761 @@
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py {'method_name': 'blockPrint', 'method_begin': 'def blockPrint():', 'method_end': "sys.stdout = open(os.devnull, 'w')", 'range': [10, 14], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py', 'method_nm': 'returnJsonFeat', 'method_defn': 'def returnJsonFeat( src_0, src_raw ):', 'usage': ['    blockPrint()    \n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py {'method_name': 'enablePrint', 'method_begin': 'def enablePrint():', 'method_end': 'sys.stdout = sys.__stdout__', 'range': [14, 28], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py', 'method_nm': 'returnJsonFeat', 'method_defn': 'def returnJsonFeat( src_0, src_raw ):', 'usage': ['    enablePrint()\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py {'method_name': 'returnEmbed', 'method_begin': 'def returnEmbed( sent ): ', 'method_end': "return json_obj['encoded_'], True", 'range': [28, 42], 'global_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py', 'method_nm': 'pos', 'method_defn': 'def pos( res_ ):', 'usage': ["            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"]}, {'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py', 'method_nm': 'addToDB', 'method_defn': 'def addToDB():', 'usage': ['            emb_ = createJsonFeats.returnEmbed( txt )\n']}, {'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'createDBRec', 'method_defn': "def createDBRec( self, summary_D, mode='NORM' ): ", 'usage': ['        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n']}]} returnEmbed
+CODE_SNIP-> def returnEmbed( sent ):
+
+    rec_ = { 'sentence': sent }
+
+    data = json.dumps( rec_ ).encode('utf-8')
+    _request = urllib.request.Request( url_encode, data=data, method='POST', \
+                                        headers={'Content-Type': 'application/json'} )
+
+    response = urllib.request.urlopen( _request )
+    string = response.read().decode('utf-8')
+    json_obj = json.loads(string)
+
+    return json_obj['encoded_'], True
+
+
+CODE_SNIP-> string = response.read().decode('utf-8')
+
+CODE_SNIP-> string = response.read()
+
+cmpOldNew-> {'Type': 'Assignment', 'Targets': ['string'], 'Ending': 'NA', 'Values': ['response', 'read', 'decode'], 'Function': 'decode'}
+NEW TGT-> json_obj 11 11
+Sending the entire code of < returnEmbed > for review
+STAGE1-> self chunking :=  [{'file': 'LLM_INTERFACE/SRC_DIR/createJsonFeats.py', 'old_start': 133, 'old_length': 8, 'new_start': 133, 'new_length': 8, 'old_code': ["    string = response.read().decode('utf-8')\n"], 'new_code': ['    string = response.read()\n'], 'method_class_nm_old': {'class_nm': '', 'method_nm': 'returnEmbed'}, 'method_class_nm_new': {'class_nm': '', 'method_nm': 'returnEmbed'}, 'method_context': "def returnEmbed( sent ):\n\n    rec_ = { 'sentence': sent }\n\n    data = json.dumps( rec_ ).encode('utf-8')\n    _request = urllib.request.Request( url_encode, data=data, method='POST', \\\n                                        headers={'Content-Type': 'application/json'} )\n\n    response = urllib.request.urlopen( _request )\n    string = response.read().decode('utf-8')\n    json_obj = json.loads(string)\n    \n    return json_obj['encoded_'], True\n\n"}]
+Traversal Beginning-> returnEmbed /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py 
+        MATCH ( startNode:Method { method_name: "returnEmbed", file_name: "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py" } )
+        CALL apoc.path.subgraphNodes(startNode, {
+            relationshipFilter: "global_uses>",
+            minLevel: 1
+        }) YIELD node
+        RETURN node
+        
+Traversal Beginning-> returnEmbed /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py 
+        MATCH ( startNode:Method { method_name: "returnEmbed", file_name: "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py" } )
+        CALL apoc.path.subgraphNodes(startNode, {
+            relationshipFilter: "local_uses>",
+            minLevel: 1
+        }) YIELD node
+        RETURN node
+        
+STAGE2->Global-> [{'method_name': 'createDBRec', 'method_importance_': 0.23500000000000004, 'file_name': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_begin_ln': '359', 'method_end_ln': '385', 'method_begin_snippet': "def createDBRec( self, summary_D, mode='NORM' ): ", 'method_end_snippet': 'return insertRec'}, {'method_name': 'addToDB', 'method_importance_': 0.29875000000000007, 'file_name': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py', 'method_begin_ln': '8', 'method_end_ln': '15', 'method_begin_snippet': 'def addToDB():', 'method_end_snippet': 'db_utils.insertNewSignature( dd_ )'}, {'method_name': 'pos', 'method_importance_': 0.23500000000000004, 'file_name': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py', 'method_begin_ln': '13', 'method_end_ln': '100', 'method_begin_snippet': 'def pos( res_ ):', 'method_end_snippet': 'return None'}, {'method_name': 'createDBRec', 'method_importance_': 0.23500000000000004, 'file_name': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_begin_ln': '359', 'method_end_ln': '385', 'method_begin_snippet': "def createDBRec( self, summary_D, mode='NORM' ): ", 'method_end_snippet': 'return insertRec'}, {'method_name': 'addToDB', 'method_importance_': 0.29875000000000007, 'file_name': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py', 'method_begin_ln': '8', 'method_end_ln': '15', 'method_begin_snippet': 'def addToDB():', 'method_end_snippet': 'db_utils.insertNewSignature( dd_ )'}, {'method_name': 'pos', 'method_importance_': 0.23500000000000004, 'file_name': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py', 'method_begin_ln': '13', 'method_end_ln': '100', 'method_begin_snippet': 'def pos( res_ ):', 'method_end_snippet': 'return None'}] 0.013207435607910156
+STAGE2->Local-> []
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'is_date', 'method_begin': 'def is_date( input_str):', 'method_end': 'return None', 'range': [14, 18], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'process', 'method_defn': 'def process( colNum, sheet, tbl ):', 'usage': ['                dtVal_ = is_date( str( sheet.cell(row=rw, column=colNum).value ) )\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'convertToPandas', 'method_begin': 'def convertToPandas(self, tbl_)', 'method_end': 'NA', 'range': [18, 33]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'process', 'method_begin': 'def process( colNum, sheet, tbl ):', 'method_end': 'return ( False, None, None )', 'range': [33, 54], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'findDateRange', 'method_defn': 'def findDateRange( self, tbl ):', 'usage': ['            results = process(col, self.sheet, tbl)\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': '__init__', 'method_begin': "def __init__(self, file_path, llm='LLAMA'):", 'method_end': 'self.query_fn_ = llama3', 'range': [54, 76]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findHeaderInfo', 'method_begin': 'NA', 'method_end': 'NA', 'range': [76, 82]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'find_bounds', 'method_begin': 'def find_bounds( self, sheet, max_row, max_col, start_row , end_row ,start_col ,end_col ):', 'method_end': 'return start_row, end_row, start_col, end_col', 'range': [82, 121], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'find_tables', 'method_defn': 'def find_tables(self, sheet):', 'usage': ['        start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, start_row ,\\\n', '            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, end_row ,\\\n', '            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, None ,\\\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'is_hdr_row_format', 'method_begin': 'def is_hdr_row_format( self, tbl_bound, sheet ):', 'method_end': 'return True', 'range': [121, 132], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'find_tables', 'method_defn': 'def find_tables(self, sheet):', 'usage': ['                if self.is_hdr_row_format( tmp_[ctr], sheet ) == False:\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'find_tables', 'method_begin': 'def find_tables(self, sheet):', 'method_end': '## init star and end col to min and max', 'range': [132, 218]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findDateRange', 'method_begin': 'def findDateRange( self, tbl ):', 'method_end': 'return (None, None)', 'range': [218, 231]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findHeaderInfo', 'method_begin': 'def findHeaderInfo(self, tbl):', 'method_end': 'return col_frame_', 'range': [231, 253]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findHighVarianceColumns', 'method_begin': 'def findHighVarianceColumns( self, start_hdr_row_, sheet, tbl ):', 'method_end': 'return list( high_var_indices_ ), hdr_col_names_', 'range': [253, 312], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'returnSummary', 'method_defn': 'def returnSummary( self, tbl ):', 'usage': ['        high_variance_cols_, hdr_col_names_ = self.findHighVarianceColumns( start_hdr_row_, self.sheet, tbl )\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'returnSummary', 'method_begin': 'def returnSummary( self, tbl ):', 'method_end': 'return frame_, high_variance_cols_, list( set(hdr_col_names_) )', 'range': [312, 339]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findHdrRow', 'method_begin': 'def findHdrRow( self, tbl ):', 'method_end': 'NA', 'range': [339, 359], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'findHeaderInfo', 'method_defn': 'def findHeaderInfo(self, tbl):', 'usage': ['        hdr_row_start_ = self.findHdrRow( tbl )\n']}, {'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'returnSummary', 'method_defn': 'def returnSummary( self, tbl ):', 'usage': ["        frame_, transposed_frame_, start_hdr_row_ = '', '', self.findHdrRow( tbl )\n"]}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'createDBRec', 'method_begin': "def createDBRec( self, summary_D, mode='NORM' ): ", 'method_end': 'return insertRec', 'range': [359, 385], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'mergeAndInsert', 'method_defn': 'def mergeAndInsert(self, summary_D)', 'usage': ["        rec_ = self.createDBRec( summary_D, 'NORM' )\n"]}]} returnEmbed
+POE-> ['        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n']
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( unified_key_ )
+
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( unified_key_ )
+
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( unified_key_ )
+
+cmpOldNew-> {'Type': 'Assignment', 'Targets': ['emb_'], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'unified_key_'], 'Function': 'returnEmbed'}
+Sending the entire code of < ['        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n'] > for review 359 385
+RETURNING->     def createDBRec( self, summary_D, mode='NORM' ):
+
+        insertRec = dict()
+        insertRec['docID'] = random.randint( 1000, 100000 )
+        ## combine all necessary fields to form vector signature
+        ## keys-> 'sample_summary'; 'date_range' ; 'hdr_info'
+
+        hdr_info = summary_D['hdr_info']
+        sample_summary_ = summary_D['sample_summary']
+
+        unified_key_ =   'Date Range : '+ str( summary_D['date_range'] ) + '\n' \
+                       + 'Column Headers : '+ ' , '.join( summary_D['col_names_'] ).strip() + '\n' \
+                       + 'LLM Summary : '+ ( sample_summary_ ) if self.add_ai_summary_to_embedding_ is True else ''
+
+        emb_ = createJsonFeats.returnEmbed( unified_key_ )
+        insertRec['docSignature'] = emb_
+        insertRec['summary'] = unified_key_
+        insertRec['file_path'] = summary_D['file_path']
+        insertRec['file_name'] = summary_D['file_path'].split('/')[-1]
+        insertRec['sheet_name'] = summary_D['sheet_name']
+        insertRec['date_range'] = summary_D['date_range']
+        insertRec['hdr_info'] = hdr_info
+
+        print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )
+        return insertRec
+
+
+CALLING LLM addChangeImpactOnDownstreamFile-> def returnEmbed( sent ):
+
+    rec_ = { 'sentence': sent }
+
+    data = json.dumps( rec_ ).encode('utf-8')
+    _request = urllib.request.Request( url_encode, data=data, method='POST', \
+                                        headers={'Content-Type': 'application/json'} )
+
+    response = urllib.request.urlopen( _request )
+    string = response.read().decode('utf-8')
+    json_obj = json.loads(string)
+    
+    return json_obj['encoded_'], True
+
+
+Changed line - NEW :     string = response.read()
+
+ OLD :     string = response.read().decode('utf-8')
+
+ downstream file importing returnEmbed
+    def createDBRec( self, summary_D, mode='NORM' ):
+
+        insertRec = dict()
+        insertRec['docID'] = random.randint( 1000, 100000 )
+        ## combine all necessary fields to form vector signature
+        ## keys-> 'sample_summary'; 'date_range' ; 'hdr_info'
+
+        hdr_info = summary_D['hdr_info']
+        sample_summary_ = summary_D['sample_summary']
+
+        unified_key_ =   'Date Range : '+ str( summary_D['date_range'] ) + '\n' \
+                       + 'Column Headers : '+ ' , '.join( summary_D['col_names_'] ).strip() + '\n' \
+                       + 'LLM Summary : '+ ( sample_summary_ ) if self.add_ai_summary_to_embedding_ is True else ''
+
+        emb_ = createJsonFeats.returnEmbed( unified_key_ )
+        insertRec['docSignature'] = emb_
+        insertRec['summary'] = unified_key_
+        insertRec['file_path'] = summary_D['file_path']
+        insertRec['file_name'] = summary_D['file_path'].split('/')[-1]
+        insertRec['sheet_name'] = summary_D['sheet_name']
+        insertRec['date_range'] = summary_D['date_range']
+        insertRec['hdr_info'] = hdr_info
+
+        print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )
+        return insertRec
+
+
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py {'method_name': 'addToDB', 'method_begin': 'def addToDB():', 'method_end': 'db_utils.insertNewSignature( dd_ )', 'range': [8, 15]} returnEmbed
+POE-> ['            emb_ = createJsonFeats.returnEmbed( txt )\n']
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( txt )
+
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( txt )
+
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( txt )
+
+cmpOldNew-> {'Type': 'Assignment', 'Targets': ['emb_'], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'txt'], 'Function': 'returnEmbed'}
+Sending the entire code of < ['            emb_ = createJsonFeats.returnEmbed( txt )\n'] > for review 8 15
+RETURNING-> def addToDB():
+    for fnm, sheets in js_.items():
+        for sheetname, txt in sheets.items():
+            cnt_ += 1
+            emb_ = createJsonFeats.returnEmbed( txt )
+            dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }
+
+
+CALLING LLM addChangeImpactOnDownstreamFile-> def returnEmbed( sent ):
+
+    rec_ = { 'sentence': sent }
+
+    data = json.dumps( rec_ ).encode('utf-8')
+    _request = urllib.request.Request( url_encode, data=data, method='POST', \
+                                        headers={'Content-Type': 'application/json'} )
+
+    response = urllib.request.urlopen( _request )
+    string = response.read().decode('utf-8')
+    json_obj = json.loads(string)
+    
+    return json_obj['encoded_'], True
+
+
+Changed line - NEW :     string = response.read()
+
+ OLD :     string = response.read().decode('utf-8')
+
+ downstream file importing returnEmbed
+def addToDB():
+    for fnm, sheets in js_.items():
+        for sheetname, txt in sheets.items():
+            cnt_ += 1
+            emb_ = createJsonFeats.returnEmbed( txt )
+            dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }
+
+
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py {'method_name': 'pos', 'method_begin': 'def pos( res_ ):', 'method_end': 'return None', 'range': [13, 100]} returnEmbed
+POE-> ["            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"]
+CODE_SNIP-> hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+CODE_SNIP-> hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+CODE_SNIP-> hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+cmpOldNew-> {'Type': 'Assignment', 'Targets': [], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'resD'], 'Function': 'returnEmbed'}
+CODE CONTEXT EXTRACTION ERROR-> Traceback (most recent call last):
+  File "/datadrive/IKG/LLM_INTERFACE/chunking_utils.py", line 262, in createChunkInDownStreamFile
+    code_review_range_ = getSphereOfInfluence( ast_details_, changed_code_, old_code_ )
+  File "/datadrive/IKG/LLM_INTERFACE/chunking_utils.py", line 139, in getSphereOfInfluence
+    return cmpOldNew( old_code_vars_, new_code_vars_, target_dict_ )
+  File "/datadrive/IKG/LLM_INTERFACE/chunking_utils.py", line 64, in cmpOldNew
+    tgt_of_interest_ = assignment_deets['Targets'][0]
+IndexError: list index out of range
+
+Sending the entire code of < ["            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"] > for review 13 100
+RETURNING-> def pos( res_ ):
+  if 'searchRes_' in res_:
+    act_ = res_[ 'searchRes_' ]
+    print( act_ )
+    tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []
+    hdr_info_D = dict()
+
+    for res_nm, resD in act_.items():
+        if 'payload' in resD and 'summary' in resD[ 'payload' ]:
+            corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]
+
+            tokenized_hdr_info_.append( resD[ 'payload' ][ 'hdr_info' ] )
+            tokenized_sample_summary_.append( 'sample' )
+            tokenized_dates_.append( resD[ 'payload' ][ 'date_range' ] )
+            title.append( resD[ 'payload' ]['file_name'] )
+
+            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+    top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )
+    for idx, key in enumerate( list( top_by_vector_score_.keys() )[:10] ):
+        print('-----------------------------------------')
+        cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )
+        print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )
+        print('-----------------------------------------')
+
+    tokenized_corpus = [doc.split(" ") for doc in list( corpus_.keys() )]
+    bm25_summary_, bm25_hdr_info_, bm25_sample_summary_, bm25_dates_, title = \
+            BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \
+            BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )
+
+    tokenized_query = txt.split(" ")
+    bm25_score_summary_  = bm25_summary_.get_scores(tokenized_query)
+    bm25_score_hdr_  = bm25_hdr_info_.get_scores(tokenized_query)
+    bm25_score_sample_  = bm25_sample_summary_.get_scores(tokenized_query)
+    bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)
+    score_title_  = title.get_scores(tokenized_query)
+
+    enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )
+    sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )
+    sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )
+    sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )
+    sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( score_title_ ) )
+    sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue
+
+        print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_summary_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue
+
+        print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_hdr_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue
+
+        print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_sample_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue
+
+        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_dt_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue
+
+        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', score_title_[keyid] )
+
+
+CALLING LLM addChangeImpactOnDownstreamFile-> def returnEmbed( sent ):
+
+    rec_ = { 'sentence': sent }
+
+    data = json.dumps( rec_ ).encode('utf-8')
+    _request = urllib.request.Request( url_encode, data=data, method='POST', \
+                                        headers={'Content-Type': 'application/json'} )
+
+    response = urllib.request.urlopen( _request )
+    string = response.read().decode('utf-8')
+    json_obj = json.loads(string)
+    
+    return json_obj['encoded_'], True
+
+
+Changed line - NEW :     string = response.read()
+
+ OLD :     string = response.read().decode('utf-8')
+
+ downstream file importing returnEmbed
+def pos( res_ ):
+  if 'searchRes_' in res_:
+    act_ = res_[ 'searchRes_' ]
+    print( act_ )
+    tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []
+    hdr_info_D = dict()
+
+    for res_nm, resD in act_.items():
+        if 'payload' in resD and 'summary' in resD[ 'payload' ]:
+            corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]
+
+            tokenized_hdr_info_.append( resD[ 'payload' ][ 'hdr_info' ] )
+            tokenized_sample_summary_.append( 'sample' )
+            tokenized_dates_.append( resD[ 'payload' ][ 'date_range' ] )
+            title.append( resD[ 'payload' ]['file_name'] )
+
+            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+    top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )
+    for idx, key in enumerate( list( top_by_vector_score_.keys() )[:10] ):
+        print('-----------------------------------------')
+        cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )
+        print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )
+        print('-----------------------------------------')
+
+    tokenized_corpus = [doc.split(" ") for doc in list( corpus_.keys() )]
+    bm25_summary_, bm25_hdr_info_, bm25_sample_summary_, bm25_dates_, title = \
+            BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \
+            BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )
+
+    tokenized_query = txt.split(" ")
+    bm25_score_summary_  = bm25_summary_.get_scores(tokenized_query)
+    bm25_score_hdr_  = bm25_hdr_info_.get_scores(tokenized_query)
+    bm25_score_sample_  = bm25_sample_summary_.get_scores(tokenized_query)
+    bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)
+    score_title_  = title.get_scores(tokenized_query)
+
+    enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )
+    sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )
+    sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )
+    sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )
+    sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( score_title_ ) )
+    sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue
+
+        print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_summary_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue
+
+        print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_hdr_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue
+
+        print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_sample_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue
+
+        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_dt_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue
+
+        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', score_title_[keyid] )
+
+
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'is_date', 'method_begin': 'def is_date( input_str):', 'method_end': 'return None', 'range': [14, 18], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'process', 'method_defn': 'def process( colNum, sheet, tbl ):', 'usage': ['                dtVal_ = is_date( str( sheet.cell(row=rw, column=colNum).value ) )\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'convertToPandas', 'method_begin': 'def convertToPandas(self, tbl_)', 'method_end': 'NA', 'range': [18, 33]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'process', 'method_begin': 'def process( colNum, sheet, tbl ):', 'method_end': 'return ( False, None, None )', 'range': [33, 54], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'findDateRange', 'method_defn': 'def findDateRange( self, tbl ):', 'usage': ['            results = process(col, self.sheet, tbl)\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': '__init__', 'method_begin': "def __init__(self, file_path, llm='LLAMA'):", 'method_end': 'self.query_fn_ = llama3', 'range': [54, 76]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findHeaderInfo', 'method_begin': 'NA', 'method_end': 'NA', 'range': [76, 82]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'find_bounds', 'method_begin': 'def find_bounds( self, sheet, max_row, max_col, start_row , end_row ,start_col ,end_col ):', 'method_end': 'return start_row, end_row, start_col, end_col', 'range': [82, 121], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'find_tables', 'method_defn': 'def find_tables(self, sheet):', 'usage': ['        start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, start_row ,\\\n', '            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, end_row ,\\\n', '            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, None ,\\\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'is_hdr_row_format', 'method_begin': 'def is_hdr_row_format( self, tbl_bound, sheet ):', 'method_end': 'return True', 'range': [121, 132], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'find_tables', 'method_defn': 'def find_tables(self, sheet):', 'usage': ['                if self.is_hdr_row_format( tmp_[ctr], sheet ) == False:\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'find_tables', 'method_begin': 'def find_tables(self, sheet):', 'method_end': '## init star and end col to min and max', 'range': [132, 218]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findDateRange', 'method_begin': 'def findDateRange( self, tbl ):', 'method_end': 'return (None, None)', 'range': [218, 231]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findHeaderInfo', 'method_begin': 'def findHeaderInfo(self, tbl):', 'method_end': 'return col_frame_', 'range': [231, 253]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findHighVarianceColumns', 'method_begin': 'def findHighVarianceColumns( self, start_hdr_row_, sheet, tbl ):', 'method_end': 'return list( high_var_indices_ ), hdr_col_names_', 'range': [253, 312], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'returnSummary', 'method_defn': 'def returnSummary( self, tbl ):', 'usage': ['        high_variance_cols_, hdr_col_names_ = self.findHighVarianceColumns( start_hdr_row_, self.sheet, tbl )\n']}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'returnSummary', 'method_begin': 'def returnSummary( self, tbl ):', 'method_end': 'return frame_, high_variance_cols_, list( set(hdr_col_names_) )', 'range': [312, 339]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'findHdrRow', 'method_begin': 'def findHdrRow( self, tbl ):', 'method_end': 'NA', 'range': [339, 359], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'findHeaderInfo', 'method_defn': 'def findHeaderInfo(self, tbl):', 'usage': ['        hdr_row_start_ = self.findHdrRow( tbl )\n']}, {'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'returnSummary', 'method_defn': 'def returnSummary( self, tbl ):', 'usage': ["        frame_, transposed_frame_, start_hdr_row_ = '', '', self.findHdrRow( tbl )\n"]}]} returnEmbed
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py {'method_name': 'createDBRec', 'method_begin': "def createDBRec( self, summary_D, mode='NORM' ): ", 'method_end': 'return insertRec', 'range': [359, 385], 'local_uses': [{'file_path': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py', 'method_nm': 'mergeAndInsert', 'method_defn': 'def mergeAndInsert(self, summary_D)', 'usage': ["        rec_ = self.createDBRec( summary_D, 'NORM' )\n"]}]} returnEmbed
+POE-> ['        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n']
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( unified_key_ )
+
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( unified_key_ )
+
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( unified_key_ )
+
+cmpOldNew-> {'Type': 'Assignment', 'Targets': ['emb_'], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'unified_key_'], 'Function': 'returnEmbed'}
+Sending the entire code of < ['        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n'] > for review 359 385
+RETURNING->     def createDBRec( self, summary_D, mode='NORM' ):
+
+        insertRec = dict()
+        insertRec['docID'] = random.randint( 1000, 100000 )
+        ## combine all necessary fields to form vector signature
+        ## keys-> 'sample_summary'; 'date_range' ; 'hdr_info'
+
+        hdr_info = summary_D['hdr_info']
+        sample_summary_ = summary_D['sample_summary']
+
+        unified_key_ =   'Date Range : '+ str( summary_D['date_range'] ) + '\n' \
+                       + 'Column Headers : '+ ' , '.join( summary_D['col_names_'] ).strip() + '\n' \
+                       + 'LLM Summary : '+ ( sample_summary_ ) if self.add_ai_summary_to_embedding_ is True else ''
+
+        emb_ = createJsonFeats.returnEmbed( unified_key_ )
+        insertRec['docSignature'] = emb_
+        insertRec['summary'] = unified_key_
+        insertRec['file_path'] = summary_D['file_path']
+        insertRec['file_name'] = summary_D['file_path'].split('/')[-1]
+        insertRec['sheet_name'] = summary_D['sheet_name']
+        insertRec['date_range'] = summary_D['date_range']
+        insertRec['hdr_info'] = hdr_info
+
+        print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )
+        return insertRec
+
+
+CALLING LLM addChangeImpactOnDownstreamFile-> def returnEmbed( sent ):
+
+    rec_ = { 'sentence': sent }
+
+    data = json.dumps( rec_ ).encode('utf-8')
+    _request = urllib.request.Request( url_encode, data=data, method='POST', \
+                                        headers={'Content-Type': 'application/json'} )
+
+    response = urllib.request.urlopen( _request )
+    string = response.read().decode('utf-8')
+    json_obj = json.loads(string)
+    
+    return json_obj['encoded_'], True
+
+
+Changed line - NEW :     string = response.read()
+
+ OLD :     string = response.read().decode('utf-8')
+
+ downstream file importing returnEmbed
+    def createDBRec( self, summary_D, mode='NORM' ):
+
+        insertRec = dict()
+        insertRec['docID'] = random.randint( 1000, 100000 )
+        ## combine all necessary fields to form vector signature
+        ## keys-> 'sample_summary'; 'date_range' ; 'hdr_info'
+
+        hdr_info = summary_D['hdr_info']
+        sample_summary_ = summary_D['sample_summary']
+
+        unified_key_ =   'Date Range : '+ str( summary_D['date_range'] ) + '\n' \
+                       + 'Column Headers : '+ ' , '.join( summary_D['col_names_'] ).strip() + '\n' \
+                       + 'LLM Summary : '+ ( sample_summary_ ) if self.add_ai_summary_to_embedding_ is True else ''
+
+        emb_ = createJsonFeats.returnEmbed( unified_key_ )
+        insertRec['docSignature'] = emb_
+        insertRec['summary'] = unified_key_
+        insertRec['file_path'] = summary_D['file_path']
+        insertRec['file_name'] = summary_D['file_path'].split('/')[-1]
+        insertRec['sheet_name'] = summary_D['sheet_name']
+        insertRec['date_range'] = summary_D['date_range']
+        insertRec['hdr_info'] = hdr_info
+
+        print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )
+        return insertRec
+
+
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py {'method_name': 'addToDB', 'method_begin': 'def addToDB():', 'method_end': 'db_utils.insertNewSignature( dd_ )', 'range': [8, 15]} returnEmbed
+POE-> ['            emb_ = createJsonFeats.returnEmbed( txt )\n']
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( txt )
+
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( txt )
+
+CODE_SNIP-> emb_ = createJsonFeats.returnEmbed( txt )
+
+cmpOldNew-> {'Type': 'Assignment', 'Targets': ['emb_'], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'txt'], 'Function': 'returnEmbed'}
+Sending the entire code of < ['            emb_ = createJsonFeats.returnEmbed( txt )\n'] > for review 8 15
+RETURNING-> def addToDB():
+    for fnm, sheets in js_.items():
+        for sheetname, txt in sheets.items():
+            cnt_ += 1
+            emb_ = createJsonFeats.returnEmbed( txt )
+            dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }
+
+
+CALLING LLM addChangeImpactOnDownstreamFile-> def returnEmbed( sent ):
+
+    rec_ = { 'sentence': sent }
+
+    data = json.dumps( rec_ ).encode('utf-8')
+    _request = urllib.request.Request( url_encode, data=data, method='POST', \
+                                        headers={'Content-Type': 'application/json'} )
+
+    response = urllib.request.urlopen( _request )
+    string = response.read().decode('utf-8')
+    json_obj = json.loads(string)
+    
+    return json_obj['encoded_'], True
+
+
+Changed line - NEW :     string = response.read()
+
+ OLD :     string = response.read().decode('utf-8')
+
+ downstream file importing returnEmbed
+def addToDB():
+    for fnm, sheets in js_.items():
+        for sheetname, txt in sheets.items():
+            cnt_ += 1
+            emb_ = createJsonFeats.returnEmbed( txt )
+            dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }
+
+
+DEEPER-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py {'method_name': 'pos', 'method_begin': 'def pos( res_ ):', 'method_end': 'return None', 'range': [13, 100]} returnEmbed
+POE-> ["            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"]
+CODE_SNIP-> hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+CODE_SNIP-> hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+CODE_SNIP-> hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+cmpOldNew-> {'Type': 'Assignment', 'Targets': [], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'resD'], 'Function': 'returnEmbed'}
+CODE CONTEXT EXTRACTION ERROR-> Traceback (most recent call last):
+  File "/datadrive/IKG/LLM_INTERFACE/chunking_utils.py", line 262, in createChunkInDownStreamFile
+    code_review_range_ = getSphereOfInfluence( ast_details_, changed_code_, old_code_ )
+  File "/datadrive/IKG/LLM_INTERFACE/chunking_utils.py", line 139, in getSphereOfInfluence
+    return cmpOldNew( old_code_vars_, new_code_vars_, target_dict_ )
+  File "/datadrive/IKG/LLM_INTERFACE/chunking_utils.py", line 64, in cmpOldNew
+    tgt_of_interest_ = assignment_deets['Targets'][0]
+IndexError: list index out of range
+
+Sending the entire code of < ["            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"] > for review 13 100
+RETURNING-> def pos( res_ ):
+  if 'searchRes_' in res_:
+    act_ = res_[ 'searchRes_' ]
+    print( act_ )
+    tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []
+    hdr_info_D = dict()
+
+    for res_nm, resD in act_.items():
+        if 'payload' in resD and 'summary' in resD[ 'payload' ]:
+            corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]
+
+            tokenized_hdr_info_.append( resD[ 'payload' ][ 'hdr_info' ] )
+            tokenized_sample_summary_.append( 'sample' )
+            tokenized_dates_.append( resD[ 'payload' ][ 'date_range' ] )
+            title.append( resD[ 'payload' ]['file_name'] )
+
+            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+    top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )
+    for idx, key in enumerate( list( top_by_vector_score_.keys() )[:10] ):
+        print('-----------------------------------------')
+        cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )
+        print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )
+        print('-----------------------------------------')
+
+    tokenized_corpus = [doc.split(" ") for doc in list( corpus_.keys() )]
+    bm25_summary_, bm25_hdr_info_, bm25_sample_summary_, bm25_dates_, title = \
+            BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \
+            BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )
+
+    tokenized_query = txt.split(" ")
+    bm25_score_summary_  = bm25_summary_.get_scores(tokenized_query)
+    bm25_score_hdr_  = bm25_hdr_info_.get_scores(tokenized_query)
+    bm25_score_sample_  = bm25_sample_summary_.get_scores(tokenized_query)
+    bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)
+    score_title_  = title.get_scores(tokenized_query)
+
+    enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )
+    sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )
+    sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )
+    sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )
+    sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( score_title_ ) )
+    sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue
+
+        print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_summary_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue
+
+        print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_hdr_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue
+
+        print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_sample_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue
+
+        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_dt_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue
+
+        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', score_title_[keyid] )
+
+
+CALLING LLM addChangeImpactOnDownstreamFile-> def returnEmbed( sent ):
+
+    rec_ = { 'sentence': sent }
+
+    data = json.dumps( rec_ ).encode('utf-8')
+    _request = urllib.request.Request( url_encode, data=data, method='POST', \
+                                        headers={'Content-Type': 'application/json'} )
+
+    response = urllib.request.urlopen( _request )
+    string = response.read().decode('utf-8')
+    json_obj = json.loads(string)
+    
+    return json_obj['encoded_'], True
+
+
+Changed line - NEW :     string = response.read()
+
+ OLD :     string = response.read().decode('utf-8')
+
+ downstream file importing returnEmbed
+def pos( res_ ):
+  if 'searchRes_' in res_:
+    act_ = res_[ 'searchRes_' ]
+    print( act_ )
+    tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []
+    hdr_info_D = dict()
+
+    for res_nm, resD in act_.items():
+        if 'payload' in resD and 'summary' in resD[ 'payload' ]:
+            corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]
+
+            tokenized_hdr_info_.append( resD[ 'payload' ][ 'hdr_info' ] )
+            tokenized_sample_summary_.append( 'sample' )
+            tokenized_dates_.append( resD[ 'payload' ][ 'date_range' ] )
+            title.append( resD[ 'payload' ]['file_name'] )
+
+            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+
+    top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )
+    for idx, key in enumerate( list( top_by_vector_score_.keys() )[:10] ):
+        print('-----------------------------------------')
+        cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )
+        print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )
+        print('-----------------------------------------')
+
+    tokenized_corpus = [doc.split(" ") for doc in list( corpus_.keys() )]
+    bm25_summary_, bm25_hdr_info_, bm25_sample_summary_, bm25_dates_, title = \
+            BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \
+            BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )
+
+    tokenized_query = txt.split(" ")
+    bm25_score_summary_  = bm25_summary_.get_scores(tokenized_query)
+    bm25_score_hdr_  = bm25_hdr_info_.get_scores(tokenized_query)
+    bm25_score_sample_  = bm25_sample_summary_.get_scores(tokenized_query)
+    bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)
+    score_title_  = title.get_scores(tokenized_query)
+
+    enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )
+    sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )
+    sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )
+    sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )
+    sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    enum_doc_scores_ = list( enumerate( score_title_ ) )
+    sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue
+
+        print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_summary_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue
+
+        print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_hdr_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue
+
+        print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_sample_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue
+
+        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', bm25_score_dt_[keyid] )
+
+    for keyid, keys in enumerate( list( corpus_.keys() ) ):
+        print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])    
+        if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue
+
+        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+                ' BM25 : ', score_title_[keyid] )
+
+
+MOMO-> {'file': 'LLM_INTERFACE/SRC_DIR/createJsonFeats.py', 'old_start': 133, 'old_length': 8, 'new_start': 133, 'new_length': 8, 'old_code': ["    string = response.read().decode('utf-8')\n"], 'new_code': ['    string = response.read()\n'], 'method_class_nm_old': {'class_nm': '', 'method_nm': 'returnEmbed'}, 'method_class_nm_new': {'class_nm': '', 'method_nm': 'returnEmbed'}, 'method_context': "def returnEmbed( sent ):\n\n    rec_ = { 'sentence': sent }\n\n    data = json.dumps( rec_ ).encode('utf-8')\n    _request = urllib.request.Request( url_encode, data=data, method='POST', \\\n                                        headers={'Content-Type': 'application/json'} )\n\n    response = urllib.request.urlopen( _request )\n    string = response.read().decode('utf-8')\n    json_obj = json.loads(string)\n    \n    return json_obj['encoded_'], True\n\n", 'impact_analysis': [{'impacted_method': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.pycreateDBRec', 'impact_analysis': 'Here is the analysis of the impact of the changed code:\n\n```\n{\n  "Issues": [\n    "The change from `string = response.read().decode(\'utf-8\')` to `string = response.read()` may cause issues with character encoding. The original code explicitly decoded the response from bytes to a UTF-8 encoded string, whereas the new code does not perform this decoding.",\n    "This change may lead to errors when trying to parse the response as a JSON object, especially if the response contains non-ASCII characters."\n  ],\n  "Criticality": 3,\n  "Recommendations": [\n    "Verify that the response from the POST request does not contain non-ASCII characters, or ensure that the response is properly decoded to a UTF-8 encoded string.",\n    "Test the `createDBRec` function with a variety of inputs to ensure that it still functions correctly with the changed `returnEmbed` function."\n  ]\n}\n```\n\nRationale:\n\n* The criticality of this change is rated as 3, as it may cause issues with character encoding, but it is not a catastrophic change that would cause the entire system to fail.\n* The issue is that the changed code no longer explicitly decodes the response from bytes to a UTF-8 encoded string, which may lead to errors when parsing the response as a JSON object.\n* The recommendation is to verify that the response from the POST request does not contain non-ASCII characters, or ensure that the response is properly decoded to a UTF-8 encoded string. Additionally, it is recommended to test the `createDBRec` function with a variety of inputs to ensure that it still functions correctly with the changed `returnEmbed` function.', 'impact_type': 'global'}, {'impacted_method': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.pyaddToDB', 'impact_analysis': 'Here is the analysis of the change:\n\n```\n{\n  "Issues": [\n    "The removal of `.decode(\'utf-8\')` from the `response.read()` call may cause issues with Unicode characters in the response. This could lead to encoding errors or unexpected behavior.",\n    "The `returnEmbed` function is now returning a bytes object instead of a Unicode string, which may affect downstream code that expects a string."\n  ],\n  "Criticality": 3,\n  "Recommendations": [\n    "Verify that the API return type is compatible with the new behavior and adjust accordingly.",\n    "Check for encoding errors or unexpected behavior in downstream code, especially when dealing with Unicode characters.",\n    "Consider adding encoding handling or error checking to the `returnEmbed` function to ensure robustness."\n  ]\n}\n```\n\nHere\'s a brief explanation:\n\nThe changed line removed the `decode(\'utf-8\')` call, which means the `string` variable now contains a bytes object instead of a Unicode string. This change may cause issues with Unicode characters in the response, leading to encoding errors or unexpected behavior.\n\nThe criticality level is set to 3, as this change may have significant implications for downstream code that relies on the original behavior. However, it is not necessarily a critical issue that requires immediate attention, as it depends on the specific requirements and constraints of the project.\n\nThe recommendations provide guidance on how to mitigate potential issues and ensure the code remains robust.', 'impact_type': 'global'}, {'impacted_method': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.pypos', 'impact_analysis': 'Here is the analysis of the changed code and its impact on the downstream method:\n\n```\n{\n  "Issues": [\n    "The change in the returnEmbed function may affect the encoding of the response string",\n    "The downstream method pos may be affected by the changed encoding of the response string"\n  ],\n  "Criticality": 3,\n  "Recommendations": [\n    "Test the returnEmbed function with different inputs to ensure the correct encoding of the response string",\n    "Verify that the downstream method pos can handle the changed encoding of the response string",\n    "Consider adding error handling to the returnEmbed function to handle potential encoding issues"\n  ]\n}\n```\n\nHere\'s a brief explanation of the analysis:\n\nThe change in the `returnEmbed` function removes the `.decode(\'utf-8\')` part, which may affect the encoding of the response string. This change may impact the downstream method `pos` that imports and uses the `returnEmbed` function.\n\nThe criticality of this change is rated as 3, as it may cause issues with the encoding of the response string, but it\'s not a critical failure.\n\nThe recommendations suggest testing the `returnEmbed` function with different inputs, verifying that the downstream method `pos` can handle the changed encoding, and considering adding error handling to the `returnEmbed` function to handle potential encoding issues.', 'impact_type': 'global'}, {'impacted_method': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.pycreateDBRec', 'impact_analysis': 'Here is the analysis of the impact of the changed code:\n\n```\n{\n  "Issues": [\n    "The changed line `string = response.read()` removes the decoding of the response from UTF-8, which may cause issues with non-ASCII characters.",\n    "The downstream file importing `returnEmbed` may not be expecting a bytes object instead of a string, which could lead to encoding errors or unexpected behavior."\n  ],\n  "Criticality": 3,\n  "Recommendations": [\n    "Verify that the response from the API does not contain non-ASCII characters that require decoding.",\n    "Update the downstream file to handle the bytes object returned by `returnEmbed` instead of a string.",\n    "Consider adding error handling to handle potential encoding errors."\n  ]\n}\n```\n\nThe criticality rating is 3 because while the change may not cause immediate critical issues, it has the potential to cause unexpected behavior or errors downstream, especially if non-ASCII characters are involved.', 'impact_type': 'global'}, {'impacted_method': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.pyaddToDB', 'impact_analysis': 'Here is the analysis of the changed code:\n\n```\n{\n  "Issues": [\n    "The changed line removes the decoding of the response from UTF-8, which may lead to encoding issues if the response contains non-ASCII characters.",\n    "If the downstream code assumes that the response is a string, it may break due to the changed return type."\n  ],\n  "Criticality": 4,\n  "Recommendations": [\n    "Verify that the downstream code can handle the changed return type (bytes instead of string) and encoding.",\n    "Test the code with non-ASCII characters to ensure it doesn\'t break.",\n    "Consider adding a comment or documentation to indicate the changed behavior."\n  ]\n}\n```\n\nExplanation:\n\nThe changed line removes the `.decode(\'utf-8\')` part, which means that the response is now returned as a bytes object instead of a string. This may cause issues if the downstream code assumes that the response is a string.\n\nThe criticality is rated as 4 because although the change is significant, it\'s not necessarily a blocker, but it requires attention to ensure that the downstream code can handle the changed return type and encoding.\n\nThe recommendations suggest verifying that the downstream code can handle the changed return type and encoding, testing the code with non-ASCII characters, and adding documentation to indicate the changed behavior.', 'impact_type': 'global'}, {'impacted_method': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.pypos', 'impact_analysis': 'Here is the analysis of the changed code:\n\n**Impact Analysis**\n\nThe changed line in the `returnEmbed` function removes the `.decode(\'utf-8\')` part, which means that the `string` variable will now hold a bytes object instead of a string. This change affects the downstream file that imports `returnEmbed`, specifically the `pos` function.\n\n**Issues**\n\n* The `pos` function assumes that `returnEmbed` returns a string, but now it returns a bytes object. This might cause issues when trying to process the output of `returnEmbed`.\n* The removal of `.decode(\'utf-8\')` might lead to encoding issues, especially if the input data contains non-ASCII characters.\n\n**Criticality**\n\nI would rate this change as a 4, as it has the potential to cause issues with encoding and string processing in the downstream file. However, the impact might be limited if the input data is ensured to be encoded properly.\n\n**Recommendations**\n\n* Review the `pos` function to ensure it can handle bytes objects instead of strings.\n* Consider adding encoding checks or conversions in the `returnEmbed` function to ensure proper encoding of the output.\n* Verify that the input data is properly encoded to avoid any encoding issues.\n\nHere is the analysis in JSON format:\n\n```\n{\n  "Issues": [\n    "The \'pos\' function assumes that \'returnEmbed\' returns a string, but now it returns a bytes object.",\n    "The removal of \'.decode(\'utf-8\')\' might lead to encoding issues, especially if the input data contains non-ASCII characters."\n  ],\n  "Criticality": 4,\n  "Recommendations": [\n    "Review the \'pos\' function to ensure it can handle bytes objects instead of strings.",\n    "Consider adding encoding checks or conversions in the \'returnEmbed\' function to ensure proper encoding of the output.",\n    "Verify that the input data is properly encoded to avoid any encoding issues."\n  ]\n}\n```', 'impact_type': 'global'}]} 11.367475509643555

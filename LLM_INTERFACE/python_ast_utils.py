@@ -11,6 +11,7 @@ class CodeAnalyzer(ast.NodeVisitor):
         self.file_ptr_ = open( file_nm_, 'r' )
         code = self.file_ptr_.readlines()[ range_[0]: range_[1] ]
         code = textwrap.dedent( ''.join( code ) )
+        print('CODE_SNIP->', code)
         #code = '\n'.join( code )
         # Parse the code into an AST
         return ast.parse(code)
@@ -22,6 +23,7 @@ class CodeAnalyzer(ast.NodeVisitor):
             local_snippet_ = snippet_arr_
 
         code_snippet_ = textwrap.dedent( ''.join( local_snippet_ ) )
+        print('CODE_SNIP->', code_snippet_)
         parsed_ast = ast.parse( code_snippet_ )
         # Parse the code into an AST
         return parsed_ast
