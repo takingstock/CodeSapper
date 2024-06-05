@@ -76,7 +76,6 @@ def returnJsonFeat( src_0, src_raw ):
     json_obj = json.loads(string)
     
     return json_obj['encoded_'], key_tuple_
-    #return doc_str_, dist_matrix_
 
 if __name__ == '__main__':
 

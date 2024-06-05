@@ -1,4 +1,4 @@
-import ast, sys, time, textwrap
+import ast, sys, time, textwrap, traceback
 
 # Define a NodeVisitor class to traverse the AST
 class CodeAnalyzer(ast.NodeVisitor):
@@ -6,15 +6,21 @@ class CodeAnalyzer(ast.NodeVisitor):
     def __init__(self):
         self.ast_linewise_deets_ = dict()
         self.file_ptr_ = None
+        self.methods = []
+        self.current_method = None
+        self.err_log_ = './EXCPN.log'
     
     def parse_ast( self, file_nm_, range_):
         self.file_ptr_ = open( file_nm_, 'r' )
-        code = self.file_ptr_.readlines()[ range_[0]: range_[1] ]
-        code = textwrap.dedent( ''.join( code ) )
-        print('CODE_SNIP->', code)
-        #code = '\n'.join( code )
-        # Parse the code into an AST
-        return ast.parse(code)
+        try:
+            code = self.file_ptr_.readlines()[ range_[0]: range_[1] ]
+            code = textwrap.dedent( ''.join( code ) )
+            print('CODE_SNIP->', code)
+            return ast.parse(code)
+        except:
+            with open( self.err_log_, 'a+') as fp:
+                fp.write('EXCPN->' + file_nm_ + ' :: \n' + traceback.format_exc() + '\n')
+            return None
     
     def parse_ast_snippet( self, snippet_arr_):
         if '--' in snippet_arr_[-1] or '++' in snippet_arr_[-1]:
@@ -58,6 +64,28 @@ class CodeAnalyzer(ast.NodeVisitor):
                 'Ending': 'NA', 'Values': value_names, 'Function': function_name }
         self.generic_visit(node)
 
+    def visit_FunctionDef(self, node):
+        if self.current_method:
+            # End the current method when we encounter a new function definition
+            self.current_method['end_line'] = node.lineno - 1
+            self.methods.append(self.current_method)
+            self.current_method = None
+
+        self.current_method = {'name': node.name, 'start_line': node.lineno}
+        self.generic_visit(node)
+
+        if self.current_method:
+            # If we have reached the end of the visit and still have a current method
+            self.current_method['end_line'] = node.end_lineno
+            self.methods.append(self.current_method)
+            self.current_method = None
+
+    def visit_Return(self, node):
+        if self.current_method:
+            # Update the end line when a return statement is found
+            self.current_method['end_line'] = node.lineno
+        self.generic_visit(node)
+
     def get_function_name(self, value):
         if isinstance(value, ast.Call):
             # Extract function name
@@ -66,14 +94,14 @@ class CodeAnalyzer(ast.NodeVisitor):
             elif isinstance(value.func, ast.Attribute):
                 return value.func.attr
         return "NA"
-    
+
     def _handle_nested_tuple( self, tuple_node, targets ):
         for element in tuple_node.elts:
             if isinstance(element, ast.Name):
                 #print(f"Assignment to variable in nested tuple: {element.id}")
                 targets.append( element.id )
             elif isinstance(element, ast.Tuple):
-                self._handle_nested_tuple(element)        
+                self._handle_nested_tuple(element)
 
     def visit_If(self, node):
         # Handle if statements
@@ -132,10 +160,42 @@ class CodeAnalyzer(ast.NodeVisitor):
         else:
             return []
 
+
+def find_methods_and_traces(source_code):
+    analyzer = CodeAnalyzer()
+    with open( source_code , 'r' ) as fp:
+        ll_ = fp.readlines()
+
+    first_line_ ,last_line_ = 0, len( ll_ )
+    parsed_ast = None
+
+    while ( parsed_ast == None or last_line_ <= first_line_ ):
+        last_line_ -= 1
+        parsed_ast = analyzer.parse_ast( source_code, ( first_line_, last_line_ ) )
+
+    for node in ast.walk( parsed_ast ):
+        if isinstance(node, ast.FunctionDef):
+            ast.increment_lineno(node, source_code.count('\n', 0, node.col_offset))
+
+    analyzer.visit(parsed_ast)
+    return analyzer.methods, analyzer.ast_linewise_deets_
+
+
 if __name__ == "__main__":
     # Instantiate the analyzer and visit the AST nodes
+    with open( sys.argv[1] , 'r' ) as fp:
+        ll_ = fp.readlines()
+
+    print( find_methods_and_traces( sys.argv[1] ) )
+
+    '''
     analyzer = CodeAnalyzer()
+    with open( sys.argv[1] , 'r' ) as fp:
+        ll_ = fp.readlines()
+
+    parsed_ast = analyzer.parse_ast( sys.argv[1], ( 0, len( ll_ ) -1 ) )
     analyzer.visit(parsed_ast)
 
     print( analyzer.ast_linewise_deets_ )
     print( 'DOMU->', time.time() - start_ )
+    '''

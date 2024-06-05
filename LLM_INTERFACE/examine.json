@@ -1,0 +1,62 @@
+{
+    "SRC_DIR/searchDB.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/db_utils.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/fetchLLMResponse.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/findKeys.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/firstpass.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/pca_test.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/query_gpt_via_groq.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/query_llama3_via_groq.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/readSS.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/validate_search.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/addtoDB.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/basic_generateXLMetaData.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/testChunking.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/testMonkey.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    },
+    "SRC_DIR/createJsonFeats.py": {
+        "method_details_": [],
+        "line_wise_details_": {}
+    }
+}
