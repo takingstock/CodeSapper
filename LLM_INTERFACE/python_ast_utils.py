@@ -178,6 +178,7 @@ def find_methods_and_traces(source_code):
             ast.increment_lineno(node, source_code.count('\n', 0, node.col_offset))
 
     analyzer.visit(parsed_ast)
+    print( analyzer.methods )
     return analyzer.methods, analyzer.ast_linewise_deets_
 
 
