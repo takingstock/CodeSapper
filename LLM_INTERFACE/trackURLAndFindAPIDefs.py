@@ -23,7 +23,7 @@ class URLAssignmentFinder(ast.NodeVisitor):
             if re.match(r'http?', url):
                 for target in node.targets:
                     if isinstance(target, ast.Name):
-                        print( self.fp_, target.id, url, node.lineno )
+                        print( 'GATHERING ->', self.fp_, target.id, url, node.lineno )
                         self.url_assignments[ self.fp_ +'#'+ target.id +'#' + str(node.lineno)] = url
 
         # Check if the value is a concatenation involving a URL variable
@@ -34,8 +34,6 @@ class URLAssignmentFinder(ast.NodeVisitor):
 
                 left_ref_val_, left_value = self._get_name_or_constant(node.value.left, key_ln_no)
                 rt_ref_val_, right_value = self._get_name_or_constant(node.value.right, key_ln_no)
-
-                print('888->', self.url_assignments.keys(), left_value, right_value, left_ref_val_, key_tgt_id)
 
                 if left_ref_val_ == key_tgt_id:
                     for target in node.targets:
@@ -86,26 +84,67 @@ class URLUsageFinder(ast.NodeVisitor):
         self.current_target = None  # Reset after processing
 
     def visit_Call(self, node):
-        '''
+
         if not isinstance(node.func, ast.Name):
-            print('visit_Call->', self.file_path, node.func.attr, node.lineno)
-        '''
+            print('visit_Call->', self.file_path, isinstance(node.func, ast.Attribute), node.func.attr, node.lineno)
+
         if isinstance(node.func, ast.Attribute) and \
                 node.func.attr in {'post', 'get', 'put', 'delete', 'patch', 'POST', 'GET', 'PUT'}:
+
+            if 'test_config_py_usage' in self.file_path:
+              print( 'TRACKING ', node.lineno, node.args, node.keywords[0], isinstance(node.args[0], ast.Name  ) if node.args else None )
             if node.args and isinstance(node.args[0], ast.Name):
                 for url_var in self.url_variables:
                     url_fp, url_variable_, url_defined_line_ = url_var.split('#')
-                    if node.args[0].id == url_variable_ and url_fp == self.file_path and\
-                            int( url_defined_line_ ) < node.lineno and \
-                            ( len( self.url_usages ) == 0 or \
-                             (len( self.url_usages ) > 0 and ( self.url_usages[-1][1] ) < int(url_defined_line_))):
+
+                    #if node.args[0].id == url_variable_ and url_fp == self.file_path and\
+                    if node.args[0].id == url_variable_ and \
+                      ( 
+                        ( url_fp == self.file_path \
+                            and int( url_defined_line_ ) < node.lineno\
+                            and ( len( self.url_usages ) == 0 or \
+                                       ( len( self.url_usages ) > 0 \
+                                          and ( int( self.url_usages[-1][1] ) < int(url_defined_line_) )
+                                       )
+                                )
+                        )\
+                        or \
+                        ( url_fp != self.file_path )
+                      ):
                                 ## the last condition just ensures that the url assignmnt is aligned with the
                                 ## usage ..meaning IF the same variable name is being used in different methods
                                 ## the usage is tracked to the varriable declared AFTER the most recent usage
-                        self.url_usages.append((url_defined_line_, node.lineno, node.col_offset, node.func.attr))
+                      self.url_usages.append(( url_fp, url_defined_line_, node.lineno, \
+                                                       node.col_offset, node.func.attr))
+
+            elif node.keywords :
+                for keyword in node.keywords:
+                    for url_var in self.url_variables:
+                        url_fp, url_variable_, url_defined_line_ = url_var.split('#')
+                        print('TRACTOR-> keyword.value, url_variable_ ', keyword.value.id, url_variable_ )
+                        #if keyword.value == url_variable_ and url_fp == self.file_path and\
+                        if isinstance( keyword.value, ast.Name ) and keyword.value.id == url_variable_ and \
+                          ( 
+                            ( url_fp == self.file_path \
+                                  and int( url_defined_line_ ) < node.lineno \
+                                  and ( len( self.url_usages ) == 0 or \
+                                            ( len( self.url_usages ) > 0 \
+                                               and ( int( self.url_usages[-1][1] ) < int(url_defined_line_) )
+                                            )
+                                      ) 
+                            )\
+                            or\
+                            ( url_fp != self.file_path ) 
+                          ):
+                                    ## the last condition just ensures that the url assignmnt is aligned with the
+                                    ## usage ..meaning IF the same variable name is being used in different methods
+                                    ## the usage is tracked to the varriable declared AFTER the most recent usage
+                          self.url_usages.append(( url_fp, url_defined_line_, node.lineno, \
+                                                           node.col_offset, node.func.attr))
 
         elif not isinstance(node.func, ast.Name) and node.func.attr == 'Request':
                 print('GOLI->', self.file_path, node.lineno, node.keywords, self.current_target, node.args)
+
                 for keyword in node.keywords:
 
                     if keyword.arg in [ 'url', 'data' ] and isinstance(keyword.value, ast.Name):
@@ -114,9 +153,16 @@ class URLUsageFinder(ast.NodeVisitor):
 
                             for arg in node.args:
                               if isinstance( arg, ast.Name ) and arg.id == url_variable_ and \
-                                      url_fp == self.file_path and int( url_defined_line_ ) < node.lineno:
+                                      ( 
+                                        ( 
+                                              ( url_fp == self.file_path and \
+                                                      int( url_defined_line_ ) < node.lineno )
+                                        )\
+                                        or\
+                                        ( url_fp != self.file_path )
+                                      ):
 
-                                 self.url_usages.append(( url_defined_line_, node.lineno, node.col_offset, \
+                                 self.url_usages.append(( url_fp, url_defined_line_, node.lineno, node.col_offset, \
                                                          node.func.attr))
 
         self.generic_visit(node)
@@ -125,8 +171,8 @@ def find_url_usages(directory, url_assignments):
     url_usages = {}
     file_paths = parse_files_in_directory(directory)
     for file_path in file_paths:
-        if file_path in url_assignments:
-            url_variables = url_assignments[file_path]
+        for ref_file_path in list( url_assignments.keys() ):
+            url_variables = url_assignments[ ref_file_path ]
             tree = parse_file(file_path)
             finder = URLUsageFinder(url_variables, file_path)
             finder.visit(tree)
@@ -146,8 +192,8 @@ def main(directory):
     url_usages = find_url_usages(directory, url_assignments)
     print("\nURL Usages Found:")
     for file_path, usages in url_usages.items():
-        for defined_line_, lineno, col_offset, method in usages:
-          print(f"File: {file_path}, Defined: {defined_line_}, UsedLine: {lineno}, \
+        for file_defined_, defined_line_, lineno, col_offset, method in usages:
+            print(f"File: {file_path}, File Defined: { file_defined_ } , Defined: {defined_line_}, UsedLine: {lineno}, \
                   Column: {col_offset}, Method: {method}")
 
 # Example usage
