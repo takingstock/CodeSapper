@@ -1,10 +1,12 @@
 import python_ast_utils as py_ast
 import numpy as np
 import json, os, sys, traceback, glob
+import createGraphEntry as graphEntry
 
 class generateGraphEntities():
-    def __init__(self, src_dir):
+    def __init__(self, src_dir, op_destination='./data/METHODS.json'):
         self.src_dir_ = src_dir
+        self.op_dest_ = op_destination
         self.LOCAL = 'local'
         self.GLOBAL = 'global'
         self.LOCAL_USAGE_KEY = 'local_uses'
@@ -116,6 +118,58 @@ class generateGraphEntities():
 
                         self.file_master_[ fnm ][self.GLOBAL_USAGE_KEY] = ll_
 
+    def convert( self, js_, root_dir_='/datadrive/IKG/LLM_INTERFACE/' ):
+        resp_ = dict()
+        for file_, details_dict_ in js_.items():
+
+            with open( file_, 'r' ) as fp:
+                ll_ = fp.readlines()
+
+            method_deets_, line_deets_, local_use, global_use = details_dict_["method_details_"],  \
+                                                               details_dict_["line_wise_details_"], \
+                                                           details_dict_["local_uses"], details_dict_["global_uses"]
+
+            resp_[ root_dir_ + file_ ] = { "method_details_" :[] , "text_details_" : line_deets_ }
+
+            for method in method_deets_:
+                tmpD = dict()
+                tmpD["method_name"] = method["name"]
+                tmpD["method_begin"] = ll_[ method["start_line"] - 1 ]
+                tmpD["method_end"] = ll_[ method["end_line"] - 1 ]
+                tmpD["range"] = [ method["start_line"], method["end_line"] ]
+                tmpD["global_uses"], tmpD["local_uses"] = [], []
+
+
+                for globaluse in global_use:
+                    localD = dict()
+                    if globaluse["called_method_nm"] != method["name"]: continue
+
+                    localD["file_path"] = root_dir_ + globaluse["file_path_method_nm"]
+                    localD["method_nm"] = globaluse["method_nm"]
+                    localD["method_defn"] = globaluse["method_defn"][0]
+                    localD["usage"] = globaluse["usage"][0][0]
+                    localD["method_end"] = globaluse["method_end"][0]
+
+                    tmpD["global_uses"].append( localD )
+
+                for localuse in local_use:
+                    localD = dict()
+                    if localuse["called_method_nm"] != method["name"]: continue
+
+                    localD["file_path"] = root_dir_ + globaluse["file_path_method_nm"]
+                    localD["method_nm"] = globaluse["method_nm"]
+                    localD["method_defn"] = globaluse["method_defn"][0]
+                    localD["usage"] = globaluse["usage"][0][0]
+                    localD["method_end"] = globaluse["method_end"][0]
+
+                    tmpD["local_uses"].append( localD )
+
+                resp_[root_dir_ + file_]["method_details_"].append( tmpD )
+
+        return resp_
+
+    
+
     def generate(self): 
 
         for file_ in self.relevant_files_:
@@ -126,13 +180,24 @@ class generateGraphEntities():
             self.generateLocalUsage( file_ )
             self.generateGlobalUsage( file_ )
 
-        print('Graph INput data generated!!')
-        with open( 'examine.json', 'w+' ) as fp:
-            json.dump( self.file_master_, fp, indent=4 )
+        #print('Graph INput data generated!!')
+        #with open( 'examine.json', 'w+' ) as fp:
+        #    json.dump( self.file_master_, fp, indent=4 )
+        
+        final_ = self.convert( self.file_master_ )
 
-        #response_json_ = 
-        #for fnm_, file_elements_ in self.file_master_.items():
+        with open( self.op_dest_, 'a+' ) as fp:
+            json.dump( final_, fp, indent=4 )
         
 if __name__ == "__main__":
-    gg_ = generateGraphEntities('SRC_DIR')
+    gg_ = generateGraphEntities('../LLM_INTERFACE/SRC_DIR')
     gg_.generate()
+    ## now invoke graph entry addition
+    gg_ = graphEntry.generateGraph( src_dir='./data/', neo4j_config='./config.json' )
+    gg_.createUniqueConstraints()
+
+    nodeList_ , edgeList_ = gg_.preProcess( 'METHODS.json' )
+
+    gg_.execNodeCreationCypher( nodeList_ , edgeList_ )
+    gg_.calculatePageRank()
+

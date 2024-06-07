@@ -1,13 +1,19 @@
 {
-    "SRC_DIR/searchDB.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py": {
         "method_details_": [
             {
-                "name": "pos",
-                "start_line": 14,
-                "end_line": 99
+                "method_name": "pos",
+                "method_begin": "def pos( res_ ):\n",
+                "method_end": "                ' BM25 : ', score_title_[keyid] )\n",
+                "range": [
+                    14,
+                    99
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "7": {
                 "Type": "Assignment",
                 "Targets": [
@@ -521,34 +527,64 @@
                 "Ending": 96,
                 "Values": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/db_utils.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py": {
         "method_details_": [
             {
-                "name": "returnBlankDBRec",
-                "start_line": 11,
-                "end_line": 29
+                "method_name": "returnBlankDBRec",
+                "method_begin": "def returnBlankDBRec():\n",
+                "method_end": "    return dbRec_\n",
+                "range": [
+                    11,
+                    29
+                ],
+                "global_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/testMonkey.py",
+                        "method_nm": "downstream_antics",
+                        "method_defn": "def downstream_antics( x, y ):\n",
+                        "usage": "    dbRec_ = db_utils.returnBlankDBRec()\n",
+                        "method_end": "        return True\n"
+                    }
+                ],
+                "local_uses": []
             },
             {
-                "name": "insertNewSignature",
-                "start_line": 31,
-                "end_line": 40
+                "method_name": "insertNewSignature",
+                "method_begin": "def insertNewSignature( rec_ ):\n",
+                "method_end": "    return string\n",
+                "range": [
+                    31,
+                    40
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "updateSignature",
-                "start_line": 42,
-                "end_line": 51
+                "method_name": "updateSignature",
+                "method_begin": "def updateSignature( rec_ ):\n",
+                "method_end": "    return string\n",
+                "range": [
+                    42,
+                    51
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "searchSignature",
-                "start_line": 53,
-                "end_line": 62
+                "method_name": "searchSignature",
+                "method_begin": "def searchSignature( rec_ ):\n",
+                "method_end": "    return json_obj\n",
+                "range": [
+                    53,
+                    62
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "4": {
                 "Type": "Assignment",
                 "Targets": [
@@ -847,37 +883,23 @@
                 ],
                 "Function": "loads"
             }
-        },
-        "local_uses": [],
-        "global_uses": [
-            {
-                "file_path": "SRC_DIR/db_utils.py",
-                "called_method_nm": "returnBlankDBRec",
-                "file_path_method_nm": "SRC_DIR/testMonkey.py",
-                "method_nm": "downstream_antics",
-                "method_defn": [
-                    "def downstream_antics( x, y ):\n"
-                ],
-                "method_end": [
-                    "        return True\n"
-                ],
-                "usage": [
-                    [
-                        "    dbRec_ = db_utils.returnBlankDBRec()\n"
-                    ]
-                ]
-            }
-        ]
+        }
     },
-    "SRC_DIR/fetchLLMResponse.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/fetchLLMResponse.py": {
         "method_details_": [
             {
-                "name": "returnOpenAI_response",
-                "start_line": 9,
-                "end_line": 21
+                "method_name": "returnOpenAI_response",
+                "method_begin": "def returnOpenAI_response( dataframe ):\n",
+                "method_end": "    print( 'FINAL RESP->', completion.choices[0].message.content )\n",
+                "range": [
+                    9,
+                    21
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "4": {
                 "Type": "Assignment",
                 "Targets": [
@@ -903,79 +925,187 @@
                 ],
                 "Function": "create"
             }
-        },
-        "local_uses": [],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/findKeys.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py": {
         "method_details_": [
             {
-                "name": "xOverlap",
-                "start_line": 9,
-                "end_line": 21
+                "method_name": "xOverlap",
+                "method_begin": "def xOverlap( val, pts, ref_val, ref_pts, dist_=150 ):\n",
+                "method_end": "    return False\n",
+                "range": [
+                    9,
+                    21
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "allNum",
-                "start_line": 23,
-                "end_line": 53
+                "method_name": "allNum",
+                "method_begin": "def allNum( wd_, mode='NA' ):\n",
+                "method_end": "  return False\n",
+                "range": [
+                    23,
+                    53
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "euclid",
-                "start_line": 55,
-                "end_line": 61
+                "method_name": "euclid",
+                "method_begin": "def euclid( refpts, pts, json_ ):\n",
+                "method_end": "    return distance.euclidean( refpts, pts )\n",
+                "range": [
+                    55,
+                    61
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "findValFeats",
-                "start_line": 63,
-                "end_line": 98
+                "method_name": "findValFeats",
+                "method_begin": "def findValFeats( refwd ):\n",
+                "method_end": "    return returnFeats\n",
+                "range": [
+                    63,
+                    98
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "findWdFeats",
-                "start_line": 100,
-                "end_line": 137
+                "method_name": "findWdFeats",
+                "method_begin": "def findWdFeats( refwd ):\n",
+                "method_end": "    return returnFeats \n",
+                "range": [
+                    100,
+                    137
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):\n",
+                        "usage": "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
+                        "method_end": "    return json_obj['encoded_'], key_tuple_\n"
+                    }
+                ]
             },
             {
-                "name": "findRaw",
-                "start_line": 139,
-                "end_line": 193
+                "method_name": "findRaw",
+                "method_begin": "def findRaw( ids, json_raw ):\n",
+                "method_end": "    return txtarr, ptsarr \n",
+                "range": [
+                    139,
+                    193
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):\n",
+                        "usage": "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
+                        "method_end": "    return json_obj['encoded_'], key_tuple_\n"
+                    }
+                ]
             },
             {
-                "name": "featNum",
-                "start_line": 195,
-                "end_line": 214
+                "method_name": "featNum",
+                "method_begin": "def featNum( txt ):\n",
+                "method_end": "    return 3 # default val\n",
+                "range": [
+                    195,
+                    214
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "findNeighBour",
-                "start_line": 216,
-                "end_line": 294
+                "method_name": "findNeighBour",
+                "method_begin": "def findNeighBour( ref_wd_ctr, lctr, json_, ref_txt, ref_pts ):\n",
+                "method_end": "    return False, None\n",
+                "range": [
+                    216,
+                    294
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "findValNeighBour",
-                "start_line": 296,
-                "end_line": 348
+                "method_name": "findValNeighBour",
+                "method_begin": "def findValNeighBour( ref_wd_ctr, lctr, json_ ):\n",
+                "method_end": "    return False, None\n",
+                "range": [
+                    296,
+                    348
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):\n",
+                        "usage": "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
+                        "method_end": "    return json_obj['encoded_'], key_tuple_\n"
+                    }
+                ]
             },
             {
-                "name": "neighContours",
-                "start_line": 350,
-                "end_line": 397
+                "method_name": "neighContours",
+                "method_begin": "def neighContours( txt_, pts_, json_, conj_lt=None, conj_rt=None ):\n",
+                "method_end": "    return x_vertical.tolist(), y_horizontal.tolist()\n",
+                "range": [
+                    350,
+                    397
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "neighContours_old",
-                "start_line": 399,
-                "end_line": 446
+                "method_name": "neighContours_old",
+                "method_begin": "def neighContours_old( txt_, pts_, json_, conj_lt=None, conj_rt=None ):\n",
+                "method_end": "    return respFeat_.tolist()\n",
+                "range": [
+                    399,
+                    446
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "isNum",
-                "start_line": 448,
-                "end_line": 451
+                "method_name": "isNum",
+                "method_begin": "def isNum( txt ):\n",
+                "method_end": "    return False    \n",
+                "range": [
+                    448,
+                    451
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "processNeighbours",
-                "start_line": 453,
-                "end_line": 734
+                "method_name": "processNeighbours",
+                "method_begin": "def processNeighbours( json_, json_raw, fileNm ):\n",
+                "method_end": "    return key_tuples_        \n",
+                "range": [
+                    453,
+                    734
+                ],
+                "global_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "method_nm": "returnJsonFeat",
+                        "method_defn": "def returnJsonFeat( src_0, src_raw ):\n",
+                        "usage": "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
+                        "method_end": "    return json_obj['encoded_'], key_tuple_\n"
+                    }
+                ],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "7": {
                 "Type": "Assignment",
                 "Targets": [
@@ -5300,89 +5430,23 @@
                 ],
                 "Function": "load"
             }
-        },
-        "local_uses": [
-            {
-                "file_path": "SRC_DIR/findKeys.py",
-                "called_method_nm": "findWdFeats",
-                "file_path_method_nm": "SRC_DIR/findKeys.py",
-                "method_nm": "processNeighbours",
-                "method_defn": [
-                    "def processNeighbours( json_, json_raw, fileNm ):\n"
-                ],
-                "method_end": [
-                    "    return key_tuples_        \n"
-                ],
-                "usage": [
-                    [
-                        "          resp_ = findWdFeats( txt1 )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/findKeys.py",
-                "called_method_nm": "findRaw",
-                "file_path_method_nm": "SRC_DIR/findKeys.py",
-                "method_nm": "processNeighbours",
-                "method_defn": [
-                    "def processNeighbours( json_, json_raw, fileNm ):\n"
-                ],
-                "method_end": [
-                    "    return key_tuples_        \n"
-                ],
-                "usage": [
-                    [
-                        "        txtarr, ptsarr = findRaw( line_[ wdctr ]['ids'], json_raw )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/findKeys.py",
-                "called_method_nm": "findValNeighBour",
-                "file_path_method_nm": "SRC_DIR/findKeys.py",
-                "method_nm": "processNeighbours",
-                "method_defn": [
-                    "def processNeighbours( json_, json_raw, fileNm ):\n"
-                ],
-                "method_end": [
-                    "    return key_tuples_        \n"
-                ],
-                "usage": [
-                    [
-                        "            typeOfNeighForVal = findValNeighBour( wdctr , linectr, json_)\n"
-                    ]
-                ]
-            }
-        ],
-        "global_uses": [
-            {
-                "file_path": "SRC_DIR/findKeys.py",
-                "called_method_nm": "processNeighbours",
-                "file_path_method_nm": "SRC_DIR/createJsonFeats.py",
-                "method_nm": "returnJsonFeat",
-                "method_defn": [
-                    "def returnJsonFeat( src_0, src_raw ):\n"
-                ],
-                "method_end": [
-                    "    return json_obj['encoded_'], key_tuple_\n"
-                ],
-                "usage": [
-                    [
-                        "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n"
-                    ]
-                ]
-            }
-        ]
+        }
     },
-    "SRC_DIR/firstpass.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/firstpass.py": {
         "method_details_": [
             {
-                "name": "find_table_bounds",
-                "start_line": 3,
-                "end_line": 35
+                "method_name": "find_table_bounds",
+                "method_begin": "def find_table_bounds(sheet):\n",
+                "method_end": "    return start_row, end_row, start_col, end_col\n",
+                "range": [
+                    3,
+                    35
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "4": {
                 "Type": "Assignment",
                 "Targets": [
@@ -5567,13 +5631,11 @@
                 ],
                 "Function": "find_table_bounds"
             }
-        },
-        "local_uses": [],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/pca_test.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/pca_test.py": {
         "method_details_": [],
-        "line_wise_details_": {
+        "text_details_": {
             "3": {
                 "Type": "Assignment",
                 "Targets": [
@@ -5609,24 +5671,42 @@
                 ],
                 "Function": "time"
             }
-        },
-        "local_uses": [],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/query_gpt_via_groq.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py": {
         "method_details_": [
             {
-                "name": "returnDocSummary",
-                "start_line": 15,
-                "end_line": 31
+                "method_name": "returnDocSummary",
+                "method_begin": "def returnDocSummary( data_frame ):\n",
+                "method_end": "            return 'NO RESPONSE'\n",
+                "range": [
+                    15,
+                    31
+                ],
+                "global_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ],
+                "local_uses": []
             },
             {
-                "name": "augmentHeaderInformation",
-                "start_line": 33,
-                "end_line": 50
+                "method_name": "augmentHeaderInformation",
+                "method_begin": "def augmentHeaderInformation( header_info_ ):\n",
+                "method_end": "            return 'NO RESPONSE'\n",
+                "range": [
+                    33,
+                    50
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "4": {
                 "Type": "Assignment",
                 "Targets": [
@@ -5720,42 +5800,42 @@
                 ],
                 "Function": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": [
-            {
-                "file_path": "SRC_DIR/query_gpt_via_groq.py",
-                "called_method_nm": "returnDocSummary",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "read_excel_file",
-                "method_defn": [
-                    "    def read_excel_file(self):\n"
-                ],
-                "method_end": [
-                    "                self.masterInfo_[ sheet_name ] = summary_D\n"
-                ],
-                "usage": [
-                    [
-                        "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n"
-                    ]
-                ]
-            }
-        ]
+        }
     },
-    "SRC_DIR/query_llama3_via_groq.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py": {
         "method_details_": [
             {
-                "name": "returnDocSummary",
-                "start_line": 15,
-                "end_line": 39
+                "method_name": "returnDocSummary",
+                "method_begin": "def returnDocSummary( data_frame, high_variance_cols_ ):\n",
+                "method_end": "            return 'NO RESPONSE'\n",
+                "range": [
+                    15,
+                    39
+                ],
+                "global_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ],
+                "local_uses": []
             },
             {
-                "name": "augmentHeaderInformation",
-                "start_line": 41,
-                "end_line": 58
+                "method_name": "augmentHeaderInformation",
+                "method_begin": "def augmentHeaderInformation( header_info_ ):\n",
+                "method_end": "            return 'NO RESPONSE'\n",
+                "range": [
+                    41,
+                    58
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "4": {
                 "Type": "Assignment",
                 "Targets": [
@@ -5883,37 +5963,23 @@
                 ],
                 "Function": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": [
-            {
-                "file_path": "SRC_DIR/query_llama3_via_groq.py",
-                "called_method_nm": "returnDocSummary",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "read_excel_file",
-                "method_defn": [
-                    "    def read_excel_file(self):\n"
-                ],
-                "method_end": [
-                    "                self.masterInfo_[ sheet_name ] = summary_D\n"
-                ],
-                "usage": [
-                    [
-                        "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n"
-                    ]
-                ]
-            }
-        ]
+        }
     },
-    "SRC_DIR/readSS.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py": {
         "method_details_": [
             {
-                "name": "read_excel_file",
-                "start_line": 7,
-                "end_line": 36
+                "method_name": "read_excel_file",
+                "method_begin": "def read_excel_file(file_path):\n",
+                "method_end": "    finalJson_[ file_path.split('/')[-1] ] = localD\n",
+                "range": [
+                    7,
+                    36
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "5": {
                 "Type": "Assignment",
                 "Targets": [
@@ -6068,13 +6134,11 @@
                 "Ending": 46,
                 "Values": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/validate_search.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/validate_search.py": {
         "method_details_": [],
-        "line_wise_details_": {
+        "text_details_": {
             "5": {
                 "Type": "Assignment",
                 "Targets": [
@@ -6090,19 +6154,23 @@
                 ],
                 "Function": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/addtoDB.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py": {
         "method_details_": [
             {
-                "name": "addToDB",
-                "start_line": 9,
-                "end_line": 16
+                "method_name": "addToDB",
+                "method_begin": "def addToDB():\n",
+                "method_end": "            db_utils.insertNewSignature( dd_ )\n",
+                "range": [
+                    9,
+                    16
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "5": {
                 "Type": "Assignment",
                 "Targets": [
@@ -6169,94 +6237,290 @@
                 ],
                 "Function": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/basic_generateXLMetaData.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py": {
         "method_details_": [
             {
-                "name": "is_date",
-                "start_line": 15,
-                "end_line": 32
+                "method_name": "is_date",
+                "method_begin": "def is_date( input_str):\n",
+                "method_end": "            return None\n",
+                "range": [
+                    15,
+                    32
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "process",
-                "start_line": 34,
-                "end_line": 52
+                "method_name": "process",
+                "method_begin": "def process( colNum, sheet, tbl ):\n",
+                "method_end": "        return ( False, None, None )\n",
+                "range": [
+                    34,
+                    52
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "__init__",
-                "start_line": 55,
-                "end_line": 81
+                "method_name": "__init__",
+                "method_begin": "    def __init__(self, file_path, llm='LLAMA'):\n",
+                "method_end": "            self.query_fn_ = llama3\n",
+                "range": [
+                    55,
+                    81
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "find_bounds",
-                "start_line": 83,
-                "end_line": 120
+                "method_name": "find_bounds",
+                "method_begin": "    def find_bounds( self, sheet, max_row, max_col, start_row ,end_row ,start_col ,end_col ):\n",
+                "method_end": "        return start_row, end_row, start_col, end_col\n",
+                "range": [
+                    83,
+                    120
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "is_hdr_row_format",
-                "start_line": 122,
-                "end_line": 131
+                "method_name": "is_hdr_row_format",
+                "method_begin": "    def is_hdr_row_format( self, tbl_bound, sheet ):\n",
+                "method_end": "        return True\n",
+                "range": [
+                    122,
+                    131
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "find_tables",
-                "start_line": 133,
-                "end_line": 217
+                "method_name": "find_tables",
+                "method_begin": "    def find_tables(self, sheet):\n",
+                "method_end": "        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n",
+                "range": [
+                    133,
+                    217
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "findDateRange",
-                "start_line": 219,
-                "end_line": 230
+                "method_name": "findDateRange",
+                "method_begin": "    def findDateRange( self, tbl ):\n",
+                "method_end": "        return (None, None)\n",
+                "range": [
+                    219,
+                    230
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "findHeaderInfo",
-                "start_line": 232,
-                "end_line": 252
+                "method_name": "findHeaderInfo",
+                "method_begin": "    def findHeaderInfo(self, tbl):\n",
+                "method_end": "        return col_frame_\n",
+                "range": [
+                    232,
+                    252
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "findHighVarianceColumns",
-                "start_line": 254,
-                "end_line": 310
+                "method_name": "findHighVarianceColumns",
+                "method_begin": "    def findHighVarianceColumns(self, start_hdr_row_, sheet, tbl ):\n",
+                "method_end": "        return list( high_var_indices_ ), hdr_col_names_\n",
+                "range": [
+                    254,
+                    310
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "returnSummary",
-                "start_line": 313,
-                "end_line": 338
+                "method_name": "returnSummary",
+                "method_begin": "    def returnSummary(self, tbl ):\n",
+                "method_end": "        return frame_, high_variance_cols_, list( set(hdr_col_names_) )\n",
+                "range": [
+                    313,
+                    338
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "findHdrRow",
-                "start_line": 340,
-                "end_line": 358
+                "method_name": "findHdrRow",
+                "method_begin": "    def findHdrRow( self, tbl ):\n",
+                "method_end": "        return None # so default value of row #1 applies to table start\n",
+                "range": [
+                    340,
+                    358
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "createDBRec",
-                "start_line": 360,
-                "end_line": 384
+                "method_name": "createDBRec",
+                "method_begin": "    def createDBRec( self, summary_D, mode='NORM' ):\n",
+                "method_end": "        return insertRec\n",
+                "range": [
+                    360,
+                    384
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "mergeAndInsert",
-                "start_line": 386,
-                "end_line": 395
+                "method_name": "mergeAndInsert",
+                "method_begin": "    def mergeAndInsert( self, summary_D ):\n",
+                "method_end": "        db_utils.insertNewSignature( rec_ )\n",
+                "range": [
+                    386,
+                    395
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "returnEntireSheet",
-                "start_line": 397,
-                "end_line": 437
+                "method_name": "returnEntireSheet",
+                "method_begin": "    def returnEntireSheet( self, tbl_, sheet_name ):\n",
+                "method_end": "        return chunks_, use_entire_sheet_\n",
+                "range": [
+                    397,
+                    437
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "read_excel_file",
+                        "method_defn": "    def read_excel_file(self):\n",
+                        "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
+                        "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
+                    }
+                ]
             },
             {
-                "name": "process_full_frame_",
-                "start_line": 439,
-                "end_line": 443
+                "method_name": "process_full_frame_",
+                "method_begin": "    def process_full_frame_( self, full_frame_, summary_D ):\n",
+                "method_end": "           self.mergeAndInsert( summary_D )\n",
+                "range": [
+                    439,
+                    443
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "read_excel_file",
-                "start_line": 445,
-                "end_line": 527
+                "method_name": "read_excel_file",
+                "method_begin": "    def read_excel_file(self):\n",
+                "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n",
+                "range": [
+                    445,
+                    527
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "18": {
                 "Type": "Assignment",
                 "Targets": [
@@ -8081,241 +8345,31 @@
                 ],
                 "Function": "GenerateXLMetaInfo"
             }
-        },
-        "local_uses": [
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "is_date",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "process",
-                "method_defn": [
-                    "def process( colNum, sheet, tbl ):\n"
-                ],
-                "method_end": [
-                    "        return ( False, None, None )\n"
-                ],
-                "usage": [
-                    [
-                        "                dtVal_ = is_date( str( sheet.cell(row=rw, column=colNum).value ) )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "process",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "findDateRange",
-                "method_defn": [
-                    "    def findDateRange( self, tbl ):\n"
-                ],
-                "method_end": [
-                    "        return (None, None)\n"
-                ],
-                "usage": [
-                    [
-                        "            results = process(col, self.sheet, tbl)\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "find_bounds",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "find_tables",
-                "method_defn": [
-                    "    def find_tables(self, sheet):\n"
-                ],
-                "method_end": [
-                    "        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n"
-                ],
-                "usage": [
-                    [
-                        "        start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, start_row ,\\\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "find_bounds",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "find_tables",
-                "method_defn": [
-                    "    def find_tables(self, sheet):\n"
-                ],
-                "method_end": [
-                    "        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n"
-                ],
-                "usage": [
-                    [
-                        "            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, end_row ,\\\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "find_bounds",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "find_tables",
-                "method_defn": [
-                    "    def find_tables(self, sheet):\n"
-                ],
-                "method_end": [
-                    "        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n"
-                ],
-                "usage": [
-                    [
-                        "            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, None ,\\\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "find_tables",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "read_excel_file",
-                "method_defn": [
-                    "    def read_excel_file(self):\n"
-                ],
-                "method_end": [
-                    "                self.masterInfo_[ sheet_name ] = summary_D\n"
-                ],
-                "usage": [
-                    [
-                        "            all_tables_ = self.find_tables( self.sheet )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "findDateRange",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "read_excel_file",
-                "method_defn": [
-                    "    def read_excel_file(self):\n"
-                ],
-                "method_end": [
-                    "                self.masterInfo_[ sheet_name ] = summary_D\n"
-                ],
-                "usage": [
-                    [
-                        "                    summary_D['date_range'] = self.findDateRange( tbl_ )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "findHeaderInfo",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "read_excel_file",
-                "method_defn": [
-                    "    def read_excel_file(self):\n"
-                ],
-                "method_end": [
-                    "                self.masterInfo_[ sheet_name ] = summary_D\n"
-                ],
-                "usage": [
-                    [
-                        "                    hdr_frame_ = self.findHeaderInfo( tbl_ )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "findHighVarianceColumns",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "returnSummary",
-                "method_defn": [
-                    "    def returnSummary(self, tbl ):\n"
-                ],
-                "method_end": [
-                    "        return frame_, high_variance_cols_, list( set(hdr_col_names_) )\n"
-                ],
-                "usage": [
-                    [
-                        "        high_variance_cols_, hdr_col_names_ = self.findHighVarianceColumns( start_hdr_row_, self.sheet, tbl )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "returnSummary",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "read_excel_file",
-                "method_defn": [
-                    "    def read_excel_file(self):\n"
-                ],
-                "method_end": [
-                    "                self.masterInfo_[ sheet_name ] = summary_D\n"
-                ],
-                "usage": [
-                    [
-                        "                    frame_, high_variance_cols_, col_names_ = self.returnSummary( tbl_ )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "findHdrRow",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "findHeaderInfo",
-                "method_defn": [
-                    "    def findHeaderInfo(self, tbl):\n"
-                ],
-                "method_end": [
-                    "        return col_frame_\n"
-                ],
-                "usage": [
-                    [
-                        "        hdr_row_start_ = self.findHdrRow( tbl )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "createDBRec",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "mergeAndInsert",
-                "method_defn": [
-                    "    def mergeAndInsert( self, summary_D ):\n"
-                ],
-                "method_end": [
-                    "        db_utils.insertNewSignature( rec_ )\n"
-                ],
-                "usage": [
-                    [
-                        "        rec_ = self.createDBRec( summary_D, 'NORM' )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/basic_generateXLMetaData.py",
-                "called_method_nm": "returnEntireSheet",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "read_excel_file",
-                "method_defn": [
-                    "    def read_excel_file(self):\n"
-                ],
-                "method_end": [
-                    "                self.masterInfo_[ sheet_name ] = summary_D\n"
-                ],
-                "usage": [
-                    [
-                        "                    full_frame_, is_full_frame_necessary_ = self.returnEntireSheet( tbl_, sheet_name )\n"
-                    ]
-                ]
-            }
-        ],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/testChunking.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/testChunking.py": {
         "method_details_": [
             {
-                "name": "chunking_test",
-                "start_line": 4,
-                "end_line": 33
+                "method_name": "chunking_test",
+                "method_begin": "def chunking_test(a, b):\n",
+                "method_end": "    print( eigenvectors1[:, idx][:, :1] )\n",
+                "range": [
+                    4,
+                    33
+                ],
+                "global_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/testMonkey.py",
+                        "method_nm": "downstream_antics",
+                        "method_defn": "def downstream_antics( x, y ):\n",
+                        "usage": "    x = tc.chunking_test( 10, 20 )\n",
+                        "method_end": "        return True\n"
+                    }
+                ],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "5": {
                 "Type": "Assignment",
                 "Targets": [
@@ -8492,37 +8546,23 @@
                 ],
                 "Function": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": [
-            {
-                "file_path": "SRC_DIR/testChunking.py",
-                "called_method_nm": "chunking_test",
-                "file_path_method_nm": "SRC_DIR/testMonkey.py",
-                "method_nm": "downstream_antics",
-                "method_defn": [
-                    "def downstream_antics( x, y ):\n"
-                ],
-                "method_end": [
-                    "        return True\n"
-                ],
-                "usage": [
-                    [
-                        "    x = tc.chunking_test( 10, 20 )\n"
-                    ]
-                ]
-            }
-        ]
+        }
     },
-    "SRC_DIR/testMonkey.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/testMonkey.py": {
         "method_details_": [
             {
-                "name": "downstream_antics",
-                "start_line": 3,
-                "end_line": 39
+                "method_name": "downstream_antics",
+                "method_begin": "def downstream_antics( x, y ):\n",
+                "method_end": "        return True\n",
+                "range": [
+                    3,
+                    39
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "6": {
                 "Type": "Assignment",
                 "Targets": [
@@ -8759,34 +8799,78 @@
                 "Ending": 39,
                 "Values": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": []
+        }
     },
-    "SRC_DIR/createJsonFeats.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py": {
         "method_details_": [
             {
-                "name": "blockPrint",
-                "start_line": 11,
-                "end_line": 12
+                "method_name": "blockPrint",
+                "method_begin": "def blockPrint():\n",
+                "method_end": "    sys.stdout = open(os.devnull, 'w')\n",
+                "range": [
+                    11,
+                    12
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "enablePrint",
-                "start_line": 15,
-                "end_line": 16
+                "method_name": "enablePrint",
+                "method_begin": "def enablePrint():\n",
+                "method_end": "    sys.stdout = sys.__stdout__\n",
+                "range": [
+                    15,
+                    16
+                ],
+                "global_uses": [],
+                "local_uses": []
             },
             {
-                "name": "returnEmbed",
-                "start_line": 29,
-                "end_line": 41
+                "method_name": "returnEmbed",
+                "method_begin": "def returnEmbed( sent ):\n",
+                "method_end": "    return json_obj['encoded_'], True\n",
+                "range": [
+                    29,
+                    41
+                ],
+                "global_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "method_nm": "pos",
+                        "method_defn": "def pos( res_ ):\n",
+                        "usage": "            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n",
+                        "method_end": "                ' BM25 : ', score_title_[keyid] )\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py",
+                        "method_nm": "addToDB",
+                        "method_defn": "def addToDB():\n",
+                        "usage": "            emb_ = createJsonFeats.returnEmbed( txt )\n",
+                        "method_end": "            db_utils.insertNewSignature( dd_ )\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "method_nm": "createDBRec",
+                        "method_defn": "    def createDBRec( self, summary_D, mode='NORM' ):\n",
+                        "usage": "        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n",
+                        "method_end": "        return insertRec\n"
+                    }
+                ],
+                "local_uses": []
             },
             {
-                "name": "returnJsonFeat",
-                "start_line": 43,
-                "end_line": 78
+                "method_name": "returnJsonFeat",
+                "method_begin": "def returnJsonFeat( src_0, src_raw ):\n",
+                "method_end": "    return json_obj['encoded_'], key_tuple_\n",
+                "range": [
+                    43,
+                    78
+                ],
+                "global_uses": [],
+                "local_uses": []
             }
         ],
-        "line_wise_details_": {
+        "text_details_": {
             "12": {
                 "Type": "Assignment",
                 "Targets": [],
@@ -9052,60 +9136,6 @@
                 "Ending": 86,
                 "Values": "NA"
             }
-        },
-        "local_uses": [],
-        "global_uses": [
-            {
-                "file_path": "SRC_DIR/createJsonFeats.py",
-                "called_method_nm": "returnEmbed",
-                "file_path_method_nm": "SRC_DIR/searchDB.py",
-                "method_nm": "pos",
-                "method_defn": [
-                    "def pos( res_ ):\n"
-                ],
-                "method_end": [
-                    "                ' BM25 : ', score_title_[keyid] )\n"
-                ],
-                "usage": [
-                    [
-                        "            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/createJsonFeats.py",
-                "called_method_nm": "returnEmbed",
-                "file_path_method_nm": "SRC_DIR/addtoDB.py",
-                "method_nm": "addToDB",
-                "method_defn": [
-                    "def addToDB():\n"
-                ],
-                "method_end": [
-                    "            db_utils.insertNewSignature( dd_ )\n"
-                ],
-                "usage": [
-                    [
-                        "            emb_ = createJsonFeats.returnEmbed( txt )\n"
-                    ]
-                ]
-            },
-            {
-                "file_path": "SRC_DIR/createJsonFeats.py",
-                "called_method_nm": "returnEmbed",
-                "file_path_method_nm": "SRC_DIR/basic_generateXLMetaData.py",
-                "method_nm": "createDBRec",
-                "method_defn": [
-                    "    def createDBRec( self, summary_D, mode='NORM' ):\n"
-                ],
-                "method_end": [
-                    "        return insertRec\n"
-                ],
-                "usage": [
-                    [
-                        "        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n"
-                    ]
-                ]
-            }
-        ]
+        }
     }
 }

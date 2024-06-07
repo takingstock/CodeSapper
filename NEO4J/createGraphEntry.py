@@ -15,6 +15,11 @@ class generateGraph():
         self.NEO4J_URI = js_["URI"]
         self.NEO4J_AUTH = ( js_['uname'] , js_['pwd'] )
 
+    def createUniqueConstraints(self):
+
+        qry_ = ''' CREATE CONSTRAINT ON ( m:Method ) ASSERT ( m.file_name, m.method_name ) IS UNIQUE; '''
+        self.execCypher( qry_ )
+
 
     def createNodes( self, fnm, method_deets ):
         '''
@@ -22,7 +27,7 @@ class generateGraph():
         '''
 
         qry_ = '''
-        CREATE (  m:Method {
+        MERGE (  m:Method {
         file_name: "'''+ fnm +'''",
         method_name: "'''+ method_deets["method_name"] +'''",
         method_begin_snippet: "'''+ method_deets["method_begin"] +'''",
@@ -44,7 +49,7 @@ class generateGraph():
                           file_name: "'''+ relation_properties_["from_fnm"] +'''" })
         MATCH (b:Method {method_name: "'''+ relation_properties_["to_method"] +'''", 
                           file_name: "'''+ relation_properties_["to_fnm"] +'''"})
-        CREATE (a)-[r: '''+ relation_properties_["connection_type"]+''' {
+        MERGE (a)-[r: '''+ relation_properties_["connection_type"]+''' {
             code_snippet: "'''+ relation_properties_["code_snippet"]+'''",
             relation_weight: 0.1
         }]->(b)
@@ -82,7 +87,9 @@ class generateGraph():
         
         nodeList_ , edgeList_ = [], []
 
-        for fnm, file_contents_ in method_summary_.items():
+        for fnm, file_contents_D in method_summary_.items():
+          file_contents_ = file_contents_D["method_details_"] 
+
           for fc in file_contents_:
             node_insertion_cypher_ = self.createNodes( fnm, fc )
             print('NODE CYPHER->', node_insertion_cypher_, fnm )
@@ -104,7 +111,18 @@ class generateGraph():
 
         return nodeList_ , edgeList_
 
-    def execCypher(self, nodeList_, edgeList_ ):
+    def execCypher(self, qry_):
+
+        with GraphDatabase.driver( self.NEO4J_URI, auth=self.NEO4J_AUTH ) as driver:
+          try:
+              with driver.session() as session:
+
+                    result = session.run( qry_ )
+                    print('QRY EXEC RES->', result)
+          except:
+              print('CYPHER INSERTION ERR->', traceback.format_exc())
+
+    def execNodeCreationCypher(self, nodeList_, edgeList_ ):
 
         with GraphDatabase.driver( self.NEO4J_URI, auth=self.NEO4J_AUTH ) as driver:
           try:
@@ -180,8 +198,11 @@ class generateGraph():
               print('CYPHER EXEC ERR->', traceback.format_exc())
 
 if __name__ == "__main__":
-
+    
     gg_ = generateGraph( src_dir='./data/', neo4j_config='./config.json' )
-    #nodeList_ , edgeList_ = gg_.preProcess( 'METHODS.json' )
-    #gg_.execCypher( nodeList_ , edgeList_ )
+    gg_.createUniqueConstraints()
+
+    nodeList_ , edgeList_ = gg_.preProcess( sys.argv[1] )
+
+    gg_.execNodeCreationCypher( nodeList_ , edgeList_ )
     gg_.calculatePageRank()

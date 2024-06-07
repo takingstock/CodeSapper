@@ -1,5 +1,5 @@
 {
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/searchDB.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py": {
         "method_details_": [
             {
                 "method_name": "pos",
@@ -529,7 +529,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/db_utils.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py": {
         "method_details_": [
             {
                 "method_name": "returnBlankDBRec",
@@ -541,7 +541,7 @@
                 ],
                 "global_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/testMonkey.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/testMonkey.py",
                         "method_nm": "downstream_antics",
                         "method_defn": "def downstream_antics( x, y ):\n",
                         "usage": "    dbRec_ = db_utils.returnBlankDBRec()\n",
@@ -885,7 +885,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/fetchLLMResponse.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/fetchLLMResponse.py": {
         "method_details_": [
             {
                 "method_name": "returnOpenAI_response",
@@ -927,7 +927,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/findKeys.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/findKeys.py": {
         "method_details_": [
             {
                 "method_name": "xOverlap",
@@ -984,7 +984,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
                         "method_nm": "returnJsonFeat",
                         "method_defn": "def returnJsonFeat( src_0, src_raw ):\n",
                         "usage": "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
@@ -1003,7 +1003,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
                         "method_nm": "returnJsonFeat",
                         "method_defn": "def returnJsonFeat( src_0, src_raw ):\n",
                         "usage": "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
@@ -1044,7 +1044,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
                         "method_nm": "returnJsonFeat",
                         "method_defn": "def returnJsonFeat( src_0, src_raw ):\n",
                         "usage": "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
@@ -1095,7 +1095,7 @@
                 ],
                 "global_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py",
                         "method_nm": "returnJsonFeat",
                         "method_defn": "def returnJsonFeat( src_0, src_raw ):\n",
                         "usage": "    key_tuple_ = findKeys.processNeighbours( json_, json_raw, file_ )    \n",
@@ -5432,7 +5432,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/firstpass.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/firstpass.py": {
         "method_details_": [
             {
                 "method_name": "find_table_bounds",
@@ -5633,7 +5633,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/pca_test.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/pca_test.py": {
         "method_details_": [],
         "text_details_": {
             "3": {
@@ -5673,7 +5673,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_gpt_via_groq.py": {
         "method_details_": [
             {
                 "method_name": "returnDocSummary",
@@ -5685,7 +5685,7 @@
                 ],
                 "global_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -5802,7 +5802,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/query_llama3_via_groq.py": {
         "method_details_": [
             {
                 "method_name": "returnDocSummary",
@@ -5814,7 +5814,7 @@
                 ],
                 "global_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -5965,7 +5965,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/readSS.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/readSS.py": {
         "method_details_": [
             {
                 "method_name": "read_excel_file",
@@ -6136,7 +6136,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/validate_search.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/validate_search.py": {
         "method_details_": [],
         "text_details_": {
             "5": {
@@ -6156,7 +6156,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/addtoDB.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py": {
         "method_details_": [
             {
                 "method_name": "addToDB",
@@ -6239,7 +6239,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py": {
         "method_details_": [
             {
                 "method_name": "is_date",
@@ -6252,7 +6252,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6271,7 +6271,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6301,21 +6301,21 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
                         "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
                     },
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
                         "method_end": "                self.masterInfo_[ sheet_name ] = summary_D\n"
                     },
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6345,7 +6345,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6364,7 +6364,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6383,7 +6383,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6402,7 +6402,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6421,7 +6421,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6440,7 +6440,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6459,7 +6459,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -6489,7 +6489,7 @@
                 "global_uses": [],
                 "local_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "read_excel_file",
                         "method_defn": "    def read_excel_file(self):\n",
                         "usage": "                    summary_ = self.query_fn_.returnDocSummary( frame_, high_variance_cols_ )\n",
@@ -8347,7 +8347,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/testChunking.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/testChunking.py": {
         "method_details_": [
             {
                 "method_name": "chunking_test",
@@ -8359,7 +8359,7 @@
                 ],
                 "global_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/testMonkey.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/testMonkey.py",
                         "method_nm": "downstream_antics",
                         "method_defn": "def downstream_antics( x, y ):\n",
                         "usage": "    x = tc.chunking_test( 10, 20 )\n",
@@ -8548,7 +8548,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/testMonkey.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/testMonkey.py": {
         "method_details_": [
             {
                 "method_name": "downstream_antics",
@@ -8801,7 +8801,7 @@
             }
         }
     },
-    "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/createJsonFeats.py": {
+    "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py": {
         "method_details_": [
             {
                 "method_name": "blockPrint",
@@ -8835,21 +8835,21 @@
                 ],
                 "global_uses": [
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/searchDB.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/searchDB.py",
                         "method_nm": "pos",
                         "method_defn": "def pos( res_ ):\n",
                         "usage": "            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n",
                         "method_end": "                ' BM25 : ', score_title_[keyid] )\n"
                     },
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/addtoDB.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/addtoDB.py",
                         "method_nm": "addToDB",
                         "method_defn": "def addToDB():\n",
                         "usage": "            emb_ = createJsonFeats.returnEmbed( txt )\n",
                         "method_end": "            db_utils.insertNewSignature( dd_ )\n"
                     },
                     {
-                        "file_path": "/datadrive/IKG/LLM_INTERFACE/../LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
+                        "file_path": "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/basic_generateXLMetaData.py",
                         "method_nm": "createDBRec",
                         "method_defn": "    def createDBRec( self, summary_D, mode='NORM' ):\n",
                         "usage": "        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n",
