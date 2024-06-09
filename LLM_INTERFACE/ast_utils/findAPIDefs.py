@@ -25,6 +25,7 @@ class APIDefinitionFinder(ast.NodeVisitor):
                     self.api_definitions.append({
                         'name': node.name,
                         'lineno': node.lineno,
+                        'end_lineno': node.body[-1].lineno,
                         'route_path': route_path,
                         'methods': methods
                     })
@@ -59,10 +60,12 @@ def find_api_definitions(directory):
                 api_definitions.append(definition)
     return api_definitions
 
-# Example usage
-api_definitions = find_api_definitions('/datadrive/IKG/LLM_INTERFACE/SRC_DIR/')
-for api in api_definitions:
-    print(f"Found API definition {api['name']} at line {api['lineno']} in {api['file_path']}")
-    print(f"Route path: {api['route_path']}")
-    print(f"Methods: {api['methods']}")
+if __name__ == "__main__":
+
+    # Example usage
+    api_definitions = find_api_definitions('/datadrive/IKG/LLM_INTERFACE/SRC_DIR/')
+    for api in api_definitions:
+        print(f"Found API definition {api['name']} at line {api['lineno']} ends {api['end_lineno']} in {api['file_path']}")
+        print(f"Route path: {api['route_path']}")
+        print(f"Methods: {api['methods']}")
 

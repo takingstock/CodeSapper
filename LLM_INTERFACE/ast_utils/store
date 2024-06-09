@@ -1,0 +1,542 @@
+ASSIGNMENT HAPPENING WITHIN FUNC-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py#url#4010
+ASSIGNMENT HAPPENING WITHIN FUNC-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py#url#4032
+ASSIGNMENT HAPPENING WITHIN FUNC-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py#url#4053
+URL Assignments Found:
+File: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py, Variable: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py#flask_url_#4, URL: http://0.0.0.0:5200/
+File: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py, Variable: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py#url_insert#7, URL: http://0.0.0.0:5200/dbInsert
+File: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py, Variable: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py#url_search#8, URL: http://0.0.0.0:5200/dbSearch
+File: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py, Variable: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py#url_update#9, URL: http://0.0.0.0:5200/dbUpdate
+File: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py, Variable: /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py#url_encode#24, URL: http://0.0.0.0:5200/encodeSentence
+File: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py, Variable: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#FLASK_BASE_URL#4, URL: http://0.0.0.0:5200/
+File: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py, Variable: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#DB_INSERT_URL#5, URL: http://0.0.0.0:5200/dbInsert
+File: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py, Variable: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#DB_SEARCH_URL#6, URL: http://0.0.0.0:5200/dbSearch
+File: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py, Variable: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#DB_UPDATE_URL#7, URL: http://0.0.0.0:5200/dbUpdate
+File: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py, Variable: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#ANOTHER_SERVICE_BASE_URL#10, URL: http://api.otherservice.com/
+File: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py, Variable: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#ANOTHER_SERVICE_LOGIN_URL#11, URL: http://api.otherservice.com/login
+File: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py, Variable: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#ANOTHER_SERVICE_FETCH_DATA_URL#12, URL: http://api.otherservice.com/fetchData
+File: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py, Variable: /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#ANOTHER_SERVICE_UPDATE_DATA_URL#13, URL: http://api.otherservice.com/updateData
+URL Assignments WITHIN-> {'/datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py': [{'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py', 'url_variable_': 'url', 'url_defined_line_': 4010, 'ref_line_no': 4010, 'ref_method_begin': 4007, 'ref_method_end': 4008, 'ref_col_offset': 8, 'ref_method_type': 'Request'}, {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py', 'url_variable_': 'url', 'url_defined_line_': 4032, 'ref_line_no': 4032, 'ref_method_begin': 4029, 'ref_method_end': 4030, 'ref_col_offset': 8, 'ref_method_type': 'Request'}, {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py', 'url_variable_': 'url', 'url_defined_line_': 4053, 'ref_line_no': 4053, 'ref_method_begin': 4050, 'ref_method_end': 4051, 'ref_col_offset': 8, 'ref_method_type': 'Request'}]}
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/json_config_example.json', 'flask_base_url', 'http://0.0.0.0:5200/')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/json_config_example.json', 'db_insert_url', 'http://0.0.0.0:5200/dbInsert')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/json_config_example.json', 'db_search_url', 'http://0.0.0.0:5200/dbSearch')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/json_config_example.json', 'db_update_url', 'http://0.0.0.0:5200/dbUpdate')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/json_config_example.json', 'another_service_base_url', 'http://api.otherservice.com/')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/json_config_example.json', 'another_service_login_url', 'http://api.otherservice.com/login')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/json_config_example.json', 'another_service_fetch_data_url', 'http://api.otherservice.com/fetchData')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/json_config_example.json', 'another_service_update_data_url', 'http://api.otherservice.com/updateData')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml', 'flask_base_url', 'http://0.0.0.0:5200/')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml', 'db_insert_url', 'http://0.0.0.0:5200/dbInsert')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml', 'db_search_url', 'http://0.0.0.0:5200/dbSearch')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml', 'db_update_url', 'http://0.0.0.0:5200/dbUpdate')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml', 'another_service_base_url', 'http://api.otherservice.com/')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml', 'another_service_login_url', 'http://api.otherservice.com/login')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml', 'another_service_fetch_data_url', 'http://api.otherservice.com/fetchData')
+NON PY PARSE-> ('/datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml', 'another_service_update_data_url', 'http://api.otherservice.com/updateData')
+
+URL Usages Found:
+{'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_insert', 'url_defined_line_': '7', 'ref_line_no': 34, 'ref_method_begin': 31, 'ref_method_end': 40, 'ref_col_offset': 21, 'ref_method_type': 'Request'}
+{'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_update', 'url_defined_line_': '9', 'ref_line_no': 45, 'ref_method_begin': 42, 'ref_method_end': 51, 'ref_col_offset': 21, 'ref_method_type': 'Request'}
+{'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_search', 'url_defined_line_': '8', 'ref_line_no': 56, 'ref_method_begin': 53, 'ref_method_end': 62, 'ref_col_offset': 21, 'ref_method_type': 'Request'}
+{'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py', 'url_variable_': 'url_encode', 'url_defined_line_': '24', 'ref_line_no': 34, 'ref_method_begin': 29, 'ref_method_end': 41, 'ref_col_offset': 15, 'ref_method_type': 'Request'}
+{}
+OUTSET-> {'/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py': [{'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_insert', 'url_defined_line_': '7', 'ref_line_no': 34, 'ref_method_begin': 31, 'ref_method_end': 40, 'ref_col_offset': 21, 'ref_method_type': 'Request'}, {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_update', 'url_defined_line_': '9', 'ref_line_no': 45, 'ref_method_begin': 42, 'ref_method_end': 51, 'ref_col_offset': 21, 'ref_method_type': 'Request'}, {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_search', 'url_defined_line_': '8', 'ref_line_no': 56, 'ref_method_begin': 53, 'ref_method_end': 62, 'ref_col_offset': 21, 'ref_method_type': 'Request'}], '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py': [{'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py', 'url_variable_': 'url_encode', 'url_defined_line_': '24', 'ref_line_no': 34, 'ref_method_begin': 29, 'ref_method_end': 41, 'ref_col_offset': 15, 'ref_method_type': 'Request'}, {}]}
+CHECKING ref_method_nm =  /multi_page  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /multi_page  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /multi_page  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /multi_page  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /multi_page  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /multi_page  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /multi_page  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /multi_page  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /multi_page  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /multi_page  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /multi_page  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /multi_page  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /multi_page  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /multi_page  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /multi_page  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /multi_page  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /multi_page  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /multi_page  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /multi_page  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /multi_page  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /multi_page  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /multi_page  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /multi_page  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /multi_page  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /multi_page  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /multi_page  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /multi_page  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /multi_page  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /multi_page  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /startBulkProcess  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /healthCheck  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /healthCheck  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /healthCheck  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /healthCheck  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /healthCheck  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /healthCheck  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /healthCheck  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /healthCheck  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /healthCheck  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /healthCheck  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /healthCheck  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /healthCheck  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /healthCheck  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /healthCheck  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /healthCheck  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /healthCheck  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /healthCheck  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /healthCheck  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /healthCheck  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /healthCheck  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /healthCheck  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /healthCheck  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /healthCheck  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /healthCheck  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /healthCheck  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /healthCheck  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /healthCheck  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /healthCheck  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /healthCheck  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /processDocument  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /processDocument  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /processDocument  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /processDocument  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /processDocument  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /processDocument  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /processDocument  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /processDocument  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /processDocument  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /processDocument  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /processDocument  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /processDocument  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /processDocument  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /processDocument  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /processDocument  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /processDocument  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /processDocument  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /processDocument  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /processDocument  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /processDocument  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /processDocument  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /processDocument  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /processDocument  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /processDocument  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /processDocument  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /processDocument  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /processDocument  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /processDocument  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /processDocument  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+Stage 1-> /encodeSentence /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py#url_encode#24 http://0.0.0.0:5200/encodeSentence
+Stage 2-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py url_encode {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py', 'url_variable_': 'url_encode', 'url_defined_line_': '24', 'ref_line_no': 34, 'ref_method_begin': 29, 'ref_method_end': 41, 'ref_col_offset': 15, 'ref_method_type': 'Request'}
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+Stage 1-> /dbInsert /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py#url_insert#7 http://0.0.0.0:5200/dbInsert
+Stage 2-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py url_insert {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_insert', 'url_defined_line_': '7', 'ref_line_no': 34, 'ref_method_begin': 31, 'ref_method_end': 40, 'ref_col_offset': 21, 'ref_method_type': 'Request'}
+CHECKING ref_method_nm =  /dbInsert  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbInsert  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbInsert  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /dbInsert  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+Stage 1-> /dbInsert /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#DB_INSERT_URL#5 http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbInsert  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbInsert  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbInsert  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbInsert  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+Stage 1-> /dbInsert /datadrive/IKG/LLM_INTERFACE/config/json_config_example.json#db_insert_url#0 http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+Stage 1-> /dbInsert /datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml#db_insert_url#0 http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbSearch  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbSearch  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbSearch  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+Stage 1-> /dbSearch /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py#url_search#8 http://0.0.0.0:5200/dbSearch
+Stage 2-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py url_search {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_search', 'url_defined_line_': '8', 'ref_line_no': 56, 'ref_method_begin': 53, 'ref_method_end': 62, 'ref_col_offset': 21, 'ref_method_type': 'Request'}
+CHECKING ref_method_nm =  /dbSearch  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbSearch  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /dbSearch  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbSearch  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbSearch  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+Stage 1-> /dbSearch /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#DB_SEARCH_URL#6 http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbSearch  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbSearch  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbSearch  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbSearch  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbSearch  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbSearch  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbSearch  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbSearch  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+Stage 1-> /dbSearch /datadrive/IKG/LLM_INTERFACE/config/json_config_example.json#db_search_url#0 http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbSearch  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbSearch  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbSearch  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbSearch  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbSearch  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbSearch  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbSearch  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbSearch  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+Stage 1-> /dbSearch /datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml#db_search_url#0 http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbSearch  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbSearch  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbSearch  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbSearch  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbSearch  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+Stage 1-> /dbUpdate /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py#url_update#9 http://0.0.0.0:5200/dbUpdate
+Stage 2-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py url_update {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_update', 'url_defined_line_': '9', 'ref_line_no': 45, 'ref_method_begin': 42, 'ref_method_end': 51, 'ref_col_offset': 21, 'ref_method_type': 'Request'}
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+Stage 1-> /dbUpdate /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#DB_UPDATE_URL#7 http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+Stage 1-> /dbUpdate /datadrive/IKG/LLM_INTERFACE/config/json_config_example.json#db_update_url#0 http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+Stage 1-> /dbUpdate /datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml#db_update_url#0 http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbUpdate  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /sendEmailFromSecondaryServer  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+Stage 2.1-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py', 'url_variable_': 'url', 'url_defined_line_': 4010, 'ref_line_no': 4010, 'ref_method_begin': 4007, 'ref_method_end': 4008, 'ref_col_offset': 8, 'ref_method_type': 'Request'}
+Stage 2.1-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py', 'url_variable_': 'url', 'url_defined_line_': 4032, 'ref_line_no': 4032, 'ref_method_begin': 4029, 'ref_method_end': 4030, 'ref_col_offset': 8, 'ref_method_type': 'Request'}
+Stage 2.1-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/main_multi_prod.py', 'url_variable_': 'url', 'url_defined_line_': 4053, 'ref_line_no': 4053, 'ref_method_begin': 4050, 'ref_method_end': 4051, 'ref_col_offset': 8, 'ref_method_type': 'Request'}
+CHECKING ref_method_nm =  /login  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /login  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /login  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /login  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /login  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /login  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /login  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /login  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /login  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /login  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /login  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+Stage 1-> /login /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#ANOTHER_SERVICE_LOGIN_URL#11 http://api.otherservice.com/login
+CHECKING ref_method_nm =  /login  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /login  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /login  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /login  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /login  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /login  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /login  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /login  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+Stage 1-> /login /datadrive/IKG/LLM_INTERFACE/config/json_config_example.json#another_service_login_url#0 http://api.otherservice.com/login
+CHECKING ref_method_nm =  /login  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /login  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /login  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /login  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /login  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /login  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /login  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /login  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+Stage 1-> /login /datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml#another_service_login_url#0 http://api.otherservice.com/login
+CHECKING ref_method_nm =  /login  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /login  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /td_api  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /td_api  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /td_api  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /td_api  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /td_api  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /td_api  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /td_api  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /td_api  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /td_api  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /td_api  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /td_api  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /td_api  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /td_api  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /td_api  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /td_api  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /td_api  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /td_api  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /td_api  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /td_api  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /td_api  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /td_api  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /td_api  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /td_api  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /td_api  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /td_api  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /td_api  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /td_api  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /td_api  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /td_api  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /extractText  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /extractText  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /extractText  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /extractText  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /extractText  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /extractText  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /extractText  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /extractText  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /extractText  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /extractText  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /extractText  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /extractText  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /extractText  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /extractText  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /extractText  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /extractText  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /extractText  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /extractText  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /extractText  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /extractText  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /extractText  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /extractText  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /extractText  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /extractText  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /extractText  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /extractText  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /extractText  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /extractText  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /extractText  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+Stage 1-> /encodeSentence /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py#url_encode#24 http://0.0.0.0:5200/encodeSentence
+Stage 2-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py url_encode {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py', 'url_variable_': 'url_encode', 'url_defined_line_': '24', 'ref_line_no': 34, 'ref_method_begin': 29, 'ref_method_end': 41, 'ref_col_offset': 15, 'ref_method_type': 'Request'}
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /encodeSentence  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+Stage 1-> /dbInsert /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py#url_insert#7 http://0.0.0.0:5200/dbInsert
+Stage 2-> /datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py url_insert {'url_fp': '/datadrive/IKG/LLM_INTERFACE/SRC_DIR/db_utils.py', 'url_variable_': 'url_insert', 'url_defined_line_': '7', 'ref_line_no': 34, 'ref_method_begin': 31, 'ref_method_end': 40, 'ref_col_offset': 21, 'ref_method_type': 'Request'}
+CHECKING ref_method_nm =  /dbInsert  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbInsert  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbInsert  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /dbInsert  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+Stage 1-> /dbInsert /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#DB_INSERT_URL#5 http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbInsert  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbInsert  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbInsert  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbInsert  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+Stage 1-> /dbInsert /datadrive/IKG/LLM_INTERFACE/config/json_config_example.json#db_insert_url#0 http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+Stage 1-> /dbInsert /datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml#db_insert_url#0 http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /dbInsert  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /dbInsert  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /fetchData  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /fetchData  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /fetchData  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /fetchData  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /fetchData  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /fetchData  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /fetchData  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /fetchData  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /fetchData  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /fetchData  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /fetchData  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /fetchData  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+Stage 1-> /fetchData /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#ANOTHER_SERVICE_FETCH_DATA_URL#12 http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /fetchData  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /fetchData  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /fetchData  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /fetchData  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /fetchData  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /fetchData  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /fetchData  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /fetchData  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+Stage 1-> /fetchData /datadrive/IKG/LLM_INTERFACE/config/json_config_example.json#another_service_fetch_data_url#0 http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /fetchData  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /fetchData  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /fetchData  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /fetchData  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /fetchData  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /fetchData  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /fetchData  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /fetchData  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+Stage 1-> /fetchData /datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml#another_service_fetch_data_url#0 http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /fetchData  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /updateData  var_nm =  flask_url_  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /updateData  var_nm =  url_insert  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /updateData  var_nm =  url_search  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /updateData  var_nm =  url_update  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /updateData  var_nm =  url_encode  Url =  http://0.0.0.0:5200/encodeSentence
+CHECKING ref_method_nm =  /updateData  var_nm =  FLASK_BASE_URL  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /updateData  var_nm =  DB_INSERT_URL  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /updateData  var_nm =  DB_SEARCH_URL  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /updateData  var_nm =  DB_UPDATE_URL  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /updateData  var_nm =  ANOTHER_SERVICE_BASE_URL  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /updateData  var_nm =  ANOTHER_SERVICE_LOGIN_URL  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /updateData  var_nm =  ANOTHER_SERVICE_FETCH_DATA_URL  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /updateData  var_nm =  ANOTHER_SERVICE_UPDATE_DATA_URL  Url =  http://api.otherservice.com/updateData
+Stage 1-> /updateData /datadrive/IKG/LLM_INTERFACE/config/python_config_example.py#ANOTHER_SERVICE_UPDATE_DATA_URL#13 http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /updateData  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /updateData  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /updateData  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /updateData  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /updateData  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /updateData  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /updateData  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /updateData  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+Stage 1-> /updateData /datadrive/IKG/LLM_INTERFACE/config/json_config_example.json#another_service_update_data_url#0 http://api.otherservice.com/updateData
+CHECKING ref_method_nm =  /updateData  var_nm =  flask_base_url  Url =  http://0.0.0.0:5200/
+CHECKING ref_method_nm =  /updateData  var_nm =  db_insert_url  Url =  http://0.0.0.0:5200/dbInsert
+CHECKING ref_method_nm =  /updateData  var_nm =  db_search_url  Url =  http://0.0.0.0:5200/dbSearch
+CHECKING ref_method_nm =  /updateData  var_nm =  db_update_url  Url =  http://0.0.0.0:5200/dbUpdate
+CHECKING ref_method_nm =  /updateData  var_nm =  another_service_base_url  Url =  http://api.otherservice.com/
+CHECKING ref_method_nm =  /updateData  var_nm =  another_service_login_url  Url =  http://api.otherservice.com/login
+CHECKING ref_method_nm =  /updateData  var_nm =  another_service_fetch_data_url  Url =  http://api.otherservice.com/fetchData
+CHECKING ref_method_nm =  /updateData  var_nm =  another_service_update_data_url  Url =  http://api.otherservice.com/updateData
+Stage 1-> /updateData /datadrive/IKG/LLM_INTERFACE/config/yaml_config_example.yml#another_service_update_data_url#0 http://api.otherservice.com/updateData
