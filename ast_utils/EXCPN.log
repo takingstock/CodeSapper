@@ -1,0 +1,936 @@
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/addtoDB.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 18
+    if __name__ == "__main__":
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 547
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 546
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+    get_meta_.read_excel_file()
+       
+
+                                                                   
+                              ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 545
+    '''
+
+    get_meta_ = GenerateXLMetaInfo( './DATA/Time & Accuracy.xlsx' )
+       
+
+                                                                  ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 544
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/basic_generateXLMetaData.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 543
+    '''
+      ^
+SyntaxError: EOF while scanning triple-quoted string literal
+
+EXCPN->/datadrive/IKG/code_db/query_llama3_via_groq.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 60
+    if __name__ == '__main__':
+                             ^
+SyntaxError: unexpected EOF while parsing
+
+EXCPN->/datadrive/IKG/code_db/readSS.py :: 
+Traceback (most recent call last):
+  File "/datadrive/IKG/ast_utils/python_ast_utils.py", line 19, in parse_ast
+    return ast.parse(code)
+  File "/home/ubuntu/miniconda3/lib/python3.8/ast.py", line 47, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 48
+    with open( 'SpreadSheetSummary.json', 'a' ) as fp:
+                                                     ^
+SyntaxError: unexpected EOF while parsing
+

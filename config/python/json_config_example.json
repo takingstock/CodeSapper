@@ -1,0 +1,59 @@
+{
+    "api_urls": {
+        "flask_base_url": "http://0.0.0.0:5200/",
+        "db_insert_url": "http://0.0.0.0:5200/dbInsert",
+        "db_search_url": "http://0.0.0.0:5200/dbSearch",
+        "db_update_url": "http://0.0.0.0:5200/dbUpdate",
+        "another_service_base_url": "http://api.otherservice.com/",
+        "another_service_login_url": "http://api.otherservice.com/login",
+        "another_service_fetch_data_url": "http://api.otherservice.com/fetchData",
+        "another_service_update_data_url": "http://api.otherservice.com/updateData"
+    },
+    "api_request_timeout": 240,
+    "logging_config": {
+        "version": 1,
+        "formatters": {
+            "default": {
+                "format": "[%(asctime)s] %(levelname)s in %(module)s: %(message)s"
+            }
+        },
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+                "formatter": "default"
+            },
+            "file": {
+                "class": "logging.FileHandler",
+                "filename": "app.log",
+                "formatter": "default"
+            }
+        },
+        "root": {
+            "level": "INFO",
+            "handlers": ["console", "file"]
+        }
+    },
+    "database_config": {
+        "host": "localhost",
+        "port": 5432,
+        "user": "db_user",
+        "password": "db_password",
+        "database": "my_database"
+    },
+    "email_config": {
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "smtp_user": "your_email@gmail.com",
+        "smtp_password": "your_password",
+        "from_email": "your_email@gmail.com",
+        "to_emails": ["recipient1@example.com", "recipient2@example.com"]
+    },
+    "feature_toggles": {
+        "enable_feature_x": true,
+        "enable_feature_y": false
+    },
+    "app_name": "My Awesome Application",
+    "app_version": "1.0.0",
+    "debug_mode": true
+}
+

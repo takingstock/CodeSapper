@@ -1,0 +1,7 @@
+{
+	"python": {
+		"frequency_in_seconds": 30,
+		"timestamp_json": "/datadrive/IKG/local_db/python/codebase_time_stamps.json",
+		"log_file": "/datadrive/IKG/local_db/python/daemon.log"
+	}
+}
