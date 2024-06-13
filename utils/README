@@ -1,0 +1,24 @@
+---- dump the below into /etc/systemd/system/github-monitor.service
+[Unit]
+Description=GitHub Monitor Service
+
+[Service]
+ExecStart=/usr/bin/python3 /datadrive/IKG/github-monitor/github_monitor.py
+Restart=on-failure
+RestartSec=10
+User=ubuntu
+Environment="GITHUB_TOKEN=<token>"
+
+[Install]
+WantedBy=multi-user.target
+
+----------------------------
+sudo systemctl daemon-reload
+sudo systemctl enable github-monitor
+sudo systemctl start github-monitor
+
+-------------
+
+to check status
+sudo systemctl status github-monitor
+

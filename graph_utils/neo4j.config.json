@@ -1,7 +1,0 @@
-{
-	"uname": "neo4j",
-	"pwd"  : "slayer#666",
-	"global_usage": "global_uses",
-	"local_usage": "local_uses",
-	"URI" : "bolt://localhost:7687"
-}
