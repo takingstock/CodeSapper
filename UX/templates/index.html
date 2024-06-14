@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Visualization</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #sidebar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #f4f4f4;
+            border-left: 1px solid #ccc;
+            display: none;
+            padding: 10px;
+        }
+        #details {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <svg></svg>
+    <div id="sidebar">
+        <h3>Node Details</h3>
+        <pre id="details"></pre>
+    </div>
+    <script src="/static/js/graph.js"></script>
+</body>
+</html>
+
