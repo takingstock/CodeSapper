@@ -305,7 +305,7 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
 
     print('RETURNING->', ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ))
 
-    return ( ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ) )
+    return ( ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ) ), downstream_point_of_entry_, ( begin_ln_, end_ln_ )
 
 if __name__ == '__main__':
     import json, time

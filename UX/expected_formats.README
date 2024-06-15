@@ -1,0 +1,33 @@
+
+EXPECTED ds into create_visualization
+
+    "file": "code_db/python/createJsonFeats.py",
+    "old_start": 133,
+    "old_length": 8,
+    "new_start": 133,
+    "new_length": 8,
+    "old_code": [
+        "    string = response.read().decode('utf-8')\n"
+    ],
+    "new_code": [
+        "    string = response.read()\n"
+    ],
+    "method_class_nm_old": {
+        "class_nm": "",
+        "method_nm": "returnEmbed"
+    },
+    "method_class_nm_new": {
+        "class_nm": "",
+        "method_nm": "returnEmbed"
+    },
+    "method_context":
+    "impact_analysis": [
+        {
+            "impacted_method": "/datadrive/IKG/code_db/python/searchDB.py/pos",
+            "impacted_code_snippet": [
+                "            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"
+            ],
+            "impacted_code_context":
+                        "criticality":
+                        "impact_analysis"
+

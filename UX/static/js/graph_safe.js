@@ -1,6 +1,5 @@
 const width = 960;
 const height = 600;
-const rectWidth = 200;
 const rectHeight = 50;
 const padding = 10; // Padding for the rectangles
 
@@ -8,9 +7,12 @@ const svg = d3.select("svg")
     .attr("width", width)
     .attr("height", height);
 
-const color = d3.scaleOrdinal()
-    .domain(["source", "globalUse"])
-    .range(["green", "orange"]);
+const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+const simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(d => d.method_nm).distance(200))
+    .force("charge", d3.forceManyBody().strength(-200))
+    .force("center", d3.forceCenter(width / 2, height / 2));
 
 // Define arrow markers for graph links
 svg.append("defs").selectAll("marker")
@@ -18,7 +20,7 @@ svg.append("defs").selectAll("marker")
     .enter().append("marker")
     .attr("id", d => d)
     .attr("viewBox", "0 -5 10 10")
-    .attr("refX", 15) // Adjusted refX for better visibility
+    .attr("refX", 40)
     .attr("refY", 0)
     .attr("markerWidth", 6)
     .attr("markerHeight", 6)
@@ -49,33 +51,15 @@ if (vizId) {
         console.log('Received nodes:', nodes);
         console.log('Received links:', links);
 
-        // Set initial positions for nodes
-        const sourceNode = nodes[0]; // Assuming the first node is the source
-        const globalUseNodes = nodes.slice(1); // All other nodes are global uses
-
-        sourceNode.x = width / 4;
-        sourceNode.y = height / 2;
-
-        const ySpacing = height / (globalUseNodes.length + 1);
-        globalUseNodes.forEach((node, index) => {
-            node.x = width * 0.75;
-            node.y = (index + 1) * ySpacing;
-        });
-
-        // Process links data
         const linkData = [];
         links.forEach(link => {
             if (link.global_uses_) {
                 link.global_uses_.forEach((target, i) => {
-                    const source = sourceNode;
-                    const targetNode = globalUseNodes.find(node => node.method_nm === target);
-                    if (targetNode) {
-                        linkData.push({ 
-                            source: source, 
-                            target: targetNode,
-                            impacted_code_snippet: link.impacted_code_snippet[i] || '' 
-                        });
-                    }
+                    linkData.push({ 
+                        source: link.method_nm, 
+                        target: target,
+                        impacted_code_snippet: link.impacted_code_snippet[i] || '' 
+                    });
                 });
             }
         });
@@ -84,9 +68,9 @@ if (vizId) {
 
         const link = svg.append("g")
             .attr("class", "links")
-            .selectAll("path")
+            .selectAll("line")
             .data(linkData)
-            .enter().append("path")
+            .enter().append("line")
             .attr("class", "link")
             .attr("stroke-width", 2)
             .attr("stroke", "#ff5733") // Set link color
@@ -108,7 +92,6 @@ if (vizId) {
             .data(nodes)
             .enter().append("g")
             .attr("class", "node")
-            .attr("transform", d => `translate(${d.x},${d.y})`) // Initialize node positions
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)
@@ -121,18 +104,10 @@ if (vizId) {
             d.rectWidth = ( 2 * Math.max(methodTextLength, fileTextLength) ) + ( 2 * padding );
         });
 
-        node.filter(d => d === sourceNode)
-            .append("rect")
+        node.append("rect")
             .attr("width", d => d.rectWidth)
             .attr("height", rectHeight)
-            .attr("fill", d => color("source"))
-            .attr("stroke", "#000");
-
-        node.filter(d => d !== sourceNode)
-            .append("rect")
-            .attr("width", d => d.rectWidth)
-            .attr("height", rectHeight)
-            .attr("fill", d => color("globalUse"))
+            .attr("fill", d => color(d.method_nm))
             .attr("stroke", "#000");
 
         node.append("text")
@@ -151,33 +126,26 @@ if (vizId) {
             .attr("fill", "#fff")
             .text(d => d.method_nm);
 
-        const simulation = d3.forceSimulation(nodes)
-            .force("link", d3.forceLink(linkData).id(d => d.method_nm).distance(200))
-            .force("charge", d3.forceManyBody().strength(-200))
-            .force("center", d3.forceCenter(width / 2, height / 2))
+        simulation
+            .nodes(nodes)
             .on("tick", ticked);
 
+        simulation.force("link")
+            .links(linkData);
+
         function ticked() {
-            link.attr("d", function(d) {
-                const deltaX = d.target.x - d.source.x;
-                const deltaY = d.target.y - d.source.y;
-                const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                const normX = deltaX / dist;
-                const normY = deltaY / dist;
-                const sourcePadding = rectWidth / 2;
-                const targetPadding = rectWidth / 2 + 10;
-                const sourceX = d.source.x + (sourcePadding * normX);
-                const sourceY = d.source.y + (rectHeight / 2) * normY;
-                const targetX = d.target.x - (targetPadding * normX);
-                const targetY = d.target.y - (rectHeight / 2) * normY;
-                return `M${sourceX},${sourceY} C${(sourceX + targetX) / 2},${sourceY} ${(sourceX + targetX) / 2},${targetY} ${targetX},${targetY}`;
-            });
+            link
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
 
             linkText
                 .attr("x", d => (d.source.x + d.target.x) / 2)
                 .attr("y", d => (d.source.y + d.target.y) / 2);
 
-            node.attr("transform", d => `translate(${d.x - d.rectWidth / 2},${d.y - rectHeight / 2})`);
+            node
+                .attr("transform", d => `translate(${d.x - d.rectWidth / 2},${d.y - rectHeight / 2})`);
         }
 
         function dragstarted(event, d) {

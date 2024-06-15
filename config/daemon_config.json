@@ -4,6 +4,9 @@
 		"timestamp_json": "/datadrive/IKG/local_db/python/codebase_time_stamps.json",
 		"log_file": "/datadrive/IKG/local_db/python/daemon.log",
 		"method_summary":"/datadrive/IKG/local_db/python/graph_entity_summary.json",
-		"git_change_summary_file":"/datadrive/IKG/utils/downloaded_artifacts/changes_for_further_analysis.json"
+		"git_change_summary_file":"/datadrive/IKG/utils/downloaded_artifacts/changes_for_further_analysis.json",
+		"viz_url":"http://0.0.0.0:6999/create_visualization",
+		"view_viz_url":"http://20.219.63.206:6999/?viz_id=",
+		"email_list":["vikram@amygb.ai"]
 	}
 }
