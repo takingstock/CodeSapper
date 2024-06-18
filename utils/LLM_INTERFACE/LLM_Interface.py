@@ -56,12 +56,13 @@ class LLM_interface:
 
     def executeInstruction(self, mode, msg ):
         # modes -> MODULE_VARIABLES, PACKAGE_VARIABLES, METHODS
-
+        content_ = ( self.extraction_prompt_[ mode ] if mode != None else "" ) + "\n" + msg
+        print('executeInstruction =>', content_)
         chat_completion = self.llm_client_.chat.completions.create(
                         messages=[
                             {
                                 "role": "user",
-                                "content": self.extraction_prompt_[ mode ] + "\n" + msg
+                                "content": content_
                             }
                         ],
                         model=self.model_to_be_used_,

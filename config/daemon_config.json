@@ -7,6 +7,9 @@
 		"git_change_summary_file":"/datadrive/IKG/utils/downloaded_artifacts/changes_for_further_analysis.json",
 		"viz_url":"http://0.0.0.0:6999/create_visualization",
 		"view_viz_url":"http://20.219.63.206:6999/?viz_id=",
-		"email_list":["vikram@amygb.ai"]
+		"email_list":["vikram@amygb.ai"],
+		"context_window": 8192,
+		"test_folder_":"/datadrive/IKG/test_db/test_plans/",
+		"criticality_thresh_": 3
 	}
 }

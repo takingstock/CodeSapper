@@ -8,6 +8,7 @@ from graph_utils.graphTraversal import traverseGraph
 from LLM_INTERFACE import chunking_utils
 from LLM_INTERFACE.LLM_Interface import LLM_interface
 from notifications import sendEmail
+from test_utils import test_chunking_utils
 ##glocal "ENUMS"
 GLOBAL, LOCAL = "global_uses", "local_uses"
 
@@ -55,7 +56,7 @@ def addChangeImpactOnDownstreamFile( change_record_, downstream_snippet_ ):
     msg_ += " downstream file importing " + change_record_["method_class_nm_new"]["method_nm"] + '\n'
     msg_ += downstream_snippet_ ## add the downstream method importing the above method
 
-    print('CALLING LLM addChangeImpactOnDownstreamFile->', msg_)
+    print('CALLING LLM addChangeImpactOnDownstreamFile->', msg_ )
     impact_response_ = llm_interface_.executeInstruction( "IMPACT_DOWNSTREAM", msg_ )
 
     return impact_response_
@@ -73,6 +74,7 @@ def aggregateImpactResponse( changed_D, usage_, change_record_, mode, default_ho
             ## method_context is added in the call made to chunking_utils.createChunkInChangeFile
             ## now concatenate all the snippets and code changes together to ascertain impact of change
             impact_analysis_ = addChangeImpactOnDownstreamFile( change_record_, downstream_snippet_ )
+            time.sleep(30)
 
             imp_ll_ = change_record_['impact_analysis'] if 'impact_analysis' in change_record_ else []
             imp_ll_.append( { 'impacted_method': usage_D['file_nm'] +'/'+ usage_D['method_nm'],\
@@ -88,6 +90,67 @@ def aggregateImpactResponse( changed_D, usage_, change_record_, mode, default_ho
         elif downstream_snippet_ == None:
             raise ValueError('Downstream usage of method->', method_,' exists but couldnt be found in ',\
                     usage_D['file_nm'], '. Need to debug!' )
+
+def testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, email_subject_ ):
+
+    impact_storage_, results_ = dict(), dict()
+    test_files_ = []
+    llm_interface_ = LLM_interface()
+    test_impact_prompt_ = llm_interface_.config_["EXTRACTION_PROMPT"]["TESTING_IMPACT"]
+
+    for root, dirs, files in os.walk( test_folder_ ):
+        for file_ in files:
+            test_files_.append( os.path.join(root, file_) )
+
+    for changes in change_summary_:
+        impact_storage_[ changes["file"] ] = changes["base_change_impact"]
+        for downstream_impact in changes["impact_analysis"]:
+            if downstream_impact['criticality'] != 'NA' and \
+                    int( downstream_impact['criticality'] ) >= criticality_thresh_:
+                downstream_impact["impacted_method"] = downstream_impact["impact_analysis"]
+
+    for key, impact_analysis in downstream_impact.items():
+        results_[ key ] = []
+
+        for test_file in test_files_:
+          try:  
+            chunky_ = test_chunking_utils.test_plan_chunker( context_window_sz_, test_file, \
+                                                         impact_analysis + test_impact_prompt_ )
+
+            eval_chunks_ = chunky_.genEvalChunks()
+
+            for chunk_ in eval_chunks_:
+                ## call the LLM 
+                print('Test-File->', len(chunk_.split()), '\n', test_file)
+                test_impact_ = llm_interface_.executeInstruction( mode=None, msg=chunk_ )
+                results_[ key ].append( test_impact_ )
+                time.sleep(90)
+          except:
+              continue
+
+    ## send email 
+    email_body_ = json.dumps( results_, indent=4 )
+    email_subject_ = "TEST FILE::" + email_subject_
+    print('SENDING TEST IMP ANALYSIS!!\n', email_body_, '\n', len( email_body_ ))
+    send_response_mail( email_subject_, email_body_ )
+
+def send_response_mail( subject, email_body ):
+    try:
+        # url = "http://amygbdemos.in:3434/api/emailManager/sendEmailForVertiv"
+        url = "https://email.amygbserver.in/api/emailManager/sendEmailFromSecondaryServer"
+        recepient_ids = "vikram@amygb.ai"
+
+        payload = {'subject': subject, 'body': email_body, 'emails': recepient_ids}
+        # files = {'file': open(file_path, 'rb')}
+        files = {'file': None}
+
+        res = requests.post(url, data=payload, files=files, timeout=30)  # , headers = headers)
+        print(res)
+        res.close()
+    except:
+        traceback.print_exc()
+        return None
+
 
 def start( change_summary_file_, \
            default_neo4j_config_=os.getenv("NEO4J_CONFIG"),\
@@ -116,6 +179,9 @@ def start( change_summary_file_, \
     with open( os.getenv("DAEMON_CONFIG"), 'r' ) as fp:
         daemon_cfg_ = json.load( fp )
         viz_url_ = daemon_cfg_['python']['viz_url']
+        context_window_sz_ = daemon_cfg_['python']["context_window"]
+        criticality_thresh_ = daemon_cfg_['python']["criticality_thresh_"]
+        test_folder_ = daemon_cfg_['python']["test_folder_"]
 
     start_timer_ = time.time()
 
@@ -148,22 +214,6 @@ def start( change_summary_file_, \
                 aggregateImpactResponse( changed_D, local_usage_, change_record_, 'local', default_home_dir_ )
             except:
                 print('Unable to find global usage method..INVESTIGATE')
-        '''        
-        else:
-            ## just add change impact summary for the method alone
-            impact_ = addChangeImpactOnFile( change_record_ )
-            change_record_['impact_analysis'] = [ { 'impacted_method': method_,\
-                                                    'impacted_code_snippet': change_record_["method_context"],\
-                                                    'impacted_code_range': ( change_record_["new_start"] ,\
-                                                                                change_record_["new_start"]+1 ),\
-                                                    'impacted_code_context': change_record_["method_context"],\
-                                                    'criticality': findPatterns(impact_, 'Criticality', r"[0-5]"),\
-                                                    'impact_analysis': impact_ ,\
-                                                    'impact_type': 'local' } ]
-        '''        
-
-        #resp_ = json.dumps( change_record_, indent=4 )
-        #print( 'MOMO->', resp_, time.time() - start_timer_ )
 
         print('HULLO ALLO->', json.dumps( change_summary_, indent=4 ))
         response = requests.post( viz_url_, json=change_summary_ )
@@ -178,11 +228,16 @@ def start( change_summary_file_, \
             viz_id_ = json_response['viz_id']
             viz_url_ = daemon_cfg['python']['view_viz_url'] + viz_id_
 
-            subject_ = "Changes in " + fnm + " Criticality: " + change_record_['base_change_criticality']
+            subject_ = "IMPACT ANALYSIS: Changes in " + fnm + " Criticality: " \
+                       + change_record_['base_change_criticality']
+
             body_    = "Hi, Kindly visualize the impact analysis of the changes made to the file in the Subject.\n"\
                     + viz_url_
             ## now send an email
-            sendEmail( ['vikram@amygb.ai'], subject_, body_ )
+            send_response_mail( subject_, body_ )
+
+        ## NOTE->now find the impact on test plans
+        testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )
 
 if __name__ == "__main__":
 
