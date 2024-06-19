@@ -70,10 +70,13 @@ class test_plan_chunker():
 
                     if self.estimateTokens( context_str_ ) >= remaining_tokens_:
                         self.eval_chunks_.append( self.change_summary_ + context_str_ )
-                        context_str_ = ''
 
-            if len( context_str_ ) > 0: ## just in case context_str_ still has some content in it
-                self.eval_chunks_.append( self.change_summary_ + context_str_ )
+                ## to get better results keep the context at a sheet level .. else 8192 tokens can 
+                ## take in a lot more than a few sheets and the results will be poorer
+                if len( context_str_ ) > 0:
+                    self.eval_chunks_.append( self.change_summary_ + context_str_ )
+
+                context_str_ = ''
 
         if doc_:
             docDict_ = reader_.readDOC()

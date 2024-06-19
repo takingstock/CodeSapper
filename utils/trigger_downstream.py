@@ -1,6 +1,6 @@
 import json, sys, os
 import numpy as np
-import time, re, requests
+import time, re, requests, traceback
 
 ## currently using sys.path approach but should be able to create microservices while making performance changes
 from graph_utils.graphTraversal import traverseGraph
@@ -91,9 +91,30 @@ def aggregateImpactResponse( changed_D, usage_, change_record_, mode, default_ho
             raise ValueError('Downstream usage of method->', method_,' exists but couldnt be found in ',\
                     usage_D['file_nm'], '. Need to debug!' )
 
+def format_test_results( test_file, test_impact_ ):
+    search_phrase = "Upon reviewing the test cases"
+    match = re.search(search_phrase, test_impact_, re.IGNORECASE)
+    if match:
+        start_pos = match.end()
+        # Extract the relevant part of the text
+        relevant_text = test_impact_[start_pos:].strip()
+
+        # Split the text by "\n\n"
+        elements = relevant_text.split("\n\n")
+
+        # Create the dictionary with element number as key and the split string as value
+        result_dict = {i + 1: element for i, element in enumerate(elements)}
+
+        # Print the dictionary
+        print(result_dict)
+        return { 'TEST_FILE': test_file, 'IMPACT': result_dict }
+    else:
+        return { 'TEST_FILE': test_file, 'IMPACT': test_impact_ }
+    
+
 def testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, email_subject_ ):
 
-    impact_storage_, results_ = dict(), dict()
+    impact_storage_, results_, genEvalInp_ = dict(), dict(), dict()
     test_files_ = []
     llm_interface_ = LLM_interface()
     test_impact_prompt_ = llm_interface_.config_["EXTRACTION_PROMPT"]["TESTING_IMPACT"]
@@ -107,9 +128,9 @@ def testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_f
         for downstream_impact in changes["impact_analysis"]:
             if downstream_impact['criticality'] != 'NA' and \
                     int( downstream_impact['criticality'] ) >= criticality_thresh_:
-                downstream_impact["impacted_method"] = downstream_impact["impact_analysis"]
+                genEvalInp_[ downstream_impact["impacted_method"] ] = downstream_impact["impact_analysis"]
 
-    for key, impact_analysis in downstream_impact.items():
+    for key, impact_analysis in genEvalInp_.items():
         results_[ key ] = []
 
         for test_file in test_files_:
@@ -118,37 +139,47 @@ def testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_f
                                                          impact_analysis + test_impact_prompt_ )
 
             eval_chunks_ = chunky_.genEvalChunks()
+            print('SENDING TEST FILE ->', test_file, ' A BUNCH OF CHUNKS->', len(eval_chunks_))
 
             for chunk_ in eval_chunks_:
                 ## call the LLM 
                 print('Test-File->', len(chunk_.split()), '\n', test_file)
                 test_impact_ = llm_interface_.executeInstruction( mode=None, msg=chunk_ )
-                results_[ key ].append( test_impact_ )
-                time.sleep(90)
+                formatted_ = format_test_results( test_file, test_impact_ ) 
+                results_[ key ].append( formatted_ )
+                time.sleep(60)
           except:
+              print('CHUNKING ERR->', traceback.format_exc())
               continue
 
     ## send email 
-    email_body_ = json.dumps( results_, indent=4 )
+    with open( '/datadrive/IKG/utils/tmp.json', 'w' ) as fp:
+        json.dump( results_, fp, indent=4 )
+    email_body_ = "PFA the impact analysis for the test cases!"
     email_subject_ = "TEST FILE::" + email_subject_
     print('SENDING TEST IMP ANALYSIS!!\n', email_body_, '\n', len( email_body_ ))
-    send_response_mail( email_subject_, email_body_ )
+    time.sleep(5)
+    send_response_mail( email_subject_, email_body_, file_=True )
 
-def send_response_mail( subject, email_body ):
+def send_response_mail( subject, email_body, file_=False ):
     try:
         # url = "http://amygbdemos.in:3434/api/emailManager/sendEmailForVertiv"
         url = "https://email.amygbserver.in/api/emailManager/sendEmailFromSecondaryServer"
         recepient_ids = "vikram@amygb.ai"
 
         payload = {'subject': subject, 'body': email_body, 'emails': recepient_ids}
-        # files = {'file': open(file_path, 'rb')}
-        files = {'file': None}
 
+        if file_:
+            files = {'file': open( '/datadrive/IKG/utils/tmp.json', 'rb')}
+        else:
+            files = {'file': None}
+        
+        print('BEFORE EMAIL SEND PAYLOAD->', payload)
         res = requests.post(url, data=payload, files=files, timeout=30)  # , headers = headers)
         print(res)
         res.close()
     except:
-        traceback.print_exc()
+        print( traceback.print_exc() )
         return None
 
 
