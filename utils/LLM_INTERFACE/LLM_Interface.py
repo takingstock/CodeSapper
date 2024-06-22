@@ -5,7 +5,7 @@ from groq import Groq
 from pathlib import Path
 
 class LLM_interface:
-    def __init__(self, cfg_path_=os.getenv("LLM_CONFIG_PATH"), llm_=os.getenv("LLM_MODEL")):
+    def __init__(self, cfg_path_=os.getenv("LLM_CONFIG_PATH")):
 
         with open( cfg_path_, 'r' ) as fp:
             self.config_ = json.load( fp )
