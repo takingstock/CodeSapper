@@ -119,7 +119,7 @@ def main():
                     print(f"Artifact downloaded and extracted successfully." )
 
                     ## now trigger graph traversal for all the changes
-                    with open( '/datadrive/IKG/config/daemon_config.json', 'r' ) as fp:
+                    with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
                         cfg = json.load( fp )
 
                     trigger_downstream.start( cfg['python']['git_change_summary_file'] )

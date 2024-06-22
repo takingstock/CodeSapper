@@ -35,7 +35,7 @@ def returnEmbed( sent ):
                                         headers={'Content-Type': 'application/json'} )
 
     response = urllib.request.urlopen( _request )
-    string = response.read().decode('utf-8')
+    string = response.read()
     json_obj = json.loads(string)
     
     return json_obj['encoded_'], True

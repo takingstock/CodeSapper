@@ -8513,3 +8513,127 @@
 2024-06-22 16:04:26,763 - GitHubMonitor - INFO - Extracted latest_run_id->
 2024-06-22 16:04:26,763 - GitHubMonitor - INFO - 9626636392
 2024-06-22 16:04:26,763 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:04:37,441 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:04:37,441 - GitHubMonitor - INFO - 9626636392
+2024-06-22 16:04:37,441 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:04:48,110 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:04:48,110 - GitHubMonitor - INFO - 9626636392
+2024-06-22 16:04:48,110 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:04:58,913 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:04:58,913 - GitHubMonitor - INFO - 9626636392
+2024-06-22 16:04:58,913 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:05:09,805 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:05:09,805 - GitHubMonitor - INFO - 9626636392
+2024-06-22 16:05:09,805 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:05:20,757 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:05:20,757 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:05:21,067 - GitHubMonitor - INFO - New artifact found. Downloading from https://api.github.com/repos/AmyGB-ai/IKG/actions/artifacts/1627750854/zip
+2024-06-22 16:05:22,275 - GitHubMonitor - INFO - GOIN TO WRITE->
+2024-06-22 16:05:22,276 - GitHubMonitor - INFO - /datadrive/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-22 16:05:22,276 - GitHubMonitor - INFO - IN WITH SCOPE->
+2024-06-22 16:05:22,276 - GitHubMonitor - INFO - /datadrive/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO - Artifact downloaded and extracted successfully.
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO - An error occurred: expected str, bytes or os.PathLike object, not NoneType
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO - Traceback (most recent call last):
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/github_monitor.py", line 125, in main
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO -     trigger_downstream.start( cfg['python']['git_change_summary_file'] )
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/trigger_downstream.py", line 208, in start
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO -     chunking_utils.createChunkInChangeFile( default_home_dir_, change_summary_ )
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 181, in createChunkInChangeFile
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO -     method_summary_ = readMethodsDBJson()
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 155, in readMethodsDBJson
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO -     with open( _config_path_, 'r' ) as fp:
+2024-06-22 16:05:22,278 - GitHubMonitor - INFO - TypeError: expected str, bytes or os.PathLike object, not NoneType
+2024-06-22 16:05:33,040 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:05:33,040 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:05:33,040 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:05:44,071 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:05:44,071 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:05:44,071 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:05:54,854 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:05:54,854 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:05:54,854 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:06:05,669 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:06:05,669 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:06:05,669 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:06:16,422 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:06:16,423 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:06:16,423 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:06:27,415 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:06:27,416 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:06:27,416 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:06:38,096 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:06:38,096 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:06:38,097 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:06:48,747 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:06:48,747 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:06:48,747 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:06:59,488 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:06:59,488 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:06:59,488 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:07:10,267 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:07:10,268 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:07:10,268 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:07:21,051 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:07:21,051 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:07:21,052 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:07:31,745 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:07:31,745 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:07:31,745 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:07:42,712 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:07:42,713 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:07:42,713 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:07:53,592 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:07:53,593 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:07:53,593 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:08:04,422 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:08:04,422 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:08:04,422 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:08:15,250 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:08:15,250 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:08:15,250 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:08:26,078 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:08:26,078 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:08:26,078 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:08:36,942 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:08:36,942 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:08:36,943 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:08:47,854 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:08:47,855 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:08:47,855 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:08:58,884 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:08:58,884 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:08:58,884 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:09:09,850 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:09:09,850 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:09:09,850 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:09:20,589 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:09:20,589 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:09:20,590 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:09:31,337 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:09:31,337 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:09:31,337 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:09:42,474 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:09:42,474 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:09:42,474 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:09:53,304 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:09:53,304 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:09:53,304 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:10:04,143 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:10:04,143 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:10:04,143 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:10:15,064 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:10:15,065 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:10:15,065 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:10:25,827 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:10:25,827 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:10:25,828 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:10:55,834 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:10:55,834 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:10:55,834 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:11:06,531 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:11:06,531 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:11:06,531 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 16:11:17,362 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 16:11:17,363 - GitHubMonitor - INFO - 9626692602
+2024-06-22 16:11:17,363 - GitHubMonitor - INFO - No new successful runs. Retrying...
