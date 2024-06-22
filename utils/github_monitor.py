@@ -15,7 +15,8 @@ REPO_OWNER = os.getenv('REPO_OWNER')
 REPO_NAME = os.getenv('REPO_NAME')
 ARTIFACT_NAME = 'generated-files'
 CHECK_INTERVAL = 10  # Check every 2 minutes
-local_path = os.getenv('GITHUB_MON_PATH')
+local_path = '/datadrive/IKG/utils/'
+#local_path = os.getenv('GITHUB_MON_PATH')
 RUN_ID_FILE = local_path + '/last_run_id.txt'
 OUTPUT_DIR = local_path + '/downloaded_artifacts'
 # Define a custom stream handler to redirect print statements

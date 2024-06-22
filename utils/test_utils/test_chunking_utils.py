@@ -2,7 +2,7 @@ import json, sys, os
 import numpy as np
 ## local imports
 sys.path.append( os.getenv('TEST_PLAN_CONFIG') )
-import doc_readers
+import test_utils.doc_readers
 
 class test_plan_chunker():
     def __init__(self, context_max_tokens, doc_path, existing_context_):

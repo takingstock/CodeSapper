@@ -1,10 +1,10 @@
 import numpy as np
 import json, sys, os, traceback
 
-sys.path.append( os.getenv('GRAPH_UTILS_FOLDER') )
+#sys.path.append( os.getenv('GRAPH_UTILS_FOLDER') )
 sys.path.append( os.getenv('AST_UTILS_FOLDER') )
 
-from python_ast_utils import CodeAnalyzer ## need to replace this based on programming language
+from ast_utils.python_ast_utils import CodeAnalyzer ## need to replace this based on programming language
 
 MIN_LINES_CTXT = 5 ## min number of lines of context needed
 
