@@ -239,7 +239,8 @@ def findPointOfEntry( file_path_, context_method_range_, changeDeets_ ):
                                                 changeDeets_["method_nm"]
     ## find the first occurence of either the imported class / method name's mention
     for idx, line_ in enumerate( context_ ):
-        if upstream_class_nm_ in line_ or upstream_method_nm_ in line_:
+        if ( upstream_class_nm_ != None and upstream_class_nm_ in line_ ) or\
+                ( upstream_method_nm_ != None and upstream_method_nm_ in line_ ):
             return idx, [ line_ ] ## using array nomenclature to maintain std with other similar inputs
 
     return None, None
