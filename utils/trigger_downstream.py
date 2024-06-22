@@ -39,6 +39,8 @@ def findPatterns(str1, pattern_, sub_pattern_):
 def addChangeImpactOnFile( change_record_ ):
 
     llm_interface_ = LLM_interface()
+    if 'method_context' not in change_record_: return ""
+
     msg_ = change_record_['method_context'] + '\n' ## add the changed method
     msg_ += "Changed line - NEW : " + ( ''.join( change_record_["new_code"] ) ) + '\n' ## add new changes
     msg_ += " OLD : " + ( ''.join( change_record_["old_code"] ) ) + '\n' ## add older version of the above
@@ -50,6 +52,8 @@ def addChangeImpactOnFile( change_record_ ):
 def addChangeImpactOnDownstreamFile( change_record_, downstream_snippet_ ):
 
     llm_interface_ = LLM_interface()
+    if 'method_context' not in change_record_: return ""
+
     msg_ = change_record_['method_context'] + '\n' ## add the changed method
     msg_ += "Changed line - NEW : " + ( ''.join( change_record_["new_code"] ) ) + '\n' ## add new changes
     msg_ += " OLD : " + ( ''.join( change_record_["old_code"] ) ) + '\n' ## add older version of the above
@@ -220,6 +224,10 @@ def start( change_summary_file_, \
     change_summary_comms_ = dict()
 
     for idx, change_record_ in enumerate( change_summary_ ):
+        if "method_class_nm_old" in change_record_ and "method_nm" in change_record_["method_class_nm_old"]\
+                and change_record_["method_class_nm_old"]["method_nm"] == None:
+                    continue
+
         fnm, method_ = change_record_['file'], change_record_["method_class_nm_old"]["method_nm"]
         class_ = change_record_["method_class_nm_old"]["class_nm"]
         impact_ = addChangeImpactOnFile( change_record_ )
@@ -246,8 +254,8 @@ def start( change_summary_file_, \
             except:
                 print('Unable to find global usage method..INVESTIGATE')
 
-        print('HULLO ALLO->', json.dumps( change_summary_, indent=4 ))
         response = requests.post( viz_url_, json=change_summary_ )
+        print( 'HULLO ALLO->', json.dumps( change_summary_, indent=4 ), response )
         ## NOTE->post this, we need to trigger an email with the URL of the visualized graph
 
         if response.status_code == 200:
@@ -257,18 +265,21 @@ def start( change_summary_file_, \
             json_response = response.json()
             
             viz_id_ = json_response['viz_id']
-            viz_url_ = daemon_cfg['python']['view_viz_url'] + viz_id_
+            send_url_ = daemon_cfg['python']['view_viz_url'] + viz_id_
 
             subject_ = "IMPACT ANALYSIS: Changes in " + fnm + " Criticality: " \
                        + change_record_['base_change_criticality']
 
-            body_    = "Hi, Kindly visualize the impact analysis of the changes made to the file in the Subject.\n"\
-                    + viz_url_
+            if change_record_['base_change_criticality'] == 'NA':
+                body_ = 'No IMPACT of the changes mentioned in the header!'
+            else:    
+                body_    = "Hi, Kindly visualize the impact analysis of the changes made to the file in \
+                            the Subject.\n"+ send_url_
             ## now send an email
             send_response_mail( subject_, body_ )
 
         ## NOTE->now find the impact on test plans
-        testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )
+        #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )
 
 if __name__ == "__main__":
 

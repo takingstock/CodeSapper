@@ -188,7 +188,11 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
                                                          changeD["method_class_nm_old"]['method_nm'], \
                                                          changeD['new_code'], changeD['old_code']
 
-        begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
+        try:
+            begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
+        except:
+            print('TRACEBACK->', traceback.format_exc())
+            continue
         
         parsed_ast_ = ast_utils_.parse_ast( file_nm_, ( begin_ln_, end_ln_ ) )
         ## the above call , apart from initializing the ast also parses the code for the range defined

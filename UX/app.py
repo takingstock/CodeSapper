@@ -69,6 +69,8 @@ def processChangeSummary( change_summary_ ):
     node_resp_, link_resp_ = [], []
 
     for idx, change_record_ in enumerate( change_summary_ ):
+        if "method_context" not in change_record_: continue
+
         fnm, method_ = change_record_['file'], change_record_["method_class_nm_old"]["method_nm"]
         old_code_, new_code_ = change_record_['old_code'], change_record_["new_code"]
         ln_no, method_context_ = change_record_["new_start"], change_record_["method_context"]
