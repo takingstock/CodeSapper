@@ -2,7 +2,7 @@
 import os
 import time
 import requests
-import json
+import json, traceback
 
 import logging
 from logging.handlers import TimedRotatingFileHandler

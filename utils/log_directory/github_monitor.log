@@ -7820,3 +7820,63 @@
 2024-06-22 15:21:10,728 - GitHubMonitor - INFO - Extracted latest_run_id->
 2024-06-22 15:21:10,728 - GitHubMonitor - INFO - 9626378298
 2024-06-22 15:21:10,728 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:21:21,682 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:21:21,682 - GitHubMonitor - INFO - 9626378298
+2024-06-22 15:21:21,682 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:21:32,373 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:21:32,373 - GitHubMonitor - INFO - 9626378298
+2024-06-22 15:21:32,374 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:21:43,215 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:21:43,215 - GitHubMonitor - INFO - 9626378298
+2024-06-22 15:21:43,215 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:21:53,966 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:21:53,966 - GitHubMonitor - INFO - 9626378298
+2024-06-22 15:21:53,966 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:22:04,858 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:22:04,858 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:22:05,143 - GitHubMonitor - INFO - New artifact found. Downloading from https://api.github.com/repos/AmyGB-ai/IKG/actions/artifacts/1627709652/zip
+2024-06-22 15:22:06,362 - GitHubMonitor - INFO - GOIN TO WRITE->
+2024-06-22 15:22:06,363 - GitHubMonitor - INFO - /datadrive/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-22 15:22:06,363 - GitHubMonitor - INFO - IN WITH SCOPE->
+2024-06-22 15:22:06,363 - GitHubMonitor - INFO - /datadrive/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-22 15:22:06,365 - GitHubMonitor - INFO - Artifact downloaded and extracted successfully.
+2024-06-22 15:22:06,365 - GitHubMonitor - ERROR - Traceback (most recent call last):
+2024-06-22 15:22:06,365 - GitHubMonitor - ERROR -   File "/datadrive/IKG/utils/github_monitor.py", line 122, in main
+2024-06-22 15:22:06,365 - GitHubMonitor - ERROR - with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
+2024-06-22 15:22:06,365 - GitHubMonitor - ERROR - TypeError
+2024-06-22 15:22:06,365 - GitHubMonitor - ERROR - :
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - expected str, bytes or os.PathLike object, not NoneType
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - 
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - During handling of the above exception, another exception occurred:
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - Traceback (most recent call last):
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR -   File "/datadrive/IKG/utils/github_monitor.py", line 138, in <module>
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - main()
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR -   File "/datadrive/IKG/utils/github_monitor.py", line 132, in main
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - print(f"An error occurred: {e}", traceback.format_exc())
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - NameError
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - :
+2024-06-22 15:22:06,366 - GitHubMonitor - ERROR - name 'traceback' is not defined
+2024-06-22 15:22:18,393 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:22:18,393 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:22:18,394 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:22:29,162 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:22:29,162 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:22:29,162 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:22:39,891 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:22:39,892 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:22:39,892 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:22:50,687 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:22:50,687 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:22:50,687 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:23:01,584 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:23:01,585 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:23:01,585 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:24:55,006 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:24:55,006 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:24:55,007 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:25:05,904 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:25:05,904 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:25:05,904 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-22 15:25:16,629 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-22 15:25:16,629 - GitHubMonitor - INFO - 9626470970
+2024-06-22 15:25:16,629 - GitHubMonitor - INFO - No new successful runs. Retrying...
