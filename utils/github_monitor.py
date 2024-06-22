@@ -11,8 +11,8 @@ import os
 import trigger_downstream
 
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-REPO_OWNER = os.getenv('REPO_OWNER') 
-REPO_NAME = os.getenv('REPO_NAME')
+REPO_OWNER = "AmyGB-ai" 
+REPO_NAME = "IKG"
 ARTIFACT_NAME = 'generated-files'
 CHECK_INTERVAL = 10  # Check every 2 minutes
 local_path = '/datadrive/IKG/utils/'
@@ -57,7 +57,6 @@ def get_latest_successful_run_id():
     headers = {'Authorization': f'token {GITHUB_TOKEN}'}
     response = requests.get(url, headers=headers)
     runs = response.json().get('workflow_runs', [])
-
     for run in runs:
         if run['conclusion'] == 'success':
             return run['id']

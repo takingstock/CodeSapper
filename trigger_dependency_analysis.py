@@ -48,9 +48,11 @@ def parse_diff_file(diff_file):
 
     with open(diff_file, 'r') as file:
         for line in file:
-            print('DUMM->', line)
             if line.startswith('diff --git'):
-                current_file = re.search(r'b/(.*)', line).group(1)
+                match = re.search(r'diff --git a/(.*) b/(.*)', line)
+                if match:
+                    current_file = match.group(2)
+                    print('DUMM->', current_file )
             elif line.startswith('@@') and current_file is not None and '.py' in current_file:
                 hunk_info = re.search(r'@@ -(\d+),(\d+) \+(\d+),(\d+) @@', line)
                 if hunk_info is not None:
