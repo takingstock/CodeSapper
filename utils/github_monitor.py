@@ -129,7 +129,7 @@ def main():
                 print("No new successful runs. Retrying...")
 
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"An error occurred: {e}", traceback.format_exc())
 
         time.sleep(CHECK_INTERVAL)
         #break
