@@ -186,7 +186,6 @@ def send_response_mail( subject, email_body, file_=False ):
         print( traceback.print_exc() )
         return None
 
-
 def start( change_summary_file_, \
            default_neo4j_config_=os.getenv("NEO4J_CONFIG"),\
            default_home_dir_=os.getenv("IKG_HOME"),\
