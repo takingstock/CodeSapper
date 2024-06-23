@@ -1,36 +1,18 @@
-# Check if /datadrive directory exists; create if not
-if [ ! -d "/datadrive" ]; then
-    echo "Creating /datadrive directory..."
-    sudo mkdir -p /datadrive
-fi
 
-# Ensure /datadrive directory has correct permissions (777)
-sudo chmod 777 /datadrive
+installation_dir_=$(pwd)
 
-# Create IKG directory within /datadrive
-sudo mkdir -p /datadrive/IKG
-
-echo "/datadrive/IKG directory created."
-# Clone IKG repository into /datadrive/IKG
-echo "Cloning IKG repository..."
-sudo git clone --branch master --single-branch https://github.com/AmyGB-ai/IKG.git /datadrive/IKG
-
-echo "IKG repository cloned."
-
-echo "Setting up environment variables..."
-
-export NEO4J_CONFIG="/datadrive/IKG/NEO4J/config.json"
-export AST_CONFIG="/datadrive/IKG/config/python/ast_config.json"
-export TEST_PLAN_CONFIG="/datadrive/IKG/utils/test_utils/"
-export GRAPH_UTILS_FOLDER="/datadrive/IKG/utils/graph_utils/"
-export AST_UTILS_FOLDER="/datadrive/IKG/utils/ast_utils/"
-export DAEMON_CONFIG="/datadrive/IKG/config/daemon_config.json"
-export IKG_HOME="/datadrive/IKG/"
+export NEO4J_CONFIG="$installation_dir_/NEO4J/config.json"
+export AST_CONFIG="$installation_dir_/config/python/ast_config.json"
+export TEST_PLAN_CONFIG="$installation_dir_/utils/test_utils/"
+export GRAPH_UTILS_FOLDER="$installation_dir_/utils/graph_utils/"
+export AST_UTILS_FOLDER="$installation_dir_/utils/ast_utils/"
+export DAEMON_CONFIG="$installation_dir_/config/daemon_config.json"
+export IKG_HOME="$installation_dir_/"
 export GITHUB_TOKEN="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"
 export REPO_OWNER="AmyGB-ai"
 export REPO_NAME="IKG"
-export GITHUB_MON_PATH="/datadrive/IKG/utils/"
-export LLM_CONFIG_PATH="/datadrive/IKG/utils/LLM_INTERFACE/llm_config.json"
+export GITHUB_MON_PATH="$installation_dir_/utils/"
+export LLM_CONFIG_PATH="$installation_dir_/utils/LLM_INTERFACE/llm_config.json"
 export LLM_MODEL="LLAMA"
 
 # Install Python libraries
@@ -84,9 +66,9 @@ echo "Neo4j installation and configuration completed without authentication."
 
 ## start code scanner
 echo "starting code scanner"
-nohup python /datadrive/IKG/utils/ast_utils/python_ast_daemon.py &> /datadrive/IKG/local-directory/code_scanner&
+nohup python $installation_dir_/utils/ast_utils/python_ast_daemon.py &> $installation_dir_/local-directory/code_scanner&
 echo "starting github monitor"
-nohup python /datadrive/IKG/utils/github_monitor.py &> /datadrive/IKG/local-directory/github_monitor&
+nohup python $installation_dir_/utils/github_monitor.py &> $installation_dir_/local-directory/github_monitor&
 echo "starting flask application"
-nohup python /datadrive/IKG/UX/app.py &> /datadrive/IKG/local-directory/flask_app&
+nohup python $installation_dir_/UX/app.py &> $installation_dir_/local-directory/flask_app&
 
