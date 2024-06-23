@@ -73,6 +73,9 @@ sudo systemctl restart neo4j
 
 echo "Neo4j installation and configuration completed without authentication."
 
+echo "Script to sleep for 10 seconds to ensure neo4j is up and running !"
+sleep 10
+
 ## start code scanner
 echo "starting code scanner"
 nohup python $installation_dir_/utils/ast_utils/python_ast_daemon.py &> $installation_dir_/local-directory/code_scanner&
