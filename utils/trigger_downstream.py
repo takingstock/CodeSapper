@@ -189,7 +189,8 @@ def send_response_mail( subject, email_body, file_=False ):
 
 def start( change_summary_file_, \
            default_neo4j_config_=os.getenv("NEO4J_CONFIG"),\
-           default_home_dir_=os.getenv("IKG_HOME") 
+           default_home_dir_=os.getenv("IKG_HOME"),\
+           send_notif_=False
          ):
     '''
     iterate through every record and
@@ -258,7 +259,7 @@ def start( change_summary_file_, \
         print( 'HULLO ALLO->', json.dumps( change_summary_, indent=4 ), response )
         ## NOTE->post this, we need to trigger an email with the URL of the visualized graph
 
-        if response.status_code == 200:
+        if response.status_code == 200 and send_notif_ == True:
             with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
                 daemon_cfg = json.load( fp )
 
@@ -278,8 +279,18 @@ def start( change_summary_file_, \
             ## now send an email
             send_response_mail( subject_, body_ )
 
-        ## NOTE->now find the impact on test plans
-        #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )
+            ## NOTE->now find the impact on test plans
+            #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )
+        else:
+            ## simply dump into json
+            criticality_ = 'NO_IMPACT_' if change_record_['base_change_criticality'] == 'NA' else\
+                                           change_record_['base_change_criticality']
+
+            impact_file_ = default_home_dir_ + './impact_analysis/impact_analysis_Method::' + fnm + '::Criticality::'\
+                           + criticality_ + '.json'
+
+            with open( impact_file_, 'w' ) as fp:
+                json.dump( change_summary_, fp )
 
 if __name__ == "__main__":
 
