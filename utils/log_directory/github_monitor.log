@@ -3733,3 +3733,486 @@
 2024-06-23 03:44:38,608 - GitHubMonitor - INFO - Extracted latest_run_id->
 2024-06-23 03:44:38,608 - GitHubMonitor - INFO - 9626788254
 2024-06-23 03:44:38,608 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:44:49,726 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:44:49,727 - GitHubMonitor - INFO - 9626788254
+2024-06-23 03:44:49,727 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:45:00,560 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:45:00,560 - GitHubMonitor - INFO - 9626788254
+2024-06-23 03:45:00,561 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:45:11,384 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:45:11,384 - GitHubMonitor - INFO - 9626788254
+2024-06-23 03:45:11,384 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:45:22,109 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:45:22,109 - GitHubMonitor - INFO - 9626788254
+2024-06-23 03:45:22,109 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:45:32,786 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:45:32,786 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:45:33,110 - GitHubMonitor - INFO - New artifact found. Downloading from https://api.github.com/repos/AmyGB-ai/IKG/actions/artifacts/1628389807/zip
+2024-06-23 03:45:34,277 - GitHubMonitor - INFO - GOIN TO WRITE->
+2024-06-23 03:45:34,278 - GitHubMonitor - INFO - /datadrive/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-23 03:45:34,278 - GitHubMonitor - INFO - IN WITH SCOPE->
+2024-06-23 03:45:34,278 - GitHubMonitor - INFO - /datadrive/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-23 03:45:34,279 - GitHubMonitor - INFO - Artifact downloaded and extracted successfully.
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - addtoDB.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - basic_generateXLMetaData.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - createJsonFeats.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - db_utils.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - fetchLLMResponse.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - findKeys.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - firstpass.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,285 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - qdrant_db_flask_server.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - test_api_app.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - ocr_api_app.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - test2_api_app.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - main_multi_prod.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - pca_test.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - query_gpt_via_groq.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - query_llama3_via_groq.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - readSS.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,286 - GitHubMonitor - INFO - searchDB.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - testChunking.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - testMonkey.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - test_config_py_usage.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - validate_search.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - TRACEBACK->
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - Traceback (most recent call last):
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 192, in createChunkInChangeFile
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO -     begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - ValueError: not enough values to unpack (expected 2, got 0)
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - addtoDB.py
+2024-06-23 03:45:34,287 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - basic_generateXLMetaData.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - createJsonFeats.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - db_utils.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - fetchLLMResponse.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - findKeys.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - firstpass.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - qdrant_db_flask_server.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - test_api_app.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - ocr_api_app.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,288 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - test2_api_app.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - main_multi_prod.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - pca_test.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - query_gpt_via_groq.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - query_llama3_via_groq.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - readSS.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - searchDB.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - testChunking.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - testMonkey.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,289 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - test_config_py_usage.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - validate_search.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - TRACEBACK->
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - Traceback (most recent call last):
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 192, in createChunkInChangeFile
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO -     begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - ValueError: not enough values to unpack (expected 2, got 0)
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - addtoDB.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - basic_generateXLMetaData.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - createJsonFeats.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,290 - GitHubMonitor - INFO - db_utils.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - fetchLLMResponse.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - findKeys.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - firstpass.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - qdrant_db_flask_server.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - test_api_app.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - ocr_api_app.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - test2_api_app.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - main_multi_prod.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,291 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - pca_test.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - query_gpt_via_groq.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - query_llama3_via_groq.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - readSS.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - searchDB.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - testChunking.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - testMonkey.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - test_config_py_usage.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - validate_search.py
+2024-06-23 03:45:34,292 - GitHubMonitor - INFO - trigger_downstream.py
+2024-06-23 03:45:34,293 - GitHubMonitor - INFO - TRACEBACK->
+2024-06-23 03:45:34,293 - GitHubMonitor - INFO - Traceback (most recent call last):
+2024-06-23 03:45:34,293 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 192, in createChunkInChangeFile
+2024-06-23 03:45:34,293 - GitHubMonitor - INFO -     begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
+2024-06-23 03:45:34,293 - GitHubMonitor - INFO - ValueError: not enough values to unpack (expected 2, got 0)
+2024-06-23 03:45:34,293 - GitHubMonitor - INFO - STAGE1-> self chunking :=
+2024-06-23 03:45:34,293 - GitHubMonitor - INFO - [{'file': 'utils/trigger_downstream.py', 'old_start': 189, 'old_length': 7, 'new_start': 189, 'new_length': 8, 'old_code': ['           default_home_dir_=os.getenv("IKG_HOME") \n'], 'new_code': ['           default_home_dir_=os.getenv("IKG_HOME"),\\\n', '           send_notif_=False\n'], 'method_class_nm_old': {'class_nm': None, 'method_nm': None}, 'method_class_nm_new': {'class_nm': None, 'method_nm': None}}, {'file': 'utils/trigger_downstream.py', 'old_start': 258, 'old_length': 7, 'new_start': 259, 'new_length': 7, 'old_code': ['        if response.status_code == 200:\n'], 'new_code': ['        if response.status_code == 200 and send_notif_ == True:\n'], 'method_class_nm_old': {'class_nm': None, 'method_nm': 'start'}, 'method_class_nm_new': {'class_nm': None, 'method_nm': 'start'}}, {'file': 'utils/trigger_downstream.py', 'old_start': 278, 'old_length': 8, 'new_start': 279, 'new_length': 18, 'old_code': ['        ## NOTE->now find the impact on test plans\n', '        #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )\n'], 'new_code': ['            ## NOTE->now find the impact on test plans\n', '            #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )\n', '        else:\n', '            ## simply dump into json\n', "            criticality_ = 'NO_IMPACT_' if change_record_['base_change_criticality'] == 'NA' else\\\n", "                                           change_record_['base_change_criticality']\n", '\n', "            impact_file_ = default_home_dir_ + './impact_analysis/impact_analysis_Method::' + fnm + '::Criticality::'\\\n", "                           + criticality_ + '.json'\n", '\n', "            with open( impact_file_, 'w' ) as fp:\n", '                json.dump( change_summary_, fp )\n'], 'method_class_nm_old': {'class_nm': None, 'method_nm': 'start'}, 'method_class_nm_new': {'class_nm': None, 'method_nm': 'start'}}]
+2024-06-23 03:45:34,310 - GitHubMonitor - INFO - Traversal Beginning->
+2024-06-23 03:45:34,310 - GitHubMonitor - INFO - start
+2024-06-23 03:45:34,310 - GitHubMonitor - INFO - /datadrive/IKG/utils/trigger_downstream.py
+2024-06-23 03:45:34,310 - GitHubMonitor - INFO - 
+2024-06-23 03:45:34,311 - GitHubMonitor - INFO -         MATCH ( startNode:Method { method_name: "start", file_name: "/datadrive/IKG/utils/trigger_downstream.py" } )
+2024-06-23 03:45:34,311 - GitHubMonitor - INFO -         CALL apoc.path.subgraphNodes(startNode, {
+2024-06-23 03:45:34,311 - GitHubMonitor - INFO -             relationshipFilter: "global_uses>",
+2024-06-23 03:45:34,311 - GitHubMonitor - INFO -             minLevel: 1
+2024-06-23 03:45:34,311 - GitHubMonitor - INFO -         }) YIELD node
+2024-06-23 03:45:34,311 - GitHubMonitor - INFO -         RETURN node
+2024-06-23 03:45:34,316 - GitHubMonitor - INFO - Traversal Beginning->
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO - start
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO - /datadrive/IKG/utils/trigger_downstream.py
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO - 
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO -         MATCH ( startNode:Method { method_name: "start", file_name: "/datadrive/IKG/utils/trigger_downstream.py" } )
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO -         CALL apoc.path.subgraphNodes(startNode, {
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO -             relationshipFilter: "local_uses>",
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO -             minLevel: 1
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO -         }) YIELD node
+2024-06-23 03:45:34,317 - GitHubMonitor - INFO -         RETURN node
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO - HULLO ALLO->
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO - [
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -     {
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "file": "utils/trigger_downstream.py",
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "old_start": 189,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "old_length": 7,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "new_start": 189,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "new_length": 8,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "old_code": [
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "           default_home_dir_=os.getenv(\"IKG_HOME\") \n"
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "new_code": [
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "           default_home_dir_=os.getenv(\"IKG_HOME\"),\\\n",
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "           send_notif_=False\n"
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "method_class_nm_old": {
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "method_nm": null
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "method_class_nm_new": {
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "method_nm": null
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         }
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -     },
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -     {
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "file": "utils/trigger_downstream.py",
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "old_start": 258,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "old_length": 7,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "new_start": 259,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "new_length": 7,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "old_code": [
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "        if response.status_code == 200:\n"
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "new_code": [
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "        if response.status_code == 200 and send_notif_ == True:\n"
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -         "method_class_nm_old": {
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:34,321 - GitHubMonitor - INFO -             "method_nm": "start"
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "method_class_nm_new": {
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "method_nm": "start"
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "base_change_impact": "",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "base_change_criticality": "NA"
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -     },
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -     {
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "file": "utils/trigger_downstream.py",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "old_start": 278,
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "old_length": 8,
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "new_start": 279,
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "new_length": 18,
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "old_code": [
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "        ## NOTE->now find the impact on test plans\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "        #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )\n"
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "new_code": [
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "            ## NOTE->now find the impact on test plans\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "            #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "        else:\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "            ## simply dump into json\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "            criticality_ = 'NO_IMPACT_' if change_record_['base_change_criticality'] == 'NA' else\\\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "                                           change_record_['base_change_criticality']\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "            impact_file_ = default_home_dir_ + './impact_analysis/impact_analysis_Method::' + fnm + '::Criticality::'\\\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "                           + criticality_ + '.json'\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "            with open( impact_file_, 'w' ) as fp:\n",
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "                json.dump( change_summary_, fp )\n"
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "method_class_nm_old": {
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "method_nm": "start"
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         "method_class_nm_new": {
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -             "method_nm": "start"
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -         }
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO -     }
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO - ]
+2024-06-23 03:45:34,322 - GitHubMonitor - INFO - <Response [200]>
+2024-06-23 03:45:34,323 - GitHubMonitor - INFO - BEFORE EMAIL SEND PAYLOAD->
+2024-06-23 03:45:34,323 - GitHubMonitor - INFO - {'subject': 'IMPACT ANALYSIS: Changes in utils/trigger_downstream.py Criticality: NA', 'body': 'No IMPACT of the changes mentioned in the header!', 'emails': 'vikram@amygb.ai'}
+2024-06-23 03:45:37,699 - GitHubMonitor - INFO - <Response [200]>
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO - Traversal Beginning->
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO - start
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO - /datadrive/IKG/utils/trigger_downstream.py
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO - 
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO -         MATCH ( startNode:Method { method_name: "start", file_name: "/datadrive/IKG/utils/trigger_downstream.py" } )
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO -         CALL apoc.path.subgraphNodes(startNode, {
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO -             relationshipFilter: "global_uses>",
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO -             minLevel: 1
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO -         }) YIELD node
+2024-06-23 03:45:37,712 - GitHubMonitor - INFO -         RETURN node
+2024-06-23 03:45:37,719 - GitHubMonitor - INFO - Traversal Beginning->
+2024-06-23 03:45:37,719 - GitHubMonitor - INFO - start
+2024-06-23 03:45:37,719 - GitHubMonitor - INFO - /datadrive/IKG/utils/trigger_downstream.py
+2024-06-23 03:45:37,719 - GitHubMonitor - INFO - 
+2024-06-23 03:45:37,720 - GitHubMonitor - INFO -         MATCH ( startNode:Method { method_name: "start", file_name: "/datadrive/IKG/utils/trigger_downstream.py" } )
+2024-06-23 03:45:37,720 - GitHubMonitor - INFO -         CALL apoc.path.subgraphNodes(startNode, {
+2024-06-23 03:45:37,720 - GitHubMonitor - INFO -             relationshipFilter: "local_uses>",
+2024-06-23 03:45:37,720 - GitHubMonitor - INFO -             minLevel: 1
+2024-06-23 03:45:37,720 - GitHubMonitor - INFO -         }) YIELD node
+2024-06-23 03:45:37,720 - GitHubMonitor - INFO -         RETURN node
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO - HULLO ALLO->
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO - [
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -     {
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "file": "utils/trigger_downstream.py",
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "old_start": 189,
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "old_length": 7,
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "new_start": 189,
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "new_length": 8,
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "old_code": [
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -             "           default_home_dir_=os.getenv(\"IKG_HOME\") \n"
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "new_code": [
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -             "           default_home_dir_=os.getenv(\"IKG_HOME\"),\\\n",
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -             "           send_notif_=False\n"
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "method_class_nm_old": {
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -             "method_nm": null
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:37,724 - GitHubMonitor - INFO -         "method_class_nm_new": {
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -             "method_nm": null
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         }
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -     },
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -     {
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "file": "utils/trigger_downstream.py",
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "old_start": 258,
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "old_length": 7,
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "new_start": 259,
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "new_length": 7,
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "old_code": [
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -             "        if response.status_code == 200:\n"
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "new_code": [
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -             "        if response.status_code == 200 and send_notif_ == True:\n"
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "method_class_nm_old": {
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -             "method_nm": "start"
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "method_class_nm_new": {
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -             "method_nm": "start"
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "base_change_impact": "",
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "base_change_criticality": "NA"
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -     },
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -     {
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "file": "utils/trigger_downstream.py",
+2024-06-23 03:45:37,725 - GitHubMonitor - INFO -         "old_start": 278,
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         "old_length": 8,
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         "new_start": 279,
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         "new_length": 18,
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         "old_code": [
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "        ## NOTE->now find the impact on test plans\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "        #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )\n"
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         "new_code": [
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "            ## NOTE->now find the impact on test plans\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "            #testImpact( change_summary_, context_window_sz_, criticality_thresh_, test_folder_, subject_ )\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "        else:\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "            ## simply dump into json\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "            criticality_ = 'NO_IMPACT_' if change_record_['base_change_criticality'] == 'NA' else\\\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "                                           change_record_['base_change_criticality']\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "            impact_file_ = default_home_dir_ + './impact_analysis/impact_analysis_Method::' + fnm + '::Criticality::'\\\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "                           + criticality_ + '.json'\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "            with open( impact_file_, 'w' ) as fp:\n",
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "                json.dump( change_summary_, fp )\n"
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         ],
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         "method_class_nm_old": {
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "method_nm": "start"
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -         "method_class_nm_new": {
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:45:37,726 - GitHubMonitor - INFO -             "method_nm": "start"
+2024-06-23 03:45:37,727 - GitHubMonitor - INFO -         },
+2024-06-23 03:45:37,727 - GitHubMonitor - INFO -         "base_change_impact": "",
+2024-06-23 03:45:37,727 - GitHubMonitor - INFO -         "base_change_criticality": "NA"
+2024-06-23 03:45:37,727 - GitHubMonitor - INFO -     }
+2024-06-23 03:45:37,727 - GitHubMonitor - INFO - ]
+2024-06-23 03:45:37,727 - GitHubMonitor - INFO - <Response [200]>
+2024-06-23 03:45:37,727 - GitHubMonitor - INFO - BEFORE EMAIL SEND PAYLOAD->
+2024-06-23 03:45:37,727 - GitHubMonitor - INFO - {'subject': 'IMPACT ANALYSIS: Changes in utils/trigger_downstream.py Criticality: NA', 'body': 'No IMPACT of the changes mentioned in the header!', 'emails': 'vikram@amygb.ai'}
+2024-06-23 03:45:40,150 - GitHubMonitor - INFO - <Response [200]>
+2024-06-23 03:45:50,904 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:45:50,904 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:45:50,904 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:46:01,760 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:46:01,760 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:46:01,760 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:46:12,579 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:46:12,579 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:46:12,579 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:46:23,519 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:46:23,520 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:46:23,520 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:46:34,321 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:46:34,321 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:46:34,322 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:46:45,149 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:46:45,149 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:46:45,149 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:46:55,831 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:46:55,831 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:46:55,832 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:47:06,721 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:47:06,721 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:47:06,722 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:47:17,551 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:47:17,551 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:47:17,552 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:47:28,468 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:47:28,468 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:47:28,468 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:48:17,889 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:48:17,889 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:48:17,890 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:48:29,048 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:48:29,048 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:48:29,048 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:48:39,778 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:48:39,778 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:48:39,778 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:48:50,715 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:48:50,715 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:48:50,715 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:49:01,694 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:49:01,694 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:49:01,695 - GitHubMonitor - INFO - No new successful runs. Retrying...
