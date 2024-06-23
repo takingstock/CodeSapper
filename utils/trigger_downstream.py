@@ -290,7 +290,7 @@ def start( change_summary_file_, \
                     + '::Criticality::' + criticality_ + '.json'
 
             with open( impact_file_, 'w' ) as fp:
-                json.dump( change_summary_, fp )
+                json.dump( change_record_, fp, indent=4 )
 
 if __name__ == "__main__":
 
