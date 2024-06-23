@@ -13,7 +13,7 @@ sudo mkdir -p /datadrive/IKG
 echo "/datadrive/IKG directory created."
 # Clone IKG repository into /datadrive/IKG
 echo "Cloning IKG repository..."
-sudo git clone https://github.com/AmyGB-ai/IKG.git /datadrive/IKG
+sudo git clone --branch master --single-branch https://github.com/AmyGB-ai/IKG.git /datadrive/IKG
 
 echo "IKG repository cloned."
 
