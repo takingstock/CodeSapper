@@ -69,10 +69,27 @@ sudo bash -c 'echo "dbms.security.procedures.unrestricted=gds.*" >> /etc/neo4j/n
 sudo bash -c 'echo "dbms.security.procedures.allowlist=gds.*" >> /etc/neo4j/neo4j.conf'
 
 # Download and install the APOC library
-sudo wget https://github.com/neo4j/apoc/releases/download/5.21.0/apoc-5.21.0-core.jar -P /var/lib/neo4j/plugins
+sudo wget https://github.com/neo4j/apoc/releases/download/5.20.0/apoc-5.20.0-core.jar -P /var/lib/neo4j/plugins
 
-# Update Neo4j configuration to enable GDS procedures
-sudo bash -c 'echo "dbms.security.procedures.unrestricted=apoc.*" >> neo4j/conf/neo4j.conf'
+# Update Neo4j configuration to enable APOC procedures
+sudo bash -c 'echo "dbms.security.procedures.unrestricted=apoc.*" >> /etc/neo4j/neo4j.conf'
+sudo bash -c 'echo "dbms.security.procedures.allowlist=apoc.*" >> /etc/neo4j/neo4j.conf'
+
+CONF_FILE="/etc/neo4j/apoc.conf"
+# Create the apoc.conf file with the specified entries
+sudo tee ${CONF_FILE} > /dev/null <<EOF
+apoc.trigger.enabled=true
+apoc.jdbc.neo4j.url="jdbc:foo:bar"
+apoc.import.file.enabled=true
+apoc.export.file.enabled=true
+dbms.security.procedures.unrestricted=apoc.*
+dbms.security.procedures.allowlist=apoc.*
+dbms.security.procedures.unrestricted=gds.*
+dbms.security.procedures.allowlist=gds.*
+EOF
+
+# Ensure correct permissions (optional, but recommended)
+sudo chmod 644 ${CONF_FILE}
 
 # Restart Neo4j
 sudo systemctl restart neo4j
