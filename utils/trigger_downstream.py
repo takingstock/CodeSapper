@@ -286,8 +286,8 @@ def start( change_summary_file_, \
             criticality_ = 'NO_IMPACT_' if change_record_['base_change_criticality'] == 'NA' else\
                                            change_record_['base_change_criticality']
 
-            impact_file_ = default_home_dir_ + '/impact_analysis/impact_analysis_Method::' + fnm + '::Criticality::'\
-                           + criticality_ + '.json'
+            impact_file_ = default_home_dir_ + '/impact_analysis/impact_analysis_Method::' + fnm.replace('/','_') \
+                    + '::Criticality::' + criticality_ + '.json'
 
             with open( impact_file_, 'w' ) as fp:
                 json.dump( change_summary_, fp )
