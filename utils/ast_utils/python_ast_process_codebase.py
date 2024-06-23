@@ -4,15 +4,11 @@ import json, os, sys, traceback, glob
 
 class generateGraphEntities():
     def __init__(self):
-        self.config_file_path_ = os.getenv("AST_CONFIG")
-        with open( self.config_file_path_, 'r' ) as fp:
-            cfg_ = json.load( fp )
-
         ##NOTE-> this MUST be the root dir of all your codebase
-        self.src_dir_ = cfg_['SRC_DIR'] 
-        self.op_dest_ = cfg_['SRC_DIR'] + '/tmp/tmp_entity_store.json'
+        self.src_dir_ = os.getenv('CODE_DB') 
+        self.op_dest_ = self.src_dir_ + '/tmp/tmp_entity_store.json'
 
-        if not os.path.exists( cfg_['SRC_DIR'] + '/tmp/' ):
+        if not os.path.exists( self.src_dir_ + '/tmp/' ):
             os.makedirs( self.op_dest_ )
 
         self.LOCAL = 'local'

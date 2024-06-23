@@ -2,7 +2,6 @@ from neo4j import GraphDatabase
 import numpy as np
 import os, json, sys, traceback
 import pandas as pd
-from pyvis.network import Network
 
 class traverseGraph():
 
@@ -47,8 +46,6 @@ class traverseGraph():
 
         result = tx.run(query, method_name=method_name, file_name=file_name)
 
-        net = Network(height='750px', width='100%', directed=True)
-
         for record in result:
             nodes = record['path'].nodes
 
@@ -57,11 +54,6 @@ class traverseGraph():
                 tgt = nodes[i+1].element_id
                 src_label = nodes[i]['method_name']
                 tgt_label = nodes[i+1]['method_name']
-                net.add_node(src, label=src_label)
-                net.add_node(tgt, label=tgt_label)
-                net.add_edge(src, tgt)
-
-        net.save_graph("traversal_path.html")
 
     def call_traversal(self, method, file_, mode, generate_html=False):
 

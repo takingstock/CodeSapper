@@ -3,6 +3,7 @@ installation_dir_=$(pwd)
 
 export NEO4J_CONFIG="$installation_dir_/NEO4J/config.json"
 export AST_CONFIG="$installation_dir_/config/python/ast_config.json"
+export CODE_DB="$installation_dir_/code_db/"
 export TEST_PLAN_CONFIG="$installation_dir_/utils/test_utils/"
 export GRAPH_UTILS_FOLDER="$installation_dir_/utils/graph_utils/"
 export AST_UTILS_FOLDER="$installation_dir_/utils/ast_utils/"
