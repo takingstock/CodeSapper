@@ -60,6 +60,14 @@ echo "Configuring Neo4j to disable authentication..."
 sudo sed -i 's/#dbms.security.auth_enabled=true/dbms.security.auth_enabled=false/' /etc/neo4j/neo4j.conf
 sudo sed -i 's/#dbms.security.auth_enabled=false/dbms.security.auth_enabled=false/' /etc/neo4j/neo4j.conf
 
+
+# Download and install the GDS library
+sudo wget https://github.com/neo4j/graph-data-science/releases/download/2.6.7/neo4j-graph-data-science-2.6.7.jar -P /var/lib/neo4j/plugins
+
+# Update Neo4j configuration to enable GDS procedures
+sudo bash -c 'echo "dbms.security.procedures.unrestricted=gds.*" >> /etc/neo4j/neo4j.conf'
+sudo bash -c 'echo "dbms.security.procedures.allowlist=gds.*" >> /etc/neo4j/neo4j.conf'
+
 # Restart Neo4j
 sudo systemctl restart neo4j
 
