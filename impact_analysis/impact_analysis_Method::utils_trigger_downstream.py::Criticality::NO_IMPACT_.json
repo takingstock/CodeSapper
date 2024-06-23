@@ -1,0 +1,23 @@
+{
+    "file": "utils/trigger_downstream.py",
+    "old_start": 290,
+    "old_length": 7,
+    "new_start": 290,
+    "new_length": 7,
+    "old_code": [
+        "                json.dump( change_summary_, fp )\n"
+    ],
+    "new_code": [
+        "                json.dump( change_record_, fp, indent=4 )\n"
+    ],
+    "method_class_nm_old": {
+        "class_nm": null,
+        "method_nm": "start"
+    },
+    "method_class_nm_new": {
+        "class_nm": null,
+        "method_nm": "start"
+    },
+    "base_change_impact": "",
+    "base_change_criticality": "NA"
+}
