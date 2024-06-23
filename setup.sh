@@ -18,7 +18,7 @@ export LLM_MODEL="LLAMA"
 
 # Install Python libraries
 echo "Installing Python libraries..."
-pip install -r requirements.txt
+pip install -r requirements.txt > $installation_dir_/local-directory/pylib_installation
 
 ## NEO4J
 echo "Neo4j installation..."
