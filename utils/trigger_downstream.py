@@ -296,5 +296,5 @@ if __name__ == "__main__":
     with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
         cfg = json.load( fp )
 
-    start( cfg['python']['git_change_summary_file'] )
+    start( os.getenv('IKG_HOME') + cfg['python']['git_change_summary_file'] )
 

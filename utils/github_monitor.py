@@ -15,8 +15,7 @@ REPO_OWNER = "AmyGB-ai"
 REPO_NAME = "IKG"
 ARTIFACT_NAME = 'generated-files'
 CHECK_INTERVAL = 10  # Check every 2 minutes
-local_path = '/datadrive/IKG/utils/'
-#local_path = os.getenv('GITHUB_MON_PATH')
+local_path = os.getenv("GITHUB_MON_PATH")
 RUN_ID_FILE = local_path + '/last_run_id.txt'
 OUTPUT_DIR = local_path + '/downloaded_artifacts'
 # Define a custom stream handler to redirect print statements
@@ -122,7 +121,8 @@ def main():
                     with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
                         cfg = json.load( fp )
 
-                    trigger_downstream.start( cfg['python']['git_change_summary_file'] )
+                    home_dir_ = os.getenv("IKG_HOME")
+                    trigger_downstream.start( home_dir_ + cfg['python']['git_change_summary_file'] )
                 else:
                     print("No artifact found for the latest successful run.")
             else:

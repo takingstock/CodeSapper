@@ -18,11 +18,12 @@ class python_ast_daemon():
         self.daemon_config_path_ = os.getenv("DAEMON_CONFIG")
         with open( self.daemon_config_path_, 'r' ) as fp:
             tmp_json_ = json.load( fp )
-
+        
+        self.home_dir_ = os.getenv('IKG_HOME')
         self.config_ = tmp_json_['python']
-        self.log_file_ = self.config_["log_file"]
+        self.log_file_ = self.home_dir_ + self.config_["log_file"]
         self.sleep_time_ = self.config_['frequency_in_seconds']
-        self.method_summary_file_ = self.config_['method_summary']
+        self.method_summary_file_ = self.home_dir_ + self.config_['method_summary']
         ## initialize ast utils 
         self.ast_codebase_utils_ = generateGraphEntities()
         self.ast_API_utils_      = addAPIUsageToGraph()
@@ -47,7 +48,8 @@ class python_ast_daemon():
 
         while True:
           try:  
-            relevant_files_ = self.ast_codebase_utils_.generateRelevantFiles( self.config_['timestamp_json'] )
+            relevant_files_ = self.ast_codebase_utils_.generateRelevantFiles( self.home_dir_ +\
+                                                                              self.config_['timestamp_json'] )
 
             non_api_graph_inputs_ = self.ast_codebase_utils_.generate()
             api_graph_inputs_     = self.ast_API_utils_.createGraphInput( relevant_files_ )
