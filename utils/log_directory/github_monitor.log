@@ -4216,3 +4216,1067 @@
 2024-06-23 03:49:01,694 - GitHubMonitor - INFO - Extracted latest_run_id->
 2024-06-23 03:49:01,694 - GitHubMonitor - INFO - 9630554918
 2024-06-23 03:49:01,695 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:49:12,383 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:49:12,383 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:49:12,383 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:49:23,324 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:49:23,325 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:49:23,325 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:49:34,342 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:49:34,343 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:49:34,343 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:49:45,050 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:49:45,050 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:49:45,050 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:49:55,969 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:49:55,969 - GitHubMonitor - INFO - 9630554918
+2024-06-23 03:49:55,969 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:50:06,890 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:50:06,890 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:50:07,176 - GitHubMonitor - INFO - New artifact found. Downloading from https://api.github.com/repos/AmyGB-ai/IKG/actions/artifacts/1628395227/zip
+2024-06-23 03:50:08,335 - GitHubMonitor - INFO - GOIN TO WRITE->
+2024-06-23 03:50:08,336 - GitHubMonitor - INFO - /datadrive/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-23 03:50:08,336 - GitHubMonitor - INFO - IN WITH SCOPE->
+2024-06-23 03:50:08,336 - GitHubMonitor - INFO - /datadrive/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-23 03:50:08,337 - GitHubMonitor - INFO - Artifact downloaded and extracted successfully.
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - addtoDB.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - createJsonFeats.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - basic_generateXLMetaData.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - createJsonFeats.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - createJsonFeats.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - createJsonFeats.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/createJsonFeats.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - {'method_name': 'blockPrint', 'method_begin': 'def blockPrint():\n', 'method_end': "    sys.stdout = open(os.devnull, 'w')\n", 'range': [11, 12], 'global_uses': [], 'local_uses': []}
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/createJsonFeats.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - {'method_name': 'enablePrint', 'method_begin': 'def enablePrint():\n', 'method_end': '    sys.stdout = sys.__stdout__\n', 'range': [15, 16], 'global_uses': [], 'local_uses': []}
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/createJsonFeats.py
+2024-06-23 03:50:08,341 - GitHubMonitor - INFO - {'method_name': 'returnEmbed', 'method_begin': 'def returnEmbed( sent ):\n', 'method_end': "    return json_obj['encoded_'], True\n", 'range': [29, 41], 'global_uses': [{'file_path': '/datadrive/IKG/code_db/python/addtoDB.py', 'method_nm': 'addToDB', 'method_defn': 'def addToDB():\n', 'usage': '            emb_ = createJsonFeats.returnEmbed( txt )\n', 'method_end': '            db_utils.insertNewSignature( dd_ )\n'}, {'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'createDBRec', 'method_defn': "    def createDBRec( self, summary_D, mode='NORM' ):\n", 'usage': '        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n', 'method_end': '        return insertRec\n'}, {'file_path': '/datadrive/IKG/code_db/python/searchDB.py', 'method_nm': 'pos', 'method_defn': 'def pos( res_ ):\n', 'usage': "            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n", 'method_end': "                ' BM25 : ', score_title_[keyid] )\n"}], 'local_uses': []}
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - rec_ = { 'sentence': sent }
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - data = json.dumps( rec_ ).encode('utf-8')
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - _request = urllib.request.Request( url_encode, data=data, method='POST', \
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO -                                     headers={'Content-Type': 'application/json'} )
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - response = urllib.request.urlopen( _request )
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - string = response.read()
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - json_obj = json.loads(string)
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,342 - GitHubMonitor - INFO - return json_obj['encoded_'], True
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - string = response.read().decode('utf-8')
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - string = response.read()
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - ['sent']
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - rec_
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - ['json', 'dumps', 'rec_', 'encode']
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - rec_
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - ['urllib', 'request', 'Request', 'url_encode']
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - rec_
+2024-06-23 03:50:08,343 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - ['urllib', 'request', 'urlopen', '_request']
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - rec_
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - ['response', 'read']
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - rec_
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - ['json', 'loads', 'string']
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - rec_
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - Furthest assignment of
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - rec_
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO -  is
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['data'], 'Ending': 'NA', 'Values': ['json', 'dumps', 'rec_', 'encode'], 'Function': 'encode'}
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['data'], 'Ending': 'NA', 'Values': ['json', 'dumps', 'rec_', 'encode'], 'Function': 'encode'}
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,344 - GitHubMonitor - INFO - ['sent']
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - data
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - ['json', 'dumps', 'rec_', 'encode']
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - data
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - ['urllib', 'request', 'Request', 'url_encode']
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - data
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - ['urllib', 'request', 'urlopen', '_request']
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - data
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - ['response', 'read']
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - data
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - ['json', 'loads', 'string']
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - data
+2024-06-23 03:50:08,345 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - Furthest assignment of
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - data
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO -  is
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - -1
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 10000
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - ['sent']
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - _request
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - ['json', 'dumps', 'rec_', 'encode']
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - _request
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - ['urllib', 'request', 'Request', 'url_encode']
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - _request
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - ['urllib', 'request', 'urlopen', '_request']
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - _request
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,346 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - ['response', 'read']
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - _request
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - ['json', 'loads', 'string']
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - _request
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - Furthest assignment of
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - _request
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO -  is
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['response'], 'Ending': 'NA', 'Values': ['urllib', 'request', 'urlopen', '_request'], 'Function': 'urlopen'}
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['response'], 'Ending': 'NA', 'Values': ['urllib', 'request', 'urlopen', '_request'], 'Function': 'urlopen'}
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - ['sent']
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - response
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - ['json', 'dumps', 'rec_', 'encode']
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - response
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - ['urllib', 'request', 'Request', 'url_encode']
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - response
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - ['urllib', 'request', 'urlopen', '_request']
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - response
+2024-06-23 03:50:08,347 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - ['response', 'read']
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - response
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - ['json', 'loads', 'string']
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - response
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - Furthest assignment of
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - response
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO -  is
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['string'], 'Ending': 'NA', 'Values': ['response', 'read'], 'Function': 'read'}
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['string'], 'Ending': 'NA', 'Values': ['response', 'read'], 'Function': 'read'}
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - ['sent']
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - string
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - ['json', 'dumps', 'rec_', 'encode']
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - string
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - ['urllib', 'request', 'Request', 'url_encode']
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - string
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - ['urllib', 'request', 'urlopen', '_request']
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - string
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - ['response', 'read']
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - string
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - ['json', 'loads', 'string']
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - string
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,348 - GitHubMonitor - INFO - Furthest assignment of
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - string
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO -  is
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['json_obj'], 'Ending': 'NA', 'Values': ['json', 'loads', 'string'], 'Function': 'loads'}
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['json_obj'], 'Ending': 'NA', 'Values': ['json', 'loads', 'string'], 'Function': 'loads'}
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - ['sent']
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - json_obj
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 2
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - ['json', 'dumps', 'rec_', 'encode']
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - json_obj
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 4
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - ['urllib', 'request', 'Request', 'url_encode']
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - json_obj
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 5
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - ['urllib', 'request', 'urlopen', '_request']
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - json_obj
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 8
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - ['response', 'read']
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - json_obj
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - ['json', 'loads', 'string']
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - json_obj
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - Furthest assignment of
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - json_obj
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO -  is
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - -1
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10000
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - cmpOldNew->
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['string'], 'Ending': 'NA', 'Values': ['response', 'read', 'decode'], 'Function': 'decode'}
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - NEW TGT->
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - json_obj
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 9
+2024-06-23 03:50:08,349 - GitHubMonitor - INFO - 10
+2024-06-23 03:50:08,350 - GitHubMonitor - INFO - Sending the entire code of <
+2024-06-23 03:50:08,350 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:08,350 - GitHubMonitor - INFO - > for review
+2024-06-23 03:50:08,350 - GitHubMonitor - INFO - STAGE1-> self chunking :=
+2024-06-23 03:50:08,350 - GitHubMonitor - INFO - [{'file': 'code_db/python/createJsonFeats.py', 'old_start': 35, 'old_length': 7, 'new_start': 35, 'new_length': 7, 'old_code': ["    string = response.read().decode('utf-8')\n"], 'new_code': ['    string = response.read()\n'], 'method_class_nm_old': {'class_nm': None, 'method_nm': 'returnEmbed'}, 'method_class_nm_new': {'class_nm': None, 'method_nm': 'returnEmbed'}, 'method_context': "\n    rec_ = { 'sentence': sent }\n\n    data = json.dumps( rec_ ).encode('utf-8')\n    _request = urllib.request.Request( url_encode, data=data, method='POST', \\\n                                        headers={'Content-Type': 'application/json'} )\n\n    response = urllib.request.urlopen( _request )\n    string = response.read()\n    json_obj = json.loads(string)\n    \n    return json_obj['encoded_'], True\n"}]
+2024-06-23 03:50:08,356 - GitHubMonitor - INFO - executeInstruction =>
+2024-06-23 03:50:08,356 - GitHubMonitor - INFO - you will be given the following: Existing Code , Changed lines in new code. You will have to analyze the impact of the changes made to the base method and add notes on how this impacts the method . Also rate the criticality of this change with 1 being nominal and 5 being deserves immediate attention. Kindly format the data in the form of a json with 3 keys - Issues, Criticality and Recommendations. The values of these keys can be lists with as many values as you can think of and return a final dictionary with the 3 keys
+2024-06-23 03:50:08,356 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,356 - GitHubMonitor - INFO - Existing Code :
+2024-06-23 03:50:08,356 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,356 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,356 - GitHubMonitor - INFO -     rec_ = { 'sentence': sent }
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO -     data = json.dumps( rec_ ).encode('utf-8')
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO -     _request = urllib.request.Request( url_encode, data=data, method='POST', \
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO -                                         headers={'Content-Type': 'application/json'} )
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO -     response = urllib.request.urlopen( _request )
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO -     string = response.read()
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO -     json_obj = json.loads(string)
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO -     return json_obj['encoded_'], True
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO - Changed line - NEW :     string = response.read()
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO - 
+2024-06-23 03:50:08,357 - GitHubMonitor - INFO -  OLD :     string = response.read().decode('utf-8')
+2024-06-23 03:50:09,611 - GitHubMonitor - INFO - CRITICALITY->
+2024-06-23 03:50:09,612 - GitHubMonitor - INFO - ": [
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO - Traversal Beginning->
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/createJsonFeats.py
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO -         MATCH ( startNode:Method { method_name: "returnEmbed", file_name: "/datadrive/IKG/code_db/python/createJsonFeats.py" } )
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO -         CALL apoc.path.subgraphNodes(startNode, {
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO -             relationshipFilter: "global_uses>",
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO -             minLevel: 1
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO -         }) YIELD node
+2024-06-23 03:50:09,621 - GitHubMonitor - INFO -         RETURN node
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO - Traversal Beginning->
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/createJsonFeats.py
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO -         MATCH ( startNode:Method { method_name: "returnEmbed", file_name: "/datadrive/IKG/code_db/python/createJsonFeats.py" } )
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO -         CALL apoc.path.subgraphNodes(startNode, {
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO -             relationshipFilter: "local_uses>",
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO -             minLevel: 1
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO -         }) YIELD node
+2024-06-23 03:50:09,629 - GitHubMonitor - INFO -         RETURN node
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/searchDB.py
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - {'method_name': 'pos', 'method_begin': 'def pos( res_ ):\n', 'method_end': "                ' BM25 : ', score_title_[keyid] )\n", 'range': [14, 99], 'global_uses': [], 'local_uses': []}
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - POE->
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - ["            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"]
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:09,634 - GitHubMonitor - INFO - hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO - hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO - cmpOldNew->
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': [], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'resD'], 'Function': 'returnEmbed'}
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO - CODE CONTEXT EXTRACTION ERROR->
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO - Traceback (most recent call last):
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 291, in createChunkInDownStreamFile
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO -     code_review_range_ = getSphereOfInfluence( ast_details_, changed_code_, old_code_ )
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 145, in getSphereOfInfluence
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO -     return cmpOldNew( old_code_vars_, new_code_vars_, target_dict_ )
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 69, in cmpOldNew
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO -     tgt_of_interest_ = assignment_deets['Targets'][0]
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO - IndexError: list index out of range
+2024-06-23 03:50:09,635 - GitHubMonitor - INFO - TIMMY->
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - (10000, -1)
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - Sending the entire code of <
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - ["            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"]
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - > for review
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - 14
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - 99
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - RETURNING->
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -   if 'searchRes_' in res_:
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -     act_ = res_[ 'searchRes_' ]
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -     print( act_ )
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -     tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -     hdr_info_D = dict()
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -     for res_nm, resD in act_.items():
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -         if 'payload' in resD and 'summary' in resD[ 'payload' ]:
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -             corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -             tokenized_hdr_info_.append( resD[ 'payload' ][ 'hdr_info' ] )
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -             tokenized_sample_summary_.append( 'sample' )
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -             tokenized_dates_.append( resD[ 'payload' ][ 'date_range' ] )
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -             title.append( resD[ 'payload' ]['file_name'] )
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -             hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -     top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -     for idx, key in enumerate( list( top_by_vector_score_.keys() )[:10] ):
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -         print('-----------------------------------------')
+2024-06-23 03:50:09,636 - GitHubMonitor - INFO -         cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -         print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -         print('-----------------------------------------')
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     tokenized_corpus = [doc.split(" ") for doc in list( corpus_.keys() )]
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     bm25_summary_, bm25_hdr_info_, bm25_sample_summary_, bm25_dates_, title = \
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -             BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -             BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     tokenized_query = txt.split(" ")
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     bm25_score_summary_  = bm25_summary_.get_scores(tokenized_query)
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     bm25_score_hdr_  = bm25_hdr_info_.get_scores(tokenized_query)
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     bm25_score_sample_  = bm25_sample_summary_.get_scores(tokenized_query)
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     score_title_  = title.get_scores(tokenized_query)
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( score_title_ ) )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,637 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_summary_[keyid] )
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_hdr_[keyid] )
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_sample_[keyid] )
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_dt_[keyid] )
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,638 - GitHubMonitor - INFO -         print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,639 - GitHubMonitor - INFO -                 ' BM25 : ', score_title_[keyid] )
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO - CALLING LLM addChangeImpactOnDownstreamFile->
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO -     rec_ = { 'sentence': sent }
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO -     data = json.dumps( rec_ ).encode('utf-8')
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO -     _request = urllib.request.Request( url_encode, data=data, method='POST', \
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO -                                         headers={'Content-Type': 'application/json'} )
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO -     response = urllib.request.urlopen( _request )
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO -     string = response.read()
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO -     json_obj = json.loads(string)
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO -     return json_obj['encoded_'], True
+2024-06-23 03:50:09,645 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO - Changed line - NEW :     string = response.read()
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -  OLD :     string = response.read().decode('utf-8')
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -  downstream file importing returnEmbed
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -   if 'searchRes_' in res_:
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -     act_ = res_[ 'searchRes_' ]
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -     print( act_ )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -     tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -     hdr_info_D = dict()
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -     for res_nm, resD in act_.items():
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -         if 'payload' in resD and 'summary' in resD[ 'payload' ]:
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -             corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -             tokenized_hdr_info_.append( resD[ 'payload' ][ 'hdr_info' ] )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -             tokenized_sample_summary_.append( 'sample' )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -             tokenized_dates_.append( resD[ 'payload' ][ 'date_range' ] )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -             title.append( resD[ 'payload' ]['file_name'] )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -             hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -     top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -     for idx, key in enumerate( list( top_by_vector_score_.keys() )[:10] ):
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -         print('-----------------------------------------')
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -         cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -         print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO -         print('-----------------------------------------')
+2024-06-23 03:50:09,646 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     tokenized_corpus = [doc.split(" ") for doc in list( corpus_.keys() )]
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     bm25_summary_, bm25_hdr_info_, bm25_sample_summary_, bm25_dates_, title = \
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -             BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -             BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     tokenized_query = txt.split(" ")
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     bm25_score_summary_  = bm25_summary_.get_scores(tokenized_query)
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     bm25_score_hdr_  = bm25_hdr_info_.get_scores(tokenized_query)
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     bm25_score_sample_  = bm25_sample_summary_.get_scores(tokenized_query)
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     score_title_  = title.get_scores(tokenized_query)
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( score_title_ ) )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,647 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_summary_[keyid] )
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_hdr_[keyid] )
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_sample_[keyid] )
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_dt_[keyid] )
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue
+2024-06-23 03:50:09,648 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -         print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -                 ' BM25 : ', score_title_[keyid] )
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - executeInstruction =>
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - you will be given the following: Existing Code , Changed lines in new code and the code snippet for a file that imports OR uses the changed method. You will have to analyze the impact of the changes made to the base method and add notes on how this impacts the downstream method that imports OR uses this code. Also rate the criticality of this change with 1 being nominal and 5 being deserves immediate attention. Kindly format the data in the form of a json with 3 keys - Issues, Criticality and Recommendations. The values of these keys can be lists with as many values as you can think of and return a final dictionary with the 3 keys
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - Existing Code :
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     rec_ = { 'sentence': sent }
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     data = json.dumps( rec_ ).encode('utf-8')
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     _request = urllib.request.Request( url_encode, data=data, method='POST', \
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -                                         headers={'Content-Type': 'application/json'} )
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     response = urllib.request.urlopen( _request )
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     string = response.read()
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     json_obj = json.loads(string)
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     return json_obj['encoded_'], True
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - Changed line - NEW :     string = response.read()
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -  OLD :     string = response.read().decode('utf-8')
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -  downstream file importing returnEmbed
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -   if 'searchRes_' in res_:
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     act_ = res_[ 'searchRes_' ]
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     print( act_ )
+2024-06-23 03:50:09,649 - GitHubMonitor - INFO -     tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     hdr_info_D = dict()
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     for res_nm, resD in act_.items():
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -         if 'payload' in resD and 'summary' in resD[ 'payload' ]:
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -             corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -             tokenized_hdr_info_.append( resD[ 'payload' ][ 'hdr_info' ] )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -             tokenized_sample_summary_.append( 'sample' )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -             tokenized_dates_.append( resD[ 'payload' ][ 'date_range' ] )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -             title.append( resD[ 'payload' ]['file_name'] )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -             hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     for idx, key in enumerate( list( top_by_vector_score_.keys() )[:10] ):
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -         print('-----------------------------------------')
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -         cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -         print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -         print('-----------------------------------------')
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     tokenized_corpus = [doc.split(" ") for doc in list( corpus_.keys() )]
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     bm25_summary_, bm25_hdr_info_, bm25_sample_summary_, bm25_dates_, title = \
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -             BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -             BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     tokenized_query = txt.split(" ")
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     bm25_score_summary_  = bm25_summary_.get_scores(tokenized_query)
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     bm25_score_hdr_  = bm25_hdr_info_.get_scores(tokenized_query)
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     bm25_score_sample_  = bm25_sample_summary_.get_scores(tokenized_query)
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)
+2024-06-23 03:50:09,650 - GitHubMonitor - INFO -     score_title_  = title.get_scores(tokenized_query)
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     enum_doc_scores_ = list( enumerate( score_title_ ) )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -         print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_summary_[keyid] )
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -         print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,651 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_hdr_[keyid] )
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_sample_[keyid] )
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -                 ' BM25 : ', bm25_score_dt_[keyid] )
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -     for keyid, keys in enumerate( list( corpus_.keys() ) ):
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO - 
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -         print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\
+2024-06-23 03:50:09,652 - GitHubMonitor - INFO -                 ' BM25 : ', score_title_[keyid] )
+2024-06-23 03:50:41,140 - GitHubMonitor - INFO - CRITICALITY->
+2024-06-23 03:50:41,141 - GitHubMonitor - INFO - ": 2,
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - {'method_name': 'is_date', 'method_begin': 'def is_date( input_str):\n', 'method_end': '            return None\n', 'range': [15, 32], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'process', 'method_defn': 'def process( colNum, sheet, tbl ):\n', 'usage': '                dtVal_ = is_date( str( sheet.cell(row=rw, column=colNum).value ) )\n', 'method_end': '        return ( False, None, None )\n'}]}
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - {'method_name': 'process', 'method_begin': 'def process( colNum, sheet, tbl ):\n', 'method_end': '        return ( False, None, None )\n', 'range': [34, 52], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'findDateRange', 'method_defn': '    def findDateRange( self, tbl ):\n', 'usage': '            results = process(col, self.sheet, tbl)\n', 'method_end': '        return (None, None)\n'}]}
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,147 - GitHubMonitor - INFO - {'method_name': '__init__', 'method_begin': "    def __init__(self, file_path, llm='LLAMA'):\n", 'method_end': '            self.query_fn_ = llama3\n', 'range': [55, 81], 'global_uses': [], 'local_uses': []}
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - {'method_name': 'find_bounds', 'method_begin': '    def find_bounds( self, sheet, max_row, max_col, start_row ,end_row ,start_col ,end_col ):\n', 'method_end': '        return start_row, end_row, start_col, end_col\n', 'range': [83, 120], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'find_tables', 'method_defn': '    def find_tables(self, sheet):\n', 'usage': '        start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, start_row ,\\\n', 'method_end': '        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n'}, {'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'find_tables', 'method_defn': '    def find_tables(self, sheet):\n', 'usage': '            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, end_row ,\\\n', 'method_end': '        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n'}, {'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'find_tables', 'method_defn': '    def find_tables(self, sheet):\n', 'usage': '            start_row, end_row, start_col, end_col = self.find_bounds( sheet, max_row, max_col, None ,\\\n', 'method_end': '        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n'}]}
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - {'method_name': 'is_hdr_row_format', 'method_begin': '    def is_hdr_row_format( self, tbl_bound, sheet ):\n', 'method_end': '        return True\n', 'range': [122, 131], 'global_uses': [], 'local_uses': []}
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - {'method_name': 'find_tables', 'method_begin': '    def find_tables(self, sheet):\n', 'method_end': '        return final_resp_[ : min( self.max_tables_per_sheet_, len( final_resp_ ) ) ]\n', 'range': [133, 217], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'read_excel_file', 'method_defn': '    def read_excel_file(self):\n', 'usage': '            all_tables_ = self.find_tables( self.sheet )\n', 'method_end': '                self.masterInfo_[ sheet_name ] = summary_D\n'}]}
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - {'method_name': 'findDateRange', 'method_begin': '    def findDateRange( self, tbl ):\n', 'method_end': '        return (None, None)\n', 'range': [219, 230], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'read_excel_file', 'method_defn': '    def read_excel_file(self):\n', 'usage': "                    summary_D['date_range'] = self.findDateRange( tbl_ )\n", 'method_end': '                self.masterInfo_[ sheet_name ] = summary_D\n'}]}
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - {'method_name': 'findHeaderInfo', 'method_begin': '    def findHeaderInfo(self, tbl):\n', 'method_end': '        return col_frame_\n', 'range': [232, 252], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'read_excel_file', 'method_defn': '    def read_excel_file(self):\n', 'usage': '                    hdr_frame_ = self.findHeaderInfo( tbl_ )\n', 'method_end': '                self.masterInfo_[ sheet_name ] = summary_D\n'}]}
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - {'method_name': 'findHighVarianceColumns', 'method_begin': '    def findHighVarianceColumns(self, start_hdr_row_, sheet, tbl ):\n', 'method_end': '        return list( high_var_indices_ ), hdr_col_names_\n', 'range': [254, 310], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'returnSummary', 'method_defn': '    def returnSummary(self, tbl ):\n', 'usage': '        high_variance_cols_, hdr_col_names_ = self.findHighVarianceColumns( start_hdr_row_, self.sheet, tbl )\n', 'method_end': '        return frame_, high_variance_cols_, list( set(hdr_col_names_) )\n'}]}
+2024-06-23 03:50:41,148 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - {'method_name': 'returnSummary', 'method_begin': '    def returnSummary(self, tbl ):\n', 'method_end': '        return frame_, high_variance_cols_, list( set(hdr_col_names_) )\n', 'range': [313, 338], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'read_excel_file', 'method_defn': '    def read_excel_file(self):\n', 'usage': '                    frame_, high_variance_cols_, col_names_ = self.returnSummary( tbl_ )\n', 'method_end': '                self.masterInfo_[ sheet_name ] = summary_D\n'}]}
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - {'method_name': 'findHdrRow', 'method_begin': '    def findHdrRow( self, tbl ):\n', 'method_end': '        return None # so default value of row #1 applies to table start\n', 'range': [340, 358], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'findHeaderInfo', 'method_defn': '    def findHeaderInfo(self, tbl):\n', 'usage': '        hdr_row_start_ = self.findHdrRow( tbl )\n', 'method_end': '        return col_frame_\n'}]}
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/basic_generateXLMetaData.py
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - {'method_name': 'createDBRec', 'method_begin': "    def createDBRec( self, summary_D, mode='NORM' ):\n", 'method_end': '        return insertRec\n', 'range': [360, 384], 'global_uses': [], 'local_uses': [{'file_path': '/datadrive/IKG/code_db/python/basic_generateXLMetaData.py', 'method_nm': 'mergeAndInsert', 'method_defn': '    def mergeAndInsert( self, summary_D ):\n', 'usage': "        rec_ = self.createDBRec( summary_D, 'NORM' )\n", 'method_end': '        db_utils.insertNewSignature( rec_ )\n'}]}
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - POE->
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - ['        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n']
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:41,149 - GitHubMonitor - INFO - emb_ = createJsonFeats.returnEmbed( unified_key_ )
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - emb_ = createJsonFeats.returnEmbed( unified_key_ )
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - emb_ = createJsonFeats.returnEmbed( unified_key_ )
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - ['createJsonFeats', 'returnEmbed', 'unified_key_']
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - emb_
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - 1
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - 1
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - Furthest assignment of
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - emb_
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO -  is
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - -1
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - 10000
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - cmpOldNew->
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['emb_'], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'unified_key_'], 'Function': 'returnEmbed'}
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - TIMMY->
+2024-06-23 03:50:41,150 - GitHubMonitor - INFO - (10000, -1)
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - Sending the entire code of <
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - ['        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n']
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - > for review
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - 360
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - 384
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - RETURNING->
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec = dict()
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec['docID'] = random.randint( 1000, 100000 )
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         ## combine all necessary fields to form vector signature
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         ## keys-> 'sample_summary'; 'date_range' ; 'hdr_info'
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         hdr_info = summary_D['hdr_info']
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         sample_summary_ = summary_D['sample_summary']
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         unified_key_ =   'Date Range : '+ str( summary_D['date_range'] ) + '\n' \
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -                        + 'Column Headers : '+ ' , '.join( summary_D['col_names_'] ).strip() + '\n' \
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -                        + 'LLM Summary : '+ ( sample_summary_ ) if self.add_ai_summary_to_embedding_ is True else ''
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         emb_ = createJsonFeats.returnEmbed( unified_key_ )
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec['docSignature'] = emb_
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec['summary'] = unified_key_
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec['file_path'] = summary_D['file_path']
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec['file_name'] = summary_D['file_path'].split('/')[-1]
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec['sheet_name'] = summary_D['sheet_name']
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec['date_range'] = summary_D['date_range']
+2024-06-23 03:50:41,151 - GitHubMonitor - INFO -         insertRec['hdr_info'] = hdr_info
+2024-06-23 03:50:41,152 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,152 - GitHubMonitor - INFO -         print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )
+2024-06-23 03:50:41,152 - GitHubMonitor - INFO -         return insertRec
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO - CALLING LLM addChangeImpactOnDownstreamFile->
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO -     rec_ = { 'sentence': sent }
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO -     data = json.dumps( rec_ ).encode('utf-8')
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO -     _request = urllib.request.Request( url_encode, data=data, method='POST', \
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO -                                         headers={'Content-Type': 'application/json'} )
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO -     response = urllib.request.urlopen( _request )
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO -     string = response.read()
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO -     json_obj = json.loads(string)
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO -     return json_obj['encoded_'], True
+2024-06-23 03:50:41,158 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO - Changed line - NEW :     string = response.read()
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -  OLD :     string = response.read().decode('utf-8')
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -  downstream file importing returnEmbed
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec = dict()
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec['docID'] = random.randint( 1000, 100000 )
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         ## combine all necessary fields to form vector signature
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         ## keys-> 'sample_summary'; 'date_range' ; 'hdr_info'
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         hdr_info = summary_D['hdr_info']
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         sample_summary_ = summary_D['sample_summary']
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         unified_key_ =   'Date Range : '+ str( summary_D['date_range'] ) + '\n' \
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -                        + 'Column Headers : '+ ' , '.join( summary_D['col_names_'] ).strip() + '\n' \
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -                        + 'LLM Summary : '+ ( sample_summary_ ) if self.add_ai_summary_to_embedding_ is True else ''
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         emb_ = createJsonFeats.returnEmbed( unified_key_ )
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec['docSignature'] = emb_
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec['summary'] = unified_key_
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec['file_path'] = summary_D['file_path']
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec['file_name'] = summary_D['file_path'].split('/')[-1]
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec['sheet_name'] = summary_D['sheet_name']
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec['date_range'] = summary_D['date_range']
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         insertRec['hdr_info'] = hdr_info
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )
+2024-06-23 03:50:41,159 - GitHubMonitor - INFO -         return insertRec
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - executeInstruction =>
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - you will be given the following: Existing Code , Changed lines in new code and the code snippet for a file that imports OR uses the changed method. You will have to analyze the impact of the changes made to the base method and add notes on how this impacts the downstream method that imports OR uses this code. Also rate the criticality of this change with 1 being nominal and 5 being deserves immediate attention. Kindly format the data in the form of a json with 3 keys - Issues, Criticality and Recommendations. The values of these keys can be lists with as many values as you can think of and return a final dictionary with the 3 keys
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - Existing Code :
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -     rec_ = { 'sentence': sent }
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -     data = json.dumps( rec_ ).encode('utf-8')
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -     _request = urllib.request.Request( url_encode, data=data, method='POST', \
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -                                         headers={'Content-Type': 'application/json'} )
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -     response = urllib.request.urlopen( _request )
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -     string = response.read()
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -     json_obj = json.loads(string)
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -     return json_obj['encoded_'], True
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - Changed line - NEW :     string = response.read()
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -  OLD :     string = response.read().decode('utf-8')
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -  downstream file importing returnEmbed
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -         insertRec = dict()
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -         insertRec['docID'] = random.randint( 1000, 100000 )
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -         ## combine all necessary fields to form vector signature
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -         ## keys-> 'sample_summary'; 'date_range' ; 'hdr_info'
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,160 - GitHubMonitor - INFO -         hdr_info = summary_D['hdr_info']
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         sample_summary_ = summary_D['sample_summary']
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         unified_key_ =   'Date Range : '+ str( summary_D['date_range'] ) + '\n' \
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -                        + 'Column Headers : '+ ' , '.join( summary_D['col_names_'] ).strip() + '\n' \
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -                        + 'LLM Summary : '+ ( sample_summary_ ) if self.add_ai_summary_to_embedding_ is True else ''
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         emb_ = createJsonFeats.returnEmbed( unified_key_ )
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         insertRec['docSignature'] = emb_
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         insertRec['summary'] = unified_key_
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         insertRec['file_path'] = summary_D['file_path']
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         insertRec['file_name'] = summary_D['file_path'].split('/')[-1]
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         insertRec['sheet_name'] = summary_D['sheet_name']
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         insertRec['date_range'] = summary_D['date_range']
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         insertRec['hdr_info'] = hdr_info
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO - 
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )
+2024-06-23 03:50:41,161 - GitHubMonitor - INFO -         return insertRec
+2024-06-23 03:51:12,474 - GitHubMonitor - INFO - CRITICALITY->
+2024-06-23 03:51:12,474 - GitHubMonitor - INFO - ": 4,
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - DEEPER->
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - /datadrive/IKG/code_db/python/addtoDB.py
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - {'method_name': 'addToDB', 'method_begin': 'def addToDB():\n', 'method_end': '            db_utils.insertNewSignature( dd_ )\n', 'range': [9, 16], 'global_uses': [], 'local_uses': []}
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - returnEmbed
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - POE->
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - ['            emb_ = createJsonFeats.returnEmbed( txt )\n']
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - emb_ = createJsonFeats.returnEmbed( txt )
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - emb_ = createJsonFeats.returnEmbed( txt )
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - CODE_SNIP->
+2024-06-23 03:51:12,479 - GitHubMonitor - INFO - emb_ = createJsonFeats.returnEmbed( txt )
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - BRAM->
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - ['createJsonFeats', 'returnEmbed', 'txt']
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - emb_
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - 1
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - 1
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - Furthest assignment of
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - emb_
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO -  is
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - -1
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - 10000
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - cmpOldNew->
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - {'Type': 'Assignment', 'Targets': ['emb_'], 'Ending': 'NA', 'Values': ['createJsonFeats', 'returnEmbed', 'txt'], 'Function': 'returnEmbed'}
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - TIMMY->
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - (10000, -1)
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - Sending the entire code of <
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - ['            emb_ = createJsonFeats.returnEmbed( txt )\n']
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - > for review
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - 9
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - 16
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO - RETURNING->
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO -     for fnm, sheets in js_.items():
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO -         for sheetname, txt in sheets.items():
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO -             cnt_ += 1
+2024-06-23 03:51:12,480 - GitHubMonitor - INFO -             emb_ = createJsonFeats.returnEmbed( txt )
+2024-06-23 03:51:12,481 - GitHubMonitor - INFO -             dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }
+2024-06-23 03:51:12,481 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,481 - GitHubMonitor - INFO -             db_utils.insertNewSignature( dd_ )
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO - CALLING LLM addChangeImpactOnDownstreamFile->
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO -     rec_ = { 'sentence': sent }
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO -     data = json.dumps( rec_ ).encode('utf-8')
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO -     _request = urllib.request.Request( url_encode, data=data, method='POST', \
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO -                                         headers={'Content-Type': 'application/json'} )
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO -     response = urllib.request.urlopen( _request )
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO -     string = response.read()
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO -     json_obj = json.loads(string)
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO -     return json_obj['encoded_'], True
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,487 - GitHubMonitor - INFO - Changed line - NEW :     string = response.read()
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -  OLD :     string = response.read().decode('utf-8')
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -  downstream file importing returnEmbed
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -     for fnm, sheets in js_.items():
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -         for sheetname, txt in sheets.items():
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -             cnt_ += 1
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -             emb_ = createJsonFeats.returnEmbed( txt )
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -             dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -             db_utils.insertNewSignature( dd_ )
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - executeInstruction =>
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - you will be given the following: Existing Code , Changed lines in new code and the code snippet for a file that imports OR uses the changed method. You will have to analyze the impact of the changes made to the base method and add notes on how this impacts the downstream method that imports OR uses this code. Also rate the criticality of this change with 1 being nominal and 5 being deserves immediate attention. Kindly format the data in the form of a json with 3 keys - Issues, Criticality and Recommendations. The values of these keys can be lists with as many values as you can think of and return a final dictionary with the 3 keys
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - Existing Code :
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -     rec_ = { 'sentence': sent }
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -     data = json.dumps( rec_ ).encode('utf-8')
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -     _request = urllib.request.Request( url_encode, data=data, method='POST', \
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -                                         headers={'Content-Type': 'application/json'} )
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -     response = urllib.request.urlopen( _request )
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -     string = response.read()
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -     json_obj = json.loads(string)
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO -     return json_obj['encoded_'], True
+2024-06-23 03:51:12,488 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO - Changed line - NEW :     string = response.read()
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO -  OLD :     string = response.read().decode('utf-8')
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO -  downstream file importing returnEmbed
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO -     for fnm, sheets in js_.items():
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO -         for sheetname, txt in sheets.items():
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO -             cnt_ += 1
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO -             emb_ = createJsonFeats.returnEmbed( txt )
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO -             dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO - 
+2024-06-23 03:51:12,489 - GitHubMonitor - INFO -             db_utils.insertNewSignature( dd_ )
+2024-06-23 03:51:43,678 - GitHubMonitor - INFO - CRITICALITY->
+2024-06-23 03:51:43,678 - GitHubMonitor - INFO - ": 3,
+2024-06-23 03:51:43,682 - GitHubMonitor - INFO - HULLO ALLO->
+2024-06-23 03:51:43,682 - GitHubMonitor - INFO - [
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -     {
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "file": "code_db/python/createJsonFeats.py",
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "old_start": 35,
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "old_length": 7,
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "new_start": 35,
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "new_length": 7,
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "old_code": [
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -             "    string = response.read().decode('utf-8')\n"
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         ],
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "new_code": [
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -             "    string = response.read()\n"
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         ],
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "method_class_nm_old": {
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -             "method_nm": "returnEmbed"
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         },
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "method_class_nm_new": {
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -             "class_nm": null,
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -             "method_nm": "returnEmbed"
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         },
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "method_context": "\n    rec_ = { 'sentence': sent }\n\n    data = json.dumps( rec_ ).encode('utf-8')\n    _request = urllib.request.Request( url_encode, data=data, method='POST', \\\n                                        headers={'Content-Type': 'application/json'} )\n\n    response = urllib.request.urlopen( _request )\n    string = response.read()\n    json_obj = json.loads(string)\n    \n    return json_obj['encoded_'], True\n",
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "base_change_impact": "Here is the analysis of the change:\n\n```\n{\n    \"Issues\": [\n        \"The change removed the decoding of the response from UTF-8, which might lead to issues with non-ASCII characters in the response.\"\n    ],\n    \"Criticality\": [\n        3\n    ],\n    \"Recommendations\": [\n        \"Revert the change to maintain compatibility with non-ASCII characters in the response.\",\n        \"Alternatively, use a more modern library like `requests` which handles encoding and decoding automatically.\",\n        \"Consider adding error handling to deal with potential encoding issues.\"\n    ]\n}\n```\n\nExplanation:\n\n* The change removed the decoding of the response from UTF-8, which might lead to issues with non-ASCII characters in the response. This could cause the method to fail or produce unexpected results when dealing with non-ASCII characters.\n* I rated the criticality of this change as 3, as it might not cause immediate issues, but could lead to problems in certain scenarios, especially when dealing with international characters or non-ASCII data.\n* The recommendations include reverting the change to maintain compatibility with non-ASCII characters, using a more modern library like `requests` which handles encoding and decoding automatically, and adding error handling to deal with potential encoding issues.",
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "base_change_criticality": "NA",
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -         "impact_analysis": [
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -             {
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -                 "impacted_method": "/datadrive/IKG/code_db/python/searchDB.py/pos",
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -                 "impacted_code_snippet": [
+2024-06-23 03:51:43,683 - GitHubMonitor - INFO -                     "            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n"
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 ],
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_code_range": [
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                     14,
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                     99
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 ],
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_code_context": "  if 'searchRes_' in res_:\n    act_ = res_[ 'searchRes_' ]\n    print( act_ )\n    tokenized_hdr_info_ , tokenized_sample_summary_, tokenized_dates_, title = [], [], [], []\n    hdr_info_D = dict()\n\n    for res_nm, resD in act_.items():\n        if 'payload' in resD and 'summary' in resD[ 'payload' ]:\n            corpus_[ ( resD[ 'payload' ][ 'summary' ] ) ] = resD[ 'score' ]\n\n            tokenized_hdr_info_.append( resD[ 'payload' ][ 'hdr_info' ] )\n            tokenized_sample_summary_.append( 'sample' )\n            tokenized_dates_.append( resD[ 'payload' ][ 'date_range' ] )\n            title.append( resD[ 'payload' ]['file_name'] )\n\n            hdr_info_D[ ( resD[ 'payload' ][ 'summary' ] ) ] = createJsonFeats.returnEmbed( resD['payload']['hdr_info'] )\n\n    top_by_vector_score_ = dict( sorted( corpus_.items(), key=lambda x:x[1], reverse=True ) )\n    for idx, key in enumerate( list( top_by_vector_score_.keys() )[:10] ):\n        print('-----------------------------------------')\n        cos_dist_ = distance.cosine( emb_, hdr_info_D[ key ] )\n        print('Rank ',idx+1,' CONTEXT->', key, ' SCORE->', top_by_vector_score_[key], ' HDR DISTANCE->', cos_dist_ )\n        print('-----------------------------------------')\n\n    tokenized_corpus = [doc.split(\" \") for doc in list( corpus_.keys() )]\n    bm25_summary_, bm25_hdr_info_, bm25_sample_summary_, bm25_dates_, title = \\\n            BM25Okapi(tokenized_corpus), BM25Okapi( tokenized_hdr_info_ ), \\\n            BM25Okapi( tokenized_sample_summary_ ), BM25Okapi( tokenized_dates_ ), BM25Okapi( title )\n\n    tokenized_query = txt.split(\" \")\n    bm25_score_summary_  = bm25_summary_.get_scores(tokenized_query)\n    bm25_score_hdr_  = bm25_hdr_info_.get_scores(tokenized_query)\n    bm25_score_sample_  = bm25_sample_summary_.get_scores(tokenized_query)\n    bm25_score_dt_  = bm25_dates_.get_scores(tokenized_query)\n    score_title_  = title.get_scores(tokenized_query)\n\n    enum_doc_scores_ = list( enumerate( bm25_score_summary_ ) )\n    sorted_doc_score_ = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n\n    enum_doc_scores_ = list( enumerate( bm25_score_hdr_ ) )\n    sorted_doc_score_1 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n\n    enum_doc_scores_ = list( enumerate( bm25_score_sample_ ) )\n    sorted_doc_score_2 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n\n    enum_doc_scores_ = list( enumerate( bm25_score_dt_ ) )\n    sorted_doc_score_3 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n\n    enum_doc_scores_ = list( enumerate( score_title_ ) )\n    sorted_doc_score_4 = sorted( enum_doc_scores_, key=lambda x:x[1] , reverse=True )\n\n    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n        print('--------', keyid, np.asarray( sorted_doc_score_ )[:3, :1])    \n        if [keyid] not in np.asarray( sorted_doc_score_ )[:3, :1]: continue\n\n        print( 'BM25 Summary :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n                ' BM25 : ', bm25_score_summary_[keyid] )\n\n    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n        print('--------', keyid, np.asarray( sorted_doc_score_1 )[:3, :1])    \n        if [keyid] not in np.asarray( sorted_doc_score_1 )[:3, :1]: continue\n\n        print( 'BM25 HDR :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n                ' BM25 : ', bm25_score_hdr_[keyid] )\n\n    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n        print('--------', keyid, np.asarray( sorted_doc_score_2 )[:3, :1])    \n        if [keyid] not in np.asarray( sorted_doc_score_2 )[:3, :1]: continue\n\n        print( 'BM25 Sample :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n                ' BM25 : ', bm25_score_sample_[keyid] )\n\n    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n        print('--------', keyid, np.asarray( sorted_doc_score_3 )[:3, :1])    \n        if [keyid] not in np.asarray( sorted_doc_score_3 )[:3, :1]: continue\n\n        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n                ' BM25 : ', bm25_score_dt_[keyid] )\n\n    for keyid, keys in enumerate( list( corpus_.keys() ) ):\n        print('--------', keyid, np.asarray( sorted_doc_score_4 )[:3, :1])    \n        if [keyid] not in np.asarray( sorted_doc_score_4 )[:3, :1]: continue\n\n        print( 'BM25 Date :: Text: ', keys, ' Vector score: ', corpus_[ keys ],\\\n                ' BM25 : ', score_title_[keyid] )\n",
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "criticality": "2",
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impact_analysis": "Here is the analysis of the impact of the changed method on the downstream file:\n\n**JSON Output**\n\n```\n{\n    \"Issues\": [\n        \"The changed line in the `returnEmbed` method may affect the character encoding of the response string, potentially leading to issues with non-UTF-8 characters.\",\n        \"The downstream file relying on the `returnEmbed` method may need to handle the changed encoding of the response string.\"\n    ],\n    \"Criticality\": 2,\n    \"Recommendations\": [\n        \"Verify that the changed line does not introduce character encoding issues in the response string.\",\n        \"Review the downstream file to ensure it can handle the changed encoding of the response string.\"\n    ]\n}\n```\n\n**Analysis**\n\nThe changed line in the `returnEmbed` method removes the decoding of the response string from UTF-8. This change may affect the character encoding of the response string, potentially leading to issues with non-UTF-8 characters.\n\nThe downstream file imports and uses the `returnEmbed` method, which means it may be affected by the changed encoding of the response string. The file processes the response string and uses it to create various features, scores, and rankings. If the response string is not properly decoded, it may lead to errors or unexpected behavior in the downstream file.\n\nThe criticality of this change is 2, as it may introduce character encoding issues that need to be addressed. However, the impact is not severe, and a review of the downstream file and the changed method should be sufficient to identify and mitigate any potential issues.",
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impact_type": "global"
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -             },
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -             {
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_method": "/datadrive/IKG/code_db/python/basic_generateXLMetaData.py/createDBRec",
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_code_snippet": [
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                     "        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n"
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 ],
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_code_range": [
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                     360,
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                     384
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 ],
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_code_context": "\n        insertRec = dict()\n        insertRec['docID'] = random.randint( 1000, 100000 )\n        ## combine all necessary fields to form vector signature\n        ## keys-> 'sample_summary'; 'date_range' ; 'hdr_info'\n\n        hdr_info = summary_D['hdr_info']\n        sample_summary_ = summary_D['sample_summary']\n\n        unified_key_ =   'Date Range : '+ str( summary_D['date_range'] ) + '\\n' \\\n                       + 'Column Headers : '+ ' , '.join( summary_D['col_names_'] ).strip() + '\\n' \\\n                       + 'LLM Summary : '+ ( sample_summary_ ) if self.add_ai_summary_to_embedding_ is True else ''\n\n        emb_ = createJsonFeats.returnEmbed( unified_key_ )\n        insertRec['docSignature'] = emb_\n        insertRec['summary'] = unified_key_\n        insertRec['file_path'] = summary_D['file_path']\n        insertRec['file_name'] = summary_D['file_path'].split('/')[-1]\n        insertRec['sheet_name'] = summary_D['sheet_name']\n        insertRec['date_range'] = summary_D['date_range']\n        insertRec['hdr_info'] = hdr_info\n\n        print('Inserting RECORD->', insertRec['file_name'], insertRec['sheet_name'], unified_key_ )\n        return insertRec\n",
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "criticality": "4",
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impact_analysis": "Here is the analysis of the impact of the changes made to the base method and its effect on the downstream method that imports or uses this code:\n\n**JSON Output:**\n\n```\n{\n    \"Issues\": [\n        \"The removal of the decode('utf-8') function may cause issues with character encoding in the downstream method\",\n        \"The downstream method may receive malformed or corrupted data if the response is not properly decoded\"\n    ],\n    \"Criticality\": 4,\n    \"Recommendations\": [\n        \"Verify that the response from the API is encoded in a format that can be handled by the downstream method\",\n        \"Consider adding error handling to deal with potential decoding issues\",\n        \"Test the changed code thoroughly to ensure that it does not cause issues with character encoding or data corruption\"\n    ]\n}\n```\n\n**Explanation:**\n\nThe changed line in the new code removes the `decode('utf-8')` function, which was previously used to decode the response from the API. This may cause issues with character encoding in the downstream method, as it may receive malformed or corrupted data if the response is not properly decoded.\n\nThe criticality of this change is rated as 4, as it may cause issues with data integrity and character encoding, but it may not necessarily cause immediate harm or security vulnerabilities.\n\nThe recommendations provided suggest verifying that the response from the API is encoded in a format that can be handled by the downstream method, adding error handling to deal with potential decoding issues, and testing the changed code thoroughly to ensure that it does not cause issues with character encoding or data corruption.",
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impact_type": "global"
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -             },
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -             {
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_method": "/datadrive/IKG/code_db/python/addtoDB.py/addToDB",
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_code_snippet": [
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                     "            emb_ = createJsonFeats.returnEmbed( txt )\n"
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 ],
+2024-06-23 03:51:43,684 - GitHubMonitor - INFO -                 "impacted_code_range": [
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -                     9,
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -                     16
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -                 ],
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -                 "impacted_code_context": "    for fnm, sheets in js_.items():\n        for sheetname, txt in sheets.items():\n            cnt_ += 1\n            emb_ = createJsonFeats.returnEmbed( txt )\n            dd_ = { 'text': txt, 'docSignature': emb_, 'docID': cnt_ }\n\n            db_utils.insertNewSignature( dd_ )\n",
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -                 "criticality": "3",
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -                 "impact_analysis": "Here is the analysis of the impact of the changes made to the base method and its effects on the downstream method:\n\n```\n{\n    \"Issues\": [\n        \"Potential issue with character encoding: The change from `string = response.read().decode('utf-8')` to `string = response.read()` may cause issues with character encoding, especially if the response contains non-ASCII characters.\"\n    ],\n    \"Criticality\": 3,\n    \"Recommendations\": [\n        \"Review the character encoding of the response data to ensure it is consistent with the expected format.\",\n        \"Consider adding error handling to handle potential encoding errors.\",\n        \"Test the updated code with various input scenarios to ensure it works as expected.\"\n    ]\n}\n```\n\nExplanation:\n\n* The changed line `string = response.read()` removes the decoding of the response data from UTF-8. This may cause issues if the response data contains non-ASCII characters, as Python 3's default string encoding is Unicode.\n* The downstream method `returnEmbed` is used in the `for` loop to process text data, which may be affected by the change in encoding.\n* The criticality level is set to 3, as the impact of the change is moderate and may cause issues with specific input data, but it is not catastrophic.\n* The recommendations include reviewing the character encoding of the response data, adding error handling, and testing the updated code thoroughly to ensure it works as expected.",
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -                 "impact_type": "global"
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -             }
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -         ]
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO -     }
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO - ]
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO - <Response [200]>
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO - An error occurred: [Errno 2] No such file or directory: '/datadrive/IKG/./impact_analysis/impact_analysis_Method::code_db/python/createJsonFeats.py::Criticality::NO_IMPACT_.json'
+2024-06-23 03:51:43,685 - GitHubMonitor - INFO - Traceback (most recent call last):
+2024-06-23 03:51:43,686 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/github_monitor.py", line 125, in main
+2024-06-23 03:51:43,686 - GitHubMonitor - INFO -     trigger_downstream.start( cfg['python']['git_change_summary_file'] )
+2024-06-23 03:51:43,686 - GitHubMonitor - INFO -   File "/datadrive/IKG/utils/trigger_downstream.py", line 292, in start
+2024-06-23 03:51:43,686 - GitHubMonitor - INFO -     with open( impact_file_, 'w' ) as fp:
+2024-06-23 03:51:43,686 - GitHubMonitor - INFO - FileNotFoundError: [Errno 2] No such file or directory: '/datadrive/IKG/./impact_analysis/impact_analysis_Method::code_db/python/createJsonFeats.py::Criticality::NO_IMPACT_.json'
+2024-06-23 03:51:54,499 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:51:54,499 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:51:54,499 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:52:05,216 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:52:05,217 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:52:05,217 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:52:16,091 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:52:16,091 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:52:16,092 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:52:26,852 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:52:26,853 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:52:26,853 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:52:38,488 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:52:38,488 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:52:38,488 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:52:53,594 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:52:53,594 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:52:53,594 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:53:04,341 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:53:04,342 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:53:04,342 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:53:15,485 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:53:15,486 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:53:15,486 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:53:26,445 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:53:26,445 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:53:26,445 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:53:37,181 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:53:37,181 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:53:37,181 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-23 03:53:48,196 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-23 03:53:48,196 - GitHubMonitor - INFO - 9630574526
+2024-06-23 03:53:48,196 - GitHubMonitor - INFO - No new successful runs. Retrying...
