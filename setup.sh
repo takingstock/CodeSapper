@@ -68,13 +68,19 @@ sudo wget https://github.com/neo4j/graph-data-science/releases/download/2.6.7/ne
 sudo bash -c 'echo "dbms.security.procedures.unrestricted=gds.*" >> /etc/neo4j/neo4j.conf'
 sudo bash -c 'echo "dbms.security.procedures.allowlist=gds.*" >> /etc/neo4j/neo4j.conf'
 
+# Download and install the APOC library
+sudo wget https://github.com/neo4j/apoc/releases/download/5.21.0/apoc-5.21.0-core.jar -P /var/lib/neo4j/plugins
+
+# Update Neo4j configuration to enable GDS procedures
+sudo bash -c 'echo "dbms.security.procedures.unrestricted=apoc.*" >> neo4j/conf/neo4j.conf'
+
 # Restart Neo4j
 sudo systemctl restart neo4j
 
 echo "Neo4j installation and configuration completed without authentication."
 
-echo "Script to sleep for 10 seconds to ensure neo4j is up and running !"
-sleep 10
+echo "Script to sleep for 20 seconds to ensure neo4j is up and running !"
+sleep 20
 
 ## start code scanner
 echo "starting code scanner"

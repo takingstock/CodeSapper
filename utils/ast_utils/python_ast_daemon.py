@@ -51,6 +51,7 @@ class python_ast_daemon():
             relevant_files_ = self.ast_codebase_utils_.generateRelevantFiles( self.home_dir_ +\
                                                                               self.config_['timestamp_json'] )
 
+            print('DELTA FILE->', relevant_files_)
             non_api_graph_inputs_ = self.ast_codebase_utils_.generate()
             api_graph_inputs_     = self.ast_API_utils_.createGraphInput( relevant_files_ )
 
@@ -71,6 +72,7 @@ class python_ast_daemon():
             nodeList_ , edgeList_ = graph_utils_.preProcess( graph_inputs_ )
             exec_status_, err_if_any_ = graph_utils_.execNodeCreationCypher( nodeList_ , edgeList_ )
             ## update page rank of nodes
+            print('POST GRAPH INSERT->', exec_status_, err_if_any_)
             graph_utils_.calculatePageRank()
 
             ## now sleep 

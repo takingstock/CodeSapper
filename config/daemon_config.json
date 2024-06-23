@@ -1,6 +1,6 @@
 {
 	"python": {
-		"frequency_in_seconds": 30,
+		"frequency_in_seconds": 60,
 		"timestamp_json": "/local_db/python/codebase_time_stamps.json",
 		"log_file": "/local_db/python/daemon.log",
 		"method_summary":"/local_db/python/graph_entity_summary.json",
