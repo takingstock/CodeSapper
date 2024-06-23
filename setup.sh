@@ -48,6 +48,7 @@ fi
 echo "Checking Java version..."
 java -version
 
+sudo mkdir -P /var/lib/neo4j/plugins
 # Install Neo4j
 echo "Installing Neo4j..."
 wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
