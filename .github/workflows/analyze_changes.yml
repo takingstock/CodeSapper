@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master  # Change this to your default branch
+      - master_UAT  # Change this to your default branch
 
 jobs:
   analyze-changes:
