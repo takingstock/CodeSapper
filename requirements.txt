@@ -2,6 +2,7 @@ Flask==2.2.3
 Flask_Cors==3.0.10
 fuzzywuzzy==0.18.0
 groq
+python-Levenshtein
 imutils==0.5.4
 mongo==0.2.0
 neo4j==5.19.0

@@ -41,6 +41,9 @@ class generateGraphEntities():
         ## update the timestamp store
         stored_timestamps_.update( delta_ )
 
+        if len( delta_ ) == 0:
+            self.relevant_files_ = []
+
         with open( timestamp_file_, 'w' ) as fp:
             json.dump( stored_timestamps_, fp )
 
