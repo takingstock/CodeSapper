@@ -72,5 +72,5 @@ class traverseGraph():
 
 if __name__ == "__main__":
 
-    tg_ = traverseGraph('./neo4j.config.json')
-    tg_.call_traversal( "returnEmbed", "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py", "global_uses" )
+    tg_ = traverseGraph('/datadrive/IKG/NEO4J/config.json')
+    print( tg_.call_traversal( "returnEmbed", "/datadrive/IKG/LLM_INTERFACE/SRC_DIR/createJsonFeats.py", "global_uses" ) )

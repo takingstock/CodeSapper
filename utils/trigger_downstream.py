@@ -254,11 +254,14 @@ def start( change_summary_file_, \
             except:
                 print('Unable to find global usage method..INVESTIGATE')
 
-        response = requests.post( viz_url_, json=change_summary_ )
+        try:
+            response = requests.post( viz_url_, json=change_summary_ )
+        except:
+            response = None
         print( 'HULLO ALLO->', json.dumps( change_summary_, indent=4 ), response )
         ## NOTE->post this, we need to trigger an email with the URL of the visualized graph
 
-        if response.status_code == 200 and send_notif_ == True:
+        if response is not None and response.status_code == 200 and send_notif_ == True:
             with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
                 daemon_cfg = json.load( fp )
 

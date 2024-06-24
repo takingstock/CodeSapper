@@ -33,15 +33,15 @@ echo "Neo4j uninstallation complete."
 
 # Install JDK 17 if not already installed
 if ! command -v java &> /dev/null; then
-    echo "Installing OpenJDK 21..."
+    echo "Installing OpenJDK 17..."
     sudo apt update
-    sudo apt install openjdk-21-jdk -y
+    sudo apt install openjdk-17-jdk -y
     echo "Java installed. Setting JAVA_HOME..."
-    export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+    export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
     echo "export JAVA_HOME=$JAVA_HOME" >> ~/.bashrc
     source ~/.bashrc
 else
-    echo "Java (OpenJDK 21) is already installed."
+    echo "Java (OpenJDK 17) is already installed."
 fi
 
 # Verify JDK version
@@ -52,7 +52,7 @@ sudo mkdir -P /var/lib/neo4j/plugins
 # Install Neo4j
 echo "Installing Neo4j..."
 wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
-echo 'deb https://debian.neo4j.com stable 4.4' | sudo tee /etc/apt/sources.list.d/neo4j.list
+echo 'deb https://debian.neo4j.com stable latest' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt update
 sudo apt install neo4j -y
 
@@ -65,16 +65,12 @@ sudo sed -i 's/#dbms.security.auth_enabled=false/dbms.security.auth_enabled=fals
 # Download and install the GDS library
 sudo wget https://github.com/neo4j/graph-data-science/releases/download/2.6.7/neo4j-graph-data-science-2.6.7.jar -P /var/lib/neo4j/plugins
 
-# Update Neo4j configuration to enable GDS procedures
-sudo bash -c 'echo "dbms.security.procedures.unrestricted=gds.*" >> /etc/neo4j/neo4j.conf'
-sudo bash -c 'echo "dbms.security.procedures.allowlist=gds.*" >> /etc/neo4j/neo4j.conf'
-
 # Download and install the APOC library
 sudo wget https://github.com/neo4j/apoc/releases/download/5.20.0/apoc-5.20.0-core.jar -P /var/lib/neo4j/plugins
 
-# Update Neo4j configuration to enable APOC procedures
-sudo bash -c 'echo "dbms.security.procedures.unrestricted=apoc.*" >> /etc/neo4j/neo4j.conf'
-sudo bash -c 'echo "dbms.security.procedures.allowlist=apoc.*" >> /etc/neo4j/neo4j.conf'
+# Update Neo4j configuration to enable GDS procedures
+sudo bash -c 'echo "dbms.security.procedures.unrestricted=apoc.*,gds.*" >> /etc/neo4j/neo4j.conf'
+sudo bash -c 'echo "dbms.security.procedures.allowlist=apoc.*,gds.*" >> /etc/neo4j/neo4j.conf'
 
 CONF_FILE="/etc/neo4j/apoc.conf"
 # Create the apoc.conf file with the specified entries

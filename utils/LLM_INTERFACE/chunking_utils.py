@@ -156,7 +156,7 @@ def readMethodsDBJson():
         tmp_json_ = json.load( fp )
 
     config_ = tmp_json_['python']
-    method_summary_file_ = config_['method_summary']
+    method_summary_file_ = os.getenv('IKG_HOME') + config_['method_summary']
 
     with open( method_summary_file_, 'r' ) as fp:
         return json.load( fp )

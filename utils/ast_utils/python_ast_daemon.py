@@ -52,6 +52,9 @@ class python_ast_daemon():
                                                                               self.config_['timestamp_json'] )
 
             print('DELTA FILE->', relevant_files_)
+            if len( relevant_files_ ) == 0:
+                print( datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), ':: NO CHANGES IN CODE_DB')
+                continue
             non_api_graph_inputs_ = self.ast_codebase_utils_.generate()
             api_graph_inputs_     = self.ast_API_utils_.createGraphInput( relevant_files_ )
 
