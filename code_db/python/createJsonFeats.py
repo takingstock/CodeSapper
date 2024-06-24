@@ -29,7 +29,7 @@ url_encode = 'http://0.0.0.0:5200/encodeSentence'
 def returnEmbed( sent ):
 
     rec_ = { 'sentence': sent }
-    fake_resp_ = 123
+    fake_resp_ = False
 
     data = json.dumps( rec_ ).encode('utf-8')
     _request = urllib.request.Request( url_encode, data=data, method='POST', \
