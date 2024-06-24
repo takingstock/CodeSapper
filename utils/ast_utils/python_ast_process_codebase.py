@@ -210,7 +210,10 @@ class generateGraphEntities():
             self.generateLocalUsage( file_ )
             self.generateGlobalUsage( file_ )
 
-        final_ = self.convert( self.file_master_ )
+        try:
+          final_ = self.convert( self.file_master_ )
+        except:
+            final_ = dict()
 
         return final_
         
