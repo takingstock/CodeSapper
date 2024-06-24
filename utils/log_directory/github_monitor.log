@@ -1,0 +1,185 @@
+2024-06-24 16:26:16,075 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:26:16,075 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:26:16,349 - GitHubMonitor - INFO - New artifact found. Downloading from https://api.github.com/repos/AmyGB-ai/IKG/actions/artifacts/1632477703/zip
+2024-06-24 16:26:17,495 - GitHubMonitor - INFO - GOIN TO WRITE->
+2024-06-24 16:26:17,496 - GitHubMonitor - INFO - /home/ubuntu/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-24 16:26:17,496 - GitHubMonitor - INFO - IN WITH SCOPE->
+2024-06-24 16:26:17,496 - GitHubMonitor - INFO - /home/ubuntu/IKG/utils//downloaded_artifacts/generated-files.zip
+2024-06-24 16:26:17,497 - GitHubMonitor - INFO - Artifact downloaded and extracted successfully.
+2024-06-24 16:26:17,499 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - ocr_api_app.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - test2_api_app.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - testChunking.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - firstpass.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - main_multi_prod.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - findKeys.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - readSS.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - searchDB.py
+2024-06-24 16:26:17,500 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - fetchLLMResponse.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - query_gpt_via_groq.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - addtoDB.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - createJsonFeats.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - db_utils.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - test_config_py_usage.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - pca_test.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - query_llama3_via_groq.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,501 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - basic_generateXLMetaData.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - testMonkey.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - qdrant_db_flask_server.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - test_api_app.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - FINDING RANGE->
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - validate_search.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - python_ast_process_codebase.py
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - TRACEBACK->
+2024-06-24 16:26:17,502 - GitHubMonitor - INFO - Traceback (most recent call last):
+2024-06-24 16:26:17,503 - GitHubMonitor - INFO -   File "/home/ubuntu/IKG/utils/LLM_INTERFACE/chunking_utils.py", line 192, in createChunkInChangeFile
+2024-06-24 16:26:17,503 - GitHubMonitor - INFO -     begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
+2024-06-24 16:26:17,503 - GitHubMonitor - INFO - ValueError: not enough values to unpack (expected 2, got 0)
+2024-06-24 16:26:17,503 - GitHubMonitor - INFO - STAGE1-> self chunking :=
+2024-06-24 16:26:17,503 - GitHubMonitor - INFO - [{'file': 'utils/ast_utils/python_ast_process_codebase.py', 'old_start': 23, 'old_length': 7, 'new_start': 23, 'new_length': 7, 'old_code': ["            if os.path.isfile(filename) and '.py' in filename and not '.pyc' in filename: # filter dirs\n"], 'new_code': ["            if os.path.isfile(filename) and '.py' in filename[ -3: ]: # filter dirs\n"], 'method_class_nm_old': {'class_nm': 'generateGraphEntities', 'method_nm': 'generateRelevantFiles'}, 'method_class_nm_new': {'class_nm': 'generateGraphEntities', 'method_nm': 'generateRelevantFiles'}}]
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO - Traversal Beginning->
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO - generateRelevantFiles
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO - /home/ubuntu/IKG/utils/ast_utils/python_ast_process_codebase.py
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO - 
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO -         MATCH ( startNode:Method { method_name: "generateRelevantFiles", file_name: "/home/ubuntu/IKG/utils/ast_utils/python_ast_process_codebase.py" } )
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO -         CALL apoc.path.subgraphNodes(startNode, {
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO -             relationshipFilter: "global_uses>",
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO -             minLevel: 1
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO -         }) YIELD node
+2024-06-24 16:26:19,633 - GitHubMonitor - INFO -         RETURN node
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO - Traversal Beginning->
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO - generateRelevantFiles
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO - /home/ubuntu/IKG/utils/ast_utils/python_ast_process_codebase.py
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO - 
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO -         MATCH ( startNode:Method { method_name: "generateRelevantFiles", file_name: "/home/ubuntu/IKG/utils/ast_utils/python_ast_process_codebase.py" } )
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO -         CALL apoc.path.subgraphNodes(startNode, {
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO -             relationshipFilter: "local_uses>",
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO -             minLevel: 1
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO -         }) YIELD node
+2024-06-24 16:26:20,130 - GitHubMonitor - INFO -         RETURN node
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO - HULLO ALLO->
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO - [
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -     {
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "file": "utils/ast_utils/python_ast_process_codebase.py",
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "old_start": 23,
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "old_length": 7,
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "new_start": 23,
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "new_length": 7,
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "old_code": [
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -             "            if os.path.isfile(filename) and '.py' in filename and not '.pyc' in filename: # filter dirs\n"
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         ],
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "new_code": [
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -             "            if os.path.isfile(filename) and '.py' in filename[ -3: ]: # filter dirs\n"
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         ],
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "method_class_nm_old": {
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -             "class_nm": "generateGraphEntities",
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -             "method_nm": "generateRelevantFiles"
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         },
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "method_class_nm_new": {
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -             "class_nm": "generateGraphEntities",
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -             "method_nm": "generateRelevantFiles"
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         },
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "base_change_impact": "",
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -         "base_change_criticality": "NA"
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO -     }
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO - ]
+2024-06-24 16:26:20,139 - GitHubMonitor - INFO - <Response [200]>
+2024-06-24 16:26:31,118 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:26:31,118 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:26:31,118 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:26:42,053 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:26:42,053 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:26:42,053 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:26:52,842 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:26:52,842 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:26:52,843 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:27:03,748 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:27:03,748 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:27:03,748 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:27:14,504 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:27:14,504 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:27:14,505 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:27:25,373 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:27:25,373 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:27:25,373 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:27:36,338 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:27:36,338 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:27:36,339 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:27:47,221 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:27:47,221 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:27:47,221 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:27:58,140 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:27:58,140 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:27:58,140 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:28:08,868 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:28:08,868 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:28:08,868 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:28:19,622 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:28:19,622 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:28:19,622 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:28:30,804 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:28:30,805 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:28:30,805 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:28:41,854 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:28:41,854 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:28:41,854 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:28:52,747 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:28:52,747 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:28:52,747 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:29:03,516 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:29:03,516 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:29:03,516 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:29:14,405 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:29:14,405 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:29:14,405 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:29:25,283 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:29:25,283 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:29:25,283 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:29:36,287 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:29:36,287 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:29:36,287 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:29:47,085 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:29:47,085 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:29:47,085 - GitHubMonitor - INFO - No new successful runs. Retrying...
+2024-06-24 16:29:57,940 - GitHubMonitor - INFO - Extracted latest_run_id->
+2024-06-24 16:29:57,940 - GitHubMonitor - INFO - 9648882936
+2024-06-24 16:29:57,940 - GitHubMonitor - INFO - No new successful runs. Retrying...

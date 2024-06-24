@@ -1,0 +1,12 @@
+nohup: ignoring input
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:6999
+ * Running on http://10.1.0.10:6999
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 446-160-499
+127.0.0.1 - - [24/Jun/2024 16:26:20] "POST /create_visualization HTTP/1.1" 200 -

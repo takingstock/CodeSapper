@@ -1,0 +1,23 @@
+{
+    "file": "utils/ast_utils/python_ast_process_codebase.py",
+    "old_start": 23,
+    "old_length": 7,
+    "new_start": 23,
+    "new_length": 7,
+    "old_code": [
+        "            if os.path.isfile(filename) and '.py' in filename and not '.pyc' in filename: # filter dirs\n"
+    ],
+    "new_code": [
+        "            if os.path.isfile(filename) and '.py' in filename[ -3: ]: # filter dirs\n"
+    ],
+    "method_class_nm_old": {
+        "class_nm": "generateGraphEntities",
+        "method_nm": "generateRelevantFiles"
+    },
+    "method_class_nm_new": {
+        "class_nm": "generateGraphEntities",
+        "method_nm": "generateRelevantFiles"
+    },
+    "base_change_impact": "",
+    "base_change_criticality": "NA"
+}
