@@ -23,7 +23,7 @@ class generateGraphEntities():
         tmp_store_, delta_ = dict(), dict()
 
         for filename in glob.iglob( self.src_dir_ + '/**', recursive=True):
-            if os.path.isfile(filename) and '.py' in filename and not '.pyc' in filename: # filter dirs
+            if os.path.isfile(filename) and '.py' in filename[ -3: ]: # filter dirs
                 tmp_store_[ filename ] = os.path.getmtime( filename )
 
         try:
