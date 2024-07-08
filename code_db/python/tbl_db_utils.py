@@ -1,6 +1,13 @@
 import createJsonFeats
 import json, urllib
 
+with open( 'eod_config.json', 'r' ) as fp:
+    config_json_ = json.load( fp )
+
+# url_insert = config_json_["url_insert"] 
+# url_search = config_json_["url_search"]
+# url_update = config_json_["url_update"]
+
 from get_ip_address import ENV
 
 config_feedback_dict = {"SCALAR" : "13.127.133.141",
@@ -10,13 +17,13 @@ config_feedback_dict = {"SCALAR" : "13.127.133.141",
 
 feedback_server_ip = config_feedback_dict.get(ENV)
 
-url_insert = "http://" + str(feedback_server_ip) + ":5000/dbInsert"
-url_search = "http://" + str(feedback_server_ip) + ":5000/dbSearch"
-url_update = "http://" + str(feedback_server_ip) + ":5000/dbUpdate"
+url_insert = "http://" + str(feedback_server_ip) + ":5100/dbInsert"
+url_search = "http://" + str(feedback_server_ip) + ":5100/dbSearch"
+url_update = "http://" + str(feedback_server_ip) + ":5100/dbUpdate"
 
-print("url_insert :", url_insert)
-print("url_search :", url_search)
-print("url_update :", url_update)
+print("url_insert table :", url_insert)
+print("url_search table :", url_search)
+print("url_update table :", url_update)
 
 def returnBlankDBRec():
     dbRec_ = dict()

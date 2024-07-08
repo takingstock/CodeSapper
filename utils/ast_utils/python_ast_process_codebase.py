@@ -168,6 +168,7 @@ class generateGraphEntities():
                 tmpD["method_name"] = method["name"]
                 tmpD["method_begin"] = ll_[ method["start_line"] - 1 ]
                 tmpD["method_end"] = ll_[ method["end_line"] - 1 ]
+                tmpD["api_end_point"] = method["api_definition"] if "api_definition" in method else "NA"
                 tmpD["range"] = [ method["start_line"], method["end_line"] ]
                 tmpD["global_uses"], tmpD["local_uses"] = [], []
 
@@ -214,6 +215,7 @@ class generateGraphEntities():
           final_ = self.convert( self.file_master_ )
         except:
             final_ = dict()
+            print('EXCPN::"python_ast_process_codebase.py"::final_ = self.convert', traceback.format_exc())
 
         return final_
         

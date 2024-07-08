@@ -298,5 +298,8 @@ def findAPIDefAndUsage( relevant_files_ ):
 
 if __name__ == "__main__":
     # Example usage
-    findAPIDefAndUsage('/datadrive/IKG/LLM_INTERFACE/')
+    import os
+    ll_ = os.listdir('/datadrive/IKG/code_db/python/')
+    x = [ '/datadrive/IKG/code_db/python/' + y for y in ll_ ]
+    print( findAPIDefAndUsage( x ) )
 

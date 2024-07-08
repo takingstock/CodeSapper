@@ -1,0 +1,1 @@
+{ "sentenceEncoderModel": "all-MiniLM-L6-v2", "dbPath": "/home/ubuntu/DOC_SIGNATURE/QD_DB_TRIAL", "dbName": "testDB", "topN": 10 }

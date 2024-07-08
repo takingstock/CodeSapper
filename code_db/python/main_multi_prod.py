@@ -58,7 +58,7 @@ print("ENV :", ENV)
 print("ENV defined")
 
 config_dict = {"SCALAR" : [7035, "http://10.0.8.154:4009"],
-               "STAGING" : [7035, "https://requordit-staging.amygbserver.in"],
+               "STAGING" : [7035, "https://aldstaging.amygbserver.in/"],#"https://requordit-staging.amygbserver.in"],
                "MARK_INFRA_PROD" : [7035, "http://162.31.17.199:4009"],
                "MARK_INFRA_STAGING" : [7035, "http://162.31.4.92:4009"]}
 
@@ -1062,7 +1062,6 @@ def get_full_json(output_format, height, width, page1, map_customer):
         mandatory_ratio = mandatory_count / mandatory_all_count
     return [list_dict, mandatory_ratio, non_table_flag]
 
-
 def change_here(list1, document_type_input):
     # Helper of ++ function
 
@@ -1073,10 +1072,13 @@ def change_here(list1, document_type_input):
     qr_present_dict = {}
     code_present_dict = {}
     externalSheet_dict = {}
+    table_id_all_list = []
     
     for i in range(len(list1)):
         json_result = dict()
         json_result_table = dict()
+        json_result_table_id = dict()
+        
         a1_here = list1[i]
         doc_here = a1_here['docType']
         
@@ -1104,15 +1106,25 @@ def change_here(list1, document_type_input):
         except:
             traceback.print_exc()
             externalSheet = []
-            
+        
         table_present_dict[doc_here.lower()] = table_present
         qr_present_dict[doc_here.lower()] = qr_present
         code_present_dict[doc_here.lower()] = code_present
         externalSheet_dict[doc_here.lower()] = externalSheet
         
         json_result[doc_here] = []
-        table_column_list = a1_here["columns"]
+        
+        tableHeaders = a1_here["tableHeaders"]
+        table_column_list = []
+        table_id_list = []
+        for i_t_c in range(len(tableHeaders)):
+            t_h_item_here = tableHeaders[i_t_c]["columns"]
+            table_column_list.append(t_h_item_here)
+            table_id_list.append(tableHeaders[i_t_c]["tableName"])
+        
+        # table_column_list = a1_here["columns"]
         json_result_table[doc_here] = table_column_list
+        json_result_table_id[doc_here] = table_id_list
         print("table_column_list :", table_column_list)
         
         key_list = a1_here["keys"]
@@ -1151,8 +1163,16 @@ def change_here(list1, document_type_input):
             json_result[doc_here].append(inner_dict)
         json_result_list.append(json_result)
         json_result_list_table.append(json_result_table)
-    return [json_result_list, table_present_dict, json_result_list_table, qr_present_dict, code_present_dict, externalSheet_dict]
-
+        table_id_all_list.append(json_result_table_id)
+        print("table_id_all_list :", table_id_all_list)
+        # time.sleep(30)
+    return [json_result_list, 
+            table_present_dict,
+            json_result_list_table,
+            qr_present_dict,
+            code_present_dict,
+            externalSheet_dict,
+            table_id_all_list]
 
 def change_format(input1, doc_id, document_type_input, flag_constant=False):
     # Get Global Mapping from Platform API
@@ -1871,31 +1891,36 @@ def get_full_json_special_generic(final_output_ntc, output_ff):
     return final_output_ntc
 
 def get_only_static_columns(map_customer_table_header, document_type_input):
-    dict_inner = map_customer_table_header[0][document_type_input]
-    print("dict_inner :", dict_inner)
-    list_req = []
-    datatype_list = []
-    cth_list = []
+    dict_inner_plus = map_customer_table_header[0][document_type_input]
     
-    for i_2 in range(len(dict_inner)):
-        dict_inner_here_v3 = dict_inner[i_2]
-        col_here_v2 = dict_inner_here_v3.get("key")
-        dt_here_v2 = dict_inner_here_v3.get("dataType")
-        list_req.append(col_here_v2)
-        datatype_list.append(dt_here_v2)
-        cth_list.append(50)
+    list_datatype_dict_master = []
+    
+    for dict_inner in dict_inner_plus:
+        list_req = []
+        datatype_list = []
+        cth_list = []
+
+        for i_2 in range(len(dict_inner)):
+            dict_inner_here_v3 = dict_inner[i_2]
+            col_here_v2 = dict_inner_here_v3.get("key")
+            dt_here_v2 = dict_inner_here_v3.get("dataType")
+            list_req.append(col_here_v2)
+            datatype_list.append(dt_here_v2)
+            cth_list.append(50)
+
+        list_datatype_dict = dict()
+        list_datatype_dict["text"] = list_req
+        list_datatype_dict["datatype"] = datatype_list
+        list_datatype_dict["confidence_threshold"] = cth_list
         
-    list_datatype_dict = dict()
-    list_datatype_dict["text"] = list_req
-    list_datatype_dict["datatype"] = datatype_list
-    list_datatype_dict["confidence_threshold"] = cth_list
+        list_datatype_dict_master.append(list_datatype_dict)
     
-    return list_datatype_dict
+    return list_datatype_dict_master
 
 def columns_input_intersection(total_table_dict, table_static_columns, type_of_doc, document_type_input):
     # time.sleep(15)
     
-    if document_type_input.lower() == "any":
+    if document_type_input.lower() == "any" or True:
         return total_table_dict
     
     table_json_list = total_table_dict.get(type_of_doc)
@@ -1913,12 +1938,14 @@ def columns_input_intersection(total_table_dict, table_static_columns, type_of_d
     return new_table_dict_result
     
 def clear_map_customer(map_customer, table_present_dict, map_customer_table_header,
-                       type_of_doc, table_static_columns, document_type_input):
+                       type_of_doc, table_static_columns, document_type_input,
+                       table_id_all_list):
     
     first_part = []
     second_part = {}
     third_part = []
-        
+    fourth_part = []
+    
     for imc in range(len(map_customer)):
         inner_mc_v2 = map_customer[imc]
         for key_mc_v2 in inner_mc_v2:
@@ -1950,7 +1977,18 @@ def clear_map_customer(map_customer, table_present_dict, map_customer_table_head
             continue
         break
     
-    return [first_part, second_part, third_part]
+    for imc4 in range(len(table_id_all_list)):
+        inner_mc2_v4 = table_id_all_list[imc4]
+        for key_mc2_v4 in inner_mc2_v4:
+            if key_mc2_v4 == type_of_doc:
+                # fourth_part.append(inner_mc2_v4[key_mc2_v4])
+                fourth_part = inner_mc2_v4[key_mc2_v4]
+                break
+        else:
+            continue
+        break
+    
+    return [first_part, second_part, third_part, fourth_part]
 
 def get_feedback_column_dict(backend_platform_url, table_static_columns, type_of_doc, client_customer_id, tenant_id, address_id):
     feedback_tsc_dict = {}
@@ -2021,6 +2059,61 @@ def get_matching_doc_number(output_ff):
             traceback.print_exc()
         
     return ["", 0]
+
+def change_table_format_azure(table_output,
+                              table_static_columns,
+                              datatype_columns_list = [],
+                              feedback_column_dict = {},
+                              th_columns_list = [],
+                              table_id_ind_here = ""):
+    
+    hdr_row_metadata = table_output.get("hdr_row_metadata")
+    cell_info_metadata = table_output.get("cell_info_metadata")
+
+    cell_info = cell_info_metadata.copy()
+    
+    global_columns = table_static_columns
+    local_columns = get_hdr_text_list(hdr_row_metadata)
+    match_column_result, dummy_a, dummy_b, cost_final = document_type.match_columns(global_columns, local_columns, feedback_column_dict)
+
+    match_column_result_inv = {v: k for k, v in match_column_result.items()} 
+    hdr_global_dict_list = get_global_hdr_dict(hdr_row_metadata, match_column_result_inv, table_static_columns)
+
+    cell_info = []
+    
+    for i_check in range(len(cell_info_metadata)):
+        cell_info_line = []
+        cell_line = cell_info_metadata[i_check]
+        for j_check in range(len(cell_line)):
+            cell_item = cell_line[j_check]
+            local_column = cell_item["local_column"]
+            if local_column in match_column_result_inv:
+                """cell_info_item = {"text" : cell_item.get("text"),
+                                  "pts" : cell_item.get("text"),
+                                  "local_column" : cell_item.get("local_column")}"""
+                cell_info_item = cell_item.copy()
+                cell_info_item["column"] = match_column_result_inv[local_column]
+                cell_info_line.append(cell_info_item)
+        cell_info.append(cell_info_line)
+        
+    table_output["hdr_row"] = hdr_global_dict_list
+    table_output["cell_info"] = cell_info
+    table_output["table_id"] = table_id_ind_here
+    
+    return table_output
+
+def get_azure_details(pdf_path):
+    url = "http://0.0.0.0:8080/processOKT"
+
+    payload = {'pdf_path': pdf_path}
+    files=[]
+    headers = {}
+
+    response = requests.request("POST", url, headers=headers, data=payload, files=files)
+    print(response.text)
+    response_json = json.loads(response.text)
+    
+    return response_json
 
 def extract_v2(file,
                cid,
@@ -2629,6 +2722,7 @@ def extract_v2(file,
                 qr_present_dict = map_customer_master[3]
                 code_present_dict = map_customer_master[4]
                 external_sheet_dict = map_customer_master[5]
+                table_id_all_list = map_customer_master[6]
                 
                 # tsc_and_datatype = get_only_static_columns(map_customer_table_header, document_type_input)
                 # table_static_columns = tsc_and_datatype.get("text")
@@ -2838,7 +2932,9 @@ def extract_v2(file,
                     
                 print("document_type_input :", document_type_input)
                 
-                if ((document_type_input.lower() not in ["invoices custom", "any"]) and (type_of_doc.lower() != "#new_format#")):
+                if ((document_type_input.lower() not in ["invoices custom", "any"]) and
+                    (type_of_doc.lower() != "#new_format#") or
+                    True):
                     type_of_doc = document_type_input
                 
                 print("type_of_doc after ff :", type_of_doc)
@@ -2857,14 +2953,19 @@ def extract_v2(file,
                 
                 # time.sleep(30)
                 
-                map_customer, table_present_dict, map_customer_table_header = clear_map_customer(map_customer,
-                                                                                                 table_present_dict,
-                                                                                                 map_customer_table_header,
-                                                                                                 type_of_doc,
-                                                                                                 table_static_columns,
-                                                                                                 document_type_input)    
+                (map_customer, 
+                 table_present_dict,
+                 map_customer_table_header,
+                 table_id_ind_list) = clear_map_customer(map_customer,
+                                                         table_present_dict,
+                                                         map_customer_table_header,
+                                                         type_of_doc,
+                                                         table_static_columns,
+                                                         document_type_input,
+                                                         table_id_all_list)    
                 
                 print("map_customer after :", map_customer)
+                print("table_id_ind_list :", table_id_ind_list)
                 
                 # time.sleep(30)
                 
@@ -2876,9 +2977,9 @@ def extract_v2(file,
                 external_sheet = []
                 if type_of_doc.lower() != "#new_format#":
                     tsc_and_datatype = get_only_static_columns(map_customer_table_header, type_of_doc)
-                    table_static_columns = tsc_and_datatype.get("text")
-                    datatype_columns_list = tsc_and_datatype.get("datatype")
-                    cth_column_list = tsc_and_datatype.get("confidence_threshold")
+                    table_static_columns = tsc_and_datatype[0].get("text")
+                    datatype_columns_list = tsc_and_datatype[0].get("datatype")
+                    cth_column_list = tsc_and_datatype[0].get("confidence_threshold")
                     
                     qr_present = qr_present_dict.get(type_of_doc.lower())
                     code_present = code_present_dict.get(type_of_doc.lower())
@@ -3084,6 +3185,8 @@ def extract_v2(file,
                         try:
                             # error_function()
                             if table_content_classic == []:
+                                print("table_static_columns :", table_static_columns)
+                                # time.sleep(15)
                                 if include_table == False:
                                     error_function()
                                 if table_static_columns == []:
@@ -3096,12 +3199,15 @@ def extract_v2(file,
                                     
                                     start_time_all_table = time.perf_counter()
                                     
-                                    result_table = call_with_timeout(latest_tbl_det_multipg_v1.lineItemExtraction,
+                                    """result_table = call_with_timeout(latest_tbl_det_multipg_v1.lineItemExtraction,
                                                                      args=[master_jpg_path[k],
                                                                            master_ocr_path[k],
                                                                            master_ocr_orig_path[k],
                                                                            type_of_doc],
-                                                                     timeout=(10 * len(master_jpg_path[k])))
+                                                                     timeout=(10 * len(master_jpg_path[k])))"""
+                                    
+                                    rj_here = get_azure_details(pdf_path)
+                                    result_table = rj_here.get("table")
                                     
                                     end_time_all_table = time.perf_counter()
                                     time_all_table = end_time_all_table - start_time_all_table
@@ -3149,11 +3255,34 @@ def extract_v2(file,
                                     print("feedback_id :", feedback_id)
                                     # time.sleep(60)
                                     
-                                    result = change_table_format(result_table,
+                                    """result = change_table_format(result_table,
                                                                  table_static_columns,
                                                                  datatype_columns_list = datatype_columns_list,
                                                                  feedback_column_dict = feedback_column_dict,
-                                                                 th_columns_list = cth_column_list)
+                                                                 th_columns_list = cth_column_list)"""
+                                    
+                                    result = []
+                                    for i_atc in range(len(result_table)):
+                                        result_table_ind = result_table[i_atc]
+                                        tsc_and_datatype_item = tsc_and_datatype[i_atc]
+                                        table_static_columns_here = tsc_and_datatype_item.get("text")
+                                        datatype_columns_list_here = tsc_and_datatype_item.get("datatype")
+                                        cth_columns_list_here = tsc_and_datatype_item.get("confidence_threshold")
+                                        table_id_ind_here = table_id_ind_list[i_atc]
+                                        
+                                        result_temp = change_table_format_azure(result_table_ind,
+                                                                                table_static_columns_here,
+                                                                                datatype_columns_list = datatype_columns_list_here,
+                                                                                feedback_column_dict = feedback_column_dict,
+                                                                                th_columns_list = cth_columns_list_here,
+                                                                                table_id_ind_here = table_id_ind_here)  
+                                        result.append(result_temp)
+                                        
+                                    # result = [result]
+                                    
+                                    print("result :", result)
+                                    # time.sleep(30)
+                                    
                                     table_content_classic = result
 
                                     with open(os.getcwd() + "/ALL_OCR_OUTPUT_METADATA/" + file_name_here + 
@@ -3318,7 +3447,7 @@ def extract_v2(file,
                         # time.sleep(15)
                         
                         if type_of_doc.lower() in ["invoices custom", "bol", "so", "statements", "mh bol"] or has_external_sheet:
-                            if address_match == "NO_VENDOR" and address_raw in ["NA", None]:
+                            if address_match == "NO_VENDOR" and address_raw in ["NA", None, ""]:
                                 pass
                             elif address_match == "NO_VENDOR":
                                 address_raw_here = client_customer_id + " " + type_of_doc + " " + name_raw + " " + address_raw
@@ -3853,7 +3982,7 @@ def extract_v2(file,
 
 def extract_wrapper(file, cid, extension, doc_id, doc_name_static, df_to_pass, 
                     client_customer_id, table_static_columns, document_type_input,
-                    map_customer_static, has_external_sheet):
+                    map_customer_static, has_external_sheet, time_overall_1):
     print(">>>> In extract_wrapper")
     global ENV
     extraction_time_ = time.time()
@@ -3913,7 +4042,8 @@ def extract_wrapper(file, cid, extension, doc_id, doc_name_static, df_to_pass,
     payload = {"data": master_final_output,
                "doc_id": doc_id,
                # "doc_id": "652fed59958a9aba4319bae6",
-               "s3_link_final_output" : s3_link_final_output}
+               "s3_link_final_output" : s3_link_final_output,
+               "time_overall" : time.perf_counter() - time_overall_1}
     
     with open(path_to_read, "w") as f:
         json.dump(payload, f)
@@ -4220,7 +4350,7 @@ def file_upload_health():
     
 def decode_pdf_fields(file_path_original, cid, extension, doc_id,
                       doc_name_static, df_to_pass, client_customer_id, table_static_columns,
-                      document_type_input, map_customer_static, has_external_sheet):
+                      document_type_input, map_customer_static, has_external_sheet, time_overall_1):
     
     time_start_page_number = time.perf_counter()
     num_pages = get_num_pages_all(file_path_original)
@@ -4248,7 +4378,7 @@ def decode_pdf_fields(file_path_original, cid, extension, doc_id,
                           file_path_original, cid, extension,
                           doc_id, doc_name_static, df_to_pass, client_customer_id,
                           table_static_columns, document_type_input, map_customer_static,
-                          has_external_sheet
+                          has_external_sheet, time_overall_1
                       ])
     task_bg.start()
     imm_response = {"processStart": "SUCCESS", "totalPages": num_pages}
@@ -4263,6 +4393,8 @@ def decode_pdf_fields(file_path_original, cid, extension, doc_id,
 
 @app.route('/processDocument', methods=['GET', 'POST'])
 def file_upload_v1():
+    time_overall_1 = time.perf_counter()
+    
     global df_master_here
     global df_master_here_bol
     global df_master_here_so
@@ -4522,6 +4654,8 @@ def file_upload_v1():
             
             try:
                 map_customer_static = change_format(cid, doc_id, document_type_input)
+                print(cid, doc_id, document_type_input)
+                # time.sleep(30)
                 external_sheet_dict_static = map_customer_static[5]
             except:
                 traceback.print_exc()
@@ -4669,7 +4803,8 @@ def file_upload_v1():
                                         table_static_columns,
                                         document_type_input,
                                         map_customer_static,
-                                        has_external_sheet)
+                                        has_external_sheet,
+                                        time_overall_1)
                 end_time_2 = time.perf_counter()
                 time_extract = end_time_2 - start_time_2
             except:

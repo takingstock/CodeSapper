@@ -15,7 +15,9 @@ class CodeAnalyzer(ast.NodeVisitor):
         try:
             code = self.file_ptr_.readlines()[ range_[0]: range_[1] ]
             code = textwrap.dedent( ''.join( code ) )
-            print('CODE_SNIP->', code)
+            print('CODE_SNIP->', code, file_nm_, ast.parse(code))
+            if len( code ) == 0: return 'EXIT'
+
             return ast.parse(code)
         except:
             with open( self.err_log_, 'a+') as fp:
@@ -68,6 +70,7 @@ class CodeAnalyzer(ast.NodeVisitor):
         if self.current_method:
             # End the current method when we encounter a new function definition
             self.current_method['end_line'] = node.lineno - 1
+
             self.methods.append(self.current_method)
             self.current_method = None
 
@@ -77,8 +80,31 @@ class CodeAnalyzer(ast.NodeVisitor):
         if self.current_method:
             # If we have reached the end of the visit and still have a current method
             self.current_method['end_line'] = node.end_lineno
+            ## check for decorators and API routes
+            for decorator in node.decorator_list:
+                if isinstance(decorator, ast.Call) and isinstance(decorator.func, ast.Attribute):
+                    args = [self.get_arg_value(arg) for arg in decorator.args]
+
+                    self.current_method['api_definition'] = args[0] if len( args ) > 0 else 'NA'
+                    print('GOOFING2->', args )
+
+            ## if no decorator found, mark as NA
+            if 'api_definition' not in self.current_method:
+                self.current_method['api_definition'] = 'NA'
+
             self.methods.append(self.current_method)
             self.current_method = None
+
+    def get_arg_value(self, arg):
+        if isinstance(arg, ast.Str):
+            return arg.s
+        elif isinstance(arg, ast.Constant):  # Python 3.8+
+            return arg.value
+        elif isinstance(arg, ast.Name):
+            return arg.id
+        elif isinstance(arg, ast.Call):
+            return self.get_func_name(arg.func)
+        return None
 
     def visit_Return(self, node):
         if self.current_method:
@@ -172,6 +198,8 @@ def find_methods_and_traces(source_code):
     while ( parsed_ast == None or last_line_ <= first_line_ ):
         last_line_ -= 1
         parsed_ast = analyzer.parse_ast( source_code, ( first_line_, last_line_ ) )
+        if parsed_ast == 'EXIT':
+            break
 
     for node in ast.walk( parsed_ast ):
         if isinstance(node, ast.FunctionDef):

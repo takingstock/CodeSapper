@@ -1,5 +1,5 @@
 import ast
-import os
+import os, traceback
 
 class APIDefinitionFinder(ast.NodeVisitor):
     def __init__(self):
@@ -49,24 +49,37 @@ def find_api_definitions_in_ast(tree):
     return finder.api_definitions
 
 def find_api_definitions(relevant_files):
+
     api_definitions = []
     file_paths = relevant_files
-    #file_paths = parse_files_in_directory(directory)
     for file_path in file_paths:
+      try:  
         tree = parse_file(file_path)
         definitions = find_api_definitions_in_ast(tree)
         if definitions:
             for definition in definitions:
                 definition['file_path'] = file_path
                 api_definitions.append(definition)
+      except:
+          print( 'EXCPN while parsing -> ', traceback.format_exc() )
+          continue
+
     return api_definitions
 
 if __name__ == "__main__":
 
     # Example usage
-    api_definitions = find_api_definitions('/datadrive/IKG/LLM_INTERFACE/SRC_DIR/')
+    import os, json
+    file_paths = parse_files_in_directory('/datadrive/IKG/code_db/python/')
+
+    api_definitions = find_api_definitions( file_paths )
+    print(json.dumps( api_definitions, indent=4 ))
+    '''
     for api in api_definitions:
         print(f"Found API definition {api['name']} at line {api['lineno']} ends {api['end_lineno']} in {api['file_path']}")
         print(f"Route path: {api['route_path']}")
         print(f"Methods: {api['methods']}")
+    '''
+
+
 

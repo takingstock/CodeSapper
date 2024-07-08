@@ -1,0 +1,1 @@
+curl --header "Content-Type: application/json" --request POST --data '{ "filter": { "must": [] }, "limit": 1, "with_payload": true, "with_vector": false }' http://localhost:6333/collections/$1/points/scroll

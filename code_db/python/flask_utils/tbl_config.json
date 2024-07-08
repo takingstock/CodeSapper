@@ -1,0 +1,1 @@
+{ "sentenceEncoderModel": "all-MiniLM-L6-v2", "dbPath": "/home/ubuntu/TBL_DET/TBL_FEEDBACK/QD_DB_TRIAL", "dbName": "tblSignatures", "topN": 10 }

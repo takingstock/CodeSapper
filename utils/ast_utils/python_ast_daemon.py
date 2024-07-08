@@ -42,6 +42,7 @@ class python_ast_daemon():
 
         ## update done, if any .. now recreate the file
         with open( self.method_summary_file_, 'w' ) as fp:
+            print('DUMPLINGS->', self.method_summary_file_, existing_)
             json.dump( existing_, fp, indent=4 )
 
     def run_loop(self):
@@ -53,6 +54,11 @@ class python_ast_daemon():
 
             print('DELTA FILE->', relevant_files_)
             non_api_graph_inputs_ = self.ast_codebase_utils_.generate()
+
+            ##NOTE-> ALWAYS COMMENT BELOW !! JUST FOR TESTING
+            print('GIMLET->', non_api_graph_inputs_)
+            self.update_method_summary_( non_api_graph_inputs_ )
+            exit()
 
             if len( relevant_files_ ) == 0 or len( non_api_graph_inputs_ ) == 0:
                 print( datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), ':: NO CHANGES IN CODE_DB')
@@ -71,6 +77,9 @@ class python_ast_daemon():
 
             ## now dump the files 
             self.update_method_summary_( graph_inputs_ )
+            
+            ##NOTE-> ALWAYS COMMENT BELOW !! JUST FOR TESTING
+            exit()
 
             ##instantiate graph module for entry into graph
             graph_utils_ = generateGraph( neo4j_config=os.getenv("NEO4J_CONFIG") )
