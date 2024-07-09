@@ -1,0 +1,69 @@
+Controllers/document.controller.js:      console.log("DOC::::::::::::::::::::::::::::::::::::: processDocumentPdfGenerator")
+Controllers/document.controller.js:      console.log("DOC::::::::::::::::::::::::::::::::::::: processDocumentPdfGenerator")
+Controllers/document.controller.js:  AI_ENDPOINTS.processDocumentSnipplet(payload)
+Controllers/vendor-ai-controller.js:            console.log("DOC::::::::::::::::::::::::::::::::::::: processDocumentPdfGenerator")
+Controllers/ocr-ai.controller.js:const _processDocumentsInSeries = async (files) => new Promise((resolve, reject) => {
+Controllers/ocr-ai.controller.js:  const ocrAiMapping = await _processDocumentsInSeries(mappedSavedDocuments);
+Routes/v2/ocr.routes.js:  processDocumentDetails: (request) => new Promise((resolve, reject) => {
+Routes/v2/ocr.routes.js:  processDocumentList: (request) => new Promise((resolve, reject) => {
+Routes/v2/config.v2.js:    handler: 'processDocumentDetails',
+Routes/v2/config.v2.js:    handler: 'processDocumentList',
+Utils/document-classification.util.js:const processDocument = (doc, callback) => {
+Utils/document-classification.util.js:const processDocumentPdfGenerator = (doc, callback) => {
+Utils/document-classification.util.js:                console.log(".................. Not found pageArray on processDocumentPdfGenerator .............")
+Utils/document-classification.util.js:            console.log("DOC::::::::::::::::::::::::::::::::::::: processDocumentPdfGenerator")
+Utils/document-classification.util.js:        processDocument(doc, cb)
+Utils/document-classification.util.js:        processDocumentPdfGenerator(doc, cb)
+Utils/document-classification.util.js:const processDocumentImages = (doc, callback) => {
+Utils/document-classification.util.js:            console.log("dataToSet processDocumentImages", dataToSet)
+Utils/document-classification.util.js:            console.log("DOC::::::::::::::::::::::::::::::::::::: processDocumentImages")
+Utils/document-classification.util.js:        processDocumentImages(doc, cb)
+Utils/ocrRotatedImages.util.js:const processDocument = (file, freeServerIp, kvpOcr, callback) => {
+Utils/ocrRotatedImages.util.js:            processOcrForDocument(file, `http://${freeServerIp}:${port}/processDocument`, (err, res) => {
+Utils/ocrRotatedImages.util.js:        processDocument(file, getFreeServerKvp(false, ocrOnDiffrentIp && ip, kvpOcr), kvpOcr, elcb)
+Utils/ocr.util.js:            processOcrForFile(file, `http://${freeServerIp}:${PORT}/processDocument`).then((res) => {
+Utils/ai-endpoints.util.js:const processDocumentSnipplet = (payload) => new Promise(async (resolve, reject) => {
+Utils/ai-endpoints.util.js:  processDocumentSnipplet,
+analysis_results.json:        "method_name": "_processDocumentsInSeries",
+analysis_results.json:        "method_begin": "const _processDocumentsInSeries = async (files) => new Promise((resolve, reject) => {",
+analysis_results.json:            "usage": "    handler: 'processDocumentDetails',"
+analysis_results.json:            "usage": "    handler: 'processDocumentList',"
+analysis_results.json:            "usage": "    handler: 'processDocumentDetails',"
+analysis_results.json:            "usage": "    handler: 'processDocumentList',"
+analysis_results.json:        "method_name": "processDocumentSnipplet",
+analysis_results.json:        "method_begin": "const processDocumentSnipplet = (payload) => new Promise(async (resolve, reject) => {",
+analysis_results.json:            "method_nm": "processDocumentSnipplet",
+analysis_results.json:            "usage": "  AI_ENDPOINTS.processDocumentSnipplet(payload)"
+analysis_results.json:        "method_name": "processDocument",
+analysis_results.json:        "method_begin": "const processDocument = (doc, callback) => {",
+analysis_results.json:            "method_nm": "processDocument",
+analysis_results.json:            "usage": "            processOcrForFile(file, `http://${freeServerIp}:${PORT}/processDocument`).then((res) => {"
+analysis_results.json:        "method_name": "processDocumentPdfGenerator",
+analysis_results.json:        "method_begin": "const processDocumentPdfGenerator = (doc, callback) => {",
+analysis_results.json:            "method_nm": "processDocumentPdfGenerator",
+analysis_results.json:            "usage": "      console.log(\"DOC::::::::::::::::::::::::::::::::::::: processDocumentPdfGenerator\")"
+analysis_results.json:            "method_nm": "processDocumentPdfGenerator",
+analysis_results.json:            "usage": "      console.log(\"DOC::::::::::::::::::::::::::::::::::::: processDocumentPdfGenerator\")"
+analysis_results.json:            "method_nm": "processDocumentPdfGenerator",
+analysis_results.json:            "usage": "            console.log(\"DOC::::::::::::::::::::::::::::::::::::: processDocumentPdfGenerator\")"
+analysis_results.json:        "method_name": "processDocumentImages",
+analysis_results.json:        "method_begin": "const processDocumentImages = (doc, callback) => {",
+analysis_results.json:            "usage": "        processDocument(file, getFreeServerKvp(false, ocrOnDiffrentIp && ip, kvpOcr), kvpOcr, elcb)"
+analysis_results.json:        "method_name": "processDocument",
+analysis_results.json:        "method_begin": "const processDocument = (file, freeServerIp, kvpOcr, callback) => {",
+analysis_results.json:            "method_nm": "processDocument",
+analysis_results.json:            "usage": "            processOcrForFile(file, `http://${freeServerIp}:${PORT}/processDocument`).then((res) => {"
+config/dev_1.js:      DOCUMENT_OCR: 'http://20.219.34.135:7007/processDocument',
+config/prod_v1.js:        DOCUMENT_OCR: 'http://20.219.34.135:7035/processDocument',
+config/dev_2.js:      DOCUMENT_OCR: 'http://20.219.34.135:7006/processDocument',
+config/trial.js:        DOCUMENT_OCR: 'http://20.219.34.135:7021/processDocument',
+config/stage.js:      DOCUMENT_OCR: 'http://20.219.34.135:6192/processDocument',
+config/mark_stage2.js:        DOCUMENT_OCR: 'http://20.219.63.206:7041/processDocument',
+config/production.js:      DOCUMENT_OCR: 'http://20.219.34.135:6193/processDocument',
+config/development.js:      DOCUMENT_OCR: 'http://20.219.34.135:6190/processDocument',
+config/scalar.js:      DOCUMENT_OCR: 'http://20.219.34.135:7035/processDocument',
+config/mark_stage3.js:        DOCUMENT_OCR: 'http://20.219.63.206:7036/processDocument',
+config/test.js:      DOCUMENT_OCR: 'http://20.219.34.135:6191/processDocument',
+config/mark_stage.js:        DOCUMENT_OCR: 'http://20.219.63.206:7036/processDocument',
+config/mark_prod.js:        DOCUMENT_OCR: 'http://20.219.34.135:7052/processDocument',
+config/demo.js:      DOCUMENT_OCR: 'http://20.219.34.135:6191/processDocument',
