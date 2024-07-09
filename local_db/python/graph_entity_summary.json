@@ -5,7 +5,7 @@
                 "method_name": "encodeSentence",
                 "method_begin": "def encodeSentence():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/encodeSentence",
+                "api_end_point": "/encodeSentence",
                 "range": [
                     19,
                     29
@@ -17,7 +17,7 @@
                 "method_name": "convert",
                 "method_begin": "def convert( input_ ):\n",
                 "method_end": "    return int(cc_)  \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     31,
                     38
@@ -37,7 +37,7 @@
                 "method_name": "dbInsert",
                 "method_begin": "def dbInsert():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbInsert",
+                "api_end_point": "/dbInsert",
                 "range": [
                     41,
                     69
@@ -49,7 +49,7 @@
                 "method_name": "dbSearch",
                 "method_begin": "def dbSearch():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbSearch",
+                "api_end_point": "/dbSearch",
                 "range": [
                     72,
                     101
@@ -61,7 +61,7 @@
                 "method_name": "dbUpdate",
                 "method_begin": "def dbUpdate():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbUpdate",
+                "api_end_point": "/dbUpdate",
                 "range": [
                     104,
                     132
@@ -374,7 +374,12 @@
                 "Ending": 136,
                 "Values": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_test1/test_api_app.py": {
         "method_details_": [
@@ -382,7 +387,7 @@
                 "method_name": "start_td",
                 "method_begin": "def start_td():\n",
                 "method_end": "        return jsonify(\"Success\")\n",
-                "api_definition": "/sendEmailFromSecondaryServer",
+                "api_end_point": "/sendEmailFromSecondaryServer",
                 "range": [
                     31,
                     81
@@ -394,7 +399,7 @@
                 "method_name": "start_ocr",
                 "method_begin": "def start_ocr():\n",
                 "method_end": "        return jsonify({\"line\":[],\"path\":''})\n",
-                "api_definition": "/login",
+                "api_end_point": "/login",
                 "range": [
                     86,
                     102
@@ -974,7 +979,7 @@
                 "method_name": "start_td",
                 "method_begin": "def start_td():\n",
                 "method_end": "        return jsonify(\"Success\")\n",
-                "api_definition": "/td_api",
+                "api_end_point": "/td_api",
                 "range": [
                     31,
                     81
@@ -986,7 +991,7 @@
                 "method_name": "start_ocr",
                 "method_begin": "def start_ocr():\n",
                 "method_end": "        return jsonify({\"line\":[],\"path\":''})\n",
-                "api_definition": "/extractText",
+                "api_end_point": "/extractText",
                 "range": [
                     86,
                     102
@@ -1566,7 +1571,7 @@
                 "method_name": "encodeSentence",
                 "method_begin": "def encodeSentence():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/encodeSentence",
+                "api_end_point": "/encodeSentence",
                 "range": [
                     19,
                     29
@@ -1578,7 +1583,7 @@
                 "method_name": "convert",
                 "method_begin": "def convert( input_ ):\n",
                 "method_end": "    return int(cc_)  \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     31,
                     38
@@ -1598,7 +1603,7 @@
                 "method_name": "dbInsert",
                 "method_begin": "def dbInsert():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbInsert",
+                "api_end_point": "/dbInsert",
                 "range": [
                     41,
                     69
@@ -1610,7 +1615,7 @@
                 "method_name": "dbSearch",
                 "method_begin": "def dbSearch():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/fetchData",
+                "api_end_point": "/fetchData",
                 "range": [
                     72,
                     101
@@ -1622,7 +1627,7 @@
                 "method_name": "dbUpdate",
                 "method_begin": "def dbUpdate():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/updateData",
+                "api_end_point": "/updateData",
                 "range": [
                     104,
                     132
@@ -1935,7 +1940,12 @@
                 "Ending": 136,
                 "Values": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/detectTableHeader.py": {
         "method_details_": [
@@ -1943,7 +1953,7 @@
                 "method_name": "returnNumCaps",
                 "method_begin": "def returnNumCaps( arr_ ):\n",
                 "method_end": "  return numCaps\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     5,
                     10
@@ -1955,7 +1965,7 @@
                 "method_name": "returnNumWords",
                 "method_begin": "def returnNumWords( arr_ ):\n",
                 "method_end": "  return numWds\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     12,
                     18
@@ -1967,7 +1977,7 @@
                 "method_name": "returnNumDigits",
                 "method_begin": "def returnNumDigits( arr_ ):\n",
                 "method_end": "  return numDigits\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     20,
                     25
@@ -1979,7 +1989,7 @@
                 "method_name": "returnAvgLenWords",
                 "method_begin": "def returnAvgLenWords( arr_ ):\n",
                 "method_end": "  return 0\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     27,
                     35
@@ -1991,7 +2001,7 @@
                 "method_name": "returnHeaderRowBreak",
                 "method_begin": "def returnHeaderRowBreak( relevant_ ):\n",
                 "method_end": "  return 0\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     37,
                     105
@@ -2439,7 +2449,7 @@
                 "method_name": "get_invoice_number",
                 "method_begin": "def get_invoice_number(img_path,\n",
                 "method_end": "    return {}\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     24,
                     569
@@ -4118,7 +4128,7 @@
                 "method_name": "format_polygon",
                 "method_begin": "def format_polygon(polygon):\n",
                 "method_end": "    return \", \".join([\"[{}, {}]\".format(p.x, p.y) for p in polygon])\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     11,
                     14
@@ -4130,13 +4140,15 @@
                 "method_name": "analyze_layout",
                 "method_begin": "def analyze_layout():\n",
                 "method_end": "    print(\"----------------------------------------\")\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     16,
                     101
                 ],
                 "global_uses": [],
-                "local_uses": []
+                "local_uses": [],
+                "local_api_call": "NA",
+                "inter_service_api_call": "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/sample-layout.pdf\""
             }
         ],
         "text_details_": {
@@ -4304,7 +4316,12 @@
                 "Ending": 94,
                 "Values": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "https://idp-amygb.cognitiveservices.azure.com/\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/heuristic_TblDetection.py": {
         "method_details_": [
@@ -4312,7 +4329,7 @@
                 "method_name": "iou",
                 "method_begin": "def iou( pts1, pts2 ):\n",
                 "method_end": "        return 0\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4,
                     21
@@ -4324,7 +4341,7 @@
                 "method_name": "isNumericalorAlpha",
                 "method_begin": "def isNumericalorAlpha( txt ):\n",
                 "method_end": "        return True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     23,
                     44
@@ -4336,7 +4353,7 @@
                 "method_name": "merge",
                 "method_begin": "def merge( master_ ):\n",
                 "method_end": "        return neo_master_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     46,
                     82
@@ -4356,7 +4373,7 @@
                 "method_name": "inSync",
                 "method_begin": "def inSync( line1, line2 ):\n",
                 "method_end": "        return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     84,
                     136
@@ -4376,7 +4393,7 @@
                 "method_name": "returnContenders",
                 "method_begin": "def returnContenders( master_, wd_, ht_ ):\n",
                 "method_end": "        return neo_contender_idx, neo_contender_line_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     138,
                     187
@@ -4396,7 +4413,7 @@
                 "method_name": "containsNumericalorAlpha",
                 "method_begin": "def containsNumericalorAlpha( txt ):\n",
                 "method_end": "\t\treturn True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     189,
                     202
@@ -4408,7 +4425,7 @@
                 "method_name": "findHdr",
                 "method_begin": "def findHdr( ref_line_ctr, master_ ):\n",
                 "method_end": "\treturn neo_row\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     204,
                     247
@@ -4428,7 +4445,7 @@
                 "method_name": "findSiblingsBelow",
                 "method_begin": "def findSiblingsBelow( _idx, master_ ):\n",
                 "method_end": "\treturn ref_line_ \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     249,
                     265
@@ -4448,7 +4465,7 @@
                 "method_name": "detectTable",
                 "method_begin": "def detectTable( master_, wd_, ht_, img_file_ ):\n",
                 "method_end": "\treturn [ x0, y0, x2, y2 ]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     267,
                     306
@@ -4476,7 +4493,7 @@
                 "method_name": "drawContour",
                 "method_begin": "def drawContour( hdr_row, last_row, img_file_, wd_, ht_, last_row_ctr, master_ ):\n",
                 "method_end": "\treturn top_left_x, top_left_y, bot_x, bot_y\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     308,
                     335
@@ -4496,7 +4513,7 @@
                 "method_name": "get_relevant_lines",
                 "method_begin": "def get_relevant_lines(pts, all_lines, flag_exist):\n",
                 "method_end": "    return rel_lines\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     337,
                     371
@@ -4524,7 +4541,7 @@
                 "method_name": "get_table_output",
                 "method_begin": "def get_table_output(image_path, ocr_orig_file, flag = 0):\n",
                 "method_end": "      return [get_rel_lines, ht, wd, image_path, table_coords]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     375,
                     443
@@ -6616,7 +6633,7 @@
                 "method_name": "__init__",
                 "method_begin": "    def __init__(self, path = path):\n",
                 "method_end": "        self.path = path\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     19,
                     20
@@ -6628,7 +6645,7 @@
                 "method_name": "returnDump",
                 "method_begin": "    def returnDump(self):\n",
                 "method_end": "            print(\"LINE--\",line_txt)\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     22,
                     44
@@ -6866,7 +6883,17 @@
                 ],
                 "Function": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://3.236.79.159:8115/extractText\""
+            }
+        ],
+        "global_usage_local_api_call": [
+            {
+                "url": "/extractText"
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/invoice_details.py": {
         "method_details_": [
@@ -6874,7 +6901,7 @@
                 "method_name": "get_details_bkp",
                 "method_begin": "def get_details_bkp(file, ocr_orig_path, ocr_path):\n",
                 "method_end": "    return result_details\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     11,
                     34
@@ -6894,7 +6921,7 @@
                 "method_name": "isGreater",
                 "method_begin": "def isGreater( invObj, neoDt ):\n",
                 "method_end": "    return True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     36,
                     53
@@ -6906,7 +6933,7 @@
                 "method_name": "cleanup",
                 "method_begin": "def cleanup( wd_ ):\n",
                 "method_end": "    return wd_.replace(':','').replace(';','').replace(' ','').replace('O','0').replace('d','')\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     55,
                     67
@@ -6934,7 +6961,7 @@
                 "method_name": "get_details",
                 "method_begin": "def get_details( fnm, orig_, src_ ):\n",
                 "method_end": "    return deets_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     69,
                     287
@@ -8430,7 +8457,7 @@
                 "method_name": "overlap_ratio",
                 "method_begin": "def overlap_ratio(x1, y1, x2, y2, x1_here, y1_here, x2_here, y2_here):\n",
                 "method_end": "        return ratio\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     41,
                     55
@@ -8442,7 +8469,7 @@
                 "method_name": "draw_contours",
                 "method_begin": "def draw_contours(result, jpg_path):\n",
                 "method_end": "    return Image(filename=write_path)\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     58,
                     110
@@ -8454,7 +8481,7 @@
                 "method_name": "get_relevant_lines",
                 "method_begin": "def get_relevant_lines(pts, all_lines, flag_exist):\n",
                 "method_end": "    return rel_lines\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     113,
                     141
@@ -8482,7 +8509,7 @@
                 "method_name": "extract",
                 "method_begin": "def extract(table_bounds, headers, jpg_path, raw_json_path, stit_json_path):\n",
                 "method_end": "    return \"Hello\"\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     144,
                     186
@@ -8509,7 +8536,7 @@
                 "method_name": "extract_v2",
                 "method_begin": "def extract_v2(master_jpg_list, master_stit_json, master_raw_json, potential_header_rows_=None ):\n",
                 "method_end": "    return cell_output_master, table_deets_, vert_lines, hori_lines\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     190,
                     276
@@ -8544,7 +8571,7 @@
                 "method_name": "noInterference",
                 "method_begin": "def noInterference(anchor_line_, pts):\n",
                 "method_end": "    return True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     279,
                     283
@@ -8556,7 +8583,7 @@
                 "method_name": "overlap",
                 "method_begin": "def overlap( rect1, rect2):\n",
                 "method_end": "    return x_overlap/smaller_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     285,
                     291
@@ -8568,7 +8595,7 @@
                 "method_name": "findAlignmentDirection",
                 "method_begin": "def findAlignmentDirection( sorted_unassigned_, curr_child, next_child, contour ):\n",
                 "method_end": "    return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     293,
                     319
@@ -8588,7 +8615,7 @@
                 "method_name": "alignAccordingToHdrs",
                 "method_begin": "def alignAccordingToHdrs(anchor_line_, _hdr_arr, pg_wd):\n",
                 "method_end": "    return resp_anch_line_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     321,
                     430
@@ -8608,7 +8635,7 @@
                 "method_name": "findAnchor",
                 "method_begin": "def findAnchor(json_, _hdr_arr):\n",
                 "method_end": "    return anchor_elem_, final_anch_line_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     433,
                     491
@@ -8635,7 +8662,7 @@
                 "method_name": "noVertical",
                 "method_begin": "def noVertical( lt, rt, vert ):\n",
                 "method_end": "    return False    \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     493,
                     498
@@ -8647,7 +8674,7 @@
                 "method_name": "returnBoundsBasedOnImg",
                 "method_begin": "def returnBoundsBasedOnImg(new_hdr_arr_, _raw_json, vertical_bounds_):\n",
                 "method_end": "    return coLB\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     501,
                     588
@@ -8667,7 +8694,7 @@
                 "method_name": "findColBounds",
                 "method_begin": "def findColBounds(new_hdr_arr_, master_stit_json, master_raw_json, vertical_bounds_):\n",
                 "method_end": "    return colBounds_arr, anchor_arr\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     591,
                     715
@@ -8687,7 +8714,7 @@
                 "method_name": "lineBelowIsFull",
                 "method_begin": "def lineBelowIsFull(_raw_json, linectr, colBound_pg, maxX2Boundary):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     718,
                     762
@@ -8699,7 +8726,7 @@
                 "method_name": "numbersNextContour",
                 "method_begin": "def numbersNextContour(line_, x2):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     765,
                     773
@@ -8711,7 +8738,7 @@
                 "method_name": "findTableEndCoOrds",
                 "method_begin": "def findTableEndCoOrds(colBounds_, new_hdr_arr_, master_stit_json, master_raw_json, vlines, hlines, pg_ctr):\n",
                 "method_end": "    return response_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     776,
                     891
@@ -8731,7 +8758,7 @@
                 "method_name": "ColFurtherOut",
                 "method_begin": "def ColFurtherOut(pts, colKey, LRBounds_, mode):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     894,
                     937
@@ -8743,7 +8770,7 @@
                 "method_name": "FPTextLine",
                 "method_begin": "def FPTextLine( line_, raw_jsn_, anchor_col_ ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     939,
                     957
@@ -8755,7 +8782,7 @@
                 "method_name": "extractBlocks",
                 "method_begin": "def extractBlocks( LRBounds_, current_top, current_bot, raw_jsn_, rowD, avg_y_diff, prev, lctr_for_last_row_\\\n",
                 "method_end": "        prev_left_ = left\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     959,
                     1101
@@ -8767,7 +8794,7 @@
                 "method_name": "lineBeforeNextAnchor",
                 "method_begin": "def lineBeforeNextAnchor( wd_, current_bot, row_separators_, existin_, tblEnding ):\n",
                 "method_end": "    return False, current_bot        \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1103,
                     1139
@@ -8779,7 +8806,7 @@
                 "method_name": "maxYinLine",
                 "method_begin": "def maxYinLine(ln_, minormax):\n",
                 "method_end": "    return maxy\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1141,
                     1149
@@ -8806,7 +8833,7 @@
                 "method_name": "gatherCellRows",
                 "method_begin": "def gatherCellRows(row_separators_, colBound_pg, raw_jsn_, last_row_anchor_, follow_vertical_bounds_, tblEnding):\n",
                 "method_end": "    return cellInfo_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1152,
                     1337
@@ -8826,7 +8853,7 @@
                 "method_name": "resultFound",
                 "method_begin": "def resultFound( t1, t2, candidates_ ):\n",
                 "method_end": "    return None    \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1339,
                     1349
@@ -8846,7 +8873,7 @@
                 "method_name": "cleanup",
                 "method_begin": "def cleanup( t1 ):    \n",
                 "method_end": "    return rt1\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1351,
                     1364
@@ -8874,7 +8901,7 @@
                 "method_name": "breakHere",
                 "method_begin": "def breakHere( line_, colBound_pg ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1366,
                     1384
@@ -8886,7 +8913,7 @@
                 "method_name": "findCells",
                 "method_begin": "def findCells(colBounds_, tblEnding, master_raw_json, hlines, vertical_bounds_='LOOSE'):\n",
                 "method_end": "    return cellArr_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1387,
                     1560
@@ -8927,7 +8954,7 @@
                 "method_name": "inbetweenCols",
                 "method_begin": "def inbetweenCols(wd, neo_col_hdr_, rawlinectr, raw_lines):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1563,
                     1592
@@ -8939,7 +8966,7 @@
                 "method_name": "repairIfNeeded",
                 "method_begin": "def repairIfNeeded( colBounds_, master_raw_json ):\n",
                 "method_end": "    return colBounds_        \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1594,
                     1641
@@ -8959,7 +8986,7 @@
                 "method_name": "extractLineItems",
                 "method_begin": "def extractLineItems(tblDeets_master, master_stit_json, master_raw_json, vlines, hlines, doc_type):\n",
                 "method_end": "    return cellInfoMaster_, colBounds_, replacedWithFeedback, feedback_based_last_line, feedback_anchor_col_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1644,
                     2097
@@ -8993,7 +9020,7 @@
                 "method_name": "addConfidenceScores",
                 "method_begin": "def addConfidenceScores( fb_cell_info, cellContents_ ):\n",
                 "method_end": "            colDict['confidence_score_'] = conf_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2099,
                     2122
@@ -9005,7 +9032,7 @@
                 "method_name": "findCommonKeys",
                 "method_begin": "def findCommonKeys( key_tup1, key_tup2 ):\n",
                 "method_end": "    return len( respObj_ )\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2125,
                     2138
@@ -9017,7 +9044,7 @@
                 "method_name": "checkSignature",
                 "method_begin": "def checkSignature( encoded_, key_coord_tup_, doc_type ):\n",
                 "method_end": "        return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2140,
                     2184
@@ -9037,7 +9064,7 @@
                 "method_name": "findHdrColFromFeedback",
                 "method_begin": "def findHdrColFromFeedback( headerColumnsDict, colBoundsArr, anchorColName, _raw_json, tblEnding, anchor_arr_, tblBounds ):\n",
                 "method_end": "    return None, None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2186,
                     2479
@@ -9057,7 +9084,7 @@
                 "method_name": "textEqual",
                 "method_begin": "def textEqual( l1, l2 ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2481,
                     2490
@@ -9069,7 +9096,7 @@
                 "method_name": "returnCoOrds",
                 "method_begin": "def returnCoOrds( cbar, colCoOrds, minY, maxY ):\n",
                 "method_end": "    return [ colCoOrds[0], minY, colCoOrds[2], maxY ]    \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2492,
                     2499
@@ -9081,7 +9108,7 @@
                 "method_name": "allLocalMatch",
                 "method_begin": "def allLocalMatch( final_hdr_col_, hcd ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2501,
                     2527
@@ -9093,7 +9120,7 @@
                 "method_name": "extractFeedbackAnchor",
                 "method_begin": "def extractFeedbackAnchor( lines, rowAnchor, final_hdr_col_ ):\n",
                 "method_end": "    return respD, abs( maxY1begin - maxY2end )\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2530,
                     2572
@@ -9113,7 +9140,7 @@
                 "method_name": "searchAndApplyFeedback",
                 "method_begin": "def searchAndApplyFeedback( _stit_json, _raw_json, anchor_arr_, doc_type ):\n",
                 "method_end": "    return None, None, None, None, None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2575,
                     2608
@@ -9133,7 +9160,7 @@
                 "method_name": "dataType",
                 "method_begin": "def dataType( txt_ ):\n",
                 "method_end": "    return 'NA'\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2611,
                     2628
@@ -9153,7 +9180,7 @@
                 "method_name": "refineCells",
                 "method_begin": "def refineCells(extractedCells_):\n",
                 "method_end": "    extractedCells_[0][0] = tmp_resp_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2630,
                     2700
@@ -9165,7 +9192,7 @@
                 "method_name": "extractAdditionalDetails",
                 "method_begin": "def extractAdditionalDetails( cellInfo, colBounds_ ):\n",
                 "method_end": "    return colHeaders_, row_vectors_, final_col_vec\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2702,
                     2774
@@ -9185,7 +9212,7 @@
                 "method_name": "getNext",
                 "method_begin": "def getNext( metaCol, hdrdeets ):\n",
                 "method_end": "    return hdrdeets\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2776,
                     2788
@@ -9205,7 +9232,7 @@
                 "method_name": "checkForHeaderLess",
                 "method_begin": "def checkForHeaderLess( extractedCells_pg0, raw_json_, colHdrs_pg0 ):\n",
                 "method_end": "                return respD\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2791,
                     2923
@@ -9225,7 +9252,7 @@
                 "method_name": "extractUsingFirstPage",
                 "method_begin": "def extractUsingFirstPage( firstPgExtractedCells_, firstPgColBounds_, stit_json_, _raw_json, \\\n",
                 "method_end": "    return None, None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2925,
                     3032
@@ -9245,7 +9272,7 @@
                 "method_name": "findLastRow",
                 "method_begin": "def findLastRow( firstPgLastSentinel, rawJS ):\n",
                 "method_end": "    return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     3034,
                     3057
@@ -9265,7 +9292,7 @@
                 "method_name": "lineItemExtraction",
                 "method_begin": "def lineItemExtraction(master_jpg_list, master_stit_json, master_raw_json, doc_type, debug=False):\n",
                 "method_end": "    return finResp_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     3060,
                     3470
@@ -24473,7 +24500,7 @@
                 "method_name": "call_with_timeout",
                 "method_begin": "def call_with_timeout(myfunc, args=(), kwargs={}, timeout=5):\n",
                 "method_end": "\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     318,
                     320
@@ -24542,7 +24569,7 @@
                 "method_name": "funcwrapper",
                 "method_begin": "    def funcwrapper(p, *args, **kwargs):\n",
                 "method_end": "        p[\"value\"] = res\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     321,
                     323
@@ -24554,7 +24581,7 @@
                 "method_name": "get_num_pages",
                 "method_begin": "def get_num_pages(pdf_path):\n",
                 "method_end": "    return len(pdf.pages)\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     338,
                     340
@@ -24581,7 +24608,7 @@
                 "method_name": "get_num_pages_pikepdf",
                 "method_begin": "def get_num_pages_pikepdf(pdf_path):\n",
                 "method_end": "    return pdf_page_count\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     342,
                     345
@@ -24601,7 +24628,7 @@
                 "method_name": "get_num_pages_convert",
                 "method_begin": "def get_num_pages_convert(pdf_path):\n",
                 "method_end": "    return total_pages\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     347,
                     352
@@ -24621,7 +24648,7 @@
                 "method_name": "get_unique_page_num",
                 "method_begin": "def get_unique_page_num(page_here):\n",
                 "method_end": "    return page_int\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     354,
                     367
@@ -24648,7 +24675,7 @@
                 "method_name": "get_num_pages_all",
                 "method_begin": "def get_num_pages_all(file_path):\n",
                 "method_end": "    return total_pages\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     369,
                     419
@@ -24682,7 +24709,7 @@
                 "method_name": "get_num_pages_all_v2",
                 "method_begin": "def get_num_pages_all_v2(file_path):\n",
                 "method_end": "    return total_pages\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     421,
                     445
@@ -24694,7 +24721,7 @@
                 "method_name": "convert_save",
                 "method_begin": "def convert_save(pdf_path, jpg_out_path, page_idx):\n",
                 "method_end": "    return jpg_path\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     448,
                     516
@@ -24706,7 +24733,7 @@
                 "method_name": "convert_save_mupdf",
                 "method_begin": "def convert_save_mupdf(pdf_path, jpg_out_path, total_pages):\n",
                 "method_end": "    return png_jpg_list\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     519,
                     541
@@ -24726,7 +24753,7 @@
                 "method_name": "convert_save_pdftoppm",
                 "method_begin": "def convert_save_pdftoppm(pdf_path, jpg_out_path, total_pages):\n",
                 "method_end": "    return jpg_list\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     544,
                     567
@@ -24738,7 +24765,7 @@
                 "method_name": "convert_save_pdftoppm_ind",
                 "method_begin": "def convert_save_pdftoppm_ind(pdf_path, jpg_out_path, pg_idx):\n",
                 "method_end": "    return final_output_file\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     570,
                     585
@@ -24758,7 +24785,7 @@
                 "method_name": "convert_save_pdftoppm_ind_v2",
                 "method_begin": "def convert_save_pdftoppm_ind_v2(pdf_path, jpg_out_path, pg_idx):\n",
                 "method_end": "    return final_output_file\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     588,
                     604
@@ -24778,7 +24805,7 @@
                 "method_name": "convert_save_pdftocairo",
                 "method_begin": "def convert_save_pdftocairo(pdf_path, jpg_out_path, total_pages):\n",
                 "method_end": "    return jpg_list\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     607,
                     630
@@ -24790,7 +24817,7 @@
                 "method_name": "convert_save_pdftocairo_ind",
                 "method_begin": "def convert_save_pdftocairo_ind(pdf_path, jpg_out_path, pg_idx):\n",
                 "method_end": "    return final_output_file\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     633,
                     648
@@ -24810,7 +24837,7 @@
                 "method_name": "convert_save_pdftocairo_ind_v2",
                 "method_begin": "def convert_save_pdftocairo_ind_v2(pdf_path, jpg_out_path, pg_idx):\n",
                 "method_end": "    return final_output_file\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     651,
                     667
@@ -24830,7 +24857,7 @@
                 "method_name": "convert_save_thumbnail",
                 "method_begin": "def convert_save_thumbnail(pdf_path, jpg_out_path, total_pages):\n",
                 "method_end": "    return tn_list\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     670,
                     703
@@ -24850,7 +24877,7 @@
                 "method_name": "convert_to_pdf",
                 "method_begin": "def convert_to_pdf(image_list, file_name, i, today, output_ext):\n",
                 "method_end": "    return s3_file_path\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     706,
                     736
@@ -24912,7 +24939,7 @@
                 "method_name": "split_pdf_local",
                 "method_begin": "def split_pdf_local(path_to_input_save, output_extension, start_page, end_page):\n",
                 "method_end": "    return pdf_output_path\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     739,
                     762
@@ -24932,7 +24959,7 @@
                 "method_name": "is_pdf_check_pdfminer",
                 "method_begin": "def is_pdf_check_pdfminer(path_to_file):\n",
                 "method_end": "        return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     764,
                     770
@@ -24966,7 +24993,7 @@
                 "method_name": "clean_pdf_file",
                 "method_begin": "def clean_pdf_file(pdf_output_path, pdf_output_path_gs, pdf_output_path_pdftocairo):\n",
                 "method_end": "    return pdf_output_path\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     772,
                     808
@@ -24986,7 +25013,7 @@
                 "method_name": "split_pdf",
                 "method_begin": "def split_pdf(path_to_save, doc_name, today, output_extension, start_page, end_page, total_pages = -1):\n",
                 "method_end": "    return s3_file_path\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     810,
                     854
@@ -25041,7 +25068,7 @@
                 "method_name": "draw_contours",
                 "method_begin": "def draw_contours(result_1, jpg_path, write_path):\n",
                 "method_end": "    return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     857,
                     916
@@ -25053,7 +25080,7 @@
                 "method_name": "get_required_list",
                 "method_begin": "def get_required_list(map_customer):\n",
                 "method_end": "    return []\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     919,
                     925
@@ -25101,7 +25128,7 @@
                 "method_name": "convert_format",
                 "method_begin": "def convert_format(input_format):\n",
                 "method_end": "    return output_format\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     928,
                     959
@@ -25128,7 +25155,7 @@
                 "method_name": "get_required_list_index",
                 "method_begin": "def get_required_list_index(list_input, global_key_input):\n",
                 "method_end": "    return -1\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     962,
                     969
@@ -25148,7 +25175,7 @@
                 "method_name": "get_full_json",
                 "method_begin": "def get_full_json(output_format, height, width, page1, map_customer):\n",
                 "method_end": "    return [list_dict, mandatory_ratio, non_table_flag]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     972,
                     1063
@@ -25168,7 +25195,7 @@
                 "method_name": "change_here",
                 "method_begin": "def change_here(list1, document_type_input):\n",
                 "method_end": "            table_id_all_list]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1065,
                     1175
@@ -25188,7 +25215,7 @@
                 "method_name": "change_format",
                 "method_begin": "def change_format(input1, doc_id, document_type_input, flag_constant=False):\n",
                 "method_end": "    return response1\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1177,
                     1209
@@ -25208,7 +25235,7 @@
                 "method_name": "is_intersecting",
                 "method_begin": "def is_intersecting(once_comp_pts, table_points):\n",
                 "method_end": "        return True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1212,
                     1230
@@ -25220,7 +25247,7 @@
                 "method_name": "is_only_row",
                 "method_begin": "def is_only_row(pivot_pts, compare_pts):\n",
                 "method_end": "        return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1233,
                     1246
@@ -25240,7 +25267,7 @@
                 "method_name": "remove_table_part",
                 "method_begin": "def remove_table_part(once, twice, intersection, individual, table_points):\n",
                 "method_end": "    return [once, twice, intersection, individual]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1249,
                     1312
@@ -25260,7 +25287,7 @@
                 "method_name": "get_full_json_special",
                 "method_begin": "def get_full_json_special(output_format, page1):\n",
                 "method_end": "    return [list_dict, mandatory_ratio, non_table_flag]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1315,
                     1468
@@ -25280,7 +25307,7 @@
                 "method_name": "get_revised_lists",
                 "method_begin": "def get_revised_lists(pg_sep, extension):\n",
                 "method_end": "    return [master_ocr_path_here, master_ocr_output_here, master_jpg_path_here, master_ocr_orig_path_here]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1471,
                     1517
@@ -25300,7 +25327,7 @@
                 "method_name": "integrate_global_kvp",
                 "method_begin": "def integrate_global_kvp(global_kvp_master):\n",
                 "method_end": "    return global_kvp_master[0]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1520,
                     1521
@@ -25312,7 +25339,7 @@
                 "method_name": "get_sublist_numbers",
                 "method_begin": "def get_sublist_numbers(ocr_sublist):\n",
                 "method_end": "    return pg_range\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1524,
                     1536
@@ -25332,7 +25359,7 @@
                 "method_name": "extract_pg_number",
                 "method_begin": "def extract_pg_number(ocr_path):\n",
                 "method_end": "    return int(ocr_path.split('/')[-1].split('-')[-1].split('.json')[0])\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1539,
                     1540
@@ -25344,7 +25371,7 @@
                 "method_name": "get_hdr_text_list",
                 "method_begin": "def get_hdr_text_list(hdr_item):\n",
                 "method_end": "    return hdr_list_all\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1543,
                     1549
@@ -25371,7 +25398,7 @@
                 "method_name": "get_global_hdr_dict",
                 "method_begin": "def get_global_hdr_dict(hdr_item, match_column_result_inv, table_static_columns):\n",
                 "method_end": "    return list_return_v3\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1552,
                     1586
@@ -25398,7 +25425,7 @@
                 "method_name": "get_real_length_column",
                 "method_begin": "def get_real_length_column(column_vector_item, table_points_item):\n",
                 "method_end": "    return [count_to_return, column_vector_item_new]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1589,
                     1599
@@ -25425,7 +25452,7 @@
                 "method_name": "clean_input",
                 "method_begin": "def clean_input(num):\n",
                 "method_end": "    return str(get_num)\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1602,
                     1648
@@ -25459,7 +25486,7 @@
                 "method_name": "get_dt_and_th",
                 "method_begin": "def get_dt_and_th(global_column_v2, table_static_columns, datatype_columns_list, th_columns_list):\n",
                 "method_end": "    return ['alphanumeric', 50]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1650,
                     1660
@@ -25479,7 +25506,7 @@
                 "method_name": "change_table_format",
                 "method_begin": "def change_table_format(table_output,\n",
                 "method_end": "    return master_table_array\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1662,
                     1830
@@ -25491,7 +25518,7 @@
                 "method_name": "char_count_function_ut",
                 "method_begin": "def char_count_function_ut(lines):\n",
                 "method_end": "    return ccount\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1833,
                     1841
@@ -25532,7 +25559,7 @@
                 "method_name": "orientation",
                 "method_begin": "def orientation(jpg_path):\n",
                 "method_end": "    return jpg_path\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1843,
                     1846
@@ -25552,7 +25579,7 @@
                 "method_name": "extract_text_from_pdf",
                 "method_begin": "def extract_text_from_pdf(pdf_path):\n",
                 "method_end": "    return text_output\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1849,
                     1852
@@ -25564,7 +25591,7 @@
                 "method_name": "get_full_json_special_generic",
                 "method_begin": "def get_full_json_special_generic(final_output_ntc, output_ff):\n",
                 "method_end": "    return final_output_ntc\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1855,
                     1891
@@ -25584,7 +25611,7 @@
                 "method_name": "get_only_static_columns",
                 "method_begin": "def get_only_static_columns(map_customer_table_header, document_type_input):\n",
                 "method_end": "    return list_datatype_dict_master\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1893,
                     1918
@@ -25604,7 +25631,7 @@
                 "method_name": "columns_input_intersection",
                 "method_begin": "def columns_input_intersection(total_table_dict, table_static_columns, type_of_doc, document_type_input):\n",
                 "method_end": "    return new_table_dict_result\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1920,
                     1938
@@ -25624,7 +25651,7 @@
                 "method_name": "clear_map_customer",
                 "method_begin": "def clear_map_customer(map_customer, table_present_dict, map_customer_table_header,\n",
                 "method_end": "    return [first_part, second_part, third_part, fourth_part]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1940,
                     1991
@@ -25644,7 +25671,7 @@
                 "method_name": "get_feedback_column_dict",
                 "method_begin": "def get_feedback_column_dict(backend_platform_url, table_static_columns, type_of_doc, client_customer_id, tenant_id, address_id):\n",
                 "method_end": "    return feedback_tsc_dict\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     1993,
                     2006
@@ -25664,7 +25691,7 @@
                 "method_name": "merge_all_ot",
                 "method_begin": "def merge_all_ot(global_kvp_all):\n",
                 "method_end": "    return [once_merge, twice_merge, intersection_merge, individual_merge]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2008,
                     2021
@@ -25684,7 +25711,7 @@
                 "method_name": "get_feedback_id",
                 "method_begin": "def get_feedback_id(output_ff):\n",
                 "method_end": "    return \"DEFAULT_ID_2\"\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2023,
                     2034
@@ -25718,7 +25745,7 @@
                 "method_name": "get_matching_doc_number",
                 "method_begin": "def get_matching_doc_number(output_ff):\n",
                 "method_end": "    return [\"\", 0]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2036,
                     2061
@@ -25752,7 +25779,7 @@
                 "method_name": "change_table_format_azure",
                 "method_begin": "def change_table_format_azure(table_output,\n",
                 "method_end": "    return table_output\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2063,
                     2103
@@ -25772,7 +25799,7 @@
                 "method_name": "get_azure_details",
                 "method_begin": "def get_azure_details(pdf_path):\n",
                 "method_end": "    return response_json\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2105,
                     2116
@@ -25786,13 +25813,15 @@
                         "usage": "                                    rj_here = get_azure_details(pdf_path)\n",
                         "method_end": "    return master_final_output\n"
                     }
-                ]
+                ],
+                "local_api_call": "NA",
+                "inter_service_api_call": "http://0.0.0.0:8080/processOKT\""
             },
             {
                 "method_name": "extract_v2",
                 "method_begin": "def extract_v2(file,\n",
                 "method_end": "    return master_final_output\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     2118,
                     3980
@@ -25827,7 +25856,7 @@
                 "method_name": "extract_wrapper",
                 "method_begin": "def extract_wrapper(file, cid, extension, doc_id, doc_name_static, df_to_pass, \n",
                 "method_end": "    return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     3983,
                     4084
@@ -25839,7 +25868,7 @@
                 "method_name": "send_response_webhook",
                 "method_begin": "def send_response_webhook(payload):\n",
                 "method_end": "    return [False, response_text]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4086,
                     4117
@@ -25866,7 +25895,7 @@
                 "method_name": "mail_output",
                 "method_begin": "def mail_output(output):\n",
                 "method_end": "    send_response_mail(file_path)\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4119,
                     4121
@@ -25878,7 +25907,7 @@
                 "method_name": "extract_zip",
                 "method_begin": "def extract_zip(zip_file, target_folder):\n",
                 "method_end": "        return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4123,
                     4135
@@ -25890,7 +25919,7 @@
                 "method_name": "send_response_mail",
                 "method_begin": "def send_response_mail(file_path):\n",
                 "method_end": "        return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4137,
                     4157
@@ -25902,7 +25931,7 @@
                 "method_name": "send_response_mail_text",
                 "method_begin": "def send_response_mail_text(file_path, subject, email_body):\n",
                 "method_end": "        return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4159,
                     4178
@@ -25914,19 +25943,21 @@
                 "method_name": "send_response_mail_text_special",
                 "method_begin": "def send_response_mail_text_special(file_path, subject, email_body):\n",
                 "method_end": "        return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4180,
                     4198
                 ],
                 "global_uses": [],
-                "local_uses": []
+                "local_uses": [],
+                "local_api_call": "/sendEmailFromSecondaryServer",
+                "inter_service_api_call": "NA"
             },
             {
                 "method_name": "start_bg_task",
                 "method_begin": "def start_bg_task(dst_folder, zip_name, logger):\n",
                 "method_end": "    return True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4200,
                     4306
@@ -25938,7 +25969,7 @@
                 "method_name": "index",
                 "method_begin": "def index():\n",
                 "method_end": "    return render_template('index2.html')\n",
-                "api_definition": "/multi_page",
+                "api_end_point": "/multi_page",
                 "range": [
                     4311,
                     4313
@@ -25972,7 +26003,7 @@
                 "method_name": "bulk_upload",
                 "method_begin": "def bulk_upload():\n",
                 "method_end": "            return \"Please upload a zip file\"\n",
-                "api_definition": "/startBulkProcess",
+                "api_end_point": "/startBulkProcess",
                 "range": [
                     4318,
                     4341
@@ -25984,7 +26015,7 @@
                 "method_name": "file_upload_health",
                 "method_begin": "def file_upload_health():\n",
                 "method_end": "        return jsonify(output)\n",
-                "api_definition": "/healthCheck",
+                "api_end_point": "/healthCheck",
                 "range": [
                     4345,
                     4348
@@ -25996,7 +26027,7 @@
                 "method_name": "decode_pdf_fields",
                 "method_begin": "def decode_pdf_fields(file_path_original, cid, extension, doc_id,\n",
                 "method_end": "    return imm_response\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     4351,
                     4391
@@ -26016,7 +26047,7 @@
                 "method_name": "file_upload_v1",
                 "method_begin": "def file_upload_v1():\n",
                 "method_end": "        })\n",
-                "api_definition": "/processDocument",
+                "api_end_point": "/processDocument",
                 "range": [
                     4395,
                     4829
@@ -44310,7 +44341,23 @@
                 "Values": [],
                 "Function": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://10.0.8.154:4009\"],"
+            },
+            {
+                "url": "http://162.31.17.199:4009\"],"
+            },
+            {
+                "url": "http://162.31.4.92:4009\"]}"
+            }
+        ],
+        "global_usage_local_api_call": [
+            {
+                "url": "/multi_page"
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/qr_detection_opencv.py": {
         "method_details_": [
@@ -44318,7 +44365,7 @@
                 "method_name": "detectQR",
                 "method_begin": "def detectQR( image_path, debug=False ):\n",
                 "method_end": "    return resp_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     7,
                     46
@@ -44576,7 +44623,7 @@
                 "method_name": "iou_",
                 "method_begin": "def iou_( item1, item2 ):\n",
                 "method_end": "  return 0\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     5,
                     20
@@ -44588,7 +44635,7 @@
                 "method_name": "containsDigit",
                 "method_begin": "def containsDigit( chars ):\n",
                 "method_end": "\treturn False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     22,
                     25
@@ -44600,7 +44647,7 @@
                 "method_name": "presentInWorldEmbed",
                 "method_begin": "def presentInWorldEmbed( wd_, emb_ , child=False):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     27,
                     62
@@ -44612,7 +44659,7 @@
                 "method_name": "verticalBetween",
                 "method_begin": "def verticalBetween( pts , pts_next, vlines ):\n",
                 "method_end": "\treturn False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     64,
                     72
@@ -44653,7 +44700,7 @@
                 "method_name": "notAdded",
                 "method_begin": "def notAdded( curr_cell, LtoRKVPairs ):\n",
                 "method_end": "\treturn True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     74,
                     79
@@ -44665,7 +44712,7 @@
                 "method_name": "numOrAlphaNum",
                 "method_begin": "def numOrAlphaNum( txt_ ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     81,
                     90
@@ -44677,7 +44724,7 @@
                 "method_name": "returnLtoRKVPairs",
                 "method_begin": "def returnLtoRKVPairs( finalLineArr_, rescaled_vline, h_scaling, w_scaling, emb_ ):\n",
                 "method_end": "    return LtoRKVPairs\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     92,
                     225
@@ -44689,7 +44736,7 @@
                 "method_name": "findColumnChild",
                 "method_begin": "def findColumnChild( cells_, line_ ):\n",
                 "method_end": "    return False, None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     227,
                     234
@@ -44709,7 +44756,7 @@
                 "method_name": "isNotValue",
                 "method_begin": "def isNotValue( txt, left_to_right_key_values_ ):\n",
                 "method_end": "\treturn True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     236,
                     239
@@ -44721,7 +44768,7 @@
                 "method_name": "findBox",
                 "method_begin": "def findBox( parent_, rescaled_vline, rescaled_hline ):\n",
                 "method_end": "\treturn False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     241,
                     278
@@ -44733,7 +44780,7 @@
                 "method_name": "returnColKVPairs",
                 "method_begin": "def returnColKVPairs( finalLineArr_, left_to_right_key_values_, h_scaling, w_scaling, \\\n",
                 "method_end": "    return colPairs\t\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     280,
                     358
@@ -46072,7 +46119,7 @@
                 "method_name": "chkNum",
                 "method_begin": "def chkNum( wd_, INV_IN_VICINITY=False, invoice_only_chk=None, mode='NA' ):\n",
                 "method_end": "        return None\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     13,
                     54
@@ -46084,7 +46131,7 @@
                 "method_name": "xOverlap",
                 "method_begin": "def xOverlap( val, pts, ref_val, ref_pts, dist_=150 ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     56,
                     68
@@ -46104,7 +46151,7 @@
                 "method_name": "yOverlap",
                 "method_begin": "def yOverlap( val, pts, ref_val, ref_pts ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     70,
                     81
@@ -46116,7 +46163,7 @@
                 "method_name": "numDigs",
                 "method_begin": "def numDigs( txt ):\n",
                 "method_end": "    return numdigs_ \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     83,
                     87
@@ -46128,7 +46175,7 @@
                 "method_name": "findElemInLine",
                 "method_begin": "def findElemInLine( line_, srch_arr_, jsn_raw_, hdr_elem_X2=None ):\n",
                 "method_end": "                  return line_[ cctr ]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     89,
                     115
@@ -46176,7 +46223,7 @@
                 "method_name": "checkOverlap",
                 "method_begin": "def checkOverlap( tmpLine, line_ ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     117,
                     132
@@ -46188,7 +46235,7 @@
                 "method_name": "noTotal",
                 "method_begin": "def noTotal( line_, ht_, last_pass=None ):\n",
                 "method_end": "    return True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     134,
                     167
@@ -46208,7 +46255,7 @@
                 "method_name": "rationalizeTbl",
                 "method_begin": "def rationalizeTbl( row_arr_, hdrX2 ):\n",
                 "method_end": "    return resp_row_arr_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     169,
                     212
@@ -46228,7 +46275,7 @@
                 "method_name": "rawOverlaps",
                 "method_begin": "def rawOverlaps( ids, jsn_raw_, amt_anchor1, amt_anchor2 ):\n",
                 "method_end": "    return False  \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     214,
                     227
@@ -46240,7 +46287,7 @@
                 "method_name": "minmaxx2y2",
                 "method_begin": "def minmaxx2y2( potLines_ ):\n",
                 "method_end": "    return maxx2[-1], maxy2[-1]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     229,
                     239
@@ -46274,7 +46321,7 @@
                 "method_name": "chkLineForNum",
                 "method_begin": "def chkLineForNum( pot_hdr_line_ ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     241,
                     248
@@ -46286,7 +46333,7 @@
                 "method_name": "nothingPresent",
                 "method_begin": "def nothingPresent( line, coords, common_wd=None ):\n",
                 "method_end": "    return True\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     250,
                     267
@@ -46298,7 +46345,7 @@
                 "method_name": "returnNumRows",
                 "method_begin": "def returnNumRows( rawwd, jsn_raw_, endY ):\n",
                 "method_end": "    return ctr_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     269,
                     280
@@ -46318,7 +46365,7 @@
                 "method_name": "returnRawCols",
                 "method_begin": "def returnRawCols( wd, jsn_raw_ , beginY, endY ):\n",
                 "method_end": "    else: return [ wd ]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     282,
                     298
@@ -46338,7 +46385,7 @@
                 "method_name": "makeComplete",
                 "method_begin": "def makeComplete( potLines_, jsn_, jsn_raw_, table_bottom_, qty_anch, amt_anch ):\n",
                 "method_end": "    return hdr_elements_\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     300,
                     466
@@ -46365,7 +46412,7 @@
                 "method_name": "mostlyWd",
                 "method_begin": "def mostlyWd( txt_ ):\n",
                 "method_end": "    return False  \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     468,
                     479
@@ -46377,7 +46424,7 @@
                 "method_name": "prevOverlap",
                 "method_begin": "def prevOverlap( currwd, prev_ ):\n",
                 "method_end": "    return False\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     481,
                     492
@@ -46389,7 +46436,7 @@
                 "method_name": "findPotentialTblHdrs",
                 "method_begin": "def findPotentialTblHdrs( jsn_, jsn_raw_, fnm, base_tbl_hdr_ ):\n",
                 "method_end": "    return anch_arr, line_arr , fp_arr\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     494,
                     557
@@ -46409,7 +46456,7 @@
                 "method_name": "whatIsDtype",
                 "method_begin": "def whatIsDtype( txt ):\n",
                 "method_end": "    return 'NON'\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     559,
                     574
@@ -46429,7 +46476,7 @@
                 "method_name": "determineColHdrDataTypes",
                 "method_begin": "def determineColHdrDataTypes( hdr_arr_, tbl_bounds_ , jsn_ ):\n",
                 "method_end": "    return finalResp\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     576,
                     613
@@ -46449,7 +46496,7 @@
                 "method_name": "detectTblWithoutHeader",
                 "method_begin": "def detectTblWithoutHeader( jsn_, jsn_raw, base_tbl_hdr_, responseTbleArr, responseTblHdr ):\n",
                 "method_end": "      return [0 ,0, 0, 0]\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     615,
                     651
@@ -46469,7 +46516,7 @@
                 "method_name": "detectTable",
                 "method_begin": "def detectTable( jsn_, jsn_raw_, fnm_img_, fnm, anch_arr, line_arr, \\\n",
                 "method_end": "    return [0, 0, 0, 0], []      \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     653,
                     900
@@ -46497,7 +46544,7 @@
                 "method_name": "tableDetectionEndPoint",
                 "method_begin": "def tableDetectionEndPoint( jsnArr_ext ):\n",
                 "method_end": "    return response_ \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     902,
                     954
@@ -50844,6 +50891,2439 @@
             }
         }
     },
+    "/datadrive/IKG/code_db/python/vendor_list_download.py": {
+        "method_details_": [
+            {
+                "method_name": "contains_us_state_code",
+                "method_begin": "def contains_us_state_code(text):\n",
+                "method_end": "    return [False, \"\"]\n",
+                "api_end_point": "NA",
+                "range": [
+                    20,
+                    67
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "split_data",
+                "method_begin": "def split_data(df):\n",
+                "method_end": "    return df\n",
+                "api_end_point": "NA",
+                "range": [
+                    69,
+                    72
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/vendor_list_download.py",
+                        "method_nm": "download",
+                        "method_defn": "def download(backend_url, type_of_doc, suffix = \"\", tenant_id = \"\", external_sheet = []):\n",
+                        "usage": "    df7 = split_data(df5)\n",
+                        "method_end": "    print(\"All Vendor List Done & Downloaded!\")\n"
+                    }
+                ]
+            },
+            {
+                "method_name": "add_address",
+                "method_begin": "def add_address(string):\n",
+                "method_end": "        return \"DEFAULT\"\n",
+                "api_end_point": "NA",
+                "range": [
+                    74,
+                    78
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "match_vendor_columns_v2",
+                "method_begin": "def match_vendor_columns_v2(external_sheet, df_columns):\n",
+                "method_end": "    return df_columns_match\n",
+                "api_end_point": "NA",
+                "range": [
+                    80,
+                    95
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "match_vendor_columns",
+                "method_begin": "def match_vendor_columns(external_sheet, df_columns):\n",
+                "method_end": "    return df_columns_match\n",
+                "api_end_point": "NA",
+                "range": [
+                    97,
+                    117
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "match_vendor_columns",
+                "method_begin": "def match_vendor_columns(external_sheet, df_columns):\n",
+                "method_end": "    return df_columns_match\n",
+                "api_end_point": "NA",
+                "range": [
+                    119,
+                    139
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "replace_basic",
+                "method_begin": "def replace_basic(df_columns):\n",
+                "method_end": "    return [df_columns, columns_left]\n",
+                "api_end_point": "NA",
+                "range": [
+                    143,
+                    151
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/vendor_list_download.py",
+                        "method_nm": "download",
+                        "method_defn": "def download(backend_url, type_of_doc, suffix = \"\", tenant_id = \"\", external_sheet = []):\n",
+                        "usage": "        ordered_columns, columns_left = replace_basic(list(df.columns))\n",
+                        "method_end": "    print(\"All Vendor List Done & Downloaded!\")\n"
+                    }
+                ]
+            },
+            {
+                "method_name": "get_hl_flag",
+                "method_begin": "def get_hl_flag(external_sheet):\n",
+                "method_end": "    return \"L\"\n",
+                "api_end_point": "NA",
+                "range": [
+                    153,
+                    160
+                ],
+                "global_uses": [],
+                "local_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/vendor_list_download.py",
+                        "method_nm": "download",
+                        "method_defn": "def download(backend_url, type_of_doc, suffix = \"\", tenant_id = \"\", external_sheet = []):\n",
+                        "usage": "                hl_flag = get_hl_flag(external_sheet)\n",
+                        "method_end": "    print(\"All Vendor List Done & Downloaded!\")\n"
+                    }
+                ]
+            },
+            {
+                "method_name": "download",
+                "method_begin": "def download(backend_url, type_of_doc, suffix = \"\", tenant_id = \"\", external_sheet = []):\n",
+                "method_end": "    print(\"All Vendor List Done & Downloaded!\")\n",
+                "api_end_point": "NA",
+                "range": [
+                    162,
+                    299
+                ],
+                "global_uses": [
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/main_multi_prod.py",
+                        "method_nm": "file_upload_v1",
+                        "method_defn": "def file_upload_v1():\n",
+                        "usage": "                        df_master_here = vendor_list_download.download(backend_platform_url, document_type_input)\n",
+                        "method_end": "        })\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/main_multi_prod.py",
+                        "method_nm": "file_upload_v1",
+                        "method_defn": "def file_upload_v1():\n",
+                        "usage": "                        df_master_here_bol = vendor_list_download.download(backend_platform_url, document_type_input)\n",
+                        "method_end": "        })\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/main_multi_prod.py",
+                        "method_nm": "file_upload_v1",
+                        "method_defn": "def file_upload_v1():\n",
+                        "usage": "                        df_master_here_so = vendor_list_download.download(backend_platform_url, document_type_input)\n",
+                        "method_end": "        })\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/main_multi_prod.py",
+                        "method_nm": "file_upload_v1",
+                        "method_defn": "def file_upload_v1():\n",
+                        "usage": "                        df_master_here_stat = vendor_list_download.download(backend_platform_url, document_type_input)\n",
+                        "method_end": "        })\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/main_multi_prod.py",
+                        "method_nm": "file_upload_v1",
+                        "method_defn": "def file_upload_v1():\n",
+                        "usage": "                        df_master_here_mhbol = vendor_list_download.download(backend_platform_url, document_type_input)\n",
+                        "method_end": "        })\n"
+                    },
+                    {
+                        "file_path": "/datadrive/IKG/code_db/python/main_multi_prod.py",
+                        "method_nm": "file_upload_v1",
+                        "method_defn": "def file_upload_v1():\n",
+                        "usage": "                        df_to_pass = vendor_list_download.download(backend_platform_url, \n",
+                        "method_end": "        })\n"
+                    }
+                ],
+                "local_uses": []
+            }
+        ],
+        "text_details_": {
+            "9": {
+                "Type": "Assignment",
+                "Targets": [
+                    "us_state_codes"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "14": {
+                "Type": "Assignment",
+                "Targets": [
+                    "canada_state_codes"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "16": {
+                "Type": "Assignment",
+                "Targets": [
+                    "extra_codes_lowercase"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "18": {
+                "Type": "Assignment",
+                "Targets": [
+                    "us_state_codes"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "us_state_codes",
+                    "canada_state_codes"
+                ],
+                "Function": "NA"
+            },
+            "21": {
+                "Type": "Assignment",
+                "Targets": [
+                    "text"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "text"
+                ],
+                "Function": "str"
+            },
+            "22": {
+                "Type": "If Statement",
+                "Targets": [
+                    "text",
+                    "strip"
+                ],
+                "Ending": 24,
+                "Values": "NA"
+            },
+            "26": {
+                "Type": "Assignment",
+                "Targets": [
+                    "text_replaced"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "text",
+                    "replace"
+                ],
+                "Function": "replace"
+            },
+            "28": {
+                "Type": "Assignment",
+                "Targets": [
+                    "text_split"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "text_replaced",
+                    "split"
+                ],
+                "Function": "split"
+            },
+            "30": {
+                "Type": "Assignment",
+                "Targets": [
+                    "num_flag"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "31": {
+                "Type": "Assignment",
+                "Targets": [
+                    "num_count"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "32": {
+                "Type": "For loop",
+                "Targets": [
+                    "text"
+                ],
+                "Ending": 33,
+                "Values": "NA"
+            },
+            "33": {
+                "Type": "If Statement",
+                "Targets": [
+                    "char"
+                ],
+                "Ending": 34,
+                "Values": "NA"
+            },
+            "34": {
+                "Type": "Assignment",
+                "Targets": [
+                    "num_count"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "num_count"
+                ],
+                "Function": "NA"
+            },
+            "35": {
+                "Type": "If Statement",
+                "Targets": [
+                    "num_count"
+                ],
+                "Ending": 36,
+                "Values": "NA"
+            },
+            "36": {
+                "Type": "Assignment",
+                "Targets": [
+                    "num_flag"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "37": {
+                "Type": "If Statement",
+                "Targets": [
+                    "num_flag"
+                ],
+                "Ending": 38,
+                "Values": "NA"
+            },
+            "38": {
+                "Type": "For loop",
+                "Targets": [
+                    "text_split"
+                ],
+                "Ending": 40,
+                "Values": "NA"
+            },
+            "39": {
+                "Type": "Assignment",
+                "Targets": [
+                    "text_to_consider"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "text_iter",
+                    "replace",
+                    "replace"
+                ],
+                "Function": "replace"
+            },
+            "40": {
+                "Type": "If Statement",
+                "Targets": [
+                    "text_to_consider",
+                    "us_state_codes"
+                ],
+                "Ending": 41,
+                "Values": "NA"
+            },
+            "41": {
+                "Type": "For loop",
+                "Targets": [
+                    "us_state_codes"
+                ],
+                "Ending": 42,
+                "Values": "NA"
+            },
+            "42": {
+                "Type": "If Statement",
+                "Targets": [
+                    "text_to_consider",
+                    "us_state_code"
+                ],
+                "Ending": 43,
+                "Values": "NA"
+            },
+            "46": {
+                "Type": "Assignment",
+                "Targets": [
+                    "text_replaced"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "get_best_vendor_match_v2",
+                    "state_names_to_code",
+                    "text",
+                    "replace"
+                ],
+                "Function": "state_names_to_code"
+            },
+            "47": {
+                "Type": "Assignment",
+                "Targets": [
+                    "text_split"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "text_replaced",
+                    "split"
+                ],
+                "Function": "split"
+            },
+            "49": {
+                "Type": "Assignment",
+                "Targets": [
+                    "num_flag"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "50": {
+                "Type": "Assignment",
+                "Targets": [
+                    "num_count"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "51": {
+                "Type": "For loop",
+                "Targets": [
+                    "text"
+                ],
+                "Ending": 52,
+                "Values": "NA"
+            },
+            "52": {
+                "Type": "If Statement",
+                "Targets": [
+                    "char"
+                ],
+                "Ending": 53,
+                "Values": "NA"
+            },
+            "53": {
+                "Type": "Assignment",
+                "Targets": [
+                    "num_count"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "num_count"
+                ],
+                "Function": "NA"
+            },
+            "54": {
+                "Type": "If Statement",
+                "Targets": [
+                    "num_count"
+                ],
+                "Ending": 55,
+                "Values": "NA"
+            },
+            "55": {
+                "Type": "Assignment",
+                "Targets": [
+                    "num_flag"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "56": {
+                "Type": "If Statement",
+                "Targets": [
+                    "num_flag"
+                ],
+                "Ending": 57,
+                "Values": "NA"
+            },
+            "57": {
+                "Type": "For loop",
+                "Targets": [
+                    "text_split"
+                ],
+                "Ending": 59,
+                "Values": "NA"
+            },
+            "58": {
+                "Type": "Assignment",
+                "Targets": [
+                    "text_to_consider"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "text_iter",
+                    "replace",
+                    "replace"
+                ],
+                "Function": "replace"
+            },
+            "59": {
+                "Type": "If Statement",
+                "Targets": [
+                    "text_to_consider",
+                    "us_state_codes"
+                ],
+                "Ending": 60,
+                "Values": "NA"
+            },
+            "60": {
+                "Type": "For loop",
+                "Targets": [
+                    "us_state_codes"
+                ],
+                "Ending": 61,
+                "Values": "NA"
+            },
+            "61": {
+                "Type": "If Statement",
+                "Targets": [
+                    "text_to_consider",
+                    "us_state_code"
+                ],
+                "Ending": 62,
+                "Values": "NA"
+            },
+            "64": {
+                "Type": "If Statement",
+                "Targets": [
+                    "len",
+                    "text_replaced"
+                ],
+                "Ending": 65,
+                "Values": "NA"
+            },
+            "71": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "df",
+                    "apply"
+                ],
+                "Function": "apply"
+            },
+            "75": {
+                "Type": "If Statement",
+                "Targets": [
+                    "string"
+                ],
+                "Ending": 76,
+                "Values": "NA"
+            },
+            "81": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df_columns_match"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "len",
+                    "df_columns"
+                ],
+                "Function": "NA"
+            },
+            "82": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "external_sheet"
+                ],
+                "Ending": 86,
+                "Values": "NA"
+            },
+            "83": {
+                "Type": "Assignment",
+                "Targets": [
+                    "item_here"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "external_sheet"
+                ],
+                "Function": "NA"
+            },
+            "84": {
+                "Type": "Assignment",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "item_here",
+                    "get"
+                ],
+                "Function": "get"
+            },
+            "85": {
+                "Type": "Assignment",
+                "Targets": [
+                    "column_header"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "item_here",
+                    "get"
+                ],
+                "Function": "get"
+            },
+            "86": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "df_columns"
+                ],
+                "Ending": 88,
+                "Values": "NA"
+            },
+            "87": {
+                "Type": "Assignment",
+                "Targets": [
+                    "column_here"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df_columns"
+                ],
+                "Function": "NA"
+            },
+            "88": {
+                "Type": "If Statement",
+                "Targets": [
+                    "column_here",
+                    "column_header"
+                ],
+                "Ending": 93,
+                "Values": "NA"
+            },
+            "89": {
+                "Type": "If Statement",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": 90,
+                "Values": "NA"
+            },
+            "90": {
+                "Type": "Assignment",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "91": {
+                "Type": "Assignment",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "key_mapping",
+                    "replace"
+                ],
+                "Function": "replace"
+            },
+            "92": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "key_mapping"
+                ],
+                "Function": "NA"
+            },
+            "99": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df_columns_match"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "len",
+                    "df_columns"
+                ],
+                "Function": "NA"
+            },
+            "100": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "external_sheet"
+                ],
+                "Ending": 110,
+                "Values": "NA"
+            },
+            "101": {
+                "Type": "Assignment",
+                "Targets": [
+                    "item_here"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "external_sheet"
+                ],
+                "Function": "NA"
+            },
+            "102": {
+                "Type": "Assignment",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "item_here",
+                    "get"
+                ],
+                "Function": "get"
+            },
+            "103": {
+                "Type": "Assignment",
+                "Targets": [
+                    "column_header"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "item_here",
+                    "get"
+                ],
+                "Function": "get"
+            },
+            "104": {
+                "Type": "If Statement",
+                "Targets": [
+                    "column_header"
+                ],
+                "Ending": 105,
+                "Values": "NA"
+            },
+            "110": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "df_columns"
+                ],
+                "Ending": 112,
+                "Values": "NA"
+            },
+            "111": {
+                "Type": "Assignment",
+                "Targets": [
+                    "column_here"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df_columns"
+                ],
+                "Function": "NA"
+            },
+            "112": {
+                "Type": "If Statement",
+                "Targets": [
+                    "column_here",
+                    "column_header"
+                ],
+                "Ending": 115,
+                "Values": "NA"
+            },
+            "113": {
+                "Type": "Assignment",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "key_mapping",
+                    "replace"
+                ],
+                "Function": "replace"
+            },
+            "114": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "key_mapping"
+                ],
+                "Function": "NA"
+            },
+            "121": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df_columns_match"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "len",
+                    "df_columns"
+                ],
+                "Function": "NA"
+            },
+            "122": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "external_sheet"
+                ],
+                "Ending": 132,
+                "Values": "NA"
+            },
+            "123": {
+                "Type": "Assignment",
+                "Targets": [
+                    "item_here"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "external_sheet"
+                ],
+                "Function": "NA"
+            },
+            "124": {
+                "Type": "Assignment",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "item_here",
+                    "get"
+                ],
+                "Function": "get"
+            },
+            "125": {
+                "Type": "Assignment",
+                "Targets": [
+                    "column_header"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "item_here",
+                    "get"
+                ],
+                "Function": "get"
+            },
+            "126": {
+                "Type": "If Statement",
+                "Targets": [
+                    "column_header"
+                ],
+                "Ending": 127,
+                "Values": "NA"
+            },
+            "132": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "df_columns"
+                ],
+                "Ending": 134,
+                "Values": "NA"
+            },
+            "133": {
+                "Type": "Assignment",
+                "Targets": [
+                    "column_here"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df_columns"
+                ],
+                "Function": "NA"
+            },
+            "134": {
+                "Type": "If Statement",
+                "Targets": [
+                    "column_here",
+                    "column_header"
+                ],
+                "Ending": 137,
+                "Values": "NA"
+            },
+            "135": {
+                "Type": "Assignment",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "key_mapping",
+                    "replace"
+                ],
+                "Function": "replace"
+            },
+            "136": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "key_mapping"
+                ],
+                "Function": "NA"
+            },
+            "141": {
+                "Type": "Assignment",
+                "Targets": [
+                    "static_columns_df"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "146": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "df_columns"
+                ],
+                "Ending": 148,
+                "Values": "NA"
+            },
+            "147": {
+                "Type": "Assignment",
+                "Targets": [
+                    "column_here"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df_columns"
+                ],
+                "Function": "NA"
+            },
+            "148": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "column_here",
+                    "replace"
+                ],
+                "Function": "replace"
+            },
+            "150": {
+                "Type": "Assignment",
+                "Targets": [
+                    "columns_left"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "list",
+                    "set",
+                    "static_columns_df",
+                    "set",
+                    "df_columns"
+                ],
+                "Function": "list"
+            },
+            "154": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "external_sheet"
+                ],
+                "Ending": 157,
+                "Values": "NA"
+            },
+            "155": {
+                "Type": "Assignment",
+                "Targets": [
+                    "item_here"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "external_sheet"
+                ],
+                "Function": "NA"
+            },
+            "156": {
+                "Type": "Assignment",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "item_here",
+                    "get"
+                ],
+                "Function": "get"
+            },
+            "157": {
+                "Type": "If Statement",
+                "Targets": [
+                    "key_mapping"
+                ],
+                "Ending": 159,
+                "Values": "NA"
+            },
+            "158": {
+                "Type": "Assignment",
+                "Targets": [
+                    "lineItemsVendor"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "item_here",
+                    "get"
+                ],
+                "Function": "get"
+            },
+            "168": {
+                "Type": "Assignment",
+                "Targets": [
+                    "generic_flag"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "169": {
+                "Type": "If Statement",
+                "Targets": [
+                    "type_of_doc",
+                    "lower"
+                ],
+                "Ending": 170,
+                "Values": "NA"
+            },
+            "170": {
+                "Type": "Assignment",
+                "Targets": [
+                    "generic_flag"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "172": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "backend_url"
+                ],
+                "Function": "NA"
+            },
+            "173": {
+                "Type": "If Statement",
+                "Targets": [
+                    "type_of_doc",
+                    "lower"
+                ],
+                "Ending": 174,
+                "Values": "NA"
+            },
+            "174": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "backend_url"
+                ],
+                "Function": "NA"
+            },
+            "175": {
+                "Type": "If Statement",
+                "Targets": [
+                    "type_of_doc",
+                    "lower"
+                ],
+                "Ending": 176,
+                "Values": "NA"
+            },
+            "176": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "backend_url"
+                ],
+                "Function": "NA"
+            },
+            "177": {
+                "Type": "If Statement",
+                "Targets": [
+                    "type_of_doc",
+                    "lower"
+                ],
+                "Ending": 178,
+                "Values": "NA"
+            },
+            "178": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "backend_url"
+                ],
+                "Function": "NA"
+            },
+            "179": {
+                "Type": "If Statement",
+                "Targets": [
+                    "type_of_doc",
+                    "lower"
+                ],
+                "Ending": 180,
+                "Values": "NA"
+            },
+            "180": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "backend_url"
+                ],
+                "Function": "NA"
+            },
+            "181": {
+                "Type": "If Statement",
+                "Targets": [
+                    "type_of_doc",
+                    "lower"
+                ],
+                "Ending": 182,
+                "Values": "NA"
+            },
+            "182": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "backend_url"
+                ],
+                "Function": "NA"
+            },
+            "187": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "backend_url",
+                    "type_of_doc",
+                    "replace",
+                    "tenant_id"
+                ],
+                "Function": "NA"
+            },
+            "190": {
+                "Type": "Assignment",
+                "Targets": [
+                    "resp"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "192": {
+                "Type": "Assignment",
+                "Targets": [
+                    "resp"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "requests",
+                    "get",
+                    "url"
+                ],
+                "Function": "get"
+            },
+            "198": {
+                "Type": "Assignment",
+                "Targets": [
+                    "resp"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "requests",
+                    "get",
+                    "url"
+                ],
+                "Function": "get"
+            },
+            "200": {
+                "Type": "If Statement",
+                "Targets": [
+                    "generic_flag"
+                ],
+                "Ending": 201,
+                "Values": "NA"
+            },
+            "201": {
+                "Type": "Assignment",
+                "Targets": [
+                    "excel_read_write_path"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "suffix"
+                ],
+                "Function": "NA"
+            },
+            "203": {
+                "Type": "Assignment",
+                "Targets": [
+                    "excel_read_write_path"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "suffix"
+                ],
+                "Function": "NA"
+            },
+            "210": {
+                "Type": "If Statement",
+                "Targets": [
+                    "generic_flag"
+                ],
+                "Ending": 227,
+                "Values": "NA"
+            },
+            "211": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "pd",
+                    "read_csv",
+                    "excel_read_write_path"
+                ],
+                "Function": "read_csv"
+            },
+            "212": {
+                "Type": "Assignment",
+                "Targets": [
+                    "ordered_columns",
+                    "columns_left"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "replace_basic",
+                    "list",
+                    "df",
+                    "columns"
+                ],
+                "Function": "replace_basic"
+            },
+            "213": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "ordered_columns"
+                ],
+                "Function": "NA"
+            },
+            "215": {
+                "Type": "For loop",
+                "Targets": [
+                    "range",
+                    "len",
+                    "columns_left"
+                ],
+                "Ending": 221,
+                "Values": "NA"
+            },
+            "216": {
+                "Type": "Assignment",
+                "Targets": [
+                    "column_to_add"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "columns_left"
+                ],
+                "Function": "NA"
+            },
+            "217": {
+                "Type": "If Statement",
+                "Targets": [
+                    "column_to_add"
+                ],
+                "Ending": 219,
+                "Values": "NA"
+            },
+            "218": {
+                "Type": "Assignment",
+                "Targets": [
+                    "hl_flag"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "get_hl_flag",
+                    "external_sheet"
+                ],
+                "Function": "get_hl_flag"
+            },
+            "219": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "hl_flag"
+                ],
+                "Function": "NA"
+            },
+            "221": {
+                "Type": "If Statement",
+                "Targets": [
+                    "column_to_add"
+                ],
+                "Ending": 222,
+                "Values": "NA"
+            },
+            "222": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "df",
+                    "apply"
+                ],
+                "Function": "apply"
+            },
+            "224": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df"
+                ],
+                "Function": "NA"
+            },
+            "243": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "pd",
+                    "read_excel",
+                    "excel_read_write_path"
+                ],
+                "Function": "read_excel"
+            },
+            "248": {
+                "Type": "If Statement",
+                "Targets": [
+                    "len",
+                    "df",
+                    "columns"
+                ],
+                "Ending": 249,
+                "Values": "NA"
+            },
+            "249": {
+                "Type": "If Statement",
+                "Targets": [
+                    "type_of_doc",
+                    "lower"
+                ],
+                "Ending": 250,
+                "Values": "NA"
+            },
+            "250": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "df",
+                    "apply"
+                ],
+                "Function": "apply"
+            },
+            "252": {
+                "Type": "If Statement",
+                "Targets": [
+                    "len",
+                    "df",
+                    "columns"
+                ],
+                "Ending": 254,
+                "Values": "NA"
+            },
+            "253": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "254": {
+                "Type": "If Statement",
+                "Targets": [
+                    "type_of_doc",
+                    "lower"
+                ],
+                "Ending": 255,
+                "Values": "NA"
+            },
+            "255": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "257": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "260": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df1"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df"
+                ],
+                "Function": "NA"
+            },
+            "262": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df2"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df1"
+                ],
+                "Function": "NA"
+            },
+            "263": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df3"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df2"
+                ],
+                "Function": "NA"
+            },
+            "270": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "df3",
+                    "fillna"
+                ],
+                "Function": "fillna"
+            },
+            "271": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "df3",
+                    "fillna"
+                ],
+                "Function": "fillna"
+            },
+            "272": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "df3",
+                    "fillna"
+                ],
+                "Function": "fillna"
+            },
+            "273": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "df3",
+                    "fillna"
+                ],
+                "Function": "fillna"
+            },
+            "275": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df4"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df3",
+                    "dropna"
+                ],
+                "Function": "dropna"
+            },
+            "276": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df5a"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df4"
+                ],
+                "Function": "NA"
+            },
+            "277": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df5"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df5a"
+                ],
+                "Function": "NA"
+            },
+            "279": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df7"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "split_data",
+                    "df5"
+                ],
+                "Function": "split_data"
+            },
+            "284": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df8"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df7"
+                ],
+                "Function": "NA"
+            },
+            "285": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df9"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df8"
+                ],
+                "Function": "NA"
+            },
+            "287": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df10"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df9",
+                    "drop_duplicates",
+                    "astype",
+                    "str"
+                ],
+                "Function": "astype"
+            },
+            "288": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df11"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df10",
+                    "reset_index"
+                ],
+                "Function": "reset_index"
+            },
+            "293": {
+                "Type": "Assignment",
+                "Targets": [
+                    "df12"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "df11"
+                ],
+                "Function": "NA"
+            },
+            "294": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "296": {
+                "Type": "Assignment",
+                "Targets": [
+                    "path_to_write_df"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "os",
+                    "getcwd"
+                ],
+                "Function": "NA"
+            }
+        }
+    },
+    "/datadrive/IKG/code_db/python/db_utils.py": {
+        "method_details_": [
+            {
+                "method_name": "returnBlankDBRec",
+                "method_begin": "def returnBlankDBRec():\n",
+                "method_end": "    return dbRec_\n",
+                "api_end_point": "NA",
+                "range": [
+                    21,
+                    39
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "insertNewSignature",
+                "method_begin": "def insertNewSignature( rec_ ):\n",
+                "method_end": "    return string\n",
+                "api_end_point": "NA",
+                "range": [
+                    41,
+                    50
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "updateSignature",
+                "method_begin": "def updateSignature( rec_ ):\n",
+                "method_end": "    return string\n",
+                "api_end_point": "NA",
+                "range": [
+                    52,
+                    61
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "searchSignature",
+                "method_begin": "def searchSignature( rec_ ):\n",
+                "method_end": "    return json_obj\n",
+                "api_end_point": "NA",
+                "range": [
+                    63,
+                    72
+                ],
+                "global_uses": [],
+                "local_uses": []
+            }
+        ],
+        "text_details_": {
+            "6": {
+                "Type": "Assignment",
+                "Targets": [
+                    "config_feedback_dict"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "11": {
+                "Type": "Assignment",
+                "Targets": [
+                    "feedback_server_ip"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "config_feedback_dict",
+                    "get",
+                    "ENV"
+                ],
+                "Function": "get"
+            },
+            "13": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url_insert"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "feedback_server_ip"
+                ],
+                "Function": "NA"
+            },
+            "14": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url_search"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "feedback_server_ip"
+                ],
+                "Function": "NA"
+            },
+            "15": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url_update"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "feedback_server_ip"
+                ],
+                "Function": "NA"
+            },
+            "22": {
+                "Type": "Assignment",
+                "Targets": [
+                    "dbRec_"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "dict"
+                ],
+                "Function": "dict"
+            },
+            "23": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "24": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "25": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "26": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "27": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "28": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "dict"
+                ],
+                "Function": "dict"
+            },
+            "29": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "dict"
+                ],
+                "Function": "NA"
+            },
+            "34": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "36": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "43": {
+                "Type": "Assignment",
+                "Targets": [
+                    "data"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "dumps",
+                    "rec_",
+                    "encode"
+                ],
+                "Function": "encode"
+            },
+            "44": {
+                "Type": "Assignment",
+                "Targets": [
+                    "insert_request"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "Request",
+                    "url_insert"
+                ],
+                "Function": "Request"
+            },
+            "47": {
+                "Type": "Assignment",
+                "Targets": [
+                    "response"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "urlopen",
+                    "insert_request"
+                ],
+                "Function": "urlopen"
+            },
+            "48": {
+                "Type": "Assignment",
+                "Targets": [
+                    "string"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "response",
+                    "read",
+                    "decode"
+                ],
+                "Function": "decode"
+            },
+            "54": {
+                "Type": "Assignment",
+                "Targets": [
+                    "data"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "dumps",
+                    "rec_",
+                    "encode"
+                ],
+                "Function": "encode"
+            },
+            "55": {
+                "Type": "Assignment",
+                "Targets": [
+                    "insert_request"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "Request",
+                    "url_update"
+                ],
+                "Function": "Request"
+            },
+            "58": {
+                "Type": "Assignment",
+                "Targets": [
+                    "response"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "urlopen",
+                    "insert_request"
+                ],
+                "Function": "urlopen"
+            },
+            "59": {
+                "Type": "Assignment",
+                "Targets": [
+                    "string"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "response",
+                    "read",
+                    "decode"
+                ],
+                "Function": "decode"
+            },
+            "65": {
+                "Type": "Assignment",
+                "Targets": [
+                    "data"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "dumps",
+                    "rec_",
+                    "encode"
+                ],
+                "Function": "encode"
+            },
+            "66": {
+                "Type": "Assignment",
+                "Targets": [
+                    "search_request"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "Request",
+                    "url_search"
+                ],
+                "Function": "Request"
+            },
+            "68": {
+                "Type": "Assignment",
+                "Targets": [
+                    "response"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "urlopen",
+                    "search_request"
+                ],
+                "Function": "urlopen"
+            },
+            "69": {
+                "Type": "Assignment",
+                "Targets": [
+                    "string"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "response",
+                    "read",
+                    "decode"
+                ],
+                "Function": "decode"
+            },
+            "70": {
+                "Type": "Assignment",
+                "Targets": [
+                    "json_obj"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "loads",
+                    "string"
+                ],
+                "Function": "loads"
+            }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://\""
+            },
+            {
+                "url": "http://\""
+            },
+            {
+                "url": "http://\""
+            }
+        ],
+        "global_usage_local_api_call": [
+            {
+                "url": "/dbUpdate"
+            },
+            {
+                "url": "/dbInsert"
+            },
+            {
+                "url": "/dbSearch"
+            }
+        ]
+    },
+    "/datadrive/IKG/code_db/python/tbl_db_utils.py": {
+        "method_details_": [
+            {
+                "method_name": "returnBlankDBRec",
+                "method_begin": "def returnBlankDBRec():\n",
+                "method_end": "    return dbRec_\n",
+                "api_end_point": "NA",
+                "range": [
+                    28,
+                    46
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "insertNewSignature",
+                "method_begin": "def insertNewSignature( rec_ ):\n",
+                "method_end": "    return string\n",
+                "api_end_point": "NA",
+                "range": [
+                    48,
+                    57
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "updateSignature",
+                "method_begin": "def updateSignature( rec_ ):\n",
+                "method_end": "    return string\n",
+                "api_end_point": "NA",
+                "range": [
+                    59,
+                    68
+                ],
+                "global_uses": [],
+                "local_uses": []
+            },
+            {
+                "method_name": "searchSignature",
+                "method_begin": "def searchSignature( rec_ ):\n",
+                "method_end": "    return json_obj\n",
+                "api_end_point": "NA",
+                "range": [
+                    70,
+                    79
+                ],
+                "global_uses": [],
+                "local_uses": []
+            }
+        ],
+        "text_details_": {
+            "5": {
+                "Type": "Assignment",
+                "Targets": [
+                    "config_json_"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "load",
+                    "fp"
+                ],
+                "Function": "load"
+            },
+            "13": {
+                "Type": "Assignment",
+                "Targets": [
+                    "config_feedback_dict"
+                ],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "18": {
+                "Type": "Assignment",
+                "Targets": [
+                    "feedback_server_ip"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "config_feedback_dict",
+                    "get",
+                    "ENV"
+                ],
+                "Function": "get"
+            },
+            "20": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url_insert"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "feedback_server_ip"
+                ],
+                "Function": "NA"
+            },
+            "21": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url_search"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "feedback_server_ip"
+                ],
+                "Function": "NA"
+            },
+            "22": {
+                "Type": "Assignment",
+                "Targets": [
+                    "url_update"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "str",
+                    "feedback_server_ip"
+                ],
+                "Function": "NA"
+            },
+            "29": {
+                "Type": "Assignment",
+                "Targets": [
+                    "dbRec_"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "dict"
+                ],
+                "Function": "dict"
+            },
+            "30": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "31": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "32": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "33": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "34": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "35": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "dict"
+                ],
+                "Function": "dict"
+            },
+            "36": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [
+                    "dict"
+                ],
+                "Function": "NA"
+            },
+            "41": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "43": {
+                "Type": "Assignment",
+                "Targets": [],
+                "Ending": "NA",
+                "Values": [],
+                "Function": "NA"
+            },
+            "50": {
+                "Type": "Assignment",
+                "Targets": [
+                    "data"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "dumps",
+                    "rec_",
+                    "encode"
+                ],
+                "Function": "encode"
+            },
+            "51": {
+                "Type": "Assignment",
+                "Targets": [
+                    "insert_request"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "Request",
+                    "url_insert"
+                ],
+                "Function": "Request"
+            },
+            "54": {
+                "Type": "Assignment",
+                "Targets": [
+                    "response"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "urlopen",
+                    "insert_request"
+                ],
+                "Function": "urlopen"
+            },
+            "55": {
+                "Type": "Assignment",
+                "Targets": [
+                    "string"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "response",
+                    "read",
+                    "decode"
+                ],
+                "Function": "decode"
+            },
+            "61": {
+                "Type": "Assignment",
+                "Targets": [
+                    "data"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "dumps",
+                    "rec_",
+                    "encode"
+                ],
+                "Function": "encode"
+            },
+            "62": {
+                "Type": "Assignment",
+                "Targets": [
+                    "insert_request"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "Request",
+                    "url_update"
+                ],
+                "Function": "Request"
+            },
+            "65": {
+                "Type": "Assignment",
+                "Targets": [
+                    "response"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "urlopen",
+                    "insert_request"
+                ],
+                "Function": "urlopen"
+            },
+            "66": {
+                "Type": "Assignment",
+                "Targets": [
+                    "string"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "response",
+                    "read",
+                    "decode"
+                ],
+                "Function": "decode"
+            },
+            "72": {
+                "Type": "Assignment",
+                "Targets": [
+                    "data"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "dumps",
+                    "rec_",
+                    "encode"
+                ],
+                "Function": "encode"
+            },
+            "73": {
+                "Type": "Assignment",
+                "Targets": [
+                    "search_request"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "Request",
+                    "url_search"
+                ],
+                "Function": "Request"
+            },
+            "75": {
+                "Type": "Assignment",
+                "Targets": [
+                    "response"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "urllib",
+                    "request",
+                    "urlopen",
+                    "search_request"
+                ],
+                "Function": "urlopen"
+            },
+            "76": {
+                "Type": "Assignment",
+                "Targets": [
+                    "string"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "response",
+                    "read",
+                    "decode"
+                ],
+                "Function": "decode"
+            },
+            "77": {
+                "Type": "Assignment",
+                "Targets": [
+                    "json_obj"
+                ],
+                "Ending": "NA",
+                "Values": [
+                    "json",
+                    "loads",
+                    "string"
+                ],
+                "Function": "loads"
+            }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://\""
+            },
+            {
+                "url": "http://\""
+            },
+            {
+                "url": "http://\""
+            }
+        ],
+        "global_usage_local_api_call": [
+            {
+                "url": "/dbUpdate"
+            },
+            {
+                "url": "/dbInsert"
+            },
+            {
+                "url": "/dbSearch"
+            }
+        ]
+    },
     "/datadrive/IKG/code_db/python/flask_utils/createDB.py": {
         "method_details_": [],
         "text_details_": {
@@ -50883,7 +53363,12 @@
                 ],
                 "Function": "QdrantClient"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_utils/createTestDB.py": {
         "method_details_": [],
@@ -50924,7 +53409,12 @@
                 ],
                 "Function": "QdrantClient"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_utils/qdrant_db_flask_server.py": {
         "method_details_": [
@@ -50932,7 +53422,7 @@
                 "method_name": "encodeSentence",
                 "method_begin": "def encodeSentence():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/encodeSentence",
+                "api_end_point": "/encodeSentence",
                 "range": [
                     19,
                     29
@@ -50944,7 +53434,7 @@
                 "method_name": "convert",
                 "method_begin": "def convert( input_ ):\n",
                 "method_end": "    return int(cc_)  \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     31,
                     38
@@ -50964,7 +53454,7 @@
                 "method_name": "dbInsert",
                 "method_begin": "def dbInsert():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbInsert",
+                "api_end_point": "/dbInsert",
                 "range": [
                     41,
                     69
@@ -50976,7 +53466,7 @@
                 "method_name": "dbSearch",
                 "method_begin": "def dbSearch():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbSearch",
+                "api_end_point": "/dbSearch",
                 "range": [
                     72,
                     101
@@ -50988,7 +53478,7 @@
                 "method_name": "dbUpdate",
                 "method_begin": "def dbUpdate():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbUpdate",
+                "api_end_point": "/dbUpdate",
                 "range": [
                     104,
                     132
@@ -51301,7 +53791,12 @@
                 "Ending": 136,
                 "Values": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_utils/tbl_createDB.py": {
         "method_details_": [],
@@ -51342,7 +53837,12 @@
                 ],
                 "Function": "QdrantClient"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_utils/tbl_qdrant_db_flask_server.py": {
         "method_details_": [
@@ -51350,7 +53850,7 @@
                 "method_name": "encodeSentence",
                 "method_begin": "def encodeSentence():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/encodeSentence",
+                "api_end_point": "/encodeSentence",
                 "range": [
                     19,
                     29
@@ -51362,7 +53862,7 @@
                 "method_name": "convert",
                 "method_begin": "def convert( input_ ):\n",
                 "method_end": "    return int(cc_)  \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     31,
                     38
@@ -51382,7 +53882,7 @@
                 "method_name": "dbInsert",
                 "method_begin": "def dbInsert():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbInsert",
+                "api_end_point": "/dbInsert",
                 "range": [
                     41,
                     69
@@ -51394,7 +53894,7 @@
                 "method_name": "dbSearch",
                 "method_begin": "def dbSearch():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbSearch",
+                "api_end_point": "/dbSearch",
                 "range": [
                     72,
                     97
@@ -51406,7 +53906,7 @@
                 "method_name": "dbUpdate",
                 "method_begin": "def dbUpdate():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbUpdate",
+                "api_end_point": "/dbUpdate",
                 "range": [
                     100,
                     128
@@ -51719,7 +54219,12 @@
                 "Ending": 132,
                 "Values": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_utils/test_qdrant_db_flask_server.py": {
         "method_details_": [
@@ -51727,7 +54232,7 @@
                 "method_name": "encodeSentence",
                 "method_begin": "def encodeSentence():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/encodeSentence",
+                "api_end_point": "/encodeSentence",
                 "range": [
                     19,
                     29
@@ -51739,7 +54244,7 @@
                 "method_name": "convert",
                 "method_begin": "def convert( input_ ):\n",
                 "method_end": "    return int(cc_)  \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     31,
                     38
@@ -51759,7 +54264,7 @@
                 "method_name": "dbInsert",
                 "method_begin": "def dbInsert():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbInsert",
+                "api_end_point": "/dbInsert",
                 "range": [
                     41,
                     69
@@ -51771,7 +54276,7 @@
                 "method_name": "dbSearch",
                 "method_begin": "def dbSearch():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbSearch",
+                "api_end_point": "/dbSearch",
                 "range": [
                     72,
                     101
@@ -51783,7 +54288,7 @@
                 "method_name": "dbUpdate",
                 "method_begin": "def dbUpdate():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbUpdate",
+                "api_end_point": "/dbUpdate",
                 "range": [
                     104,
                     132
@@ -52096,7 +54601,12 @@
                 "Ending": 136,
                 "Values": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_utils/test_tbl_createDB.py": {
         "method_details_": [],
@@ -52137,7 +54647,12 @@
                 ],
                 "Function": "QdrantClient"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_utils/test_tbl_qdrant_db_flask_server.py": {
         "method_details_": [
@@ -52145,7 +54660,7 @@
                 "method_name": "encodeSentence",
                 "method_begin": "def encodeSentence():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/encodeSentence",
+                "api_end_point": "/encodeSentence",
                 "range": [
                     19,
                     29
@@ -52157,7 +54672,7 @@
                 "method_name": "convert",
                 "method_begin": "def convert( input_ ):\n",
                 "method_end": "    return int(cc_)  \n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     31,
                     38
@@ -52177,7 +54692,7 @@
                 "method_name": "dbInsert",
                 "method_begin": "def dbInsert():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbInsert",
+                "api_end_point": "/dbInsert",
                 "range": [
                     41,
                     69
@@ -52189,7 +54704,7 @@
                 "method_name": "dbSearch",
                 "method_begin": "def dbSearch():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbSearch",
+                "api_end_point": "/dbSearch",
                 "range": [
                     72,
                     97
@@ -52201,7 +54716,7 @@
                 "method_name": "dbUpdate",
                 "method_begin": "def dbUpdate():\n",
                 "method_end": "  return jsonify(response)\n",
-                "api_definition": "/dbUpdate",
+                "api_end_point": "/dbUpdate",
                 "range": [
                     100,
                     128
@@ -52514,7 +55029,12 @@
                 "Ending": 132,
                 "Values": "NA"
             }
-        }
+        },
+        "global_usage_inter_service_api_call": [
+            {
+                "url": "http://localhost:6333\""
+            }
+        ]
     },
     "/datadrive/IKG/code_db/python/flask_utils/views.py": {
         "method_details_": [
@@ -52522,7 +55042,7 @@
                 "method_name": "encodeSentence",
                 "method_begin": "def encodeSentence(request):\n",
                 "method_end": "      return JsonResponse( { 'encodedDoc': [] } )\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     33,
                     45
@@ -52534,7 +55054,7 @@
                 "method_name": "dbInsert",
                 "method_begin": "def dbInsert(request):  \n",
                 "method_end": "      return JsonResponse( { 'dbInsert': False } )\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     47,
                     72
@@ -52546,7 +55066,7 @@
                 "method_name": "dbSearch",
                 "method_begin": "def dbSearch(request):  \n",
                 "method_end": "      return JsonResponse( { 'searchRes_': [] } )\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     75,
                     103
@@ -52558,7 +55078,7 @@
                 "method_name": "dbUpdate",
                 "method_begin": "def dbUpdate(request):  \n",
                 "method_end": "      print( 'Exception in dbUpdate->', traceback.format_exc())\n",
-                "api_definition": "NA",
+                "api_end_point": "NA",
                 "range": [
                     105,
                     127

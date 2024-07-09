@@ -6,6 +6,7 @@ import numpy as np
 import datetime
 from python_ast_process_codebase import generateGraphEntities 
 from python_ast_process_API_contracts import addAPIUsageToGraph
+from python_ast_generate_URL_usage import analyze_codebase
 
 sys.path.append( os.getenv('GRAPH_UTILS_FOLDER') )
 from createGraphEntry import generateGraph
@@ -45,6 +46,67 @@ class python_ast_daemon():
             print('DUMPLINGS->', self.method_summary_file_, existing_)
             json.dump( existing_, fp, indent=4 )
 
+    def update_url_usages(self, current_graph_inputs_, url_, local_usage_store_, api_endpoint_defined_in_microservice_ ):
+        '''
+        the graph inputs have fnm as key and 2 inner keys -> method details & text / code snippet details
+        we will iterate through the methods to match the input args and if matched, update URL usage
+        we will add 2 new keys to method info -> intra service APIs being called and inter service APIs being called
+        IN case the input arg "method_nm_" is NA then we add a new key to graph_inputs_ and call it "global_usage"
+        ** the main intent here is the ability to look for these API end points across code bases to link for 
+        future impact analysis
+        '''
+        for fnm_, file_dict_ in current_graph_inputs_.items():
+
+           method_details_ = file_dict_["method_details_"]
+           if 'main_multi_prod' in fnm_:
+               print('GOPHER->', local_usage_store_, method_details_)
+           ## iterate through local_usage
+           for usageD in local_usage_store_:
+                for graph_input_ in method_details_:
+                    if "method_nm" in usageD:
+                        print( '1.', graph_input_["method_name"] == usageD["method_nm"], fnm_ == usageD["file_name"])
+                        print( '2.', graph_input_, usageD)
+                    if "method_nm" in usageD and graph_input_["method_name"] == usageD["method_nm"] and \
+                            fnm_ == usageD["file_name"]:
+                                ## init both keys for uniformity
+                                print('THAR->', fnm_, api_endpoint_defined_in_microservice_, usageD["method_nm"])
+                                graph_input_['local_api_call'] = 'NA'
+                                graph_input_['inter_service_api_call'] = 'NA'
+                                ## now based on usage, overwrite the default values
+                                if api_endpoint_defined_in_microservice_ == True:
+                                    graph_input_['local_api_call'] = url_
+                                else:
+                                    graph_input_['inter_service_api_call'] = url_
+
+                ## separate loop for usage method_nm == NA  
+                if "method_nm" in usageD and usageD["method_nm"] == 'NA' and fnm_ == usageD["file_name"]:
+                    tmp_ll_ , tmp_key_ = [], ""
+
+                    if api_endpoint_defined_in_microservice_ == True and \
+                            'global_usage_local_api_call' in file_dict_:
+
+                        tmp_ll_ = file_dict_["global_usage_local_api_call"]
+                        tmp_key_ = "global_usage_local_api_call"
+                    elif api_endpoint_defined_in_microservice_ == True and \
+                            'global_usage_local_api_call' not in file_dict_:
+
+                        tmp_key_ = "global_usage_local_api_call"
+
+                    elif api_endpoint_defined_in_microservice_ != True and \
+                            'global_usage_inter_service_api_call' in file_dict_:
+
+                        tmp_ll_ = file_dict_["global_usage_inter_service_api_call"]
+                        tmp_key_ = "global_usage_inter_service_api_call"
+                    elif api_endpoint_defined_in_microservice_ != True and \
+                            'global_usage_inter_service_api_call' not in file_dict_:
+
+                        tmp_key_ = "global_usage_inter_service_api_call"
+
+                    ## simply add to file_dict_
+                    tmp_ll_.append( { 'url': url_ } )
+                    print('GOBI->', fnm_, tmp_key_, tmp_ll_)
+                    file_dict_[ tmp_key_ ] = tmp_ll_
+
     def run_loop(self):
 
         while True:
@@ -54,28 +116,58 @@ class python_ast_daemon():
 
             print('DELTA FILE->', relevant_files_)
             non_api_graph_inputs_ = self.ast_codebase_utils_.generate()
-
-            ##NOTE-> ALWAYS COMMENT BELOW !! JUST FOR TESTING
-            print('GIMLET->', non_api_graph_inputs_)
-            self.update_method_summary_( non_api_graph_inputs_ )
-            exit()
-
+            
             if len( relevant_files_ ) == 0 or len( non_api_graph_inputs_ ) == 0:
                 print( datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), ':: NO CHANGES IN CODE_DB')
                 continue
 
             api_graph_inputs_     = self.ast_API_utils_.createGraphInput( relevant_files_ )
-
+            
             ## create a cumulutive json with both inputs
-            non_api_graph_inputs_.update( api_graph_inputs_ )
+            for non_api_key, non_api_value in non_api_graph_inputs_.items():
+                for non_api_D in non_api_value['method_details_']:
+                    ##now iterate via api_graph_inputs_ and ONLY add keys to the non_api_D that DONT YET EXIST..capice
+                    for api_key, api_value in api_graph_inputs_.items():
+                        for api_D in api_value['method_details_']:
+                            non_keys_ , api_keys_ = set( list(non_api_D.keys()) ), set( list(api_D.keys()) )
+                            api_key_not_in_non_ = api_keys_ - non_keys_
+                            for key in list( api_key_not_in_non_ ):
+                                non_api_D[ key ] = api_D[ key ]
             ## simpler naming convention post combination of both types of inputs
             graph_inputs_ = non_api_graph_inputs_
 
             formatted_time = time.strftime( '%Y-%m-%d %H:%M', time.localtime() )
             with open( self.log_file_, 'a+' ) as fp:
                 fp.write( str( formatted_time ) + ':: GRAPH INPUTS ::\n' + json.dumps(graph_inputs_,indent=4) + '\n')
+            
+            ## get URL usages 
+            url_usages_ = analyze_codebase( os.getenv('CODE_DB_PYTHON') )
+            print('URL USAGES->', json.dumps( url_usages_, indent=4 ) )
+            '''
+            url_usages_ DS = [ { 'url': [{file_name, method_nm}, {file_name, api_definition}]
+            ... now check if the URL is defined locally OR inter services and group them by file name
+            then finally just add to the graph_inputs_
+            '''
+            for url_, usage_list in url_usages_.items():
+                print('Processing->', url_)
+                api_endpoint_defined_in_microservice_ = False
+                local_usage_store_ = []
 
-            ## now dump the files 
+                for usageD in usage_list:
+                    # if the dict contains definition details then we just skip it .. it was meant to add
+                    ## redundancy .. this info is already present thanks to findAPIDefs BUT this is very helpful
+                    ### to create an additional data point. Whether the API being called is defined within the
+                    #### microservice OR with OUT
+                    if 'api_definition' in usageD: 
+                        api_endpoint_defined_in_microservice_ = True
+                        continue
+                    ## now we know there's only usage info left
+                    local_usage_store_.append( usageD )
+
+                self.update_url_usages( graph_inputs_, url_, local_usage_store_, \
+                                                             api_endpoint_defined_in_microservice_ )
+
+            ##  save the inputs
             self.update_method_summary_( graph_inputs_ )
             
             ##NOTE-> ALWAYS COMMENT BELOW !! JUST FOR TESTING

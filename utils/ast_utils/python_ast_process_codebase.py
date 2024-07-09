@@ -5,7 +5,7 @@ import json, os, sys, traceback, glob
 class generateGraphEntities():
     def __init__(self):
         ##NOTE-> this MUST be the root dir of all your codebase
-        self.src_dir_ = os.getenv('CODE_DB') 
+        self.src_dir_ = os.getenv('CODE_DB_PYTHON') 
         self.op_dest_ = self.src_dir_ + '/tmp/tmp_entity_store.json'
 
         if not os.path.exists( self.src_dir_ + '/tmp/' ):
@@ -220,8 +220,9 @@ class generateGraphEntities():
         return final_
         
 if __name__ == "__main__":
-    gg_ = generateGraphEntities('../LLM_INTERFACE/SRC_DIR')
-    gg_.generate()
+    gg_ = generateGraphEntities()
+    print( json.dumps( gg_.generate(), indent=4 ) )
+    '''
     ## now invoke graph entry addition
     gg_ = graphEntry.generateGraph( src_dir='./data/', neo4j_config='./config.json' )
     gg_.createUniqueConstraints()
@@ -230,4 +231,5 @@ if __name__ == "__main__":
 
     gg_.execNodeCreationCypher( nodeList_ , edgeList_ )
     gg_.calculatePageRank()
+    '''
 

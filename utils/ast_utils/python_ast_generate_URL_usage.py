@@ -8,6 +8,54 @@ url_pattern = re.compile(r'(https?://[^\s]+)')
 config_var_pattern = re.compile(r'(["\'])(?P<var_name>[A-Z_]+)["\']\s*:\s*["\'](?P<url>https?://[^\s]+)["\']')
 env_var_pattern = re.compile(r'os\.environ\["([A-Z_]+)"\]')
 
+class VariableUsageVisitor(ast.NodeVisitor):
+    def __init__(self, target_var):
+        self.target_var = target_var
+        self.usages = []
+
+    def visit_Name(self, node):
+        print(node.lineno)
+        if isinstance( node, ast.Name ):
+            print('VISITING NODE->', node, isinstance(node.ctx, ast.Load), node.id)
+
+        if isinstance(node.ctx, ast.Load) and node.id == self.target_var:
+            self.usages.append(node)
+        self.generic_visit(node)
+
+class MethodVisitor(ast.NodeVisitor):
+    def __init__(self, target_var):
+        self.target_var = target_var
+        self.methods = []
+
+    def visit_FunctionDef(self, node):
+        # Visit the method node to find usages of the target variable
+        var_usage_visitor = VariableUsageVisitor(self.target_var)
+        var_usage_visitor.visit(node)
+        
+        if var_usage_visitor.usages:
+            self.methods.append({
+                'method_name': node.name,
+                'start_line': node.lineno,
+                'end_line': node.body[-1].lineno if node.body else node.lineno,
+                'usages': [{
+                    'line': usage.lineno,
+                    'col_offset': usage.col_offset
+                } for usage in var_usage_visitor.usages]
+            })
+        self.generic_visit(node)
+
+class NodeVisitorWithParent(ast.NodeVisitor):
+
+    def __init__(self):
+        self.parent = None
+        super().__init__()
+
+    def generic_visit(self, node):
+        if hasattr(node, 'body') and isinstance(node.body, list):
+            for child in node.body:
+                child.parent = node
+        super().generic_visit(node)
+
 def get_all_files(directory):
     """Get all files in the given directory and subdirectories."""
     files_list = []
@@ -63,54 +111,6 @@ def extract_urls_from_rhs(node, urls, var_nm):
     elif isinstance(node, ast.Name) and ( 'http' in node.id or var_nm in node.id ):
         urls.append(node.id)
 
-class VariableUsageVisitor(ast.NodeVisitor):
-    def __init__(self, target_var):
-        self.target_var = target_var
-        self.usages = []
-
-    def visit_Name(self, node):
-        print(node.lineno)
-        if isinstance( node, ast.Name ):
-            print('VISITING NODE->', node, isinstance(node.ctx, ast.Load), node.id)
-
-        if isinstance(node.ctx, ast.Load) and node.id == self.target_var:
-            self.usages.append(node)
-        self.generic_visit(node)
-
-class MethodVisitor(ast.NodeVisitor):
-    def __init__(self, target_var):
-        self.target_var = target_var
-        self.methods = []
-
-    def visit_FunctionDef(self, node):
-        # Visit the method node to find usages of the target variable
-        var_usage_visitor = VariableUsageVisitor(self.target_var)
-        var_usage_visitor.visit(node)
-        
-        if var_usage_visitor.usages:
-            self.methods.append({
-                'method_name': node.name,
-                'start_line': node.lineno,
-                'end_line': node.body[-1].lineno if node.body else node.lineno,
-                'usages': [{
-                    'line': usage.lineno,
-                    'col_offset': usage.col_offset
-                } for usage in var_usage_visitor.usages]
-            })
-        self.generic_visit(node)
-
-class NodeVisitorWithParent(ast.NodeVisitor):
-
-    def __init__(self):
-        self.parent = None
-        super().__init__()
-
-    def generic_visit(self, node):
-        if hasattr(node, 'body') and isinstance(node.body, list):
-            for child in node.body:
-                child.parent = node
-        super().generic_visit(node)
-
 def contains_var_as_BinOP( varNm, node ):
 
     if isinstance(node, ast.Str) and varNm in node.s:
@@ -128,7 +128,8 @@ def find_usages(file_path, var_name):
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
     tree = ast.parse(content)
-    var_name = var_name.replace('"','').replace("'",'').replace('[','').replace(']','').replace(',','').replace('{','').replace('}','')
+    var_name = var_name.replace('"','').replace("'",'').replace('[','').replace(']','').\
+                                         replace(',','').replace('{','').replace('}','')
 
     usages = []
     print('CHECKING FOR ->', var_name)
@@ -153,19 +154,19 @@ def find_usages(file_path, var_name):
                 else:
                     rhs_urls = []
                     extract_urls_from_rhs( node.value, rhs_urls, var_name )
-                    print('RHS URLS->', node.value, rhs_urls)
+                    #print('RHS URLS->', node.value, rhs_urls)
                     for rhs_url in rhs_urls:
                         if var_name in rhs_url:
                             usages.append((line_no, None))
-                            print('APPENDING USAGE->', line_no, None, target.id, rhs_urls)
+                            #print('APPENDING USAGE->', line_no, None, target.id, rhs_urls)
                             method_visitor = MethodVisitor(target.id)
                             method_visitor.visit(tree)
-                            print( 'URL-USAGES->', method_visitor.methods )
+                            #print( 'URL-USAGES->', method_visitor.methods )
 
         elif isinstance(node, ast.Call):
             for arg in node.args:
                 if isinstance(arg, ast.Name) and arg.id == var_name:
-                    print('VAR IS RHS!', var_name, arg.id)
+                    #print('VAR IS RHS!', var_name, arg.id)
                     line_no = node.lineno
                     method_node = node
                     while not isinstance(method_node, ast.FunctionDef) and hasattr(method_node, 'parent'):
