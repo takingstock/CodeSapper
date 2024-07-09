@@ -1570,8 +1570,8 @@ RETURNING:: {
   file_path: '../idp_backend/Configurations/hapijs-logger.config.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -1587,8 +1587,8 @@ RETURNING:: {
   file_path: '../idp_backend/Configurations/orm.config.js',
   returnType: "reject(new Error('Mongoose default connection disconnected'))",
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -1610,8 +1610,8 @@ RETURNING:: {
   file_path: '../idp_backend/Configurations/redis.config.js',
   returnType: 'DecryptedResponse',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -1643,8 +1643,8 @@ RETURNING:: {
   file_path: '../idp_backend/Configurations/server.config.js',
   returnType: 'true',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -1694,8 +1694,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/admin-dashboard.controller.js',
   returnType: 'cb(null, files)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 18
@@ -1711,8 +1711,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/ai-api-logs.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -1738,8 +1738,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/ai-server.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'aiServer/{serverId}',
-  url_usages_: [],
+  api_end_point: 'aiServer/{serverId}',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -1757,8 +1757,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/aiController.js',
   returnType: 'callback(err) | callback(null, response)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -1786,8 +1786,8 @@ RETURNING:: {
     '      ...HTTP_SUCCESS_MESSAGES.DELETE_SUCCESS,\n' +
     '    })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'config/{id}',
-  url_usages_: [],
+  api_end_point: 'config/{id}',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -1819,8 +1819,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/auth.controller.js',
   returnType: 'hcb(err)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'users/changePassword',
-  url_usages_: [],
+  api_end_point: 'users/changePassword',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -1840,8 +1840,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/backup-document.controller.js',
   returnType: `callback(null, { ...ERR_MESSAGES.BAD_REQUEST, message: "document can't be null" }) | cb(err) | cb(HTTP_ERROR_MESSAGES.NO_DOC_FOUND) | cb(null, result) | callback(e)`,
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -1893,8 +1893,8 @@ RETURNING:: {
     '                    message: "Bad Columns in File"\n' +
     '                }) | cb(e) | cb(failReason)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 13
@@ -1914,8 +1914,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/cell-info-metaData.contorller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -1941,8 +1941,8 @@ RETURNING:: {
     '        ...HTTP_SUCCESS_MESSAGES.DELETE_SUCCESS,\n' +
     '      })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'creds/{id}',
-  url_usages_: [],
+  api_end_point: 'creds/{id}',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -1960,8 +1960,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/cron.controller.js',
   returnType: 'initAiProcess(process.env.CRON_JOB !== "DISABLED")',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -1979,8 +1979,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/cron.controller.old.js',
   returnType: 'initAiProcess()',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -2002,8 +2002,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/dashboard-report.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -2032,8 +2032,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/debugLogs.controller.js',
   returnType: 'cb(err) | cb() | cb() | resultArray | err | cb() | callback(err) | callback(null, { ...HTTP_SUCCESS_MESSAGES.DEFAULT, data: formattedDataArray })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'generate/logsReport',
-  url_usages_: [
+  api_end_point: 'generate/logsReport',
+  inter_service_api_call: [
     'https://storage.amygbserver.in/getAuthenticatedFile/${newFileName}<br><br>',
     'https://storage.amygbserver.in/getAuthenticatedFile/${newFileName}'
   ],
@@ -2090,8 +2090,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/decission-tree.controller.js',
   returnType: 'NA',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 20
@@ -2111,8 +2111,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/doc-output.controller.js',
   returnType: "resolve('')",
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -2168,8 +2168,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/document.controller.js',
   returnType: 'hcb(HTTP_ERROR_MESSAGES.MAINTENANCE)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'documents/fieldCompletion',
-  url_usages_: [],
+  api_end_point: 'documents/fieldCompletion',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 21
@@ -2195,8 +2195,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/enterprise-admin-dashboard.controller.js',
   returnType: 'callback(e)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -2227,8 +2227,8 @@ RETURNING:: {
     "                    message: 'User Not Found In Any Team',\n" +
     '                  }) | ecb(err) | ecb(HTTP_ERROR_MESSAGES.NOT_FOUND) | ecb(err) | ecb(err) | icb(err) | icb(err) | icb() | ecb(err) | ecb(null, results.updateSupervisor) | ecb() | cb(err) | cb(null, results.updateIndexersSupervisor) | hcb(err) | hcb(null, HTTP_SUCCESS_MESSAGES.DELETE_USER)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'users/getOwnDetails',
-  url_usages_: [],
+  api_end_point: 'users/getOwnDetails',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -2248,8 +2248,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/env-config.controller.js',
   returnType: 'callback()',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -2286,8 +2286,8 @@ RETURNING:: {
     "                        message: 'Data base configuration not found',\n" +
     '                    })',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 10
@@ -2305,8 +2305,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/feedback-ai.controller.js',
   returnType: 'Promise.resolve(true) | Promise.resolve(false)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -2341,8 +2341,8 @@ RETURNING:: {
     '      data: mappedResponse,\n' +
     '    })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'globalMapping',
-  url_usages_: [],
+  api_end_point: 'globalMapping',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -2360,8 +2360,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/govt-api.controller.js',
   returnType: 'mockPanApi()',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -2385,8 +2385,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/health.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'server/health',
-  url_usages_: [],
+  api_end_point: 'server/health',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -2416,8 +2416,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/idp-key.controller.js',
   returnType: 'hcb(err)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'apiKey/delete',
-  url_usages_: [],
+  api_end_point: 'apiKey/delete',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -2479,8 +2479,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/idp.controller.js',
   returnType: 'cb({ ...HTTP_ERROR_MESSAGES.BAD_REQUEST, message: "Invalid batch id" }) | cb(err) | callback(err)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'idp/createDownloadLink',
-  url_usages_: [],
+  api_end_point: 'idp/createDownloadLink',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 24
@@ -2526,8 +2526,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/imc.controller.js',
   returnType: 'hcb(err) | hcb(null, { ...HTTP_SUCCESS_MESSAGES.DEFAULT, data: vendors })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'imc/fetchVendorList',
-  url_usages_: [],
+  api_end_point: 'imc/fetchVendorList',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 16
@@ -2561,8 +2561,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/input-storage.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -2586,8 +2586,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/joi.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -2615,8 +2615,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/latest-enterprise-user.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -2872,8 +2872,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/latest-reports.controller.js',
   returnType: 'cb(err) | cb(err) | escb(err) | cb(err) | cb(err) | cb(err) | callback(err)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 16
@@ -2915,8 +2915,8 @@ RETURNING:: {
     '            workbookData,\n' +
     '        })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'team/deleteTeam',
-  url_usages_: [],
+  api_end_point: 'team/deleteTeam',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 10
@@ -2936,8 +2936,8 @@ RETURNING:: {
     '        count: array.length,\n' +
     "      })) | hcb('Error in generating logs')",
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -2961,8 +2961,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/mapping.controller.js',
   returnType: 'aiMappedData | resolve({ ...customMappedFields }) | resolve({ ...mappedFields })',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -2984,8 +2984,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/ocr-ai.controller.js',
   returnType: 'Promise.resolve(false) | Promise.resolve(false) | Promise.resolve(false) | Promise.resolve(false)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -3003,8 +3003,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/ocr-logs.controller.js',
   returnType: 'cb() | cb() | acb() | acb() | acb() | acb(null, []) | acb(null, []) | hcb(err)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'ocr/logsList',
-  url_usages_: [],
+  api_end_point: 'ocr/logsList',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -3050,8 +3050,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/process-ocr.controller.js',
   returnType: 'hcb(e) | hcb(null, { ...HTTP_SUCCESS_MESSAGES.DEFAULT, data: documents, totalCount })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'documents',
-  url_usages_: [],
+  api_end_point: 'documents',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 16
@@ -3084,8 +3084,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/queueController.js',
   returnType: 'callback()',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'queue/logs',
-  url_usages_: [],
+  api_end_point: 'queue/logs',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -3107,8 +3107,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/rate-limiting-controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -3130,8 +3130,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/recaptcha-controller.js',
   returnType: 'NA',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -3309,8 +3309,8 @@ RETURNING:: {
     '                data: formattedDataArray\n' +
     '            })',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [
+  api_end_point: 'NA',
+  inter_service_api_call: [
     'https://storage.amygbserver.in/getAuthenticatedFile/${newFileName}<br><br>',
     'https://storage.amygbserver.in/getAuthenticatedFile/${newFileName}'
   ],
@@ -3334,8 +3334,8 @@ RETURNING:: {
     '       data\n' +
     '    })',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -3351,8 +3351,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/setting-controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -3380,8 +3380,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/socket-publishers.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -3413,8 +3413,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/splitFile.controller.js',
   returnType: 'cb(null, 0) | callback(e)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -3430,8 +3430,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/stats.controller.js',
   returnType: 'hcb(err) | hcb(null, response)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'stats',
-  url_usages_: [],
+  api_end_point: 'stats',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -3458,8 +3458,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/syncAiResponse.controller.js',
   returnType: 'cb(err) | cb(null, result) | cb(err) | cb(error) | cb(null, res) | callback(err)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -3493,8 +3493,8 @@ RETURNING:: {
     '                    ...HTTP_SUCCESS_MESSAGES.DEFAULT,\n' +
     '                }) | hcb(err) | hcb(null, result.deleteCustomersFromTeam)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'team/deleteCustomersFromTeam',
-  url_usages_: [],
+  api_end_point: 'team/deleteCustomersFromTeam',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -3515,8 +3515,8 @@ RETURNING:: {
     '      ...HTTP_SUCCESS_MESSAGES.CONFIG_SUCCESS,\n' +
     '    })',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -3556,8 +3556,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/training.controller.js',
   returnType: 'hcb(null, {\n    ...HTTP_SUCCESS_MESSAGES.DEFAULT,\n    data: response,\n  })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'training/docs/{id}',
-  url_usages_: [],
+  api_end_point: 'training/docs/{id}',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 13
@@ -3607,8 +3607,8 @@ RETURNING:: {
     '    stream.pipe(fileOutput);\n' +
     '  })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'documents/createDownloadLink',
-  url_usages_: [],
+  api_end_point: 'documents/createDownloadLink',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 13
@@ -3648,8 +3648,8 @@ RETURNING:: {
     '        totalCount,\n' +
     '      })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'admin/users/workflow/{tenantId}',
-  url_usages_: [],
+  api_end_point: 'admin/users/workflow/{tenantId}',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -3683,8 +3683,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/user.controller.js',
   returnType: 'cb(null, false) | cb(null, false) | cb(null, true)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'users/request/extend',
-  url_usages_: [],
+  api_end_point: 'users/request/extend',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 10
@@ -3700,8 +3700,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/userHistoryBatch.controller.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -3745,8 +3745,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/vendor-ai-controller.js',
   returnType: 'hcb(err) | hcb(null, HTTP_SUCCESS_MESSAGES.DEFAULT)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'documents/{id}',
-  url_usages_: [],
+  api_end_point: 'documents/{id}',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 15
@@ -3790,8 +3790,8 @@ RETURNING:: {
   file_path: '../idp_backend/Controllers/vendors.controller.js',
   returnType: 'cb(err) | cb() | cb(err) | cb() | cb() | cb(err)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 15
@@ -3826,8 +3826,8 @@ RETURNING:: {
     "                        message: 'webhook not found',\n" +
     '                    })',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -3867,8 +3867,8 @@ RETURNING:: {
     '    data: user\n' +
     '  })',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'workflows/process',
-  url_usages_: [],
+  api_end_point: 'workflows/process',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 11
@@ -3892,8 +3892,8 @@ RETURNING:: {
   file_path: '../idp_backend/Helpers/ai-endpoints.js',
   returnType: 'cb(null, false) | resolve(retried)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -3930,8 +3930,8 @@ RETURNING:: {
     '  })\n' +
     '})',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -3969,8 +3969,8 @@ RETURNING:: {
   file_path: '../idp_backend/Helpers/cron.js',
   returnType: 'cb(null, false)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 12
@@ -3990,8 +3990,8 @@ RETURNING:: {
   file_path: '../idp_backend/Helpers/disk-alert.js',
   returnType: 'NA',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -4688,8 +4688,8 @@ RETURNING:: {
   file_path: '../idp_backend/Helpers/emailTemplates.js',
   returnType: 'newMessage',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [
+  api_end_point: 'NA',
+  inter_service_api_call: [
     'http://www.w3.org/1999/xhtml',
     'http://www.w3.org/2000/svg',
     'http://www.w3.org/1999/xlink',
@@ -4732,8 +4732,8 @@ RETURNING:: {
     '\n' +
     '  ]',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -4761,8 +4761,8 @@ RETURNING:: {
   file_path: '../idp_backend/Helpers/ocr.js',
   returnType: 'data.map(aidoc => _customizeOcrResponse(aidoc, fileOriginalName)) | [_customizeOcrResponse(data, fileOriginalName)]',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -4795,8 +4795,8 @@ RETURNING:: {
     '                error: `[AI]: ${err.message}`,\n' +
     '            })',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -4846,8 +4846,8 @@ RETURNING:: {
     '      },\n' +
     '    }',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -4863,8 +4863,8 @@ RETURNING:: {
   file_path: '../idp_backend/Helpers/workflow.js',
   returnType: 'hcb(err) | hcb(null, "BATCHES PROCESSING DONE")',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -4892,8 +4892,8 @@ RETURNING:: {
   file_path: '../idp_backend/Mock/non-tabular-content.js',
   returnType: 'callback(null, { tabularContent: [], nonTabularContent: DEFAULT_NON_TABLAR_CONTENT }) | callback(null, defaultResponse) | cb(null, defaultResponse) | cb(null, { nonTabularContent, tabularContent: [] }) | callback(null, defaultResponse)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -5358,8 +5358,8 @@ RETURNING:: {
     '        "local_column": "Date",\n' +
     '        "text": "21-10-2020 NEFT AXMB202951726'... 5382 more characters,
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [
+  api_end_point: 'NA',
+  inter_service_api_call: [
     'https://s3-ap-south-1.amazonaws.com/vision-era-uploads/A01_BANK_STATEMENT06_Nov_2020_16_49_48null-0.jpg',
     'https://s3-ap-south-1.amazonaws.com/vision-era-uploads/A01_BANK_STATEMENT06_Nov_2020_16_49_48null-0.json',
     'https://s3-ap-south-1.amazonaws.com/vision-era-uploads/A01_BANK_STATEMENT06_Nov_2020_16_49_48null-0.json',
@@ -5492,8 +5492,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/config.routes.js',
   returnType: 'err',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -5511,8 +5511,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/index.js',
   returnType: 'NA',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -5546,8 +5546,8 @@ RETURNING:: {
     '        })\n' +
     '    }) | reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -5592,8 +5592,8 @@ RETURNING:: {
     "      .header('Content-Type', contentType)\n" +
     "      .header('Content-Disposition', `attachment; filename=${request.params.fileName}`)",
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -5633,8 +5633,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/admin-dashboard-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -5656,8 +5656,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/ai-ocr-server-routes.js',
   returnType: '({ ...HTTP_ERROR_MESSAGES.BAD_REQUEST, message: "Ip address not available" }) | (HTTP_SUCCESS_MESSAGES.DEFAULT)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -5681,8 +5681,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/backup-document.routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -5714,8 +5714,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/bol-vendors-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -5733,8 +5733,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/dashboard-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -5758,8 +5758,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/enterprise-admin-dashboard-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -5779,8 +5779,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/env-config-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -5806,8 +5806,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/external-db-config-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -5835,8 +5835,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/input-storage.routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -5862,8 +5862,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/latest-enterprise-user.routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(response)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -5889,8 +5889,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/latest-teams.routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'team/deleteTeam',
-  url_usages_: [],
+  api_end_point: 'team/deleteTeam',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -5912,8 +5912,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/ocr.routes.js',
   returnType: 'queue.add(() => processOcrInbackground(request))',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -5957,8 +5957,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/reports-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 14
@@ -5994,8 +5994,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/vendor-ai-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -6031,8 +6031,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/vendors-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 11
@@ -6058,8 +6058,8 @@ RETURNING:: {
   file_path: '../idp_backend/Routes/v2/webhook-routes.js',
   returnType: 'reject(BoomCustomError(err)) | resolve(result)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -6091,8 +6091,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/addressIds.service.js',
   returnType: 'Models.AddressIds\n  .deleteMany(criteria, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -6124,8 +6124,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/app-config.service.js',
   returnType: 'Models.AppConfig\n  .updateMany(criteria, dataToSet, options, cb)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -6155,8 +6155,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/bolVendors.service.js',
   returnType: 'Models.Vendors\n  .deleteMany(criteria, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -6186,8 +6186,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/credentials.service.js',
   returnType: 'Models.Credentail\n  .updateMany(criteria, dataToSet, options, cb)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -6227,8 +6227,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/customer.service.js',
   returnType: 'Models.Customers.aggregate(query, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -6272,8 +6272,8 @@ RETURNING:: {
     '    supplier_tax_identification_number: "DataTypes.STRING",\n' +
     '})',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -6297,8 +6297,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/debugLogs.service.js',
   returnType: 'Models.DebugLogs\n  .updateMany(criteria, dataToSet, options, cb)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -6336,8 +6336,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/document.service.js',
   returnType: 'void',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 12
@@ -6383,8 +6383,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/dynamic-bol-vendor.service.js',
   returnType: 'Models.DynamicBolVendor(currentCollectionName).syncIndexes(callback)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 16
@@ -6430,8 +6430,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/dynamic-vendor.service.js',
   returnType: 'Models.DynamicVendor(currentCollectionName).syncIndexes(callback)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 16
@@ -6463,8 +6463,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/global-mapping.service.js',
   returnType: 'Models.GlobalMapping.aggregate(query, cb)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 9
@@ -6492,8 +6492,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/idp-key.service.js',
   returnType: 'Models.TenantModel\n  .findOne(criteria, projection, options)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -6529,8 +6529,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/idp.service.js',
   returnType: 'Models.Idp.aggregate(query, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 11
@@ -6558,8 +6558,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/logs.service.js',
   returnType: 'Models.Logs\n  .updateMany(criteria, dataToSet, options, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -6597,8 +6597,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/page.service.js',
   returnType: 'void',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 12
@@ -6624,8 +6624,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/queueLogs.service.js',
   returnType: 'Models.QueueLogs\n  .updateMany(criteria, dataToSet, options, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -6651,8 +6651,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/rate-limiting.service.js',
   returnType: 'Models.RateLimit.count(criteria, cb)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -6694,8 +6694,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/reports-list.service.js',
   returnType: 'Models.ReportsList.aggregate(query, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 10
@@ -6723,8 +6723,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/role.service.js',
   returnType: 'Models.Role\n  .deleteMany(criteria, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -6766,8 +6766,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/teams.service.js',
   returnType: 'Models.Teams.aggregate(query, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 10
@@ -6793,8 +6793,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/tenant.service.js',
   returnType: 'Models.Tenant\n  .deleteOne(criteria, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -6812,8 +6812,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/training-feedback.service.js',
   returnType: 'new Models.TrainingFeedback(objToSave).save(cb)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -6843,8 +6843,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/training.service.js',
   returnType: 'Models.Training\n  .updateMany(criteria, dataToSet, options, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -6882,8 +6882,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/user.service.js',
   returnType: 'Models.User.aggregate(query, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -6921,8 +6921,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/vendors.service.js',
   returnType: 'Models.Vendors.syncIndexes(cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 12
@@ -6958,8 +6958,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/workflow-log.service.js',
   returnType: 'Models.WorkflowLog.aggregate(query, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -6995,8 +6995,8 @@ RETURNING:: {
   file_path: '../idp_backend/Services/workflow.service.js',
   returnType: 'Models.Workflow.aggregate(query, cb)',
   if_api_url_declaration_file_: '../idp_backend/Routes/v1/config.v1.js',
-  if_api_url_declaration_: 'ai/countTableData',
-  url_usages_: [],
+  api_end_point: 'ai/countTableData',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -7036,8 +7036,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/S3.js',
   returnType: 'cb() | cb()',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 13
@@ -7057,8 +7057,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/admin-dashboard.util.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -7122,8 +7122,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/ai-endpoints.util.js',
   returnType: 'resolve(false) | resolve(data) | resolve(false)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 25
@@ -7147,8 +7147,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/archive-collections.util.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -7164,8 +7164,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/auth-manager.util.js',
   returnType: 'validRequestObject',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -7191,8 +7191,8 @@ RETURNING:: {
     '        },\n' +
     '      }',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -7216,8 +7216,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/bootsrap-seed.util.js',
   returnType: 'true',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -7233,8 +7233,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/bootstrap-config.util.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -7260,8 +7260,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/bootstrap-team.util.js',
   returnType: 'true',
   if_api_url_declaration_file_: '../idp_backend/Routes/v2/config.v2.js',
-  if_api_url_declaration_: 'users/createUsers',
-  url_usages_: [],
+  api_end_point: 'users/createUsers',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 6
@@ -7277,8 +7277,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/bootstrap-vendors.util.js',
   returnType: 'resolve(true) | resolve(true)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -7314,8 +7314,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/checkForAlerts.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 11
@@ -7337,8 +7337,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/console-log.util.js',
   returnType: 'NA',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -7358,8 +7358,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/data-emitter.util.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -7411,8 +7411,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/document-classification.util.js',
   returnType: 'cb("Batch Not reviewed completly yet") | cb(null, USERS[doc.email]) | checkReviewPercent(doc, cb) | cb() | cb(null, 0) | cb()',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 19
@@ -7453,8 +7453,8 @@ RETURNING:: {
     '    }\n' +
     '})',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -7498,8 +7498,8 @@ RETURNING:: {
     '    }\n' +
     '  }) | resolve(true) | resolve(false)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -7533,8 +7533,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/input-storage.util.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 10
@@ -7626,8 +7626,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/load-balancer.js',
   returnType: 'NA',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 39
@@ -7664,8 +7664,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/ocr.util.js',
   returnType: 'callback(null, true) | cb() | cb(null, batches) | cb() | cb() | cb() | cb(e) | cb(null, true)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -7694,8 +7694,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/ocrRotatedImages.util.js',
   returnType: 'callback(null, true) | cb(null, true)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 5
@@ -7713,8 +7713,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/page.util.js',
   returnType: 'cb()',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -7730,8 +7730,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/performance.utils.js',
   returnType: 'callback() | callback() | cb()',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -7750,8 +7750,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/sales.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [ 'http://go.pardot.com/l/962123/2022-02-03/8x1' ],
+  api_end_point: 'NA',
+  inter_service_api_call: [ 'http://go.pardot.com/l/962123/2022-02-03/8x1' ],
   global_uses: [],
   local_uses: []
 } 1
@@ -7787,8 +7787,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/serverMapping.js',
   returnType: 'true',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 11
@@ -7816,8 +7816,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/sharedMongodb.util.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 4
@@ -7833,8 +7833,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/socket-topic.util.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -7864,8 +7864,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/token-manager.util.js',
   returnType: 'response',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 8
@@ -7927,8 +7927,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/universal-functions.util.js',
   returnType: 'resolve([]) | resolve([]) | resolve(customers)',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 24
@@ -7944,8 +7944,8 @@ RETURNING:: {
   file_path: '../idp_backend/Utils/validation-error-handler.util.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -8011,8 +8011,8 @@ RETURNING:: {
   file_path: '../idp_backend/cache/cache.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 7
@@ -8028,8 +8028,8 @@ RETURNING:: {
   file_path: '../idp_backend/cache/commonCache.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
@@ -8049,8 +8049,8 @@ RETURNING:: {
   file_path: '../idp_backend/cache/customPluginCache.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -8070,8 +8070,8 @@ RETURNING:: {
   file_path: '../idp_backend/cache/latestTeamCache.js',
   returnType: 'void',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 3
@@ -8129,8 +8129,8 @@ RETURNING:: {
   file_path: '../idp_backend/test/config.js',
   returnType: 'data.accessToken',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 2
@@ -8146,8 +8146,8 @@ RETURNING:: {
   file_path: '../idp_backend/test/mock.js',
   returnType: 'formData',
   if_api_url_declaration_file_: 'NA',
-  if_api_url_declaration_: 'NA',
-  url_usages_: [],
+  api_end_point: 'NA',
+  inter_service_api_call: [],
   global_uses: [],
   local_uses: []
 } 1
