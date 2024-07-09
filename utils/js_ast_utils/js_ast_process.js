@@ -136,8 +136,8 @@ class JSFileAnalyzer {
                     file_path: filePath,
 		    returnType: returnType,
 		    if_api_url_declaration_file_: url_declaration_file_,	
-		    if_api_url_declaration_: url_declaration_,	
-		    url_usages_: urls_used_,	
+		    api_end_point: url_declaration_,	
+		    inter_service_api_call: urls_used_,	
                     global_uses: [],
                     local_uses: []
                 });
@@ -185,8 +185,8 @@ class JSFileAnalyzer {
                         file_path: filePath,
 			returnType: returnType,
 		        if_api_url_declaration_file_: url_declaration_file_,	
-		        if_api_url_declaration_: url_declaration_,	
-		        url_usages_: urls_used_,	
+		        api_end_point: url_declaration_,	
+		        inter_service_api_call: urls_used_,	
                         global_uses: [],
                         local_uses: []
 		    });
