@@ -49,9 +49,9 @@ function extractUrls(filePath) {
 }
 
 // Scan the project directory
-scanDirectory('../idp_backend/');
+//scanDirectory('../idp_backend/');
 
-console.log(urlMapping);
+//console.log(urlMapping);
 
 module.exports = {
     scanDirectory,

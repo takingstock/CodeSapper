@@ -63,23 +63,37 @@ class python_ast_daemon():
            ## iterate through local_usage
            for usageD in local_usage_store_:
                 for graph_input_ in method_details_:
-                    if "method_nm" in usageD:
-                        print( '1.', graph_input_["method_name"] == usageD["method_nm"], fnm_ == usageD["file_name"])
-                        print( '2.', graph_input_, usageD)
-                    if "method_nm" in usageD and graph_input_["method_name"] == usageD["method_nm"] and \
+                    if "method_nm" in usageD and graph_input_["method_name"] in usageD["method_nm"] and \
                             fnm_ == usageD["file_name"]:
                                 ## init both keys for uniformity
                                 print('THAR->', fnm_, api_endpoint_defined_in_microservice_, usageD["method_nm"])
-                                graph_input_['local_api_call'] = 'NA'
-                                graph_input_['inter_service_api_call'] = 'NA'
                                 ## now based on usage, overwrite the default values
                                 if api_endpoint_defined_in_microservice_ == True:
-                                    graph_input_['local_api_call'] = url_
+                                    if 'local_api_call' in graph_input_:
+                                        tmpLL = graph_input_['local_api_call']
+                                    else:
+                                        tmpLL = list()
+
+                                    tmpLL.append( url_ )
+                                    graph_input_['local_api_call'] = tmpLL
+                                    if 'inter_service_api_call' not in graph_input_:
+                                        graph_input_[ 'inter_service_api_call' ] = list()
+
                                 else:
-                                    graph_input_['inter_service_api_call'] = url_
+                                    if 'inter_service_api_call' in graph_input_:
+                                        tmpLL = graph_input_['inter_service_api_call']
+                                    else:
+                                        tmpLL = list()
+
+                                    tmpLL.append( url_ )
+                                    graph_input_['inter_service_api_call'] = tmpLL
+                                    if 'local_api_call' not in graph_input_:
+                                        graph_input_[ 'local_api_call' ] = list()
 
                 ## separate loop for usage method_nm == NA  
-                if "method_nm" in usageD and usageD["method_nm"] == 'NA' and fnm_ == usageD["file_name"]:
+                if "method_nm" in usageD and graph_input_["method_name"] not in usageD["method_nm"] and\
+                        fnm_ == usageD["file_name"]:
+
                     tmp_ll_ , tmp_key_ = [], ""
 
                     if api_endpoint_defined_in_microservice_ == True and \
@@ -93,21 +107,24 @@ class python_ast_daemon():
                         tmp_key_ = "global_usage_local_api_call"
 
                     elif api_endpoint_defined_in_microservice_ != True and \
-                            'global_usage_inter_service_api_call' in file_dict_:
+                            'inter_service_api_call' in file_dict_:
 
-                        tmp_ll_ = file_dict_["global_usage_inter_service_api_call"]
-                        tmp_key_ = "global_usage_inter_service_api_call"
+                        tmp_ll_ = file_dict_["inter_service_api_call"]
+                        tmp_key_ = "inter_service_api_call"
                     elif api_endpoint_defined_in_microservice_ != True and \
-                            'global_usage_inter_service_api_call' not in file_dict_:
+                            'inter_service_api_call' not in file_dict_:
 
-                        tmp_key_ = "global_usage_inter_service_api_call"
+                        tmp_key_ = "inter_service_api_call"
 
                     ## simply add to file_dict_
-                    tmp_ll_.append( { 'url': url_ } )
-                    print('GOBI->', fnm_, tmp_key_, tmp_ll_)
+                    if { 'url': url_ } not in tmp_ll_:
+                        tmp_ll_.append( { 'url': url_ } )
+
                     file_dict_[ tmp_key_ ] = tmp_ll_
 
     def run_loop(self):
+
+        start_time_ = time.time()
 
         while True:
           try:  
@@ -122,6 +139,7 @@ class python_ast_daemon():
                 continue
 
             api_graph_inputs_     = self.ast_API_utils_.createGraphInput( relevant_files_ )
+            print('ST TIME1 ->', time.time() - start_time_) 
             
             ## create a cumulutive json with both inputs
             for non_api_key, non_api_value in non_api_graph_inputs_.items():
@@ -140,6 +158,7 @@ class python_ast_daemon():
             with open( self.log_file_, 'a+' ) as fp:
                 fp.write( str( formatted_time ) + ':: GRAPH INPUTS ::\n' + json.dumps(graph_inputs_,indent=4) + '\n')
             
+            print('ST TIME2 ->', time.time() - start_time_) 
             ## get URL usages 
             url_usages_ = analyze_codebase( os.getenv('CODE_DB_PYTHON') )
             print('URL USAGES->', json.dumps( url_usages_, indent=4 ) )
@@ -169,6 +188,7 @@ class python_ast_daemon():
 
             ##  save the inputs
             self.update_method_summary_( graph_inputs_ )
+            print('ST TIME3 ->', time.time() - start_time_) 
             
             ##NOTE-> ALWAYS COMMENT BELOW !! JUST FOR TESTING
             exit()

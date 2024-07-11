@@ -4347,7 +4347,6 @@ def file_upload_health():
         output = dict({"response": True})
         return jsonify(output)
 
-    
 def decode_pdf_fields(file_path_original, cid, extension, doc_id,
                       doc_name_static, df_to_pass, client_customer_id, table_static_columns,
                       document_type_input, map_customer_static, has_external_sheet, time_overall_1):
