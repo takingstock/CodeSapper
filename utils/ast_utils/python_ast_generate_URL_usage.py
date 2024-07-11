@@ -56,6 +56,44 @@ class NodeVisitorWithParent(ast.NodeVisitor):
                 child.parent = node
         super().generic_visit(node)
 
+class URLExtractor(ast.NodeVisitor):
+    def __init__(self):
+        self.urls = []
+
+    def visit_FunctionDef(self, node):
+        self.current_function = node
+        self.generic_visit(node)
+
+    def visit_Assign(self, node):
+        if isinstance(node.targets[0], ast.Name):
+            var_name = node.targets[0].id
+            if isinstance(node.value, ast.BinOp) and isinstance(node.value.op, ast.Add):
+                # Check if URL is constructed with addition operation
+                url_parts = self.extract_constant_parts(node.value)
+                if url_parts:
+                    self.urls.append({
+                        "variable": var_name,
+                        "parts": url_parts,
+                        "function": self.current_function.name
+                    })
+        self.generic_visit(node)
+
+    def extract_constant_parts(self, node):
+        if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
+            left_parts = self.extract_constant_parts(node.left)
+            right_parts = self.extract_constant_parts(node.right)
+            if left_parts is not None and right_parts is not None:
+                return left_parts + right_parts
+        elif isinstance(node, ast.Constant) and isinstance(node.value, str):
+            if node.value.count("/") > 2:
+                return [node.value]
+        return []
+
+def extract_urls_from_code( tree ):
+    extractor = URLExtractor()
+    extractor.visit(tree)
+    return extractor.urls
+
 def get_all_files(directory):
     """Get all files in the given directory and subdirectories."""
     files_list = []
@@ -79,6 +117,17 @@ def find_urls_in_file(file_path, local_routes):
         ## search for locally defined "routes"
         tree = ast.parse( content )
 
+        ## in some cases, the url defined in a method is a combination of a base URL and the final path like so
+        ### url = backend_platform_url + "/api/v1/globalMapping/ocr?sortBy=docType&orderBy=DESC"
+        #### in this case, since we are looking for API definition across code bases, its the ENDPOINT that matter
+        ##### hence i would benefit by identifying "/api/v1/globalMapping/ocr" and search for it in the codebase
+        indirect_urls_ = extract_urls_from_code( tree )
+        print('INDIRECT URLS=', indirect_urls_)
+        
+        id_urls_ = []
+        if len( indirect_urls_ ) > 0:
+            id_urls_ = [ x['parts'][0] for x in indirect_urls_ ]
+
         for route_ in local_routes:
             for node in ast.walk( tree ):
               if isinstance(node, ast.Assign):
@@ -87,7 +136,7 @@ def find_urls_in_file(file_path, local_routes):
                             route_ not in urls:
                         urls.append( route_ )
 
-    return urls
+    return urls + id_urls_
 
 def extract_urls_from_rhs(node, urls, var_nm):
     if isinstance(node, ast.Str):
@@ -121,6 +170,22 @@ def contains_var_as_BinOP( varNm, node ):
         return any(contains_var_as_BinOP(varNm, arg) for arg in node.args)
     return False
 
+def get_name_or_constant(node, store_):
+        if isinstance(node, ast.Name):
+            store_.append( node.id )
+            return {"type": "variable", "value": node.id}
+        elif isinstance(node, ast.Constant):
+            store_.append( node.value )
+            return {"type": "constant", "value": node.value}
+        elif isinstance(node, ast.BinOp):
+            return {"type": "binop", "value": get_lhs_rhs( node.right, node.left, store_ )}
+        else:
+            return {"type": "unknown", "value": ast.dump(node)}
+
+def get_lhs_rhs( node_rt, node_lt, store_ ):
+    left = get_name_or_constant( node_lt, store_ )
+    rt = get_name_or_constant( node_rt, store_ )
+
 def find_usages(file_path, var_name):
     """Find all usages of the given variable in the given file."""
     print('Finding USAGE', file_path, file_path[-3:])
@@ -141,6 +206,20 @@ def find_usages(file_path, var_name):
         if isinstance(node, ast.Assign):
             for target in node.targets:
                 line_no = node.lineno
+                store_ = []
+                if isinstance(node.value, ast.BinOp):
+                    get_lhs_rhs( node.value.right, node.value.left, store_ )
+                    #print('BINOP-> ::RHS::LHS::', get_lhs_rhs( node.value.right, node.value.left, store_ ), store_)
+                    if var_name in store_:
+                        method_node = node
+                        while not isinstance(method_node, ast.FunctionDef) and hasattr(method_node, 'parent'):
+                            method_node = method_node.parent
+                        if isinstance(method_node, ast.FunctionDef):
+                            usages.append((line_no, method_node.name))
+                            print('ADDED FOR BINOP', var_name, method_node.name)
+                        else:
+                            usages.append((line_no, None))
+
                 if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str) and\
                         var_name in node.value.value:
                     method_node = node
@@ -199,6 +278,7 @@ def analyze_codebase(directory):
     ## now track the urls defined all over the place including usage of locally defined APIs
     for file_path in files_list:
         urls = find_urls_in_file(file_path, local_routes_)
+        print('DHUFF->', urls)
         for url in urls:
             if url in result:
                 result[url].append({'file_name': file_path})
@@ -220,30 +300,49 @@ def analyze_codebase(directory):
             var_name = url[1] if isinstance(url, tuple) else None
             if var_name:
                 usages = find_usages(file_path, var_name)
+                print('POST CHECK ->', usages)
                 for usage in usages:
                     line_no, method_name = usage
-                    info['lines_usage'] = [line_no]
-                    if method_name:
-                        info['method_nm'] = method_name
-                        info['method_begin_code_snippet'] = extract_method_code_snippet(file_path, method_name)
-                        info['method_end_code_snippet'] = None
+                    if 'lines_usage' not in info:
+                        info['lines_usage'] = [line_no]
                     else:
-                        info['method_nm'] = 'NA'
-                        info['method_begin_code_snippet'] = 'NA'
-                        info['method_end_code_snippet'] = 'NA'
+                        info['lines_usage'].append( line_no )
+
+                    if method_name:
+                        if 'method_nm' not in info:
+                            info['method_nm'] = [method_name]
+                        else:
+                            info['method_nm'].append( method_name )
+                    else:
+                        if 'method_nm' not in info:
+                            info['method_nm'] = ['NA']
+                        else:
+                            info['method_nm'].append( 'NA' )
+
             else:
                 usages = find_usages(file_path, url)
+                print('POST CHECK2 ->', usages)
                 for usage in usages:
                     line_no, method_name = usage
-                    info['lines_usage'] = [line_no]
-                    if method_name:
-                        info['method_nm'] = method_name
-                        info['method_begin_code_snippet'] = extract_method_code_snippet(file_path, method_name)
-                        info['method_end_code_snippet'] = None
+                    if 'lines_usage' not in info:
+                        info['lines_usage'] = [line_no]
                     else:
-                        info['method_nm'] = 'NA'
-                        info['method_begin_code_snippet'] = 'NA'
-                        info['method_end_code_snippet'] = 'NA'
+                        info['lines_usage'].append( line_no )
+
+                    if method_name:
+                        if 'method_nm' not in info:
+                            info['method_nm'] = [method_name]
+                        else:
+                            info['method_nm'].append( method_name )
+                    else:
+                        if 'method_nm' not in info:
+                            info['method_nm'] = ['NA']
+                        else:
+                            info['method_nm'].append( 'NA' )
+
+            if 'method_nm' in info: info['method_nm'] = list( set( info['method_nm'] ) )
+            if 'lines_usage' in info: info['lines_usage'] = list( set( info['lines_usage'] ) )
+
     return result
 
 if __name__ == "__main__":

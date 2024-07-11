@@ -11,5 +11,6 @@
 		"context_window": 8192,
 		"test_folder_":"/test_db/test_plans/",
 		"criticality_thresh_": 3
-	}
+	},
+	"graph_inputs": ["/local_db/python/graph_entity_summary.json", "/local_db/js/graph_entity_summary.json"]
 }

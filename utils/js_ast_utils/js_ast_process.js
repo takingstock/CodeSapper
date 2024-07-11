@@ -30,7 +30,7 @@ class JSFileAnalyzer {
             results[filePath] = fileResult;
         }
 
-        const resultsFilePath = path.join(this.directoryPath, 'analysis_results.json');
+        const resultsFilePath = ('../../local_db/js/graph_entity_summary.json');
         fs.writeFileSync(resultsFilePath, JSON.stringify(results, null, 2));
         console.log('Analysis complete. Results saved to', resultsFilePath);
     }
