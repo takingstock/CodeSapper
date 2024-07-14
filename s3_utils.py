@@ -8,6 +8,7 @@ class s3_utils():
 
     def shipToS3( self, file_nm, contents, pickle=False ):
 
+        print('Shipping to bucket ->', self.bucket_name_)
         if pickle == True:    
             pickled_file_ = pickle.dumps( contents )
             self.s3_client.put_object(Bucket=self.bucket_name_, Key=file_nm, Body=pickled_file_ )
