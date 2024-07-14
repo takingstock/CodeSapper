@@ -194,7 +194,7 @@ class generateGraphEntities():
             self.generateFileDeets( file_ )
 
         for file_ in self.relevant_files_:
-            print('GOIN THRU RELEVANT FILES->', file_)
+            #print('GOIN THRU RELEVANT FILES->', file_)
             self.generateLocalUsage( file_ )
             self.generateGlobalUsage( file_ )
 

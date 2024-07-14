@@ -34,17 +34,17 @@ class addAPIUsageToGraph():
 
         for compKey, Url in url_assignments_.items():
             var_defined_in, var_nm, var_defined_ln_no = compKey.split('#')
-            print('CHECKING ref_method_nm = ', ref_method_nm, ' var_nm = ', var_nm, ' Url = ', Url)
+            #print('CHECKING ref_method_nm = ', ref_method_nm, ' var_nm = ', var_nm, ' Url = ', Url)
 
             if ref_method_nm.split('/')[-1] == Url.split('/')[-1]:
-                print('Stage 1->', ref_method_nm, compKey, Url)
+                #print('Stage 1->', ref_method_nm, compKey, Url)
                 ## now iterate through url_usages_ and find all references of "var_nm"
                 for usage_file, usage_list_ in url_usages_.items():
                     
                   for usage_D in usage_list_:
 
                     if len( usage_D ) > 0 and usage_D['url_variable_'] == var_nm:
-                        print('Stage 2->', usage_file, var_nm, usage_D)
+                        #print('Stage 2->', usage_file, var_nm, usage_D)
                         localD= dict()
                         localD['file_path'] = usage_file
                         localD['method_nm'] = self.returnSnippet( usage_file, int(usage_D['ref_method_begin']) - 1 )
@@ -62,7 +62,7 @@ class addAPIUsageToGraph():
                 potential_usage_snippet_ = self.returnSnippet( fnm, int( ref_ln_no_ ) - 1 )
 
                 if ref_method_nm.split('/')[-1] in potential_usage_snippet_:
-                        print('Stage 2.1->', fnm, assignD)
+                        #print('Stage 2.1->', fnm, assignD)
                         localD= dict()
                         localD['file_path'] = fnm
                         localD['method_nm'] = self.returnSnippet( fnm, int(assignD['ref_method_begin']) - 1 )
@@ -103,7 +103,7 @@ class addAPIUsageToGraph():
     def createGraphInput(self, relevant_files_):
 
         url_assignments_, url_assignments_within_methods_, url_usages_ = findAPIDefAndUsage( relevant_files_ )
-        print('OUTSET->', url_usages_)
+        #print('OUTSET->', url_usages_)
         '''
         url_assignments -> 
                         key -> var ( composite key -> fnm , var nm, line no separated by #
