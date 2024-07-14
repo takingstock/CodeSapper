@@ -1,6 +1,6 @@
 import numpy as np
 import json, sys, os, traceback
-
+import s3_utils
 #sys.path.append( os.getenv('GRAPH_UTILS_FOLDER') )
 sys.path.append( os.getenv('AST_UTILS_FOLDER') )
 
@@ -151,15 +151,20 @@ def readMethodsDBJson():
     read the method json and return reference ..let the caller decide what to do with the data
     especially since there might be a mongo call also to be made ..no convoluting this space
     '''
-    _config_path_ = os.getenv("DAEMON_CONFIG")
-    with open( _config_path_, 'r' ) as fp:
-        tmp_json_ = json.load( fp )
+    ## find all code base method summaries from the s3 bucket by using the common graph_entity_summary extension
+    s3_ = s3_utils.s3_utils()
+    rel_files_ = s3_.relevantFiles( pattern='graph_entity_summary' )
 
-    config_ = tmp_json_['python']
-    method_summary_file_ = os.getenv('IKG_HOME') + config_['method_summary']
+    all_methods_db_ = dict()
 
-    with open( method_summary_file_, 'r' ) as fp:
-        return json.load( fp )
+    for method_summary_fnm in rel_files_:
+        summ_ = s3_.readFromS3( method_summary_fnm )
+
+        if summ_ != None:
+            print('ADDING METHOD SUMMARY FOR ->', method_summary_fnm)
+            all_methods_db_.update( json.loads( summ_ ) )
+
+    return all_methods_db_
 
 def createChunkInChangeFile( home_dir_, summary_of_changes ):
     '''
@@ -191,7 +196,7 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
         try:
             begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
         except:
-            print('TRACEBACK->',  traceback.format_exc(), '\n', file_nm_, method_nm_, method_summary_ )
+            print('TRACEBACK->',  traceback.format_exc(), '\n', file_nm_, method_nm_ )
             continue
         
         parsed_ast_ = ast_utils_.parse_ast( file_nm_, ( begin_ln_, end_ln_ ) )
