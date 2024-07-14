@@ -14,9 +14,9 @@ class VariableUsageVisitor(ast.NodeVisitor):
         self.usages = []
 
     def visit_Name(self, node):
-        print(node.lineno)
-        if isinstance( node, ast.Name ):
-            print('VISITING NODE->', node, isinstance(node.ctx, ast.Load), node.id)
+        #print(node.lineno)
+        #if isinstance( node, ast.Name ):
+        #    print('VISITING NODE->', node, isinstance(node.ctx, ast.Load), node.id)
 
         if isinstance(node.ctx, ast.Load) and node.id == self.target_var:
             self.usages.append(node)
@@ -286,7 +286,7 @@ def analyze_codebase(directory):
                 result[url] = [{'file_name': file_path}]
 
     for apiDef in api_defs_:
-        print('ADDING LOCALLY DEFINED->', apiDef['route_path'], apiDef[ 'file_path' ])
+        #print('ADDING LOCALLY DEFINED->', apiDef['route_path'], apiDef[ 'file_path' ])
         if apiDef['route_path'] in result:
             result[ apiDef['route_path'] ].append({'api_definition': apiDef[ 'file_path' ], \
                                                    'file_name': apiDef[ 'file_path' ] })
@@ -300,7 +300,7 @@ def analyze_codebase(directory):
             var_name = url[1] if isinstance(url, tuple) else None
             if var_name:
                 usages = find_usages(file_path, var_name)
-                print('POST CHECK ->', usages)
+                #print('POST CHECK ->', usages)
                 for usage in usages:
                     line_no, method_name = usage
                     if 'lines_usage' not in info:
@@ -321,7 +321,7 @@ def analyze_codebase(directory):
 
             else:
                 usages = find_usages(file_path, url)
-                print('POST CHECK2 ->', usages)
+                #print('POST CHECK2 ->', usages)
                 for usage in usages:
                     line_no, method_name = usage
                     if 'lines_usage' not in info:

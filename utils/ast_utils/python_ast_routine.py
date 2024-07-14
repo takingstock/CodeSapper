@@ -33,7 +33,7 @@ class python_ast_routine():
                 existing_[ key ] = val
 
         ## update done, if any .. now recreate the file
-        print('DUMPLINGS->', self.method_summary_file_, existing_)
+        #print('DUMPLINGS->', self.method_summary_file_, existing_)
         updated_ = json.dumps( existing_, indent=4 )
         try:
             self.s3_.shipToS3( self.method_summary_file_, updated_ )
@@ -52,15 +52,15 @@ class python_ast_routine():
         for fnm_, file_dict_ in current_graph_inputs_.items():
 
            method_details_ = file_dict_["method_details_"]
-           if 'main_multi_prod' in fnm_:
-               print('GOPHER->', local_usage_store_, method_details_)
+           #if 'main_multi_prod' in fnm_:
+           #    print('GOPHER->', local_usage_store_, method_details_)
            ## iterate through local_usage
            for usageD in local_usage_store_:
                 for graph_input_ in method_details_:
                     if "method_nm" in usageD and graph_input_["method_name"] in usageD["method_nm"] and \
                             fnm_ == usageD["file_name"]:
                                 ## init both keys for uniformity
-                                print('THAR->', fnm_, api_endpoint_defined_in_microservice_, usageD["method_nm"])
+                                #print('THAR->', fnm_, api_endpoint_defined_in_microservice_, usageD["method_nm"])
                                 ## now based on usage, overwrite the default values
                                 if api_endpoint_defined_in_microservice_ == True:
                                     if 'local_api_call' in graph_input_:
@@ -161,14 +161,14 @@ class python_ast_routine():
             print('ST TIME2 ->', time.time() - start_time_) 
             ## get URL usages 
             url_usages_ = analyze_codebase( os.getenv('CODE_DB_PYTHON') )
-            print('URL USAGES->', json.dumps( url_usages_, indent=4 ) )
+            #print('URL USAGES->', json.dumps( url_usages_, indent=4 ) )
             '''
             url_usages_ DS = [ { 'url': [{file_name, method_nm}, {file_name, api_definition}]
             ... now check if the URL is defined locally OR inter services and group them by file name
             then finally just add to the graph_inputs_
             '''
             for url_, usage_list in url_usages_.items():
-                print('Processing->', url_)
+                #print('Processing->', url_)
                 api_endpoint_defined_in_microservice_ = False
                 local_usage_store_ = []
 

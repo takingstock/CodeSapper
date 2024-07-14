@@ -189,7 +189,8 @@ class python_ast_daemon():
             ##  save the inputs
             self.update_method_summary_( graph_inputs_ )
             print('ST TIME3 ->', time.time() - start_time_) 
-            
+           
+            '''
             ##NOTE-> ALWAYS COMMENT BELOW !! JUST FOR TESTING
             exit()
 
@@ -203,6 +204,7 @@ class python_ast_daemon():
 
             ## now sleep 
             time.sleep( self.sleep_time_ )
+            '''
           except:
               print('LOOP Stopped!->', traceback.format_exc())
               with open( self.log_file_, 'a+' ) as fp:

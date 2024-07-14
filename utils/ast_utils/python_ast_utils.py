@@ -15,7 +15,7 @@ class CodeAnalyzer(ast.NodeVisitor):
         try:
             code = self.file_ptr_.readlines()[ range_[0]: range_[1] ]
             code = textwrap.dedent( ''.join( code ) )
-            print('CODE_SNIP->', code, file_nm_, ast.parse(code))
+            #print('CODE_SNIP->', code, file_nm_, ast.parse(code))
             if len( code ) == 0: return 'EXIT'
 
             return ast.parse(code)
@@ -31,7 +31,7 @@ class CodeAnalyzer(ast.NodeVisitor):
             local_snippet_ = snippet_arr_
 
         code_snippet_ = textwrap.dedent( ''.join( local_snippet_ ) )
-        print('CODE_SNIP->', code_snippet_)
+        #print('CODE_SNIP->', code_snippet_)
         parsed_ast = ast.parse( code_snippet_ )
         # Parse the code into an AST
         return parsed_ast
@@ -86,7 +86,7 @@ class CodeAnalyzer(ast.NodeVisitor):
                     args = [self.get_arg_value(arg) for arg in decorator.args]
 
                     self.current_method['api_definition'] = args[0] if len( args ) > 0 else 'NA'
-                    print('GOOFING2->', args )
+                    #print('GOOFING2->', args )
 
             ## if no decorator found, mark as NA
             if 'api_definition' not in self.current_method:
@@ -206,7 +206,7 @@ def find_methods_and_traces(source_code):
             ast.increment_lineno(node, source_code.count('\n', 0, node.col_offset))
 
     analyzer.visit(parsed_ast)
-    print( analyzer.methods )
+    #print( analyzer.methods )
     return analyzer.methods, analyzer.ast_linewise_deets_
 
 

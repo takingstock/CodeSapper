@@ -29,7 +29,7 @@ class traverseGraph():
         except Exception as e:
             print(f"An error occurred: {e}")
 
-    def traverse_graph( self, method_name, file_name, usage_type ):
+    def traverse_graph( self, method_name, file_name, mode ):
         # Iterate over edges
         for u, v, edge_data in self.graph_.edges(data=True):
             # Check if edge matches criteria

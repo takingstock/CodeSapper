@@ -57,8 +57,8 @@ class URLAssignmentFinder(ast.NodeVisitor):
                     if isinstance(target, ast.Name):
                         #print( 'GATHERING ->', self.fp_, target.id, url, node.lineno )
                         if self.context_stack:
-                            print('ASSIGNMENT HAPPENING WITHIN FUNC->', \
-                                    self.fp_ +'#'+ target.id +'#' + str(node.lineno) )
+                            #print('ASSIGNMENT HAPPENING WITHIN FUNC->', \
+                            #       self.fp_ +'#'+ target.id +'#' + str(node.lineno) )
 
                             self.add_within_method( self.fp_, target.id, node, self.context_stack[-1] )
                         else:
@@ -78,8 +78,8 @@ class URLAssignmentFinder(ast.NodeVisitor):
                         if isinstance(target, ast.Name):
                             full_url = url_ + right_value
                             if self.context_stack:
-                                print('ASSIGNMENT HAPPENING WITHIN FUNC->', \
-                                        key_fp +'#'+ target.id +'#' + str(node.lineno) )
+                                #print('ASSIGNMENT HAPPENING WITHIN FUNC->', \
+                                #        key_fp +'#'+ target.id +'#' + str(node.lineno) )
 
                                 self.add_within_method( key_fp, target.id, node, self.context_stack[-1] )
                             else:
@@ -263,15 +263,15 @@ def find_url_usages(relevant_files, url_assignments):
 def findAPIDefAndUsage( relevant_files_ ):
     # Step 1: Find URL assignments
     url_assignments, assignment_within_methods_ = find_url_assignments( relevant_files_ ) 
-    print("URL Assignments Found:")
+    #print("URL Assignments Found:")
     code_level_url_assignments_ = dict()
 
     for file_path, urls in url_assignments.items():
         for var, url in urls.items():
-            print(f"File: {file_path}, Variable: {var}, URL: {url}")
+            #print(f"File: {file_path}, Variable: {var}, URL: {url}")
             code_level_url_assignments_[ var ] = url
 
-    print('URL Assignments WITHIN->', assignment_within_methods_)
+    #print('URL Assignments WITHIN->', assignment_within_methods_)
     # Step 1.5: Now gather assignments from non py files ( json, yml's etc )
     npc_ = nonPythonConfigParser( relevant_files_ )
     all_apis_ = npc_.gather_deets()
@@ -282,14 +282,14 @@ def findAPIDefAndUsage( relevant_files_ ):
         ## BUT if its defined in a config file there's 0 chance of the variable being used in the config file
         ## so while searching for its usage the line number is not used
         code_level_url_assignments_[ fnm+'#'+var_name+'#0' ] = url
-        print('NON PY PARSE->', tup)
+        #print('NON PY PARSE->', tup)
 
     #print( code_level_url_assignments_ )
 
 
     # Step 2: Find URL usages
     url_usages = find_url_usages(relevant_files_, url_assignments)
-    print("\nURL Usages Found:")
+    #print("\nURL Usages Found:")
     for file_path, usages in url_usages.items():
         for usageD in usages:
             print( usageD )
