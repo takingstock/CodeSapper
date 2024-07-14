@@ -2,7 +2,16 @@ const fs = require('fs');
 const path = require('path');
 const ts = require('typescript');
 
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
+const { Upload } = require('@aws-sdk/lib-storage');
+const s3_bucket_name_ = "my-networkx-s3-bucket"
+const s3_key_name_ = "js_graph_entity_summary.json"
+
 const { scanDirectory, extractUrls, urlMapping } = require('./grep_urls');
+
+// Configure AWS SDK
+const REGION = 'ap-south-1'; // e.g. 'us-west-1'
+const s3Client = new S3Client({ region: REGION });
 
 class JSFileAnalyzer {
 
@@ -30,9 +39,37 @@ class JSFileAnalyzer {
             results[filePath] = fileResult;
         }
 
-        const resultsFilePath = ('../../local_db/js/graph_entity_summary.json');
-        fs.writeFileSync(resultsFilePath, JSON.stringify(results, null, 2));
-        console.log('Analysis complete. Results saved to', resultsFilePath);
+        //const resultsFilePath = ('../../local_db/js/graph_entity_summary.json');
+        //fs.writeFileSync(resultsFilePath, JSON.stringify(results, null, 2));
+	
+	// Parameters for S3 upload
+	const uploadParams = {
+	  Bucket: s3_bucket_name_,
+	  Key: s3_key_name_,
+	  Body: JSON.stringify(results, null, 2),
+	  ContentType: 'application/json'
+	};  
+
+	// Upload JSON data to S3
+	const run = async () => {
+	  try {
+	    const parallelUploads3 = new Upload({
+	      client: s3Client,
+	      params: uploadParams,
+	    });
+
+	    parallelUploads3.on('httpUploadProgress', (progress) => {
+	      console.log(progress);
+	    });
+
+	    await parallelUploads3.done();
+	    console.log('Successfully uploaded data');
+	  } catch (err) {
+	    console.log('Error uploading data:', err);
+	  }
+	};
+
+        console.log('Analysis complete. Results saved to S3');
     }
 
     getAllJSFiles(directoryPath) {

@@ -12,9 +12,6 @@ import numpy as np
 from trackURLAndFindAPIDefs import findAPIDefAndUsage
 from findAPIDefs import find_api_definitions
 
-sys.path.append( os.getenv('GRAPH_UTILS_FOLDER') )
-from createGraphEntry import generateGraph
-
 class addAPIUsageToGraph():
     def __init__(self):
         self.config_file_path_ = os.getenv("AST_CONFIG")

@@ -6,11 +6,6 @@ class generateGraphEntities():
     def __init__(self):
         ##NOTE-> this MUST be the root dir of all your codebase
         self.src_dir_ = os.getenv('CODE_DB_PYTHON') 
-        self.op_dest_ = self.src_dir_ + '/tmp/tmp_entity_store.json'
-
-        if not os.path.exists( self.src_dir_ + '/tmp/' ):
-            os.makedirs( self.op_dest_ )
-
         self.LOCAL = 'local'
         self.GLOBAL = 'global'
         self.LOCAL_USAGE_KEY = 'local_uses'
@@ -26,12 +21,7 @@ class generateGraphEntities():
             if os.path.isfile(filename) and '.py' in filename[ -3: ]: # filter dirs
                 tmp_store_[ filename ] = os.path.getmtime( filename )
 
-        try:
-            with open( timestamp_file_, 'r' ) as fp:
-                stored_timestamps_ = json.load( fp )
-        except:
-            print('File doesnt exist ! create')
-            stored_timestamps_ = dict()
+        stored_timestamps_ = json.loads( timestamp_file_ )
 
         for fnm, ts_ in tmp_store_.items():
             if fnm not in stored_timestamps_ or ( ( fnm in stored_timestamps_ and stored_timestamps_[fnm] != ts_ ) ):
@@ -44,10 +34,7 @@ class generateGraphEntities():
         if len( delta_ ) == 0:
             self.relevant_files_ = []
 
-        with open( timestamp_file_, 'w' ) as fp:
-            json.dump( stored_timestamps_, fp )
-
-        return self.relevant_files_
+        return self.relevant_files_, stored_timestamps_
 
     def generateFileDeets(self, fnm):
         self.file_master_[ fnm ] = { 'method_details_': [] , 'line_wise_details_': {} }
