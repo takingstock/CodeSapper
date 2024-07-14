@@ -1,6 +1,5 @@
 import networkx as nx
 import json, os, traceback
-from pympler import asizeof
 import pickle, boto3
 
 class generateGraph():
@@ -158,7 +157,7 @@ class generateGraph():
 
             # Deserialize the graph using pickle
             G = pickle.loads(graph_data)
-            print( asizeof.asizeof( G ), G.number_of_nodes(), G.number_of_edges() )
+            print( G.number_of_nodes(), G.number_of_edges() )
 
             print("Graph loaded from S3")
 
@@ -169,6 +168,6 @@ class generateGraph():
 if __name__ == '__main__':
     localGraph = generateGraph()
     localGraph.createGraphEntries()
-    print( asizeof.asizeof( localGraph.graph_ ), localGraph.graph_.number_of_nodes(), localGraph.graph_.number_of_edges() )
+    print( localGraph.graph_.number_of_nodes(), localGraph.graph_.number_of_edges() )
     localGraph.shipToS3()
     localGraph.readFromS3()
