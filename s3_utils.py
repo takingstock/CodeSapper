@@ -24,6 +24,14 @@ class s3_utils():
 
         return response['Body'].read()
 
+    def relevantFiles( self, pattern ):
+
+        response = self.s3_client.list_objects_v2( Bucket=self.bucket_name_ )
+
+        matching_objects = [ obj['Key'] for obj in response.get('Contents', []) \
+                                                  if pattern in obj['Key'] ]
+        return matching_objects
+
 if __name__ == "__main__":
     s3_ = s3_utils()
     print( s3_.readFromS3( 'graph_store.pickle' ) )
