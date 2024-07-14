@@ -8,7 +8,7 @@ import python_ast_routine
 sys.path.append('./utils')
 import trigger_downstream
 
-sys.path.append('./graph_utils/networkx')
+sys.path.append('./utils/graph_utils/networkx')
 import createGraphEntry
 
 def parse_python_file(file_path):
