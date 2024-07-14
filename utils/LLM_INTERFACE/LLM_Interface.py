@@ -10,8 +10,8 @@ class LLM_interface:
         with open( cfg_path_, 'r' ) as fp:
             self.config_ = json.load( fp )
 
-        self.llm_client_ = Groq( api_key=None,  )
-        #self.llm_client_ = Groq( api_key=self.config_['GROQ_KEY'],  )
+        #self.llm_client_ = Groq( api_key=None,  )
+        self.llm_client_ = Groq( api_key=self.config_['GROQ_KEY'],  )
         self.extraction_prompt_ = self.config_['EXTRACTION_PROMPT']
         self.src_folder_ = self.config_['SRC_FOLDER']
         self.dest_folder_ = self.config_['DEST_FOLDER']
