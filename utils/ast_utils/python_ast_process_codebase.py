@@ -73,8 +73,8 @@ class generateGraphEntities():
                 ## the array usage above is redundant for now but the idea is that in case the method
                 ## is called multiple times in the same func / method, we could accomodate ..for now
                 ## the assumption is 1 usage per method 
-                print( mode.upper() ,' Usage of ', called_method_, ' Found in ', method_nm_, \
-                        '\n', tmpD)
+                #print( mode.upper() ,' Usage of ', called_method_, ' Found in ', method_nm_, \
+                #        '\n', tmpD)
                 return tmpD
 
     def generateLocalUsage(self, fnm):
@@ -83,8 +83,8 @@ class generateGraphEntities():
         line_wise_details_ = self.file_master_[ fnm ]['line_wise_details_']
         self.file_master_[ fnm ][self.LOCAL_USAGE_KEY] = []
 
-        print( 'ANALYZING FOR fnm ->', fnm, ' local_methods_ = ', local_methods_, ' line_wise_details_ = ',\
-                line_wise_details_ )
+        #print( 'ANALYZING FOR fnm ->', fnm, ' local_methods_ = ', local_methods_, ' line_wise_details_ = ',\
+        #        line_wise_details_ )
 
         for method_deets_ in local_methods_:
             method_nm_, begin, end = method_deets_['name'], method_deets_['start_line'], method_deets_['end_line']
@@ -122,8 +122,8 @@ class generateGraphEntities():
             for line_no, line_dict in of_line_wise_.items():
                 if ( 'Function' in line_dict and line_dict['Function'] != 'NA' ):
 
-                    print('REF METHODS->', reference_methods_)
-                    print('FILE->', used_method_in_file_, ' line_dict::', line_dict)
+                    #print('REF METHODS->', reference_methods_)
+                    #print('FILE->', used_method_in_file_, ' line_dict::', line_dict)
                     used_in_method_nm_ = self.global_usage( line_dict['Function'], reference_methods_ )
                     
                     ll_ = self.file_master_[ fnm ][self.GLOBAL_USAGE_KEY]

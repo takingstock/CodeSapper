@@ -199,6 +199,7 @@ def start( change_summary_file_, \
     '''
 
     viz_id_store_ = dict()
+    default_home_dir_ = './'
 
     change_summary_ = change_summary_file_
     ## call chunking for the changed method itself, first
