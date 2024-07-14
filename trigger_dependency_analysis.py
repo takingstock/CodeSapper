@@ -1,13 +1,13 @@
 import sys, json, ast, subprocess
 import re, os
 import s3_utils
-sys.path.append('/datadrive/IKG/utils/ast_utils')
+sys.path.append('./utils/ast_utils')
 import python_ast_routine
 
-sys.path.append('/datadrive/IKG/utils')
+sys.path.append('./utils')
 import trigger_downstream
 
-sys.path.append('/datadrive/IKG/utils/graph_utils/networkx')
+sys.path.append('./graph_utils/networkx')
 import createGraphEntry
 
 def parse_python_file(file_path):
