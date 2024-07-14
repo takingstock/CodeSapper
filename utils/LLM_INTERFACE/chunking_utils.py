@@ -191,7 +191,7 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
         try:
             begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
         except:
-            print('TRACEBACK->', traceback.format_exc())
+            print('TRACEBACK->',  traceback.format_exc(), '\n', file_nm_, method_nm_, method_summary_ )
             continue
         
         parsed_ast_ = ast_utils_.parse_ast( file_nm_, ( begin_ln_, end_ln_ ) )
