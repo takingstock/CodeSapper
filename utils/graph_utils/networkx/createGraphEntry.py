@@ -11,7 +11,6 @@ class generateGraph():
         self.bucket_name_ = os.getenv('NETWORKX_S3')
         self.s3_client = boto3.client('s3')
         self.pickle_name_ = 'graph_store.pickle'
-        self.source_folder_ = os.getenv('GRAPH_INPUTS').split(',')
         self.default_edge_wt = 0.1 ## if we intend to use algo's like pagerank then we can use this attribute to mark importance of the edges / relations
 
     def createNodes( self, fnm, all_methods_data_arr, file_level_api_calls_ ):
@@ -99,11 +98,34 @@ class generateGraph():
         except:
             print('EXCPN::EDGE_ADDITION::', traceback.format_exc())
 
-    def createGraphEntries( self ):
+    def list_and_download_files_with_phrase(self, phrase):
+        s3 = boto3.client('s3')
+        paginator = s3.get_paginator('list_objects_v2')
 
-        for src_folder in self.source_folder_:
-            with open( src_folder, 'r' ) as fp:
-                graph_json_ = json.load( fp )
+        filtered_files = []
+
+        for page in paginator.paginate(Bucket=self.bucket_name_):
+            if 'Contents' not in page:
+                continue
+
+            for obj in page['Contents']:
+                key = obj['Key']
+                if phrase in key:
+                    # Download the file content
+                    response = s3.get_object(Bucket=self.bucket_name_, Key=key)
+                    file_content = response['Body'].read().decode('utf-8')
+
+                    # Add to results
+                    filtered_files.append((key, file_content))
+
+        return filtered_files
+
+    def createGraphEntries( self ):
+        
+        src_folder_ = self.list_and_download_files_with_phrase('graph_entity_summary.json')
+
+        for src_folder, content in src_folder_:
+            graph_json_ = json.loads( content )
 
             for file_nm_, method_deets_ in graph_json_.items():
                 method_details_ = method_deets_[ "method_details_" ]
@@ -114,9 +136,8 @@ class generateGraph():
                 self.createNodes( file_nm_, method_details_, file_level_api_calls_ )
 
         ## once nodes are inserted, its time to create the edges
-        for src_folder in self.source_folder_:
-            with open( src_folder, 'r' ) as fp:
-                graph_json_ = json.load( fp )
+        for src_folder, content in src_folder_:
+            graph_json_ = json.loads( content )
 
             for file_nm_, method_deets_ in graph_json_.items():
                 method_details_ = method_deets_[ "method_details_" ]

@@ -3,7 +3,7 @@ import numpy as np
 import time, re, requests, traceback
 
 ## currently using sys.path approach but should be able to create microservices while making performance changes
-from graph_utils.graphTraversal import traverseGraph
+from graph_utils.networkx.graphTraversal import traverseGraph
 ##local packages
 from LLM_INTERFACE import chunking_utils
 from LLM_INTERFACE.LLM_Interface import LLM_interface
@@ -187,8 +187,6 @@ def send_response_mail( subject, email_body, file_=False ):
         return None
 
 def start( change_summary_file_, \
-           default_neo4j_config_=os.getenv("NEO4J_CONFIG"),\
-           default_home_dir_=os.getenv("IKG_HOME"),\
            send_notif_=False
          ):
     '''
@@ -202,14 +200,10 @@ def start( change_summary_file_, \
 
     viz_id_store_ = dict()
 
-    with open( change_summary_file_, 'r' ) as fp:
-        change_summary_ = json.load( fp )
-        ## call chunking for the changed method itself, first
-        chunking_utils.createChunkInChangeFile( default_home_dir_, change_summary_ )
-        print('STAGE1-> self chunking := ', change_summary_)
-
-    with open( default_neo4j_config_, 'r' ) as fp:
-        neo4j_conf_ = json.load( fp )
+    change_summary_ = change_summary_file_
+    ## call chunking for the changed method itself, first
+    chunking_utils.createChunkInChangeFile( default_home_dir_, change_summary_ )
+    print('STAGE1-> self chunking := ', change_summary_)
 
     with open( os.getenv("DAEMON_CONFIG"), 'r' ) as fp:
         daemon_cfg_ = json.load( fp )
@@ -220,7 +214,7 @@ def start( change_summary_file_, \
 
     start_timer_ = time.time()
 
-    tg_ = traverseGraph( default_neo4j_config_ )
+    tg_ = traverseGraph()
     change_summary_comms_ = dict()
 
     for idx, change_record_ in enumerate( change_summary_ ):
@@ -236,8 +230,8 @@ def start( change_summary_file_, \
 
         ## traverse the graph and find global uses first
         #NOTE->COMMENT THE BELOW & UNCOMMENT THE LINES BELOW ..only for testing 
-        global_usage_ = tg_.call_traversal( method_, (default_home_dir_ + fnm), mode=GLOBAL )
-        local_usage_ = tg_.call_traversal( method_, (default_home_dir_ + fnm), mode=LOCAL )
+        global_usage_ = tg_.traverse_graph( method_, (default_home_dir_ + fnm), mode=GLOBAL )
+        local_usage_  = tg_.traverse_graph( method_, (default_home_dir_ + fnm), mode=LOCAL )
 
         changed_D = { 'file_nm': default_home_dir_ + fnm, 'class_nm': class_, 'method_nm': method_ }
 

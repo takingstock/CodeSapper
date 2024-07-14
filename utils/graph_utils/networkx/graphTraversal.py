@@ -12,6 +12,7 @@ class traverseGraph():
         self.s3_client = boto3.client('s3')
         self.pickle_name_ = 'graph_store.pickle'
         self.matching_nodes = []
+        self.readFromS3()
 
     def readFromS3( self ):
 
@@ -41,9 +42,10 @@ class traverseGraph():
 
                     self.matching_nodes.append( self.graph_.nodes[v] )
 
+        return self.matching_nodes
 
 if __name__ == '__main__':
     localGraph = traverseGraph()
-    localGraph.readFromS3()
+    #localGraph.readFromS3()
     localGraph.traverse_graph( "detectTable", "/datadrive/IKG/code_db/python/tblDetMultiPage.py", "global" )
     print( localGraph.matching_nodes )
