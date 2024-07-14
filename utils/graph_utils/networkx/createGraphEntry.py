@@ -25,7 +25,8 @@ class generateGraph():
                     ## if the above works then the key already exists ..so continue
                     continue
                 except:
-                    print('Key doesnt exist ..continue addition!')
+                    pass
+                    #print('Key doesnt exist ..continue addition!')
 
                 self.graph_.add_node( 
                                        key_, 

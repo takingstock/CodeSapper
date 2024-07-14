@@ -78,7 +78,7 @@ def aggregateImpactResponse( changed_D, usage_, change_record_, mode, default_ho
             ## method_context is added in the call made to chunking_utils.createChunkInChangeFile
             ## now concatenate all the snippets and code changes together to ascertain impact of change
             impact_analysis_ = addChangeImpactOnDownstreamFile( change_record_, downstream_snippet_ )
-            time.sleep(30)
+            time.sleep(3)
 
             imp_ll_ = change_record_['impact_analysis'] if 'impact_analysis' in change_record_ else []
             imp_ll_.append( { 'impacted_method': usage_D['file_nm'] +'/'+ usage_D['method_nm'],\
@@ -233,6 +233,9 @@ def start( change_summary_file_, \
         #NOTE->COMMENT THE BELOW & UNCOMMENT THE LINES BELOW ..only for testing 
         global_usage_ = tg_.traverse_graph( method_, (default_home_dir_ + fnm), mode=GLOBAL )
         local_usage_  = tg_.traverse_graph( method_, (default_home_dir_ + fnm), mode=LOCAL )
+
+        print('ABOUT TO START IMPACT ANALSYSIS FOR ->', method_,'::GLOBAL::',global_usage_)
+        print('ABOUT TO START IMPACT ANALSYSIS FOR ->', method_,'::LOCAL::',local_usage_)
 
         changed_D = { 'file_nm': default_home_dir_ + fnm, 'class_nm': class_, 'method_nm': method_ }
 
