@@ -38,7 +38,7 @@ class generateGraph():
                                        method_level_api_call_=data[ "inter_service_api_call" ],\
                                        file_level_api_calls_=file_level_api_calls_
                                     )
-                print('Added graph_node->', fnm, data["method_name"])
+                #print('Added graph_node->', fnm, data["method_name"])
                 ## file_level_api_calls_ are API calls whose source couldn't be traced within the codebase
                 ## meaning they are 99% outside of the codebase
         except:
@@ -66,9 +66,9 @@ class generateGraph():
                                        'method_usage_snippet': local_uses["usage"],\
                                        'weight': self.default_edge_wt }
 
-                    print('Added graph_edge->', graph_entry_parent_['method_name'], \
-                                                graph_entry_child_['method_name'],\
-                                                edge_property_ )
+                    #print('Added graph_edge->', graph_entry_parent_['method_name'], \
+                    #                            graph_entry_child_['method_name'],\
+                    #                            edge_property_ )
 
                     self.graph_.add_edge( parent_key, child_key, **edge_property_ )
 
@@ -88,9 +88,9 @@ class generateGraph():
                                        'method_usage_snippet': local_uses["usage"],\
                                        'weight': self.default_edge_wt }
 
-                    print( 'Added graph_edge->',graph_entry_parent_['method_name'], \
-                                               graph_entry_child_['method_name'],\
-                                               edge_property_ )
+                    #print( 'Added graph_edge->',graph_entry_parent_['method_name'], \
+                    #                           graph_entry_child_['method_name'],\
+                    #                           edge_property_ )
 
                     self.graph_.add_edge( parent_key, child_key, **edge_property_ )
 
@@ -145,7 +145,7 @@ class generateGraph():
     def shipToS3( self ):
         
         graph_pickle_ = pickle.dumps( self.graph_ )
-        print('DUDU->', self.bucket_name_, self.pickle_name_)
+        #print('DUDU->', self.bucket_name_, self.pickle_name_)
         self.s3_client.put_object(Bucket=self.bucket_name_, Key=self.pickle_name_, Body=graph_pickle_ )
 
     def readFromS3( self ):
@@ -157,9 +157,9 @@ class generateGraph():
 
             # Deserialize the graph using pickle
             G = pickle.loads(graph_data)
-            print( G.number_of_nodes(), G.number_of_edges() )
+            #print( G.number_of_nodes(), G.number_of_edges() )
 
-            print("Graph loaded from S3")
+            #print("Graph loaded from S3")
 
         except Exception as e:
             print(f"An error occurred: {e}")
