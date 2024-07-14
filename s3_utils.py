@@ -4,7 +4,7 @@ class s3_utils():
     def __init__( self ):
 
         self.bucket_name_ = os.getenv('NETWORKX_S3')
-        self.s3_client = boto3.client('s3')
+        self.s3_client = boto3.client('s3', region_name='ap-south-1')
 
     def shipToS3( self, file_nm, contents, pickle=False ):
 
