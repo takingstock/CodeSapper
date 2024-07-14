@@ -1,6 +1,5 @@
 import networkx as nx
 import json, os, traceback
-from pympler import asizeof
 import pickle, boto3
 
 class traverseGraph():
@@ -23,7 +22,7 @@ class traverseGraph():
 
             # Deserialize the graph using pickle
             self.graph_ = pickle.loads(graph_data)
-            print( asizeof.asizeof( self.graph_ ), self.graph_.number_of_nodes(), self.graph_.number_of_edges() )
+            print( self.graph_.number_of_nodes(), self.graph_.number_of_edges() )
 
             print("Graph loaded from S3")
 
