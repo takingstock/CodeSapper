@@ -10,6 +10,17 @@ jobs:
   analyze-changes:
     runs-on: ubuntu-latest
 
+    env:
+      NETWORKX_S3: "my-networkx-s3-bucket"
+      CODE_JS_PYTHON: "./code_db/js/"
+      AST_CONFIG: "./config/python/ast_config.json"
+      GRAPH_UTILS_FOLDER: "./utils/graph_utils/"
+      DAEMON_CONFIG: "./config/daemon_config.json"
+      IKG_HOME: "./"
+      CODE_DB_PYTHON: "./code_db/python/"
+      AST_UTILS_FOLDER: "./utils/ast_utils/"
+      LLM_CONFIG_PATH: "./utils/LLM_INTERFACE/llm_config.json"
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -28,18 +39,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Ensure you have a requirements.txt file if dependencies are needed
-
-      - name: Run tests
-        env:
-          NETWORKX_S3: "my-networkx-s3-bucket"
-          CODE_JS_PYTHON: "./code_db/js/"
-          AST_CONFIG: "./config/python/ast_config.json"
-          GRAPH_UTILS_FOLDER: "./utils/graph_utils/"
-          DAEMON_CONFIG: "./config/daemon_config.json"
-          IKG_HOME: "./"
-          CODE_DB_PYTHON: "./code_db/python/"
-          AST_UTILS_FOLDER: "./utils/ast_utils/"
-          LLM_CONFIG_PATH: "./utils/LLM_INTERFACE/llm_config.json"
 
       - name: Identify changed files
         id: changes
