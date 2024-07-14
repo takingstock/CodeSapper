@@ -141,7 +141,7 @@ def parse_diff_file(diff_file):
 
     ## dump into s3
     s3_ = s3_utils.s3_utils()
-    s3_.shipToS3( 'changes_for_further_analysis.json', changes )
+    s3_.shipToS3( 'changes_for_further_analysis.json', json.dumps( changes, indent=4 ) )
 
     ## define all language code scanners below 
     ## ideally 99.99 of the code needs to be inside utils/<language>_ast_utils folder 
