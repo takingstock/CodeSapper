@@ -117,14 +117,14 @@ def getSphereOfInfluence( ast_details_, changed_code_, old_code_ ):
                 max_ln_, min_line_ = -1, 10000
 
                 for ln_no, line_ast_ in ast_details_.items():
-                    print('BRAM->', line_ast_['Values'], eval_tgt_, out_ln_no, ln_no)
+                    #print('BRAM->', line_ast_['Values'], eval_tgt_, out_ln_no, ln_no)
                     if eval_tgt_ in line_ast_['Values'] and max_ln_ < ln_no:
                         max_ln_ = ln_no
 
                     if eval_tgt_ in line_ast_['Values'] and min_line_ > ln_no:
                         min_line_ = ln_no
 
-                print('Furthest assignment of ',eval_tgt_,' is ', max_ln_, min_line_)
+                #print('Furthest assignment of ',eval_tgt_,' is ', max_ln_, min_line_)
                 if min_line_ != 10000 and max_ln_ != -1:
                     print( ast_details_[min_line_], ast_details_[max_ln_] )
 
