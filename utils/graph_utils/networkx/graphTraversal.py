@@ -35,6 +35,9 @@ class traverseGraph():
             # Check if edge matches criteria
             if edge_data.get("usage_type") == mode:
                 # Check if source node (u) matches method name and target node (v) matches file name
+                print('TG1->', self.graph_.nodes[u].get("method_name"),' ? ', method_name,\
+                        ' :: ', self.graph_.nodes[u].get("file_path"), ' ?? ', file_name )
+
                 if self.graph_.nodes[u].get("method_name") == method_name and \
                         self.graph_.nodes[u].get("file_path") == file_name and \
                         v not in self.matching_nodes:
