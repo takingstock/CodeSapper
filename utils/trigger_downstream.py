@@ -256,8 +256,8 @@ def start( change_summary_file_, \
             response = requests.post( viz_url_, json=change_summary_ )
         except:
             response = None
-        print( 'HULLO ALLO->', json.dumps( change_summary_, indent=4 ), response )
-        ## NOTE->post this, we need to trigger an email with the URL of the visualized graph
+        #print( 'HULLO ALLO->', json.dumps( change_summary_, indent=4 ), response )
+        ## NOTE->post this, we need to trigger an email with the URL of the visualized graph if send_notif_ is true
 
         if response is not None and response.status_code == 200 and send_notif_ == True:
             with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
@@ -291,6 +291,9 @@ def start( change_summary_file_, \
 
             with open( impact_file_, 'w' ) as fp:
                 json.dump( change_record_, fp, indent=4 )
+            
+            print('===================IMPACT SUMMARY ',fnm,' :: ', method_,'=======================================')
+            print( json.dumps( change_record_, fp, indent=4 ) )
 
 if __name__ == "__main__":
 
