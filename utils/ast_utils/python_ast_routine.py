@@ -84,37 +84,37 @@ class python_ast_routine():
                                     if 'local_api_call' not in graph_input_:
                                         graph_input_[ 'local_api_call' ] = list()
 
-                ## separate loop for usage method_nm == NA  
-                if "method_nm" in usageD and graph_input_["method_name"] not in usageD["method_nm"] and\
+                    ## separate loop for usage method_nm == NA  
+                    if "method_nm" in usageD and graph_input_["method_name"] not in usageD["method_nm"] and\
                         fnm_ == usageD["file_name"]:
 
-                    tmp_ll_ , tmp_key_ = [], ""
+                        tmp_ll_ , tmp_key_ = [], ""
 
-                    if api_endpoint_defined_in_microservice_ == True and \
-                            'global_usage_local_api_call' in file_dict_:
+                        if api_endpoint_defined_in_microservice_ == True and \
+                                'global_usage_local_api_call' in file_dict_:
 
-                        tmp_ll_ = file_dict_["global_usage_local_api_call"]
-                        tmp_key_ = "global_usage_local_api_call"
-                    elif api_endpoint_defined_in_microservice_ == True and \
-                            'global_usage_local_api_call' not in file_dict_:
+                            tmp_ll_ = file_dict_["global_usage_local_api_call"]
+                            tmp_key_ = "global_usage_local_api_call"
+                        elif api_endpoint_defined_in_microservice_ == True and \
+                                'global_usage_local_api_call' not in file_dict_:
 
-                        tmp_key_ = "global_usage_local_api_call"
+                            tmp_key_ = "global_usage_local_api_call"
 
-                    elif api_endpoint_defined_in_microservice_ != True and \
-                            'inter_service_api_call' in file_dict_:
+                        elif api_endpoint_defined_in_microservice_ != True and \
+                                'inter_service_api_call' in file_dict_:
 
-                        tmp_ll_ = file_dict_["inter_service_api_call"]
-                        tmp_key_ = "inter_service_api_call"
-                    elif api_endpoint_defined_in_microservice_ != True and \
-                            'inter_service_api_call' not in file_dict_:
+                            tmp_ll_ = file_dict_["inter_service_api_call"]
+                            tmp_key_ = "inter_service_api_call"
+                        elif api_endpoint_defined_in_microservice_ != True and \
+                                'inter_service_api_call' not in file_dict_:
 
-                        tmp_key_ = "inter_service_api_call"
+                            tmp_key_ = "inter_service_api_call"
 
-                    ## simply add to file_dict_
-                    if { 'url': url_ } not in tmp_ll_:
-                        tmp_ll_.append( { 'url': url_ } )
+                        ## simply add to file_dict_
+                        if { 'url': url_ } not in tmp_ll_:
+                            tmp_ll_.append( { 'url': url_ } )
 
-                    file_dict_[ tmp_key_ ] = tmp_ll_
+                        file_dict_[ tmp_key_ ] = tmp_ll_
 
     def run_routine(self):
             
