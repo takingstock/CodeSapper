@@ -31,6 +31,7 @@ class traverseGraph():
 
     def traverse_graph( self, method_name, file_name, mode ):
         # Iterate over edges
+        matching_nodes = []
         for u, v, edge_data in self.graph_.edges(data=True):
             # Check if edge matches criteria
             '''
@@ -44,9 +45,9 @@ class traverseGraph():
                         self.graph_.nodes[u].get("file_path") == file_name and \
                         v not in self.matching_nodes:
 
-                    self.matching_nodes.append( self.graph_.nodes[v] )
+                    matching_nodes.append( self.graph_.nodes[v] )
 
-        return self.matching_nodes
+        return matching_nodes
 
 if __name__ == '__main__':
     localGraph = traverseGraph()

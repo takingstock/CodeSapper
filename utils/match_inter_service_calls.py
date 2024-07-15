@@ -63,8 +63,13 @@ def updateGlobalUsage( outer_file_, inner_file_ ):
                             #print('Inner API ::', inner_api_call_,' :: is defined in ::', of_api_definition_,\
                             #                      inner_method )
                             ## now add inner method details to of_method
+
                             if "global_uses" in of_method:
                                 ll_ = of_method["global_uses"]
+                                existing_tmp_ = [ x['file_path'] for x in ll_ ]
+                                if inner_file in existing_tmp_:
+                                    ## DONT ADD DUPES !!
+                                    continue
                             else:
                                 ll_ = list()
 
