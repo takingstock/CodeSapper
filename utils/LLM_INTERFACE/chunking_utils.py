@@ -275,6 +275,7 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
     method_summary_ = readMethodsDBJson()
     chunks_for_analysis_ = []
     downstream_default_context_window_ = 20 ## lines of code 
+    begin_ln_ = None
 
     ## if we are looking for a method thats the implementation of an API . ie the endpoint
     ## for e.g. in python flask, the method name is something else BUT the API endpoint goes by a diff name
@@ -336,13 +337,15 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
         code_review_range_ = ( 10000, -1 )
 
 
-    if code_review_range_[0] == 10000 or code_review_range_[1] == -1 or \
-            ( begin_ln_ == end_ln_ ) or ( end_ln_ < begin_ln_ ):
-
+    if code_review_range_[0] == 10000 or code_review_range_[1] == -1: 
         begin_ln_, end_ln_ = range_for_llm
         print('Sending the entire code of <', downstream_point_of_entry_,'> for review', begin_ln_, end_ln_)
     else:
+        if begin_ln_ == None:
+            begin_ln_ = code_review_range_[0]
+
         _, end_ln_ = code_review_range_ ## begin will be point of entry ..just get the furthest assignment
+
         print('Found contextual subtext for <', downstream_point_of_entry_,'>', begin_ln_, end_ln_ )
 
     ast_utils_.gc()
