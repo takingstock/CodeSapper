@@ -58,6 +58,7 @@ class LLM_interface:
     def executeInstruction(self, mode, msg ):
         # modes -> MODULE_VARIABLES, PACKAGE_VARIABLES, METHODS
         content_ = ( self.extraction_prompt_[ mode ] if mode != None else "" ) + "\n" + msg
+        print('PRE_EXEC=>', len( content_ ))
         print('executeInstruction =>', content_)
         chat_completion = self.llm_client_.chat.completions.create(
                         messages=[
