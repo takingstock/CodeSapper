@@ -293,6 +293,11 @@ def start( change_summary_file_, \
                 json.dump( change_record_, fp, indent=4 )
             
             print('===================IMPACT SUMMARY ',fnm,' :: ', method_,'=======================================')
+
+            print('====== BASE CHANGE IMPACT=>', "NO IMPACT" if change_record_["base_change_impact"] in ['','NA']\
+                                                             else change_record_["base_change_impact"] )
+            
+            print('====== BASE CHANGE CRITICALITY=>', criticality_) 
             print( json.dumps( change_record_, indent=4 ) )
 
 if __name__ == "__main__":
