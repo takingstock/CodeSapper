@@ -39,9 +39,6 @@ class JSFileAnalyzer {
             results[filePath] = fileResult;
         }
 
-        //const resultsFilePath = ('../../local_db/js/graph_entity_summary.json');
-        //fs.writeFileSync(resultsFilePath, JSON.stringify(results, null, 2));
-	
 	// Parameters for S3 upload
 	const uploadParams = {
 	  Bucket: s3_bucket_name_,
@@ -69,6 +66,7 @@ class JSFileAnalyzer {
 	  }
 	};
 
+	run();    
         console.log('Analysis complete. Results saved to S3');
     }
 
