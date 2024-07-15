@@ -105,7 +105,7 @@ def connectInterServiceCalls():
             if outer_file_nm == inner_file_nm:
                         continue ## obviously, we ignore the files that are exactly same
 
-            updateGlobalUsage( outer_file_, inner_file_ )
+            updateGlobalUsage( outer_file_jsn_, inner_file_jsn_ )
 
             ## write back all the contents
             try:

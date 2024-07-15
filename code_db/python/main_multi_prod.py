@@ -3094,7 +3094,8 @@ def extract_v2(file,
                         "flag_3_5" : False, # default
                         "flag_vendor_exist" : True,
                         "original_resolution_flag" : original_resolution_flag,
-                        "table_columns" : table_static_columns,
+                        # "table_columns" : table_static_columns,
+                        "table_columns" : table_id_all_list,
                         "table_thresholds" : cth_column_list,
                         "table_datatypes" : datatype_columns_list,
                         "header_table" : "H",
@@ -3586,7 +3587,8 @@ def extract_v2(file,
                             "flag_3_5" : flag_3_5,
                             "flag_vendor_exist" : flag_vendor_exist,
                             "original_resolution_flag" : original_resolution_flag,
-                            "table_columns" : table_static_columns,
+                            # "table_columns" : table_static_columns,
+                            "table_columns" : table_id_all_list,
                             "table_thresholds" : cth_column_list,
                             "table_datatypes" : datatype_columns_list,
                             "timestr" : timestr,
@@ -3743,7 +3745,8 @@ def extract_v2(file,
                         "flag_3_5" : False,
                         "flag_vendor_exist" : True,
                         "original_resolution_flag" : original_resolution_flag,
-                        "table_columns" : table_static_columns,
+                        # "table_columns" : table_static_columns,
+                        "table_columns" : table_id_all_list,
                         "table_datatypes" : datatype_columns_list,
                         "header_table" : "H",
                         "feedback_column_dict" : {},
@@ -3867,7 +3870,8 @@ def extract_v2(file,
                         "flag_3_5" : False,
                         "flag_vendor_exist" : True,
                         "original_resolution_flag" : original_resolution_flag,
-                        "table_columns" : table_static_columns,
+                        # "table_columns" : table_static_columns,
+                        "table_columns" : table_id_all_list,
                         "table_thresholds" : cth_column_list,
                         "table_datatypes" : datatype_columns_list,
                         "header_table" : "H",
@@ -3959,7 +3963,8 @@ def extract_v2(file,
                         "flag_3_5" : False,
                         "flag_vendor_exist" : True,
                         "original_resolution_flag" : original_resolution_flag,
-                        "table_columns" : table_static_columns,
+                        # "table_columns" : table_static_columns,
+                        "table_columns" : table_id_all_list,
                         "table_thresholds" : cth_column_list,
                         "table_datatypes" : datatype_columns_list,
                         "header_table" : "H",
@@ -4347,6 +4352,7 @@ def file_upload_health():
         output = dict({"response": True})
         return jsonify(output)
 
+    
 def decode_pdf_fields(file_path_original, cid, extension, doc_id,
                       doc_name_static, df_to_pass, client_customer_id, table_static_columns,
                       document_type_input, map_customer_static, has_external_sheet, time_overall_1):
@@ -4763,8 +4769,8 @@ def file_upload_v1():
             # pdf_cleaned_path = os.getcwd() + "/uploads/" + name
             pdf_cleaned_path = file_write_path
             try:
-                start_page = (str(request.form["start_page"]))
-                end_page = (str(request.form["end_page"]))
+                start_page = int(str(request.form["start_page"]))
+                end_page = int(str(request.form["end_page"]))
                 
                 print("start_page :", start_page)
                 print("end_page :", end_page)
