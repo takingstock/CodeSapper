@@ -188,7 +188,7 @@ def get_lhs_rhs( node_rt, node_lt, store_ ):
 
 def find_usages(file_path, var_name):
     """Find all usages of the given variable in the given file."""
-    print('Finding USAGE', file_path, file_path[-3:])
+    #print('Finding USAGE', file_path, file_path[-3:])
     if '.py' not in file_path[-3:]: return []
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
@@ -197,7 +197,7 @@ def find_usages(file_path, var_name):
                                          replace(',','').replace('{','').replace('}','')
 
     usages = []
-    print('CHECKING FOR ->', var_name)
+    #print('CHECKING FOR ->', var_name)
 
     visitor = NodeVisitorWithParent()
     visitor.visit(tree)
