@@ -70,7 +70,7 @@ def call_code_scanners():
     command = ['node', script_path, argument]    
 
     result = subprocess.run( command, capture_output=True, text=True, check=True )
-    print('T2->', command, len( result ))
+    print('T2->', command, ( result ))
 
     match_inter_service_calls.connectInterServiceCalls()
 
