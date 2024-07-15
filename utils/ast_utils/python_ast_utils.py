@@ -13,8 +13,8 @@ class CodeAnalyzer(ast.NodeVisitor):
     def parse_ast( self, file_nm_, range_):
         self.file_ptr_ = open( file_nm_, 'r' )
         try:
-            print('LEN OF FILE->', len(self.file_ptr_.readlines()), range_ )
-            self.file_ptr_.seek(0) ## the above call will take the file pointer to the end of the file! reset to begin
+            #print('LEN OF FILE->', len(self.file_ptr_.readlines()), range_ )
+            #self.file_ptr_.seek(0) ## the above call will take the file pointer to the end of the file! reset to begin
             code = self.file_ptr_.readlines()[ range_[0]: range_[1] ]
             print('PRE CODE_SNIP->', [code] )
             code = textwrap.dedent( ''.join( code ) )
