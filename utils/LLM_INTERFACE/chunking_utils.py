@@ -153,7 +153,7 @@ def readMethodsDBJson():
     '''
     ## find all code base method summaries from the s3 bucket by using the common graph_entity_summary extension
     s3_ = s3_utils.s3_utils()
-    rel_files_ = s3_.relevantFiles( pattern='graph_entity_summary' )
+    rel_files_ = s3_.relevantFiles( pattern=os.getenv('GRAPH_INPUT_FILE_NM_SUFFIX') )
 
     all_methods_db_ = dict()
 

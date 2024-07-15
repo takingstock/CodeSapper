@@ -1,5 +1,6 @@
 import json, os 
 import numpy as np
+import s3_utils
 
 with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
     config_js_ = json.load( fp )
@@ -37,12 +38,8 @@ def innerCallingOuter( inner_api_call_, of_api_definition_ ):
 
 def updateGlobalUsage( outer_file_, inner_file_ ):
     ## since the format of ALL graph inputs is the same
-    print('AIVO->', outer_file_, inner_file_ )
-    with open( os.getenv('IKG_HOME') + outer_file_, 'r' ) as fp:
-        of_json_ = json.load( fp )
-
-    with open( os.getenv('IKG_HOME') + inner_file_, 'r' ) as fp:
-        inner_json_ = json.load( fp )
+    #print('AIVO->', outer_file_, inner_file_ )
+    of_json_, inner_json_ = outer_file_, inner_file_
 
     for of_file, of_contents_ in of_json_.items():
         of_method_details_ = of_contents_["method_details_"]
@@ -85,23 +82,38 @@ def updateGlobalUsage( outer_file_, inner_file_ ):
                             print( 'GLOBAL USAGE ADD->', of_method["global_uses"][-1], ' ::For:: ', \
                                     of_file )
 
-    ## write back all the contents
-    with open( os.getenv('IKG_HOME') + outer_file_, 'w' ) as fp:
-        json.dump( of_json_, fp, indent=4 )
-
-    with open( os.getenv('IKG_HOME') + inner_file_, 'w' ) as fp:
-        json.dump( inner_json_, fp, indent=4 )
-
 def connectInterServiceCalls():
+    '''
+    trawl through s3 and pick all relevant method summary files first, then iterate and match inter service calls
+    '''
+    ## get the json's from the s3 buckets
+    s3_ = s3_utils.s3_utils()
+    rel_files_ = s3_.relevantFiles( pattern=os.getenv('GRAPH_INPUT_FILE_NM_SUFFIX') )
 
-    graph_input_repo_ = config_js_["graph_inputs"]
+    graph_input_repo_ = dict()
+
+    for method_summary_fnm in rel_files_:
+        summ_ = s3_.readFromS3( method_summary_fnm )
+
+        if summ_ != None:
+            print('ADDING METHOD SUMMARY FOR ->', method_summary_fnm)
+            graph_input_repo_[ method_summary_fnm ] = ( json.loads( summ_ ) )
 
     ## process the graph inputs of different languages as pairs
-    for outer_file_ in ( graph_input_repo_ ):
-        for inner_file_ in ( graph_input_repo_ ):
-            if outer_file_ == inner_file_: continue ## obviously, we ignore the files that are exactly same
+    for outer_file_nm, outer_file_jsn_ in ( graph_input_repo_.items() ):
+        for inner_file_nm, inner_file_jsn_ in ( graph_input_repo_.items() ):
+            if outer_file_nm == inner_file_nm:
+                        continue ## obviously, we ignore the files that are exactly same
 
             updateGlobalUsage( outer_file_, inner_file_ )
+
+            ## write back all the contents
+            try:
+                self.s3_.shipToS3( outer_file_nm, json.dumps( outer_file_jsn_, indent=4 ) )
+                self.s3_.shipToS3( inner_file_nm, json.dumps( inner_file_jsn_, indent=4 ) )
+            except:
+                print('EXCPN::"match_inter_service_calls.py"::connectInterServiceCalls:: writing fail!!')
+
 
 if __name__ == "__main__":
     connectInterServiceCalls()
