@@ -274,6 +274,7 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
     ast_utils_ = CodeAnalyzer()
     method_summary_ = readMethodsDBJson()
     chunks_for_analysis_ = []
+    downstream_default_context_window_ = 20 ## lines of code 
 
     ## if we are looking for a method thats the implementation of an API . ie the endpoint
     ## for e.g. in python flask, the method name is something else BUT the API endpoint goes by a diff name
@@ -293,30 +294,47 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
                                                  change_details_['method_nm'], api_endpoint_, method_summary_ )
 
     parsed_ast_ = ast_utils_.parse_ast( downstream_file_details_['file_nm'], range_for_snippet )
-    ast_utils_.visit( parsed_ast_ )
-    ast_details_ = ast_utils_.ast_linewise_deets_
 
-    begin_ln_, downstream_point_of_entry_ = findPointOfEntry( downstream_file_details_['file_nm'], \
-                                                                range_for_snippet,\
-                                                                                change_details_ )
-    if downstream_point_of_entry_ == None:
-        print('Point of entry not found ..raise EXCPN')
-        return None
-
-    try:
-        changed_code_ = old_code_ = downstream_point_of_entry_
-        ## since we want to understand how much of the downstream code is actually impacted by teh upstream
-        ## method change we would like to ONLY shortlist those lines of code which are actually impacted
-        ## both changed and old can contain the same input since the below method only returns the best possible
-        ## range considering both
-        code_review_range_ = getSphereOfInfluence( ast_details_, changed_code_, old_code_ )
-    except:
-        print('CODE CONTEXT EXTRACTION ERROR->', traceback.format_exc())
-        code_review_range_ = ( 10000, -1 )
-
-    print('TIMMY->', code_review_range_)
     with open( downstream_file_details_['file_nm'], 'r' ) as fp:
         tmp_contents_ = fp.readlines()
+
+    if parsed_ast_ != None:
+        ## either an exception OR a non PYTHON file will give this error
+        ## since with inter service calls, we can definitely encounter non python files, in the else
+        ## we can use a default number of lines above and below the "range_for_snippet" above
+        ## so if the method ABC defined in python, is being used, via API in a node js file
+        ## and the usage is <http URL>/ABC & its on line 271, we simply use a range from 251 to 291 for the LLM
+        ## summary
+
+        ast_utils_.visit( parsed_ast_ )
+        ast_details_ = ast_utils_.ast_linewise_deets_
+
+        begin_ln_, downstream_point_of_entry_ = findPointOfEntry( downstream_file_details_['file_nm'], \
+                                                                    range_for_snippet,\
+                                                                                    change_details_ )
+        if downstream_point_of_entry_ == None:
+            print('Point of entry not found ..raise EXCPN')
+            return None
+
+        try:
+            changed_code_ = old_code_ = downstream_point_of_entry_
+            ## since we want to understand how much of the downstream code is actually impacted by teh upstream
+            ## method change we would like to ONLY shortlist those lines of code which are actually impacted
+            ## both changed and old can contain the same input since the below method only returns the best possible
+            ## range considering both
+            code_review_range_ = getSphereOfInfluence( ast_details_, changed_code_, old_code_ )
+        except:
+            print('CODE CONTEXT EXTRACTION ERROR->', traceback.format_exc())
+            code_review_range_ = ( 10000, -1 )
+
+        print('TIMMY->', code_review_range_)
+
+    else if len( range_for_snippet  ) > 0:
+        code_review_range_ = ( max( range_for_snippet - downstream_default_context_window_, 0 ), \
+                              min( range_for_snippet + downstream_default_context_window_, len(tmp_contents_)-1 ) )
+    else:
+        code_review_range_ = ( 10000, -1 )
+
 
     if code_review_range_[0] == 10000 or code_review_range_[1] == -1 or \
             ( begin_ln_ == end_ln_ ) or ( end_ln_ < begin_ln_ ):
