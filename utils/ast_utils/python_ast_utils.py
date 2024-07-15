@@ -74,6 +74,7 @@ class CodeAnalyzer(ast.NodeVisitor):
             self.current_method = None
 
         self.current_method = {'name': node.name, 'start_line': node.lineno}
+        print('Begin NEW METHOD->', node.name,'AT LINE->', node.lineno)
         self.generic_visit(node)
 
         if self.current_method:
