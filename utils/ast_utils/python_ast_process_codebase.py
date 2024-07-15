@@ -48,6 +48,8 @@ class generateGraphEntities():
         ## first element -> array of dicts containing method deets {'name': , 'start_line': , 'end_line': }
         ## 2nd element -> dict with key-> line # and val -> dict ( 'Type': , 'Targets': , 'Ending': , 'Values': , 'Function': )
         if file_deets_ != None and len( file_deets_ ) > 0:
+            if 'main_multi' in fnm:
+              print('TYAGARAJA->', file_deets_[0])
             self.file_master_[ fnm ] = { 'method_details_': file_deets_[0] , 'line_wise_details_': file_deets_[1] }
 
     def returnSnippet(self, fnm, begin, end=None ):
