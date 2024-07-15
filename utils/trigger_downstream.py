@@ -10,7 +10,7 @@ from LLM_INTERFACE.LLM_Interface import LLM_interface
 from notifications import sendEmail
 from test_utils import test_chunking_utils
 ##glocal "ENUMS"
-GLOBAL, LOCAL = "global_uses", "local_uses"
+GLOBAL, LOCAL = "global", "local"
 
 def findPatterns(str1, pattern_, sub_pattern_):
     '''
