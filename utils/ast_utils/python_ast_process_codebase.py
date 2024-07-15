@@ -134,7 +134,7 @@ class generateGraphEntities():
                             ll_.append( usageD_ )
 
                         self.file_master_[ fnm ][self.GLOBAL_USAGE_KEY] = ll_
-                        print('GLOBAL USAGE->', used_in_method_nm_, ' line_dict::', ll_)
+                        print('GLOBAL USAGE->', used_in_method_nm_, ' line_dict::', usageD_)
 
     def convert( self, js_ ):
         resp_ = dict()
