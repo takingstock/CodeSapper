@@ -25,7 +25,7 @@ def findRange( file_, input_method_, method_json_ ):
 
     return []
 
-def findRangeDownstream( file_, input_method_, method_json_ ):
+def findRangeDownstream( file_, input_method_, api_ep_, method_json_ ):
 
     with open( file_, 'r' ) as fp:
         usage_file_ = fp.readlines()
@@ -40,7 +40,7 @@ def findRangeDownstream( file_, input_method_, method_json_ ):
                     if range_[1] < range_[0]: continue
                     ## now find point of entry 
                     for idx, ln_ in enumerate( usage_file_[ range_[0]: range_[1] ] ):
-                        if input_method_ in ln_:
+                        if input_method_ in ln_ or api_ep_ in ln_:
                             print( 'POE->', usage_file_[ range_[0] + idx : range_[0] + idx + 1 ] )
                             return [ range_[0] + idx , range_[0] + idx + 1 ], content['range']
 
@@ -275,8 +275,22 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
     method_summary_ = readMethodsDBJson()
     chunks_for_analysis_ = []
 
+    ## if we are looking for a method thats the implementation of an API . ie the endpoint
+    ## for e.g. in python flask, the method name is something else BUT the API endpoint goes by a diff name
+    ## and this API endpoint is actually whats being invoked in another codebase / same one ..iterate
+    ## through method summary and , in case the api_endpoint is ! NA then send that also
+    print('RETREIVAL API_ENDPOINT=>', change_details_['file_nm'], change_details_['file_nm'] in method_summary_)
+    api_endpoint_ = 'NA'
+
+    if change_details_['file_nm'] in method_summary_:
+        changed_method_details_ = method_summary_[ change_details_['file_nm'] ]['method_details_']
+
+        for deets in changed_method_details_:
+            if deets['method_name'] == change_details_['method_nm']:
+                api_endpoint_ = deets['api_end_point']
+
     range_for_snippet, range_for_llm = findRangeDownstream( downstream_file_details_['file_nm'], \
-                                                            change_details_['method_nm'], method_summary_ )
+                                                 change_details_['method_nm'], api_endpoint_, method_summary_ )
 
     parsed_ast_ = ast_utils_.parse_ast( downstream_file_details_['file_nm'], range_for_snippet )
     ast_utils_.visit( parsed_ast_ )
