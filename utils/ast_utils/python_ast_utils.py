@@ -15,13 +15,12 @@ class CodeAnalyzer(ast.NodeVisitor):
         try:
             code = self.file_ptr_.readlines()[ range_[0]: range_[1] ]
             code = textwrap.dedent( ''.join( code ) )
-            #print('CODE_SNIP->', code, file_nm_, ast.parse(code))
+            print('CODE_SNIP->', code, file_nm_, ast.parse(code))
             if len( code ) == 0: return 'EXIT'
 
             return ast.parse(code)
         except:
-            with open( self.err_log_, 'a+') as fp:
-                fp.write('EXCPN->' + file_nm_ + ' :: \n' + traceback.format_exc() + '\n')
+            print('EXCPN->' + file_nm_ + ' :: \n' + traceback.format_exc() + '\n')
             return None
     
     def parse_ast_snippet( self, snippet_arr_):
