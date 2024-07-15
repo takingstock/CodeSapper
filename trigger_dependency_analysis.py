@@ -7,6 +7,7 @@ import python_ast_routine
 
 sys.path.append('./utils')
 import trigger_downstream
+import match_inter_service_calls
 
 sys.path.append('./utils/graph_utils/networkx')
 import createGraphEntry
@@ -63,12 +64,15 @@ def call_code_scanners():
     py_ast_.run_routine()
 
     ## now call the js code base scanner ..we shall use subprocess here since JS can't obviously be directly invoked
-    script_path = 'utils/js_ast_utils/js_ast_process.js'
+    script_path = os.getenv('CODE_JS_SCANNER')
     argument = os.getenv('CODE_JS_PYTHON')
 
     command = ['node', script_path, argument]    
 
     result = subprocess.run( command, capture_output=True, text=True, check=True )
+
+    match_inter_service_calls.connectInterServiceCalls()
+
 
 def impact_analysis( changes ):
     cumulative_graph_ = createGraphEntry.generateGraph()
@@ -78,7 +82,6 @@ def impact_analysis( changes ):
     ##obtain reference to graph ..we shall be traversing this graph 
     in_mem_graph_ = cumulative_graph_.graph_
     ## call downstream trigger !!
-    ##NOTE-> make changes to the trigger file ..wont work in current avatar
     trigger_downstream.start( changes )
 
 def parse_diff_file(diff_file):

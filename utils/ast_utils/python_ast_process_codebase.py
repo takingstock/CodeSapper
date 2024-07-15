@@ -123,7 +123,6 @@ class generateGraphEntities():
                 if ( 'Function' in line_dict and line_dict['Function'] != 'NA' ):
 
                     #print('REF METHODS->', reference_methods_)
-                    #print('FILE->', used_method_in_file_, ' line_dict::', line_dict)
                     used_in_method_nm_ = self.global_usage( line_dict['Function'], reference_methods_ )
                     
                     ll_ = self.file_master_[ fnm ][self.GLOBAL_USAGE_KEY]
@@ -135,6 +134,7 @@ class generateGraphEntities():
                             ll_.append( usageD_ )
 
                         self.file_master_[ fnm ][self.GLOBAL_USAGE_KEY] = ll_
+                        print('GLOBAL USAGE->', used_in_method_nm_, ' line_dict::', ll_)
 
     def convert( self, js_ ):
         resp_ = dict()

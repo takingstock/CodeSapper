@@ -13,7 +13,9 @@ jobs:
     env:
       NETWORKX_S3: "my-networkx-s3-bucket"
       CODE_JS_PYTHON: "./code_db/js/"
+      CODE_JS_SCANNER: "./utils/js_ast_utils/js_ast_process.js"
       AST_CONFIG: "./config/python/ast_config.json"
+      GRAPH_INPUT_FILE_NM_SUFFIX: "graph_entity_summary"
       GRAPH_UTILS_FOLDER: "./utils/graph_utils/"
       DAEMON_CONFIG: "./config/daemon_config.json"
       IKG_HOME: "./"
