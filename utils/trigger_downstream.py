@@ -293,7 +293,7 @@ def start( change_summary_file_, \
                 json.dump( change_record_, fp, indent=4 )
             
             print('===================IMPACT SUMMARY ',fnm,' :: ', method_,'=======================================')
-            print( json.dumps( change_record_, fp, indent=4 ) )
+            print( json.dumps( change_record_, indent=4 ) )
 
 if __name__ == "__main__":
 
