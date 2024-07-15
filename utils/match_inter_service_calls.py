@@ -1,9 +1,6 @@
-import json, os 
+import json, os, traceback
 import numpy as np
 import s3_utils
-
-with open( os.getenv('DAEMON_CONFIG'), 'r' ) as fp:
-    config_js_ = json.load( fp )
 
 def cleanUp( t1, t2 ):
     '''
@@ -15,14 +12,14 @@ def cleanUp( t1, t2 ):
 def innerCallingOuter( inner_api_call_, of_api_definition_ ):
     '''
     the api definition could be a simple route like "/someAPI" and the call could be
-    something like "https://<some_ip_addr>:<port_num>/someAPI?key='abc'..."
+    something like "https://<some_ip_addr>:<port_num>/someAPI?key='abc'..." ; so lets match !!
     '''
     shorter_url_ = inner_api_call_ if len( inner_api_call_ ) < len( of_api_definition_ ) else of_api_definition_
     longer_url_  = of_api_definition_ if len( inner_api_call_ ) < len( of_api_definition_ ) else inner_api_call_
 
     shorter_arr_, longer_arr_ = shorter_url_.split('/'), longer_url_.split('/')
 
-    print('DODO-> shorter_, longer_::', shorter_arr_, longer_arr_)
+    #print('DODO-> shorter_, longer_::', shorter_arr_, longer_arr_)
 
     if len( shorter_arr_) >= 2 and shorter_url_ in longer_url_:
         return True
@@ -52,19 +49,19 @@ def updateGlobalUsage( outer_file_, inner_file_ ):
             for of_method in of_method_details_:
                 for inner_method in inner_method_details_:
                     ## DEFENSIVE CHECK
-                    print('B4 DEFENSIVE->INNER::', inner_method, '::OUTER::', of_method)
+                    #print('B4 DEFENSIVE->INNER::', inner_method, '::OUTER::', of_method)
                     if "inter_service_api_call" not in inner_method or "api_end_point" not in of_method: continue
 
                     inner_api_call_ = inner_method["inter_service_api_call"]
                     of_api_definition_ = of_method["api_end_point"]
 
                     if of_api_definition_ == "NA" or len( inner_api_call_ ) == 0: continue
-                    print('OUTER_URL::', of_api_definition_, of_file, '::INNER_URL::', inner_api_call_, inner_file)
+                    #print('OUTER_URL::', of_api_definition_, of_file, '::INNER_URL::', inner_api_call_, inner_file)
 
                     for call in inner_api_call_: ## since , theoretically , we can call multiple APIs from a method
                         if innerCallingOuter( call, of_api_definition_ ):
-                            print('Inner API ::', inner_api_call_,' :: is defined in ::', of_api_definition_,\
-                                                  inner_method )
+                            #print('Inner API ::', inner_api_call_,' :: is defined in ::', of_api_definition_,\
+                            #                      inner_method )
                             ## now add inner method details to of_method
                             if "global_uses" in of_method:
                                 ll_ = of_method["global_uses"]
@@ -100,6 +97,7 @@ def connectInterServiceCalls():
             graph_input_repo_[ method_summary_fnm ] = ( json.loads( summ_ ) )
 
     ## process the graph inputs of different languages as pairs
+    ## so for e.g. the outer loop is the ".py" code base and the inner loop will be ".js" , ".java" etc
     for outer_file_nm, outer_file_jsn_ in ( graph_input_repo_.items() ):
         for inner_file_nm, inner_file_jsn_ in ( graph_input_repo_.items() ):
             if outer_file_nm == inner_file_nm:
@@ -109,10 +107,11 @@ def connectInterServiceCalls():
 
             ## write back all the contents
             try:
-                self.s3_.shipToS3( outer_file_nm, json.dumps( outer_file_jsn_, indent=4 ) )
-                self.s3_.shipToS3( inner_file_nm, json.dumps( inner_file_jsn_, indent=4 ) )
+                s3_.shipToS3( outer_file_nm, json.dumps( outer_file_jsn_, indent=4 ) )
+                s3_.shipToS3( inner_file_nm, json.dumps( inner_file_jsn_, indent=4 ) )
             except:
                 print('EXCPN::"match_inter_service_calls.py"::connectInterServiceCalls:: writing fail!!')
+                print( traceback.format_exc() )
 
 
 if __name__ == "__main__":
