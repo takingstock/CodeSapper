@@ -199,7 +199,8 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
             print('"utils/LLM_INTERFACE/chunking_utils.py"::createChunkInChangeFile:: File ', file_nm_, method_nm_\
                     ,' DOES NOT EXIST in codebase!')
             continue
-        
+       
+        print('RANGE FINDER->', file_nm_, method_nm_, begin_ln_, end_ln_)
         parsed_ast_ = ast_utils_.parse_ast( file_nm_, ( begin_ln_, end_ln_ ) )
         ## the above call , apart from initializing the ast also parses the code for the range defined
         ## this sub tree can now be accessed via its predicate parsed_ast
