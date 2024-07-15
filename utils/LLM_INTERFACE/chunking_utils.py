@@ -330,8 +330,8 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
         print('TIMMY->', code_review_range_)
 
     elif len( range_for_snippet  ) > 0:
-        code_review_range_ = ( max( range_for_snippet - downstream_default_context_window_, 0 ), \
-                              min( range_for_snippet + downstream_default_context_window_, len(tmp_contents_)-1 ) )
+        code_review_range_ = ( max( range_for_snippet[0] - downstream_default_context_window_, 0 ), \
+                              min( range_for_snippet[1] + downstream_default_context_window_, len(tmp_contents_)-1 ) )
     else:
         code_review_range_ = ( 10000, -1 )
 
