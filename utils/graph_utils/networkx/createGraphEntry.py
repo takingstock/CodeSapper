@@ -51,6 +51,9 @@ class generateGraph():
         try:
             for data_ in method_data_arr_:
 
+                if 'global_uses' in data_ and len( data_['global_uses'] ) > 0:
+                    print('EDGE_ADDITION->', fnm_, data_["method_name"], data_['global_uses'])
+
                 for local_uses in data_['local_uses']:
                     ## find the parent node ( parent == node whose local_use is being mapped here
                     parent_fnm, parent_method = fnm_, data_["method_name"]
@@ -89,9 +92,9 @@ class generateGraph():
                                        'method_usage_snippet': local_uses["usage"],\
                                        'weight': self.default_edge_wt }
 
-                    #print( 'Added graph_edge->',graph_entry_parent_['method_name'], \
-                    #                           graph_entry_child_['method_name'],\
-                    #                           edge_property_ )
+                    print( 'Added graph_edge->',graph_entry_parent_['method_name'], \
+                                               graph_entry_child_['method_name'],\
+                                               edge_property_ )
 
                     self.graph_.add_edge( parent_key, child_key, **edge_property_ )
 
