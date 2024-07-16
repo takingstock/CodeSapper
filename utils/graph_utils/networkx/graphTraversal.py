@@ -34,11 +34,9 @@ class traverseGraph():
         matching_nodes = []
         for u, v, edge_data in self.graph_.edges(data=True):
             # Check if edge matches criteria
-            '''
             print( 'EDGY->', u, v , edge_data.get("usage_type"), mode,\
                     self.graph_.nodes[u].get("method_name"), method_name, \
                     self.graph_.nodes[u].get("file_path"), file_name )
-            '''
             if edge_data.get("usage_type") == mode:
                 # Check if source node (u) matches method name and target node (v) matches file name
                 if self.graph_.nodes[u].get("method_name") == method_name and \
