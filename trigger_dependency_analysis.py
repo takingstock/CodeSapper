@@ -48,8 +48,9 @@ def find_method_class_for_line( s3_, chg_dict_ ):
     relevant_method_summaries_ = s3_.relevantFiles( os.getenv('GRAPH_INPUT_FILE_NM_SUFFIX') )
 
     for method_summ_D in relevant_method_summaries_:
-        if file_ in method_summ_D:
-           method_deets_ = method_summ_D[ file_ ]["method_details_"] 
+        key_ = file_ if './' in file_ else ( './' + file_ )
+        if key_ in method_summ_D:
+           method_deets_ = method_summ_D[ key_ ]["method_details_"] 
            for individual_method_ in method_deets_:
                range_ = individual_method_['range']
 
