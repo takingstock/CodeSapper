@@ -15,7 +15,7 @@ def findRange( file_, input_method_, method_json_ ):
 
         for file_key, method_deets_ in method_json_.items():
             ref_file_, input_file_ = file_key.split('/')[-1], file_.split('/')[-1]
-            #print('FINDING RANGE->', ref_file_, input_file_)
+            print('FINDING RANGE->', ref_file_, input_file_)
             if ref_file_ == input_file_:
                 for content in method_deets_['method_details_']:
                     #print('DEEPER->', file_, content, input_method_)
