@@ -53,6 +53,7 @@ def find_method_class_for_line( s3_, chg_dict_ ):
         if method_summ_D != None:
 
             key_ = file_ if './' in file_ else ( './' + file_ )
+            print('KK->', key_, method_summ_D.keys())
 
             if key_ in method_summ_D:
                method_deets_ = method_summ_D[ key_ ]["method_details_"] 
