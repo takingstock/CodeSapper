@@ -119,11 +119,7 @@ def parse_diff_file(diff_file):
     hunk_info = None
 
     s3_ = s3_utils.s3_utils()
-    permissible_extensions_ = s3_.relevantFiles( os.getenv('GRAPH_INPUT_FILE_NM_SUFFIX') )
-    if len( permissible_extensions_ ) > 0:
-        _extensions_ = [ ( '.' + x.split('.')[-1] ) for x in permissible_extensions_ ]
-    else:
-        _extensions_ = os.getenv('VALID_FILE_EXTENSIONS').split(',')
+    _extensions_ = os.getenv('VALID_FILE_EXTENSIONS').split(',')
 
     print('EXTN_FILE->', _extensions_)
 
