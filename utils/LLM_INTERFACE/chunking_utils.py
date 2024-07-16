@@ -193,6 +193,9 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
                                                          changeD["method_class_nm_old"]['method_nm'], \
                                                          changeD['new_code'], changeD['old_code']
 
+        with open( file_nm_, 'r' ) as fp:
+           tmp_contents_ = fp.readlines()
+
         try:
             begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
         except:
@@ -216,9 +219,6 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
             except:
                 print('CODE CONTEXT EXTRACTION ERROR->', traceback.format_exc())
                 code_review_range_ = ( 10000, -1 )
-
-            with open( file_nm_, 'r' ) as fp:
-                tmp_contents_ = fp.readlines()
 
             delta_ = abs( code_review_range_[1] - code_review_range_[0] )
 

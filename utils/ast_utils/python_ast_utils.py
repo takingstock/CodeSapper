@@ -16,9 +16,9 @@ class CodeAnalyzer(ast.NodeVisitor):
             #print('LEN OF FILE->', len(self.file_ptr_.readlines()), range_ )
             #self.file_ptr_.seek(0) ## the above call will take the file pointer to the end of the file! reset to begin
             code = self.file_ptr_.readlines()[ range_[0]: range_[1] ]
-            print('PRE CODE_SNIP->', [code] )
+            #print('PRE CODE_SNIP->', [code] )
             code = textwrap.dedent( ''.join( code ) )
-            print('CODE_SNIP->', code, file_nm_, ast.parse(code))
+            #print('CODE_SNIP->', code, file_nm_, ast.parse(code))
             if len( code ) == 0: return 'EXIT'
 
             return ast.parse(code)
