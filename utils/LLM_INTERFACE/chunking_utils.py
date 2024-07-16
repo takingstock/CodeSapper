@@ -229,6 +229,11 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
             end_ln_   = ( begin_ln_ + delta_ + 1 )
             ## since code_review_range_ just contains the line numbers within the context of the method
             ## to get the original subtext, add the min line to begin and calibrate end using begin
+        
+        ##NOTE-> hack alert ! ideally we should be sending just the changed code till the return
+        ## so if the context is too long the LLM will ignore most of the context
+        if abs( begin_ln_ - changeD['new_start'] ) >= 10:
+            begin_ln_ = changeD['new_start']
 
         chunks_for_analysis_.append( changeD.update( { \
                 'method_context': ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ) } ) )
