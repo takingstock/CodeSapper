@@ -3,6 +3,8 @@
     "@aws-sdk/client-s3": "^3.614.0",
     "@aws-sdk/lib-storage": "^3.614.0",
     "aws-sdk": "^2.1659.0",
+    "espree": "^10.1.0",
+    "estraverse": "^5.3.0",
     "typescript": "^5.5.3"
   }
 }

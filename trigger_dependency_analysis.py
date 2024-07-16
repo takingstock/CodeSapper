@@ -38,19 +38,30 @@ def parse_python_file(file_path):
 
     return definitions
 
-def find_method_class_for_line(definitions, line_number):
+def find_method_class_for_line( s3_, chg_dict_ ):
     """
     Finds the method or class for a given line number.
     """
-    class_nm, method_nm = None, None
+    old_start, new_start, file_ = chg_dict_['old_start'], chg_dict_['new_start'], chg_dict_['file']
+    class_nm_old, method_nm_old, class_nm_new, method_nm_new  = None, None, None, None
 
-    for def_type, name, start_line, end_line in definitions:
-        if start_line <= line_number <= end_line and def_type == 'class':
-            class_nm = name
-        elif start_line <= line_number <= end_line and def_type == 'function':
-            method_nm = name
+    relevant_method_summaries_ = s3_.relevantFiles( os.getenv('GRAPH_INPUT_FILE_NM_SUFFIX') )
 
-    return {'class_nm': class_nm, 'method_nm': method_nm }
+    for method_summ_D in relevant_method_summaries_:
+        if file_ in method_summ_D:
+           method_deets_ = method_summ_D[ file_ ]["method_details_"] 
+           for individual_method_ in method_deets_:
+               range_ = individual_method_['range']
+
+               if old_start >= range_[0] and old_start <= range_[1]:
+                   method_nm_old = individual_method_["method_name"]
+
+               if new_start >= range_[0] and new_start <= range_[1]:
+                   method_nm_new = individual_method_["method_name"]
+
+
+    return {'class_nm':class_nm_old, 'method_nm': method_nm_old}, \
+            {'class_nm':class_nm_new, 'method_nm':method_nm_new }
 
 def call_code_scanners():
     '''
@@ -88,6 +99,7 @@ def parse_diff_file(diff_file):
     changes = []
     current_file = None
     hunk_info = None
+    s3_ = s3_utils.s3_utils()
 
     with open(diff_file, 'r') as file:
         for line in file:
@@ -122,18 +134,15 @@ def parse_diff_file(diff_file):
     ## finally add method name that the line changes belong to
     curr_file_ = None
 
+    ## define all language code scanners below 
+    ## ideally 99.99 of the code needs to be inside utils/<language>_ast_utils folder 
+    ## only the call needs to be in the below code
+    call_code_scanners()
+
     for chg_dict_ in changes:
       try:  
-        if curr_file_ != chg_dict_['file']:
-            method_class_deets_ = parse_python_file( chg_dict_['file'] )
-            curr_file_ = chg_dict_['file']
-            ## we dont want to parse the tree for every element in the "changes" array
-            ## changes array, the way its constructed, will mostly have multiple mentions of the same file
-            ## the DS -> file, code change, line # etc ..so file will be repeated and hence parse AST only when
-            ## the file is diff ..capisce ?
 
-        method_class_nm_old = find_method_class_for_line( method_class_deets_, chg_dict_['old_start'] )
-        method_class_nm_new = find_method_class_for_line( method_class_deets_, chg_dict_['new_start'] )
+        method_class_nm_old, method_class_nm_new = find_method_class_for_line( s3_, chg_dict_ )
 
         ## in case the lines are moved to a new method
         chg_dict_['method_class_nm_old'] = method_class_nm_old
@@ -141,15 +150,8 @@ def parse_diff_file(diff_file):
       except:
           continue
         
-
     ## dump into s3
-    s3_ = s3_utils.s3_utils()
     s3_.shipToS3( 'changes_for_further_analysis.json', json.dumps( changes, indent=4 ) )
-
-    ## define all language code scanners below 
-    ## ideally 99.99 of the code needs to be inside utils/<language>_ast_utils folder 
-    ## only the call needs to be in the below code
-    call_code_scanners()
 
     ## now call the graph insertion and get a reference to the graph
     impact_analysis( changes )

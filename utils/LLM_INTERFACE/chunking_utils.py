@@ -299,6 +299,8 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
     with open( downstream_file_details_['file_nm'], 'r' ) as fp:
         tmp_contents_ = fp.readlines()
 
+    downstream_point_of_entry_ = []
+
     if parsed_ast_ != None:
         ## either an exception OR a non PYTHON file will give this error
         ## since with inter service calls, we can definitely encounter non python files, in the else
@@ -331,6 +333,9 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
         print('TIMMY->', code_review_range_)
 
     elif len( range_for_snippet  ) > 0:
+
+        downstream_point_of_entry_ = tmp_contents_[ range_for_snippet[0]-1 : range_for_snippet[1]+1 ]
+
         code_review_range_ = ( max( range_for_snippet[0] - downstream_default_context_window_, 0 ), \
                               min( range_for_snippet[1] + downstream_default_context_window_, len(tmp_contents_)-1 ) )
     else:
@@ -338,7 +343,10 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
 
 
     if code_review_range_[0] == 10000 or code_review_range_[1] == -1: 
+
         begin_ln_, end_ln_ = range_for_llm
+        downstream_point_of_entry_ = tmp_contents_[ begin_ln_: end_ln_ ]
+
         print('Sending the entire code of <', downstream_point_of_entry_,'> for review', begin_ln_, end_ln_)
     else:
         if begin_ln_ == None:
