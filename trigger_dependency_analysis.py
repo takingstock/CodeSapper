@@ -49,6 +49,7 @@ def find_method_class_for_line( s3_, chg_dict_ ):
 
     for method_summary_fnm in relevant_method_summaries_:
         method_summ_D = s3_.readFromS3( method_summary_fnm )
+        print('READS3->', method_summary_fnm, method_summ_D)
 
         if method_summ_D != None:
 
