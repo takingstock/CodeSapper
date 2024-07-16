@@ -243,6 +243,7 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
         if abs( begin_ln_ - changeD['new_start'] ) >= 10:
             begin_ln_ = changeD['new_start']
 
+        print('CLEARING FOR TAKE-OFF->', ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ))
         chunks_for_analysis_.append( changeD.update( { \
                 'method_context': ''.join( tmp_contents_[ begin_ln_: end_ln_ ] ) } ) )
 
