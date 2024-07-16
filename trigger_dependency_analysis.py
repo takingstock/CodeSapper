@@ -46,25 +46,29 @@ def find_method_class_for_line( s3_, chg_dict_ ):
     class_nm_old, method_nm_old, class_nm_new, method_nm_new  = None, None, None, None
 
     relevant_method_summaries_ = s3_.relevantFiles( os.getenv('GRAPH_INPUT_FILE_NM_SUFFIX') )
-    print('BTRAP->', relevant_method_summaries_)
 
-    for method_summ_D in relevant_method_summaries_:
-        key_ = file_ if './' in file_ else ( './' + file_ )
-        print('GOING THROUGH -> file, method_summ_D =>', key_, method_summ_D.keys())
-        if key_ in method_summ_D:
-           method_deets_ = method_summ_D[ key_ ]["method_details_"] 
-           for individual_method_ in method_deets_:
-               range_ = individual_method_['range']
-               print( 'GRUNGE-> range_, old_start, new_start=>', individual_method_["method_name"],\
-                       range_, old_start, new_start )
+    for method_summary_fnm in relevant_method_summaries_:
+        method_summ_D = s3_.readFromS3( method_summary_fnm )
 
-               if old_start >= range_[0] and old_start <= range_[1]:
-                   method_nm_old = individual_method_["method_name"]
+        if method_summ_D != None:
 
-               if new_start >= range_[0] and new_start <= range_[1]:
-                   method_nm_new = individual_method_["method_name"]
+            key_ = file_ if './' in file_ else ( './' + file_ )
 
+            if key_ in method_summ_D:
+               method_deets_ = method_summ_D[ key_ ]["method_details_"] 
+               for individual_method_ in method_deets_:
+                   range_ = individual_method_['range']
+                   print( 'GRUNGE-> range_, old_start, new_start=>', individual_method_["method_name"],\
+                           range_, old_start, new_start )
 
+                   if old_start >= range_[0] and old_start <= range_[1]:
+                       method_nm_old = individual_method_["method_name"]
+
+                   if new_start >= range_[0] and new_start <= range_[1]:
+                       method_nm_new = individual_method_["method_name"]
+
+    ## the reason we have old and new is to ensure the correct context is shared with the LLM for summary
+    ## what if the line of code was in a method X before and its been moved to method Y now ..capisce ?
     return {'class_nm':class_nm_old, 'method_nm': method_nm_old}, \
             {'class_nm':class_nm_new, 'method_nm':method_nm_new }
 
