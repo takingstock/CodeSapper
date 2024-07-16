@@ -154,7 +154,7 @@ const mappingFetchIMC = (
             return cb({ message: err.message });
           }
           const { dataList = [] } = response[0];
-          return cb(null, dataList);
+          return cb(null, null);
         }
       );
     }]
