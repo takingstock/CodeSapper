@@ -49,10 +49,10 @@ def find_method_class_for_line( s3_, chg_dict_ ):
 
     for method_summary_fnm in relevant_method_summaries_:
         method_summ_D = s3_.readFromS3( method_summary_fnm )
-        print('READS3->', method_summary_fnm, method_summ_D)
 
         if method_summ_D != None:
 
+            method_summ_D = json.loads( method_summ_D )
             key_ = file_ if './' in file_ else ( './' + file_ )
             print('KK->', key_, method_summ_D.keys())
 
