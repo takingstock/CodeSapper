@@ -68,6 +68,8 @@ def addChangeImpactOnDownstreamFile( change_record_, downstream_snippet_ ):
 def aggregateImpactResponse( changed_D, usage_, change_record_, mode, default_home_dir_ ):
 
     for usage_rec_ in usage_:
+        if len( usage_rec_ ) == 0: continue 
+
         usage_D = { 'file_nm': usage_rec_['file_path'] if default_home_dir_ in usage_rec_['file_path'] \
                                                        else default_home_dir_ + usage_rec_['file_path'],\
                                                        'method_nm': usage_rec_['method_name'] }
