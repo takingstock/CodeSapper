@@ -297,9 +297,11 @@ def start( change_summary_file_, \
             print('===================IMPACT SUMMARY ',fnm,' :: ', method_,'=======================================')
 
             print('====== BASE CHANGE IMPACT=>', change_record_['base_change_impact']) 
-            if "impact_analysis" in change_record_ and "impact_analysis" in change_record_["impact_analysis"]:
-                print('====== DOWN STREAM IMPACT =============================') 
-                print( json.dumps( change_record_["impact_analysis"]["impact_analysis"], indent=4 ) )
+            if "impact_analysis" in change_record_ :
+                for downstream_impacted_ in change_record_["impact_analysis"]:
+                    if "impact_analysis" in downstream_impacted_:
+                        print('====== DOWN STREAM IMPACT =============================') 
+                        print( json.dumps( downstream_impacted_["impact_analysis"], indent=4 ) )
 
 if __name__ == "__main__":
 
