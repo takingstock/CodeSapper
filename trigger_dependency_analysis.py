@@ -46,15 +46,16 @@ def find_method_class_for_line( s3_, chg_dict_ ):
     class_nm_old, method_nm_old, class_nm_new, method_nm_new  = None, None, None, None
 
     relevant_method_summaries_ = s3_.relevantFiles( os.getenv('GRAPH_INPUT_FILE_NM_SUFFIX') )
+    print('BTRAP->', relevant_method_summaries_)
 
     for method_summ_D in relevant_method_summaries_:
         key_ = file_ if './' in file_ else ( './' + file_ )
-        print('GOING THROUGH BOLI BASTARD-> file, method_summ_D =>', key_, method_summ_D.keys())
+        print('GOING THROUGH -> file, method_summ_D =>', key_, method_summ_D.keys())
         if key_ in method_summ_D:
            method_deets_ = method_summ_D[ key_ ]["method_details_"] 
            for individual_method_ in method_deets_:
                range_ = individual_method_['range']
-               print( 'SULE-> range_, old_start, new_start=>', individual_method_["method_name"],\
+               print( 'GRUNGE-> range_, old_start, new_start=>', individual_method_["method_name"],\
                        range_, old_start, new_start )
 
                if old_start >= range_[0] and old_start <= range_[1]:
