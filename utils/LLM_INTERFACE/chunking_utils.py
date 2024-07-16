@@ -197,7 +197,7 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
             begin_ln_, end_ln_ = findRange( file_nm_, method_nm_, method_summary_ )
         except:
             print('"utils/LLM_INTERFACE/chunking_utils.py"::createChunkInChangeFile:: File ', file_nm_, method_nm_\
-                    ,' DOES NOT EXIST in codebase!')
+                    ,' DOES NOT EXIST in codebase!', traceback.format_exc())
             continue
        
         print('RANGE FINDER->', file_nm_, method_nm_, begin_ln_, end_ln_)
