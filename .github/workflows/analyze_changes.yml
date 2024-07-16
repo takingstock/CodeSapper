@@ -22,6 +22,7 @@ jobs:
       CODE_DB_PYTHON: "./code_db/python/"
       AST_UTILS_FOLDER: "./utils/ast_utils/"
       LLM_CONFIG_PATH: "./utils/LLM_INTERFACE/llm_config.json"
+      VALID_FILE_EXTENSIONS: ".js,.py,.java"
 
     steps:
       - name: Checkout repository
