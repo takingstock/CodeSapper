@@ -249,7 +249,7 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
 
     ast_utils_.gc()
 
-def findPointOfEntry( file_path_, context_method_range_, changeDeets_ ):
+def findPointOfEntry( file_path_, context_method_range_, changeDeets_, api_endpoint_ ):
 
     with open( file_path_, 'r' ) as fp:
         downstream_file_ = fp.readlines()
@@ -261,7 +261,8 @@ def findPointOfEntry( file_path_, context_method_range_, changeDeets_ ):
     ## find the first occurence of either the imported class / method name's mention
     for idx, line_ in enumerate( context_ ):
         if ( upstream_class_nm_ != None and upstream_class_nm_ in line_ ) or\
-                ( upstream_method_nm_ != None and upstream_method_nm_ in line_ ):
+                ( upstream_method_nm_ != None and upstream_method_nm_ in line_ ) or\
+                ( api_endpoint_ != None and api_endpoint_ in line_ ) :
             return idx, [ line_ ] ## using array nomenclature to maintain std with other similar inputs
 
     return None, None
@@ -328,7 +329,7 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
 
         begin_ln_, downstream_point_of_entry_ = findPointOfEntry( downstream_file_details_['file_nm'], \
                                                                     range_for_snippet,\
-                                                                                    change_details_ )
+                                                                    change_details_, api_endpoint_ )
         if downstream_point_of_entry_ == None:
             print('Point of entry not found ..raise EXCPN')
             return None
