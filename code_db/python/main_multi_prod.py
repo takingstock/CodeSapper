@@ -4769,8 +4769,8 @@ def file_upload_v1():
             # pdf_cleaned_path = os.getcwd() + "/uploads/" + name
             pdf_cleaned_path = file_write_path
             try:
-                start_page = int(str(request.form["start_page"]))
-                end_page = int(str(request.form["end_page"]))
+                start_page = (str(request.form["start_page"]))
+                end_page = (str(request.form["end_page"]))
                 
                 print("start_page :", start_page)
                 print("end_page :", end_page)
