@@ -59,20 +59,13 @@ class generateGraph():
                     parent_fnm, parent_method = fnm_, data_["method_name"]
                     parent_key = parent_fnm+'::'+parent_method
 
-                    graph_entry_parent_ = self.graph_.nodes[ parent_key ]
-
                     child_key = local_uses['file_path']+'::'+local_uses['method_nm']
-                    graph_entry_child_ = self.graph_.nodes[ child_key ]
 
                     ## now that we have both nodes create edge
                     edge_property_ = { 'usage_type': 'local',\
                                        'method_nm': local_uses['method_nm'],\
                                        'method_usage_snippet': local_uses["usage"],\
                                        'weight': self.default_edge_wt }
-
-                    #print('Added graph_edge->', graph_entry_parent_['method_name'], \
-                    #                            graph_entry_child_['method_name'],\
-                    #                            edge_property_ )
 
                     self.graph_.add_edge( parent_key, child_key, **edge_property_ )
 
@@ -81,10 +74,7 @@ class generateGraph():
                     parent_fnm, parent_method = fnm_, data_["method_name"]
                     parent_key = parent_fnm+'::'+parent_method
 
-                    graph_entry_parent_ = self.graph_.nodes[ parent_key ]
-
                     child_key = local_uses['file_path']+'::'+local_uses['method_nm']
-                    graph_entry_child_ = self.graph_.nodes[ child_key ]
 
                     ## now that we have both nodes create edge
                     edge_property_ = { 'usage_type': 'global',\
@@ -92,8 +82,7 @@ class generateGraph():
                                        'method_usage_snippet': local_uses["usage"],\
                                        'weight': self.default_edge_wt }
 
-                    print( 'Added graph_edge->',graph_entry_parent_['method_name'], \
-                                               graph_entry_child_['method_name'],\
+                    print( 'Added graph_edge->', parent_key , child_key, \
                                                edge_property_ )
 
                     self.graph_.add_edge( parent_key, child_key, **edge_property_ )
