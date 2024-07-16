@@ -30,7 +30,7 @@ class generateGraph():
 
                 self.graph_.add_node( 
                                        key_, 
-                                       file_path=fnm,\
+                                       file_path=fnm if './' in fnm else ( './' + fnm ),\
                                        method_name=data["method_name"], \
                                        method_begin=data["method_begin"], \
                                        method_end=data["method_end"],\
