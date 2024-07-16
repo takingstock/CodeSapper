@@ -106,11 +106,20 @@ def impact_analysis( changes ):
     ## call downstream trigger !!
     trigger_downstream.start( changes )
 
+def valid_extn( filenm, extn_arr ):
+
+    for extn in extn_arr:
+        if extn in filenm: return True
+
+    return False
+
 def parse_diff_file(diff_file):
     changes = []
     current_file = None
     hunk_info = None
     s3_ = s3_utils.s3_utils()
+    permissible_extensions_ = s3_.relevantFiles( os.getenv('GRAPH_INPUT_FILE_NM_SUFFIX') )
+    _extensions_ = [ ( '.' + x.split('.')[-1] ) for x in permissible_extensions_ ]
 
     with open(diff_file, 'r') as file:
         for line in file:
@@ -119,7 +128,8 @@ def parse_diff_file(diff_file):
                 if match:
                     current_file = match.group(2)
                     print('DUMM->', current_file )
-            elif line.startswith('@@') and current_file is not None and '.py' in current_file:
+
+            elif line.startswith('@@') and current_file is not None and valid_extn( current_file, _extensions_ ):
                 hunk_info = re.search(r'@@ -(\d+),(\d+) \+(\d+),(\d+) @@', line)
                 if hunk_info is not None:
                     old_start = int(hunk_info.group(1))
@@ -136,9 +146,13 @@ def parse_diff_file(diff_file):
                         'new_code': []
                     }
                     changes.append(hunk_data)
-            elif line.startswith('-') and hunk_info and current_file is not None and '.py' in current_file:
+
+            elif line.startswith('-') and hunk_info and current_file is not None and\
+                    valid_extn( current_file, _extensions_ ):
                 hunk_data['old_code'].append(line[1:])
-            elif line.startswith('+') and hunk_info and current_file is not None and '.py' in current_file:
+
+            elif line.startswith('+') and hunk_info and current_file is not None and\
+                    valid_extn( current_file, _extensions_ ):
                 hunk_data['new_code'].append(line[1:])
 
     print('FINAL CHANGE->', changes)
