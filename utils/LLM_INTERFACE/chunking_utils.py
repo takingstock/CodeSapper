@@ -202,23 +202,31 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
        
         print('RANGE FINDER->', file_nm_, method_nm_, begin_ln_, end_ln_)
         parsed_ast_ = ast_utils_.parse_ast( file_nm_, ( begin_ln_, end_ln_ ) )
-        ## the above call , apart from initializing the ast also parses the code for the range defined
-        ## this sub tree can now be accessed via its predicate parsed_ast
-        ast_utils_.visit( parsed_ast_ )
-        ## this should generate all the details which can be accessed via its predicate ast_linewise_deets_
-        ast_details_ = ast_utils_.ast_linewise_deets_
-        #print( ast_details_ )
 
-        try:
-            code_review_range_ = getSphereOfInfluence( ast_details_, changed_code_, old_code_ )
-        except:
-            print('CODE CONTEXT EXTRACTION ERROR->', traceback.format_exc())
+        if parsed_ast_ != None: 
+            ## the above call , apart from initializing the ast also parses the code for the range defined
+            ## this sub tree can now be accessed via its predicate parsed_ast
+            ast_utils_.visit( parsed_ast_ )
+            ## this should generate all the details which can be accessed via its predicate ast_linewise_deets_
+            ast_details_ = ast_utils_.ast_linewise_deets_
+            #print( ast_details_ )
+
+            try:
+                code_review_range_ = getSphereOfInfluence( ast_details_, changed_code_, old_code_ )
+            except:
+                print('CODE CONTEXT EXTRACTION ERROR->', traceback.format_exc())
+                code_review_range_ = ( 10000, -1 )
+
+            with open( file_nm_, 'r' ) as fp:
+                tmp_contents_ = fp.readlines()
+
+            delta_ = abs( code_review_range_[1] - code_review_range_[0] )
+
+        else:
+
             code_review_range_ = ( 10000, -1 )
+            delta_ = 0
 
-        with open( file_nm_, 'r' ) as fp:
-            tmp_contents_ = fp.readlines()
-
-        delta_ = abs( code_review_range_[1] - code_review_range_[0] )
 
         if code_review_range_[0] == 10000 or code_review_range_[1] == -1 or delta_ <= MIN_LINES_CTXT or \
             ( code_review_range_[0] == code_review_range_[1] ) or ( code_review_range_[1] < code_review_range_[0] ):
