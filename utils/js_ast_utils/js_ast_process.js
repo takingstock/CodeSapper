@@ -36,11 +36,15 @@ class JSFileAnalyzer {
                 text_details_: []
             };
             console.log( 'RETURNING::', fileResult.method_details_[ fileResult.method_details_.length - 1 ], fileResult.method_details_.length )
-
+            
+            let Path_ = ''		
 	    if (!filePath.startsWith('./')) {
-               filePath = './' + filePath;
-            }	
-            results[filePath] = fileResult;
+               Path_ = './' + filePath;
+            }
+	    else{
+               Path_ = filePath;
+	    }
+            results[Path_] = fileResult;
         }
 
 	// Parameters for S3 upload
