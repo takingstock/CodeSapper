@@ -49,10 +49,13 @@ def find_method_class_for_line( s3_, chg_dict_ ):
 
     for method_summ_D in relevant_method_summaries_:
         key_ = file_ if './' in file_ else ( './' + file_ )
+        print('GOING THROUGH BOLI BASTARD-> file, method_summ_D =>', key_, method_summ_D.keys())
         if key_ in method_summ_D:
            method_deets_ = method_summ_D[ key_ ]["method_details_"] 
            for individual_method_ in method_deets_:
                range_ = individual_method_['range']
+               print( 'SULE-> range_, old_start, new_start=>', individual_method_["method_name"],\
+                       range_, old_start, new_start )
 
                if old_start >= range_[0] and old_start <= range_[1]:
                    method_nm_old = individual_method_["method_name"]
