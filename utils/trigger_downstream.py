@@ -300,7 +300,8 @@ def start( change_summary_file_, \
             if "impact_analysis" in change_record_ :
                 for downstream_impacted_ in change_record_["impact_analysis"]:
                     if "impact_analysis" in downstream_impacted_:
-                        print('====== DOWN STREAM IMPACT =============================') 
+                        print('\n====== DOWN STREAM IMPACT =============================\n') 
+                        print('\n====== IMPACTED FILE->', downstream_impacted_["impacted_method"],'\n' )
                         print( json.dumps( downstream_impacted_["impact_analysis"], indent=4 ) )
 
 if __name__ == "__main__":
