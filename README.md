@@ -5,7 +5,7 @@ If you have gone through the architecture diagram then you probably have an idea
 
 ## Steps to use the app
 - currently i have tested the app for python and javascript and there are known issues besides the fact that you will have to dump all your python code into code_db/python and js code into code_db/js ..apologies for that .. working on making it more real world :)
-- you only need to do 2 things
+- you only need to do 2 things ( though we have 4 steps :) )
   1. change the ENV variables specified in the .github/workflows/analyze_changes.yml; specifically NETWORKX_S3 where you give the **name** of your S3 bucket .. also please configure remote access to the S3 bucket from whichever env u use .. i dont think i can cover that part programmatically !
   2. please ensure your git repo has actions enabled
   3. for the LLM i am currently using a groq API ( please note this is not elon musks grok ) that implements LLama3-70B ..and its lightening fast ..but if you already have an API that serves LLama / claude / openai , go for it ( u will have to implement a custom method for these )
