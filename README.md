@@ -2,6 +2,15 @@
 Thanks for stopping by ! to get a very basic overview of what the site is about, kindly visit https://takingstock.github.io/codesapper.ai/
 To add a few more basic details, the project was born out of all the pains i went through reviewing code, fixing build fails and ensuring test coverage.
 If you have gone through the architecture diagram then you probably have an idea of what the critical components in this project are going to be, but let me summarize
+
+## Steps to use the app
+- currently i have tested the app for python and javascript and there are known issues besides the fact that you will have to dump all your python code into code_db/python and js code into code_db/js ..apologies for that .. working on making it more real world :)
+- you only need to do 2 things
+  1. change the ENV variables specified in the .github/workflows/analyze_changes.yml; specifically NETWORKX_S3 where you give the **name** of your S3 bucket .. also please configure remote access to the S3 bucket from whichever env u use .. i dont think i can cover that part programmatically !
+  2. please ensure your git repo has actions enabled
+  3. for the LLM i am currently using a groq API ( please note this is not elon musks grok ) that implements LLama3-70B ..and its lightening fast ..but if you already have an API that serves LLama / claude / openai , go for it ( u will have to implement a custom method for these )
+  4. once u have the above setup, simply make changes to the code base, check in and once the workflow ends, search for the keywords "BASE CHANGE IMPACT" and "DOWNSTREAM" in the logs .. sorry, i will provide a cleaner way to access this but for now, this will give u an end to end idea ! 
+
 ## Summary of critical components
 ### AST parsers
 - every language has its own idiosyncracies when it comes to defining methods, variables, package declarations etc. Though LLMs are kind of ok when it comes to parsing these details in a language agnostic format, given the criticality of getting this ~100% correct, we will be relying on language specific AST parsers. Currently i have already written the parsers for python and javascript and a parser for Java is in the pipeline
