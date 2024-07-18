@@ -1,3 +1,4 @@
+# CodeSapper - pre-emptive analysis for a hassle free build !
 Thanks for stopping by ! to get a very basic overview of what the site is about, kindly visit https://takingstock.github.io/codesapper.ai/
 To add a few more basic details, the project was born out of all the pains i went through reviewing code, fixing build fails and ensuring test coverage.
 If you have gone through the architecture diagram then you probably have an idea of what the critical components in this project are going to be, but let me summarize
@@ -28,4 +29,4 @@ would love for people to reach out. Skill sets i am looking out for
 - dev's who have worked in complicated code bases that encompass atleast 2 or more programming languages OR same programming language but different frameworks
 - LLM fine tuning enthusiasts
 - UX designers ( to improve workflows )
-shoot an email to vikram.murthy@gmail.com if you would like to contribute OR open issues , whatever floats your boat
+- shoot an email to vikram.murthy@gmail.com if you would like to contribute OR open issues , whatever floats your boat
