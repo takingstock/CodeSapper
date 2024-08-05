@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const ts = require('typescript');
 
+<<<<<<< HEAD
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 const { Upload } = require('@aws-sdk/lib-storage');
 const s3_bucket_name_ = "my-networkx-s3-bucket"
@@ -13,6 +14,10 @@ const { scanDirectory, extractUrls, urlMapping } = require('./grep_urls');
 const REGION = 'ap-south-1'; // e.g. 'us-west-1'
 const s3Client = new S3Client({ region: REGION });
 
+=======
+const { scanDirectory, extractUrls, urlMapping } = require('./grep_urls');
+
+>>>>>>> added JS integration
 class JSFileAnalyzer {
 
     constructor(directoryPath, urlMap) {
@@ -36,6 +41,7 @@ class JSFileAnalyzer {
                 text_details_: []
             };
             console.log( 'RETURNING::', fileResult.method_details_[ fileResult.method_details_.length - 1 ], fileResult.method_details_.length )
+<<<<<<< HEAD
             
             let Path_ = ''		
 	    if (!filePath.startsWith('./')) {
@@ -76,6 +82,14 @@ class JSFileAnalyzer {
 
 	run();    
         console.log('Analysis complete. Results saved to S3');
+=======
+            results[filePath] = fileResult;
+        }
+
+        const resultsFilePath = path.join(this.directoryPath, 'analysis_results.json');
+        fs.writeFileSync(resultsFilePath, JSON.stringify(results, null, 2));
+        console.log('Analysis complete. Results saved to', resultsFilePath);
+>>>>>>> added JS integration
     }
 
     getAllJSFiles(directoryPath) {
@@ -179,8 +193,13 @@ class JSFileAnalyzer {
                     file_path: filePath,
 		    returnType: returnType,
 		    if_api_url_declaration_file_: url_declaration_file_,	
+<<<<<<< HEAD
 		    api_end_point: url_declaration_,	
 		    inter_service_api_call: urls_used_,	
+=======
+		    if_api_url_declaration_: url_declaration_,	
+		    url_usages_: urls_used_,	
+>>>>>>> added JS integration
                     global_uses: [],
                     local_uses: []
                 });
@@ -228,8 +247,13 @@ class JSFileAnalyzer {
                         file_path: filePath,
 			returnType: returnType,
 		        if_api_url_declaration_file_: url_declaration_file_,	
+<<<<<<< HEAD
 		        api_end_point: url_declaration_,	
 		        inter_service_api_call: urls_used_,	
+=======
+		        if_api_url_declaration_: url_declaration_,	
+		        url_usages_: urls_used_,	
+>>>>>>> added JS integration
                         global_uses: [],
                         local_uses: []
 		    });

@@ -49,9 +49,15 @@ function extractUrls(filePath) {
 }
 
 // Scan the project directory
+<<<<<<< HEAD
 //scanDirectory('../idp_backend/');
 
 //console.log(urlMapping);
+=======
+scanDirectory('../idp_backend/');
+
+console.log(urlMapping);
+>>>>>>> added JS integration
 
 module.exports = {
     scanDirectory,
