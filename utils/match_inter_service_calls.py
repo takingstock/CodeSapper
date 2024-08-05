@@ -9,29 +9,37 @@ def cleanUp( t1, t2 ):
     # at times the last part of the url can come with params, typically demarcated using "?"
     return t1.split('?')[0], t2.split('?')[0]
 
-def innerCallingOuter( inner_api_call_, of_api_definition_ ):
+def innerCallingOuter( inner_api_call_, of_api_definition_list_ ):
     '''
     the api definition could be a simple route like "/someAPI" and the call could be
     something like "https://<some_ip_addr>:<port_num>/someAPI?key='abc'..." ; so lets match !!
     '''
-    shorter_url_ = inner_api_call_ if len( inner_api_call_ ) < len( of_api_definition_ ) else of_api_definition_
-    longer_url_  = of_api_definition_ if len( inner_api_call_ ) < len( of_api_definition_ ) else inner_api_call_
+    primary, secondary = None, None
 
-    shorter_arr_, longer_arr_ = shorter_url_.split('/'), longer_url_.split('/')
+    for of_api_definition_ in of_api_definition_list_: 
+        shorter_url_ = inner_api_call_ if len( inner_api_call_ ) < len( of_api_definition_ ) else of_api_definition_
+        longer_url_  = of_api_definition_ if len( inner_api_call_ ) < len( of_api_definition_ ) else inner_api_call_
 
-    #print('DODO-> shorter_, longer_::', shorter_arr_, longer_arr_)
+        shorter_arr_, longer_arr_ = shorter_url_.split('/'), longer_url_.split('/')
 
-    if len( shorter_arr_) >= 2 and shorter_url_ in longer_url_:
-        return True
+        print('DODO-> shorter_, longer_::', shorter_arr_, longer_arr_)
+        ## try matching last 2 first if url like /abc/def and the other is v1/abc/def?123
+        if len( shorter_arr_ ) >= 2 and shorter_arr_[-1] != '':
+            primary_candidate_ = '/'.join( shorter_arr_[-2:] )
+            if primary_candidate_ in longer_url_:
+                print('HAWK TUAAH->', primary_candidate_, longer_url_ )
+                primary = primary_candidate_ ## it just needs to be NOT NONE
+                return primary, secondary
 
-    shorter_, longer_ = cleanUp( shorter_arr_[-1], longer_arr_[-1] )
-    ## now ensure that the last element on the shorter_arr is a substring of longer_arr's last term
-    ## for e.g. using above, short_arr = ['', 'someAPI'] longer = [ 'https:',....,'someAPI?key='abc' ]
-    if len(shorter_arr_[-1]) > 0 and shorter_arr_[-1] == longer_arr_[-1]:
-        print( inner_api_call_, of_api_definition_, shorter_arr_, longer_arr_)
-        return True
+        shorter_, longer_ = cleanUp( shorter_arr_[-1], longer_arr_[-1] )
+        ## now ensure that the last element on the shorter_arr is a substring of longer_arr's last term
+        ## for e.g. using above, short_arr = ['', 'someAPI'] longer = [ 'https:',....,'someAPI?key='abc' ]
+        if len(shorter_arr_[-1]) > 0 and shorter_arr_[-1] == longer_arr_[-1]:
+            print( inner_api_call_, of_api_definition_, shorter_arr_, longer_arr_)
+            secondary = shorter_arr_[-1]
+            return primary, secondary
 
-    return False
+    return primary, secondary
 
 def updateGlobalUsage( outer_file_, inner_file_ ):
     ## since the format of ALL graph inputs is the same
@@ -49,40 +57,73 @@ def updateGlobalUsage( outer_file_, inner_file_ ):
             for of_method in of_method_details_:
                 for inner_method in inner_method_details_:
                     ## DEFENSIVE CHECK
-                    #print('B4 DEFENSIVE->INNER::', inner_method, '::OUTER::', of_method)
                     if "inter_service_api_call" not in inner_method or "api_end_point" not in of_method: continue
 
                     inner_api_call_ = inner_method["inter_service_api_call"]
                     of_api_definition_ = of_method["api_end_point"]
 
                     if of_api_definition_ == "NA" or len( inner_api_call_ ) == 0: continue
-                    #print('OUTER_URL::', of_api_definition_, of_file, '::INNER_URL::', inner_api_call_, inner_file)
+                    print('OUTER_URL::', of_api_definition_, of_file, '::INNER_URL::', inner_api_call_, inner_file)
 
                     for call in inner_api_call_: ## since , theoretically , we can call multiple APIs from a method
-                        if innerCallingOuter( call, of_api_definition_ ):
-                            #print('Inner API ::', inner_api_call_,' :: is defined in ::', of_api_definition_,\
-                            #                      inner_method )
+                        primary, secondary = innerCallingOuter( call, of_api_definition_ )
+
+                        if primary != None:
                             ## now add inner method details to of_method
 
                             if "global_uses" in of_method:
                                 ll_ = of_method["global_uses"]
-                                existing_tmp_ = [ x['file_path'] for x in ll_ ]
-                                if inner_file in existing_tmp_:
+                                existing_tmp_f = [ x['file_path'] for x in ll_ ]
+                                existing_tmp_m = [ x['method_nm'] for x in ll_ ]
+                                if inner_file in existing_tmp_f and inner_method["method_name"] in existing_tmp_m:
                                     ## DONT ADD DUPES !!
+                                    print('DUPE !!')
                                     continue
                             else:
                                 ll_ = list()
 
+                            print('Inner API ::', inner_api_call_,' :: is defined in ::', of_api_definition_,\
+                                                  inner_method )
+
                             ll_.append( { 'file_path': inner_file,\
                                           'method_nm': inner_method["method_name"],\
                                           "method_defn": inner_method["method_begin"],\
-                                          "usage": "NA",\
+                                          "usage": primary,\
                                           "method_end": inner_method["method_end"]
                                           } )
 
                             of_method["global_uses"] = ll_
                             print( 'GLOBAL USAGE ADD->', of_method["global_uses"][-1], ' ::For:: ', \
                                     of_file )
+
+                        elif secondary != None:
+                            ## now add inner method details to of_method
+
+                            if "low_prob_global_uses" in of_method:
+                                ll_ = of_method["low_prob_global_uses"]
+                                existing_tmp_f = [ x['file_path'] for x in ll_ ]
+                                existing_tmp_m = [ x['method_nm'] for x in ll_ ]
+                                if inner_file in existing_tmp_f and inner_method["method_name"] in existing_tmp_m:
+                                    ## DONT ADD DUPES !!
+                                    print('DUPE !!')
+                                    continue
+                            else:
+                                ll_ = list()
+
+                            print('Inner API ::', inner_api_call_,' :: is defined in ::', of_api_definition_,\
+                                                  inner_method )
+
+                            ll_.append( { 'file_path': inner_file,\
+                                          'method_nm': inner_method["method_name"],\
+                                          "method_defn": inner_method["method_begin"],\
+                                          "usage": secondary,\
+                                          "method_end": inner_method["method_end"]
+                                          } )
+
+                            of_method["low_prob_global_uses"] = ll_
+                            print('LOW PROB GLOBAL USAGE ADD->', of_method["low_prob_global_uses"][-1], ' ::For:: ', \
+                                    of_file )
+
 
 def connectInterServiceCalls():
     '''

@@ -1,0 +1,13 @@
+export NETWORKX_S3="my-networkx-s3-bucket"
+export CODE_JS_PYTHON="./code_db/js/"
+export CODE_JS_SCANNER="./utils/js_ast_utils/js_ast_process.js"
+export AST_CONFIG="./config/python/ast_config.json"
+export GRAPH_INPUT_FILE_NM_SUFFIX="graph_entity_summary"
+export GRAPH_UTILS_FOLDER="./utils/graph_utils/"
+export DAEMON_CONFIG="./config/daemon_config.json"
+export IKG_HOME="./"
+export CODE_DB_PYTHON="./code_db/python/"
+export AST_UTILS_FOLDER="./utils/ast_utils/"
+export LLM_CONFIG_PATH="./utils/LLM_INTERFACE/llm_config.json"
+export VALID_FILE_EXTENSIONS=".js,.py,.java"
+

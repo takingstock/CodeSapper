@@ -14,12 +14,6 @@ from findAPIDefs import find_api_definitions
 
 class addAPIUsageToGraph():
     def __init__(self):
-        self.config_file_path_ = os.getenv("AST_CONFIG")
-        with open( self.config_file_path_, 'r' ) as fp:
-            cfg_ = json.load( fp )
-
-        ##NOTE-> this MUST be the root dir of all your codebase
-        self.src_dir_ = cfg_['SRC_DIR']
         self.method_summary_ = dict()
 
     def returnSnippet(self, fnm, ln_no):
