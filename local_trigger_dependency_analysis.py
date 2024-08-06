@@ -81,25 +81,36 @@ def call_code_scanners():
     b) upload the same to s3
     c) download updated graph entry files s3
     '''
+    #NOTE-> whenever new code bases are added call the main code scanner script
 
     ## now call the python code base scanner
     py_ast_ = python_ast_routine.python_ast_routine()
     py_ast_.run_routine()
 
     ## now call the js code base scanner ..we shall use subprocess here since JS can't obviously be directly invoked
-    script_path = os.getenv('CODE_JS_SCANNER')
-    argument = os.getenv('CODE_JS_PYTHON')
+    script_path_backend = os.getenv('CODE_JS_BACKEND_SCANNER')
+    argument_backend = os.getenv('CODE_JS_BACKEND')
 
-    command = ['node', script_path, argument]    
-    print('Running command for NODE CODE->', command)
-    result = subprocess.run( command, capture_output=True, text=True, check=True )
+    command_backend = ['node', script_path_backend, argument_backend ]    
+    print('Running command for NODE CODE->', command_backend )
+    result = subprocess.run( command_backend, capture_output=True, text=True, check=True )
+
+    script_path_frontend = os.getenv('CODE_JS_FRONTEND_SCANNER')
+    argument_frontend = os.getenv('CODE_JS_FRONTEND')
+
+    command_frontend = [ 'node', script_path_frontend, argument_frontend ]    
+    print('Running command for NODE CODE->', command_frontend )
+    result = subprocess.run( command_frontend, capture_output=True, text=True, check=True )
 
     match_inter_service_calls.connectInterServiceCalls()
 
     s3_ = s3_utils.s3_utils()
 
-    with open( 'local_db/js/graph_entity_summary.json', 'w' ) as fp:
-        json.dump( json.loads( s3_.readFromS3('js_graph_entity_summary.json') ), fp, indent=4 )
+    with open( 'local_db/js_backend/graph_entity_summary.json', 'w' ) as fp:
+        json.dump( json.loads( s3_.readFromS3('idp_backend_graph_entity_summary.json') ), fp, indent=4 )
+
+    with open( 'local_db/js_frontend/graph_entity_summary.json', 'w' ) as fp:
+        json.dump( json.loads( s3_.readFromS3('idp_frontend_graph_entity_summary.json') ), fp, indent=4 )
 
     with open( 'local_db/python/graph_entity_summary.json', 'w' ) as fp:
         json.dump( json.loads( s3_.readFromS3('py_graph_entity_summary.json') ), fp, indent=4 )
