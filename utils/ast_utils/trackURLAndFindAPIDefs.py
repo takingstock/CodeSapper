@@ -1,6 +1,7 @@
 import ast
 import os
 import re
+import traceback
 from process_non_py_config import nonPythonConfigParser
 
 class URLAssignmentFinder(ast.NodeVisitor):
@@ -110,6 +111,7 @@ def find_url_assignments( relevant_files ):
     for file_path in file_paths:
         tree = parse_file(file_path)
         finder = URLAssignmentFinder(file_path)
+        print('GOING INTO=>', file_path)
         finder.visit(tree)
         if finder.url_assignments:
             url_assignments[file_path] = finder.url_assignments
@@ -222,7 +224,8 @@ class URLUsageFinder(ast.NodeVisitor):
                                     ## the usage is tracked to the varriable declared AFTER the most recent usage
                           self.url_usages.append( self.convert( url_fp, url_variable_, url_defined_line_, node ) )
 
-        elif not isinstance(node.func, ast.Name) and node.func.attr == 'Request':
+        elif not isinstance(node.func, ast.Name) and node.func.id == 'Request':
+        #elif not isinstance(node.func, ast.Name) and node.func.attr == 'Request':
                 #print('GOLI->', self.file_path, node.lineno, node.keywords, self.current_target, node.args)
 
                 for keyword in node.keywords:
@@ -243,6 +246,8 @@ class URLUsageFinder(ast.NodeVisitor):
                                       ):
 
                                  self.url_usages.append(self.convert(url_fp, url_variable_, url_defined_line_, node))
+        else:
+            pass
 
         self.generic_visit(node)
 
@@ -255,7 +260,12 @@ def find_url_usages(relevant_files, url_assignments):
             url_variables = url_assignments[ ref_file_path ]
             tree = parse_file(file_path)
             finder = URLUsageFinder(url_variables, file_path)
-            finder.visit(tree)
+            try:
+              finder.visit(tree)
+            except:
+                print('"trackURLAndFindAPIDefs.py"::find_url_usages::EXCPN=>', traceback.format_exc())
+                continue
+
             if finder.url_usages:
                 url_usages[file_path] = finder.url_usages
     return url_usages

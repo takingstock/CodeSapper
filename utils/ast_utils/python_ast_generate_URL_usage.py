@@ -59,6 +59,7 @@ class NodeVisitorWithParent(ast.NodeVisitor):
 class URLExtractor(ast.NodeVisitor):
     def __init__(self):
         self.urls = []
+        self.current_function = None
 
     def visit_FunctionDef(self, node):
         self.current_function = node
@@ -70,7 +71,7 @@ class URLExtractor(ast.NodeVisitor):
             if isinstance(node.value, ast.BinOp) and isinstance(node.value.op, ast.Add):
                 # Check if URL is constructed with addition operation
                 url_parts = self.extract_constant_parts(node.value)
-                if url_parts:
+                if url_parts and self.current_function is not None:
                     self.urls.append({
                         "variable": var_name,
                         "parts": url_parts,

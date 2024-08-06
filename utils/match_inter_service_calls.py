@@ -9,14 +9,25 @@ def cleanUp( t1, t2 ):
     # at times the last part of the url can come with params, typically demarcated using "?"
     return t1.split('?')[0], t2.split('?')[0]
 
-def innerCallingOuter( inner_api_call_, of_api_definition_list_ ):
+def innerCallingOuter( inner_api_, of_api_definition_ ):
     '''
     the api definition could be a simple route like "/someAPI" and the call could be
     something like "https://<some_ip_addr>:<port_num>/someAPI?key='abc'..." ; so lets match !!
     '''
     primary, secondary = None, None
 
-    for of_api_definition_ in of_api_definition_list_: 
+    if type( inner_api_ ) == str:
+        inner_api_list_ = [ inner_api_ ]
+    else:
+        inner_api_list_ = inner_api_
+
+    if type( of_api_definition_ ) == str:
+        of_api_definition_list_ = [ of_api_definition_ ]
+    else:
+        of_api_definition_list_ = of_api_definition_
+
+    for inner_api_call_ in inner_api_list_:
+      for of_api_definition_ in of_api_definition_list_: 
         shorter_url_ = inner_api_call_ if len( inner_api_call_ ) < len( of_api_definition_ ) else of_api_definition_
         longer_url_  = of_api_definition_ if len( inner_api_call_ ) < len( of_api_definition_ ) else inner_api_call_
 
