@@ -115,9 +115,9 @@ class generateGraph():
     def createGraphEntries( self ):
         
         src_folder_ = self.list_and_download_files_with_phrase('graph_entity_summary.json')
-
         for src_folder, content in src_folder_:
             graph_json_ = json.loads( content )
+            print('BIG BALD=>', src_folder)
 
             for file_nm_, method_deets_ in graph_json_.items():
                 method_details_ = method_deets_[ "method_details_" ]
@@ -130,6 +130,7 @@ class generateGraph():
         ## once nodes are inserted, its time to create the edges
         for src_folder, content in src_folder_:
             graph_json_ = json.loads( content )
+            print('BIG BALD=>', src_folder)
 
             for file_nm_, method_deets_ in graph_json_.items():
                 method_details_ = method_deets_[ "method_details_" ]

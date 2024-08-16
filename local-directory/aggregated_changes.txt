@@ -1,0 +1,53 @@
+Output of git diff in /datadrive/IMPACT_ANALYSIS/IKG/:
+diff --git a/main_multi_prod.py b/main_multi_prod.py
+index 5b450b97..98de5440 100644
+--- a/main_multi_prod.py
++++ b/main_multi_prod.py
+@@ -4350,6 +4350,8 @@ def file_upload_v1():
+     global df_master_here_stat
+     global df_master_here_mhbol
+     global df_dict
++
++    print('Testing global mapping USAGE!')
+     
+     if request.method == 'POST':
+         # Get the file from post request
+
+Output of git diff in /datadrive/IMPACT_ANALYSIS/IKG/code_db/idp-frontend/:
+diff --git a/src/Components/Training/TrainingFooter.js b/src/Components/Training/TrainingFooter.js
+index 49abf912..b73e4001 100644
+--- a/src/Components/Training/TrainingFooter.js
++++ b/src/Components/Training/TrainingFooter.js
+@@ -111,7 +111,8 @@ const TrainingFooter = (observer((props) => {
+                         if (errorField !== undefined)
+                             return
+                         if (table.numericColumns && table.numericColumns.includes(cell && cell.column)) {
+-                            if (!NUMERIC_REGEX.test(Number(cell && cell.text && cell.text.replace(',', ''))) && ((cell && cell.text) !== ''))
++                            console.log(cell)
++                            if (!NUMERIC_REGEX.test(Number(cell && cell.text && cell.text.toString().replace(',', ''))) && ((cell && cell.text) !== ''))
+                                 errorField = `expandpage${index}table${tableIndex}data${tIndex}cell${cellIndex}`
+                         }
+                     })
+
+Output of git diff in /datadrive/IMPACT_ANALYSIS/IKG/code_db/idp_backend:
+diff --git a/Routes/v2/gmail.js b/Routes/v2/gmail.js
+index 28d2f012..cccc4ea6 100644
+--- a/Routes/v2/gmail.js
++++ b/Routes/v2/gmail.js
+@@ -45,7 +45,14 @@ module.exports = [
+           status: Joi.string().valid("PENDING", "DOWNLOADED", "FILES_UPLOADED_TO_S3", "START_FILES_SENDING_TO_IDP", "COMPLETED", "FAILED"),
+         }).concat(SEARCH_COMMON_SCHEMA)
+       },
+-
++      auth: {
++        strategy: AUTH_STRATEGIES.API_AUTH,
++        access: [
++          {
++            scope: SUPER_ADMIN,
++          },
++        ]
++      },
+       tags: ["Gmail", "api"],
+       description: "Get mail list",
+     },
+

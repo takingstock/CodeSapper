@@ -1,6 +1,7 @@
 import numpy as np
 import json, sys, os, traceback
 import s3_utils
+import glob
 #sys.path.append( os.getenv('GRAPH_UTILS_FOLDER') )
 sys.path.append( os.getenv('AST_UTILS_FOLDER') )
 
@@ -166,6 +167,20 @@ def readMethodsDBJson():
 
     return all_methods_db_
 
+def find_file(file_name):
+    # Get the current working directory
+    cwd = os.getcwd()
+
+    # Use glob to find files that match the file_name
+    # '**/' means to include all subdirectories
+    pattern = os.path.join('/datadrive/IMPACT_ANALYSIS/', '**', file_name)
+    matching_files = glob.glob(pattern, recursive=True)
+
+    if matching_files:
+        return matching_files[0] ## if dupe files with same name, cant help !!
+
+    return None
+
 def createChunkInChangeFile( home_dir_, summary_of_changes ):
     '''
     ideally if the size of the method is small we could pass the entire method to the LLM
@@ -189,8 +204,12 @@ def createChunkInChangeFile( home_dir_, summary_of_changes ):
     ## summary_of_changes -> [ { 'file name': <>, 'method name': <>, 'old_code': <>, 'new_code': <> } ]
     ## also search the graph to find the ending of the method so we can pass the bounds for ast search and analysis
     for changeD in summary_of_changes:
-        file_nm_, method_nm_, changed_code_, old_code_ = home_dir_ + changeD['file'], \
-                                                         changeD["method_class_nm_old"]['method_nm'], \
+        file_nm_ = find_file( changeD['file'].split('/')[-1] )
+        print('CWD=>', os.getcwd(), changeD['file'].split('/')[-1], file_nm_ )
+
+        if file_nm_ == None: continue
+
+        method_nm_, changed_code_, old_code_ = changeD["method_class_nm_old"]['method_nm'], \
                                                          changeD['new_code'], changeD['old_code']
 
         with open( file_nm_, 'r' ) as fp:
@@ -306,12 +325,17 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
             if deets['method_name'] == change_details_['method_nm']:
                 api_endpoint_ = deets['api_end_point']
 
-    range_for_snippet, range_for_llm = findRangeDownstream( downstream_file_details_['file_nm'], \
+    file_nm_ = find_file( downstream_file_details_['file_nm'].split('/')[-1] )
+
+    try:
+      range_for_snippet, range_for_llm = findRangeDownstream( file_nm_, \
                                                  change_details_['method_nm'], api_endpoint_, method_summary_ )
 
-    parsed_ast_ = ast_utils_.parse_ast( downstream_file_details_['file_nm'], range_for_snippet )
+      parsed_ast_ = ast_utils_.parse_ast( file_nm_, range_for_snippet )
+    except:
+        parsed_ast_ = None
 
-    with open( downstream_file_details_['file_nm'], 'r' ) as fp:
+    with open( file_nm_, 'r' ) as fp:
         tmp_contents_ = fp.readlines()
 
     downstream_point_of_entry_ = []
@@ -327,7 +351,7 @@ def createChunkInDownStreamFile( change_details_, downstream_file_details_ ):
         ast_utils_.visit( parsed_ast_ )
         ast_details_ = ast_utils_.ast_linewise_deets_
 
-        begin_ln_, downstream_point_of_entry_ = findPointOfEntry( downstream_file_details_['file_nm'], \
+        begin_ln_, downstream_point_of_entry_ = findPointOfEntry( file_nm, \
                                                                     range_for_snippet,\
                                                                     change_details_, api_endpoint_ )
         if downstream_point_of_entry_ == None:

@@ -121,10 +121,10 @@ class python_ast_routine():
             start_time_ = time.time()
             
             try:
-                #ts_file_ = self.s3_.readFromS3( self.time_stamp_file_ )
+                ts_file_ = self.s3_.readFromS3( self.time_stamp_file_ )
 
-                #if ts_file_ == None:
-                if True:
+                if ts_file_ == None:
+                #if True:
                     ts_file_ = json.dumps( dict() )
 
                 relevant_files_, updated_ts_file_ = self.ast_codebase_utils_.generateRelevantFiles( ts_file_ )

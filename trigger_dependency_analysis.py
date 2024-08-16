@@ -1,5 +1,5 @@
 import sys, json, ast, subprocess
-import re, os
+import re, os, time, requests, traceback
 import s3_utils
 from groq import Groq
 sys.path.append('./utils/ast_utils')
@@ -38,6 +38,12 @@ def parse_python_file(file_path):
 
     return definitions
 
+def thoroughKeyCheck( key_, method_summ_D ):
+    for key, val in method_summ_D.items():
+        if key_ in key: return key
+
+    return 'NA'
+
 def find_method_class_for_line( s3_, chg_dict_ ):
     """
     Finds the method or class for a given line number.
@@ -53,8 +59,10 @@ def find_method_class_for_line( s3_, chg_dict_ ):
         if method_summ_D != None:
 
             method_summ_D = json.loads( method_summ_D )
-            key_ = file_ if './' in file_ else ( './' + file_ )
-            print('KK->', key_, method_summ_D.keys())
+            key_ = file_
+            #key_ = file_ if './' in file_ else ( './' + file_ )
+            key_ = thoroughKeyCheck( key_, method_summ_D )
+            print('KK->', key_, key_ in method_summ_D)
 
             if key_ in method_summ_D:
                method_deets_ = method_summ_D[ key_ ]["method_details_"] 
@@ -74,27 +82,37 @@ def find_method_class_for_line( s3_, chg_dict_ ):
     return {'class_nm':class_nm_old, 'method_nm': method_nm_old}, \
             {'class_nm':class_nm_new, 'method_nm':method_nm_new }
 
-def call_code_scanners():
+def call_code_scanners( changes ):
     '''
     the below should
     a) ensure the latest code is scanned and a graph input json created
     b) upload the same to s3
     '''
 
-    ## now call the python code base scanner
     py_ast_ = python_ast_routine.python_ast_routine()
     py_ast_.run_routine()
 
     ## now call the js code base scanner ..we shall use subprocess here since JS can't obviously be directly invoked
-    script_path = os.getenv('CODE_JS_SCANNER')
-    argument = os.getenv('CODE_JS_PYTHON')
+    script_path_backend = os.getenv('CODE_JS_BACKEND_SCANNER')
+    argument_backend = os.getenv('CODE_JS_BACKEND')
 
-    command = ['node', script_path, argument]    
+    command_backend = ['node', script_path_backend, argument_backend ]
+    print('Running command for NODE CODE->', command_backend )
+    try:
+      result = subprocess.run( command_backend, capture_output=True, text=True, check=True )
+    
+    except subprocess.CalledProcessError as e:
+        print(f"Return Code: {e.returncode}")
+        print(f"Error Output: {e.stderr}")
 
-    result = subprocess.run( command, capture_output=True, text=True, check=True )
+    script_path_frontend = os.getenv('CODE_JS_FRONTEND_SCANNER')
+    argument_frontend = os.getenv('CODE_JS_FRONTEND')
 
-    match_inter_service_calls.connectInterServiceCalls()
+    command_frontend = [ 'node', script_path_frontend, argument_frontend ]
+    print('Running command for NODE CODE->', command_frontend )
+    result = subprocess.run( command_frontend, capture_output=True, text=True, check=True )
 
+    match_inter_service_calls.connectInterServiceCalls( changes )
 
 def impact_analysis( changes ):
     cumulative_graph_ = createGraphEntry.generateGraph()
@@ -104,7 +122,8 @@ def impact_analysis( changes ):
     ##obtain reference to graph ..we shall be traversing this graph 
     in_mem_graph_ = cumulative_graph_.graph_
     ## call downstream trigger !!
-    trigger_downstream.start( changes )
+    global_usage_summary_ = trigger_downstream.start( changes )
+    return global_usage_summary_
 
 def valid_extn( filenm, extn_arr ):
 
@@ -124,8 +143,13 @@ def parse_diff_file(diff_file):
     print('EXTN_FILE->', _extensions_)
 
     with open(diff_file, 'r') as file:
+
         for line in file:
-            if line.startswith('diff --git'):
+            if 'Output of git diff in ' in line:
+                repo_ = (line.split( 'Output of git diff in ' )[-1])
+                print('REPO=>', repo_)
+
+            elif line.startswith('diff --git'):
                 match = re.search(r'diff --git a/(.*) b/(.*)', line)
                 if match:
                     current_file = match.group(2)
@@ -150,24 +174,24 @@ def parse_diff_file(diff_file):
                     changes.append(hunk_data)
 
             elif line.startswith('-') and hunk_info and current_file is not None and\
-                    valid_extn( current_file, _extensions_ ):
+                    valid_extn( current_file, _extensions_ ) and '--' not in line and '++' not in line and line !='\n':
                 hunk_data['old_code'].append(line[1:])
 
             elif line.startswith('+') and hunk_info and current_file is not None and\
-                    valid_extn( current_file, _extensions_ ):
+                    valid_extn( current_file, _extensions_ ) and '--' not in line and '++' not in line and line !='\n':
                 hunk_data['new_code'].append(line[1:])
 
-    print('FINAL CHANGE->', changes)
     ## finally add method name that the line changes belong to
     curr_file_ = None
 
-    ## define all language code scanners below 
-    ## ideally 99.99 of the code needs to be inside utils/<language>_ast_utils folder 
+    ## define all language code scanners below
+    ## ideally 99.99 of the code needs to be inside utils/<language>_ast_utils folder
     ## only the call needs to be in the below code
-    call_code_scanners()
+
+    #call_code_scanners( changes )
 
     for chg_dict_ in changes:
-      try:  
+      try:
 
         method_class_nm_old, method_class_nm_new = find_method_class_for_line( s3_, chg_dict_ )
 
@@ -176,30 +200,103 @@ def parse_diff_file(diff_file):
         chg_dict_['method_class_nm_new'] = method_class_nm_new
       except:
           continue
-        
+
+    print('FINAL CHANGE->', changes)
     ## dump into s3
     s3_.shipToS3( 'changes_for_further_analysis.json', json.dumps( changes, indent=4 ) )
 
     ## now call the graph insertion and get a reference to the graph
-    impact_analysis( changes )
+    global_usage_summary_ = impact_analysis( changes )
+    return changes, global_usage_summary_
 
-    return changes
 
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python analyze_changes.py <diff_file>")
+def send_response_mail_text( sub, body ):
+    try:
+        # url = "http://amygbdemos.in:3434/api/emailManager/sendEmailForVertiv"
+        url = os.getenv( 'IMPACT_EMAIL_URL' )
+        recepient_ids = os.getenv( 'IMPACT_RECEPIENT_LIST' )
+        # recepient_ids = "abhijeet@amygb.ai"
+
+        payload = {'subject': sub, 'body': body, 'emails': recepient_ids}
+        # files = {'file': open(file_path, 'rb')}
+        files = {'file': None}
+
+        res = requests.post(url, data=payload, files=files, timeout=30)  # , headers = headers)
+        print(res)
+        res.close()
+    except:
+        traceback.print_exc()
+        return None
+
+def main(inp_file_=None):
+    if len(sys.argv) != 2 and inp_file_ == None:
+        print("Usage: python trigger_dependency_analysis.py <diff_file>")
         sys.exit(1)
 
-    diff_file = sys.argv[1]
-    changes = parse_diff_file(diff_file)
+    diff_file = sys.argv[1] if inp_file_ == None else inp_file_
+    changes, global_usage_summary_ = parse_diff_file(diff_file)
+
+    result, sub, dd_, receipient_list_ = [], [], dict(), []
 
     for change in changes:
-        print(f"File: {change['file']}")
-        print(f"Old code starts at line {change['old_start']} with length {change['old_length']}:")
-        print("\n".join(change['old_code']))
-        print(f"New code starts at line {change['new_start']} with length {change['new_length']}:")
-        print("\n".join(change['new_code']))
-        print("-" * 80)
+        if change["file"] not in global_usage_summary_: continue
+        if change["file"] in global_usage_summary_ and \
+                len( global_usage_summary_[change["file"]]['global_usage_'] ) == 0: continue
+
+        print('GLOB exists !=>', len( global_usage_summary_[change["file"]] ) )
+        result.append(f"File: {change['file']}")
+        sub.append( change['file'] )
+
+        dd_[ change['file'] ] = dict()
+        
+        for uses_ in global_usage_summary_[change["file"]]['global_usage_']:
+            dd_[ change['file'] ]['method_name'] = uses_.get( 'upstream_method_nm', "NA" )
+            dd_[ change['file'] ]['api_endpoint'] = uses_.get( 'upstream_api_endpoint', "NA" )
+
+        dd_[ change['file'] ]['change_impact'] = global_usage_summary_[change["file"]].get( 'base_change_impact', "NA" )
+
+        result.append(f"Old code starts at line {change['old_start']} with length {change['old_length']}:")
+        result.append("\n".join(change['old_code']))
+        dd_[ change['file'] ]['old_code'] = "\n".join(change['old_code'])
+
+        result.append(f"New code starts at line {change['new_start']} with length {change['new_length']}:")
+        result.append("\n".join(change['new_code']))
+        dd_[ change['file'] ]['new_code'] = "\n".join(change['new_code'])
+
+        result.append(f'\nGlobal Usage=> {global_usage_summary_.get(change["file"], "No data available")}')
+        dd_[ change['file'] ]['global_usage'] = global_usage_summary_[change["file"]]['global_usage_']
+        
+        #IMPACT_OWNERS_CFG
+        if len( dd_[ change['file'] ]['global_usage'] ) > 0:
+
+            owners_file_ = os.getenv( 'IMPACT_OWNERS_CFG' )
+            with open( owners_file_, 'r' ) as fp:
+                owners_ = json.load( fp )
+
+            for usage_ in dd_[ change['file'] ]['global_usage']:
+                fnm = usage_['file_path']
+                found_ = False
+                print('Searching...', fnm, owners_)
+
+                for repo, recep_list in owners_.items():
+                    if repo in fnm:
+                        receipient_list_.append( recep_list )
+                        found_ = True
+                        print('Adding...', recep_list)
+                        break
+
+                if found_ is False:
+                    receipient_list_.append( 'abhijeet@amygb.ai' )
+                    ## default => Abhijeet
+
+        result.append("-" * 80)
+
+    dd_['recepient_list'] = receipient_list_
+    email_bod = json.dumps( dd_, indent=4 )
+    email_sub = "Impact Analysis: File Changes=>" + str(sub)
+    print('Sending email =>', email_bod, email_sub)
+
+    send_response_mail_text( email_sub, email_bod )
 
 if __name__ == "__main__":
     main()

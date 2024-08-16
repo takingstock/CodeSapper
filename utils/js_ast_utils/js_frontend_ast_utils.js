@@ -463,9 +463,10 @@ if (!directoryPath) {
     process.exit(1);
 }
 
+console.log('PRE SCANNING DIR=>', directoryPath)
 //before you do this, also find all the URLs being declared and their definitions
 scanDirectory( directoryPath );
-
+console.log('DONE SCANNING DIR=>', directoryPath)
 const analyzer = new JSFileAnalyzer( directoryPath, urlMapping );
 analyzer.analyzeFiles();
 

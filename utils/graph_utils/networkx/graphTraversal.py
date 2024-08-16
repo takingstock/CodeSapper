@@ -35,15 +35,23 @@ class traverseGraph():
         for u, v, edge_data in self.graph_.edges(data=True):
             # Check if edge matches criteria
             print( 'EDGY->', u, v , edge_data.get("usage_type"), mode,\
-                    self.graph_.nodes[u].get("method_name"), method_name, \
-                    self.graph_.nodes[u].get("file_path"), file_name )
+               self.graph_.nodes[u].get("method_name"), method_name, \
+               self.graph_.nodes[u].get("file_path"), file_name, file_name in self.graph_.nodes[u].get("file_path") )
+
             if edge_data.get("usage_type") == mode:
                 # Check if source node (u) matches method name and target node (v) matches file name
                 if self.graph_.nodes[u].get("method_name") == method_name and \
-                        self.graph_.nodes[u].get("file_path") == file_name and \
+                        ( self.graph_.nodes[u].get("file_path") == file_name or \
+                           file_name in self.graph_.nodes[u].get("file_path")
+                        )\
+                                and \
                         v not in self.matching_nodes:
 
-                    matching_nodes.append( self.graph_.nodes[v] )
+                    resp_ = self.graph_.nodes[v].copy()
+                    resp_.update( { 'upstream_method_nm': self.graph_.nodes[u]['method_name'],\
+                                    'upstream_api_endpoint': self.graph_.nodes[u]['api_end_point'] } )
+                    matching_nodes.append( resp_ )
+                    print('GOBBLEDY_GOOK=>', resp_ )
 
         return matching_nodes
 

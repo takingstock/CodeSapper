@@ -201,7 +201,7 @@ def start( change_summary_file_, \
     '''
 
     viz_id_store_ = dict()
-    default_home_dir_ = './'
+    default_home_dir_ = ''
 
     change_summary_ = change_summary_file_
     ## call chunking for the changed method itself, first
@@ -219,6 +219,16 @@ def start( change_summary_file_, \
 
     tg_ = traverseGraph()
     change_summary_comms_ = dict()
+    
+    ## local summary
+    local_summary = dict()
+    for idx, change_record_ in enumerate( change_summary_ ):
+        if "method_class_nm_old" in change_record_ and "method_nm" in change_record_["method_class_nm_old"]\
+                and change_record_["method_class_nm_old"]["method_nm"] == None:
+
+            fnm = change_record_['file']
+            global_usage_ = tg_.traverse_graph( 'NA', (default_home_dir_ + fnm), mode=GLOBAL )
+            local_summary[ fnm ] = { 'global_usage_': global_usage_ }
 
     for idx, change_record_ in enumerate( change_summary_ ):
         if "method_class_nm_old" in change_record_ and "method_nm" in change_record_["method_class_nm_old"]\
@@ -229,12 +239,17 @@ def start( change_summary_file_, \
         class_ = change_record_["method_class_nm_old"]["class_nm"]
         impact_ = addChangeImpactOnFile( change_record_ )
         change_record_['base_change_impact'] = impact_
+
+        if fnm in local_summary:
+            local_summary[ fnm ]['base_change_impact'] = impact_
+
         change_record_['base_change_criticality'] = findPatterns( impact_, 'Criticality', r"[0-5]")
 
         ## traverse the graph and find global uses first
         #NOTE->COMMENT THE BELOW & UNCOMMENT THE LINES BELOW ..only for testing 
         global_usage_ = tg_.traverse_graph( method_, (default_home_dir_ + fnm), mode=GLOBAL )
         local_usage_  = tg_.traverse_graph( method_, (default_home_dir_ + fnm), mode=LOCAL )
+        local_summary[ fnm ] = { 'global_usage_': global_usage_, 'base_change_impact': impact_ }
 
         print('ABOUT TO START IMPACT ANALSYSIS FOR ->', method_,'::GLOBAL::',global_usage_)
         print('ABOUT TO START IMPACT ANALSYSIS FOR ->', method_,'::LOCAL::',local_usage_)
@@ -291,18 +306,23 @@ def start( change_summary_file_, \
             impact_file_ = default_home_dir_ + '/impact_analysis/impact_analysis_Method::' + fnm.replace('/','_') \
                     + '::Criticality::' + criticality_ + '.json'
 
-            with open( impact_file_, 'w' ) as fp:
-                json.dump( change_record_, fp, indent=4 )
-            
-            print('===================IMPACT SUMMARY ',fnm,' :: ', method_,'=======================================')
+            try:
+                with open( impact_file_, 'w' ) as fp:
+                    json.dump( change_record_, fp, indent=4 )
+                
+                print('===================IMPACT SUMMARY ',fnm,' :: ', method_,'=======================================')
 
-            print('====== BASE CHANGE IMPACT=>', change_record_['base_change_impact']) 
-            if "impact_analysis" in change_record_ :
-                for downstream_impacted_ in change_record_["impact_analysis"]:
-                    if "impact_analysis" in downstream_impacted_:
-                        print('\n====== DOWN STREAM IMPACT =============================\n') 
-                        print('\n====== IMPACTED FILE->', downstream_impacted_["impacted_method"],'\n' )
-                        print( json.dumps( downstream_impacted_["impact_analysis"], indent=4 ) )
+                print('====== BASE CHANGE IMPACT=>', change_record_['base_change_impact']) 
+                if "impact_analysis" in change_record_ :
+                    for downstream_impacted_ in change_record_["impact_analysis"]:
+                        if "impact_analysis" in downstream_impacted_:
+                            print('\n====== DOWN STREAM IMPACT =============================\n') 
+                            print('\n====== IMPACTED FILE->', downstream_impacted_["impacted_method"],'\n' )
+                            print( json.dumps( downstream_impacted_["impact_analysis"], indent=4 ) )
+            except:
+                pass
+
+    return local_summary
 
 if __name__ == "__main__":
 

@@ -33,12 +33,12 @@ def innerCallingOuter( inner_api_, of_api_definition_ ):
 
         shorter_arr_, longer_arr_ = shorter_url_.split('/'), longer_url_.split('/')
 
-        print('DODO-> shorter_, longer_::', shorter_arr_, longer_arr_)
+        #print('DODO-> shorter_, longer_::', shorter_arr_, longer_arr_)
         ## try matching last 2 first if url like /abc/def and the other is v1/abc/def?123
         if len( shorter_arr_ ) >= 2 and shorter_arr_[-1] != '':
             primary_candidate_ = '/'.join( shorter_arr_[-2:] )
             if primary_candidate_ in longer_url_:
-                print('HAWK TUAAH->', primary_candidate_, longer_url_ )
+                #print('HAWK TUAAH->', primary_candidate_, longer_url_ )
                 primary = primary_candidate_ ## it just needs to be NOT NONE
                 return primary, secondary
 
@@ -52,15 +52,39 @@ def innerCallingOuter( inner_api_, of_api_definition_ ):
 
     return primary, secondary
 
-def updateGlobalUsage( outer_file_, inner_file_ ):
+def updateGlobalUsage( outer_file_, inner_file_, chg_file_ ):
     ## since the format of ALL graph inputs is the same
     #print('AIVO->', outer_file_, inner_file_ )
     of_json_, inner_json_ = outer_file_, inner_file_
 
+    ## if any of the chg_file_ in inner_json_ then ensure u add them to a list
+    ## and in the "INNER loop" only iterate through these files
+    ## the idea of updating global usage is to check if the outer file has any methods that are being
+    ## invoked by the inner file ..so if the "chg_file" is all outer files there is no need to even update
+    ## the global usage ..just return 
+    inner_arr_ , outer_arr_ = [], []
+
+    if chg_file_ != None:
+        for of_file, of_contents_ in of_json_.items():
+            for chgf in chg_file_:
+                if chgf['file'] in of_file: outer_arr_.append( of_file )
+
+        for inner_file, inner_contents_ in inner_json_.items():
+            for chgf in chg_file_:
+                if chgf['file'] in inner_file: inner_arr_.append( inner_file )
+
+        if len( inner_arr_ ) == 0:
+            print('NO PT Wasting time since inner_arr_ EMPTY=>')
+            return
+
     for of_file, of_contents_ in of_json_.items():
         of_method_details_ = of_contents_["method_details_"]
 
+        ## INNER loop
         for inner_file, inner_contents_ in inner_json_.items():
+            ## ensure we only check files from inner_arr_ above
+            if len( inner_arr_ ) > 0 and inner_file not in inner_arr_: continue
+
             inner_method_details_ = inner_contents_["method_details_"]
             
             ## check if inner method uses / calls an API thats defined in of_method_details_ and update
@@ -68,13 +92,22 @@ def updateGlobalUsage( outer_file_, inner_file_ ):
             for of_method in of_method_details_:
                 for inner_method in inner_method_details_:
                     ## DEFENSIVE CHECK
+                    if "global_uses" in of_method:
+                        ll_ = of_method["global_uses"]
+                        existing_tmp_f = [ x['file_path'] for x in ll_ ]
+                        existing_tmp_m = [ x['method_nm'] for x in ll_ ]
+                        if inner_file in existing_tmp_f and inner_method["method_name"] in existing_tmp_m:
+                            ## DONT ADD DUPES !!
+                            print('DUPE !!')
+                            continue
+
                     if "inter_service_api_call" not in inner_method or "api_end_point" not in of_method: continue
 
                     inner_api_call_ = inner_method["inter_service_api_call"]
                     of_api_definition_ = of_method["api_end_point"]
 
                     if of_api_definition_ == "NA" or len( inner_api_call_ ) == 0: continue
-                    print('OUTER_URL::', of_api_definition_, of_file, '::INNER_URL::', inner_api_call_, inner_file)
+                    #print('OUTER_URL::', of_api_definition_, of_file, '::INNER_URL::', inner_api_call_, inner_file)
 
                     for call in inner_api_call_: ## since , theoretically , we can call multiple APIs from a method
                         primary, secondary = innerCallingOuter( call, of_api_definition_ )
@@ -136,7 +169,7 @@ def updateGlobalUsage( outer_file_, inner_file_ ):
                                     of_file )
 
 
-def connectInterServiceCalls():
+def connectInterServiceCalls( changes=None ):
     '''
     trawl through s3 and pick all relevant method summary files first, then iterate and match inter service calls
     '''
@@ -160,7 +193,7 @@ def connectInterServiceCalls():
             if outer_file_nm == inner_file_nm:
                         continue ## obviously, we ignore the files that are exactly same
 
-            updateGlobalUsage( outer_file_jsn_, inner_file_jsn_ )
+            updateGlobalUsage( outer_file_jsn_, inner_file_jsn_, changes )
 
             ## write back all the contents
             try:
